@@ -1,2 +1,1 @@
-# component_page
-Page TEST
+# slot
