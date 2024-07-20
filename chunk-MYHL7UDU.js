@@ -1,7 +1,7 @@
 import {
   ScrollingModule,
   ViewportRuler
-} from "./chunk-G6KUNCDA.js";
+} from "./chunk-ZIMSTWUK.js";
 import {
   Directionality,
   MatCommonModule,
@@ -11,7 +11,7 @@ import {
   _VIEW_REPEATER_STRATEGY,
   _ViewRepeaterOperation,
   isDataSource
-} from "./chunk-XQIQEWOC.js";
+} from "./chunk-K6SENQKZ.js";
 import {
   Attribute,
   BehaviorSubject,
@@ -3527,4 +3527,4 @@ export {
   MatRow,
   MatTableModule
 };
-//# sourceMappingURL=chunk-QXBUS4UC.js.map
+//# sourceMappingURL=chunk-MYHL7UDU.js.map

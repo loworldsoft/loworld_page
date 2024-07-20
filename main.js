@@ -4,7 +4,7 @@ import {
   pvFailureAction,
   pvSuccessAction,
   selectMonth
-} from "./chunk-4KSATUFW.js";
+} from "./chunk-GLLB5556.js";
 import {
   AnimationDriver,
   AnimationEngine,
@@ -17,12 +17,12 @@ import {
 import {
   canActivate,
   roleGuard
-} from "./chunk-S5LGBAJ4.js";
+} from "./chunk-2VQOAEDE.js";
 import {
   HeaderComponent,
   SharedModule
-} from "./chunk-IPQO33EI.js";
-import "./chunk-ZJEDGCY5.js";
+} from "./chunk-XQHKTGCF.js";
+import "./chunk-EBJGEC5I.js";
 import {
   JwtModule,
   LayoutService,
@@ -37,7 +37,7 @@ import {
   sortExpansionPanelBox,
   triggerAction,
   updateNode
-} from "./chunk-G6KUNCDA.js";
+} from "./chunk-ZIMSTWUK.js";
 import {
   BrowserModule,
   DateTime,
@@ -62,7 +62,7 @@ import {
   platformBrowser,
   props,
   select
-} from "./chunk-XQIQEWOC.js";
+} from "./chunk-K6SENQKZ.js";
 import "./chunk-KGFIP23Z.js";
 import {
   ANIMATION_MODULE_TYPE,
@@ -1135,36 +1135,36 @@ var routes = [
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-GPKKEFKO.js").then((m) => m.MainModule),
+    loadChildren: () => import("./chunk-BCFNOKJO.js").then((m) => m.MainModule),
     canActivate: [canActivate]
   },
   {
     path: "chatbot",
-    loadChildren: () => import("./chunk-DR6JZ462.js").then((m) => m.ChatbotModule),
+    loadChildren: () => import("./chunk-ITFJD5U5.js").then((m) => m.ChatbotModule),
     canActivate: [canActivate]
   },
   {
     path: "history",
-    loadChildren: () => import("./chunk-YVBTADSA.js").then((m) => m.HistoryModule),
+    loadChildren: () => import("./chunk-2DMUZR43.js").then((m) => m.HistoryModule),
     canActivate: [canActivate]
   },
   {
     path: "membership",
-    loadChildren: () => import("./chunk-3NTBEN5T.js").then((m) => m.MembershipModule)
+    loadChildren: () => import("./chunk-4CYJJZLO.js").then((m) => m.MembershipModule)
   },
   {
     path: "logic",
-    loadChildren: () => import("./chunk-GFV4BPP5.js").then((m) => m.ChatflowModule),
+    loadChildren: () => import("./chunk-43SVH2OF.js").then((m) => m.ChatflowModule),
     canActivate: [canActivate]
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-CUDM6FQD.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-OFTQRRMX.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {
     path: "monitoring",
-    loadChildren: () => import("./chunk-VNXBACUK.js").then((m) => m.MonitoringModule),
+    loadChildren: () => import("./chunk-NQ6JR5H4.js").then((m) => m.MonitoringModule),
     canActivate: [canActivate, roleGuard],
     data: {
       requiredRoles: [RoleName.SuperAdmin]
@@ -1185,40 +1185,40 @@ var devRoutes = [
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-GPKKEFKO.js").then((m) => m.MainModule),
+    loadChildren: () => import("./chunk-BCFNOKJO.js").then((m) => m.MainModule),
     canActivate: [canActivate]
   },
   {
     path: "chatbot",
-    loadChildren: () => import("./chunk-DR6JZ462.js").then((m) => m.ChatbotModule),
+    loadChildren: () => import("./chunk-ITFJD5U5.js").then((m) => m.ChatbotModule),
     canActivate: [canActivate]
   },
   {
     path: "history",
-    loadChildren: () => import("./chunk-YVBTADSA.js").then((m) => m.HistoryModule),
+    loadChildren: () => import("./chunk-2DMUZR43.js").then((m) => m.HistoryModule),
     canActivate: [canActivate]
   },
   {
     path: "membership",
-    loadChildren: () => import("./chunk-3NTBEN5T.js").then((m) => m.MembershipModule)
+    loadChildren: () => import("./chunk-4CYJJZLO.js").then((m) => m.MembershipModule)
   },
   {
     path: "logic",
-    loadChildren: () => import("./chunk-GFV4BPP5.js").then((m) => m.ChatflowModule),
+    loadChildren: () => import("./chunk-43SVH2OF.js").then((m) => m.ChatflowModule),
     canActivate: [canActivate]
   },
   {
     path: "sketchflow",
-    loadChildren: () => import("./chunk-7Q6BGEW5.js").then((m) => m.SketchflowModule)
+    loadChildren: () => import("./chunk-SEOUVJLT.js").then((m) => m.SketchflowModule)
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-CUDM6FQD.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-OFTQRRMX.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {
     path: "monitoring",
-    loadChildren: () => import("./chunk-VNXBACUK.js").then((m) => m.MonitoringModule),
+    loadChildren: () => import("./chunk-NQ6JR5H4.js").then((m) => m.MonitoringModule),
     canActivate: [canActivate, roleGuard],
     data: {
       requiredRoles: [RoleName.SuperAdmin]
@@ -1226,7 +1226,7 @@ var devRoutes = [
   },
   {
     path: "editor",
-    loadChildren: () => import("./chunk-OXTKLIAO.js").then((m) => m.EditorModule)
+    loadChildren: () => import("./chunk-IBOLFKG2.js").then((m) => m.EditorModule)
   },
   {
     path: "**",

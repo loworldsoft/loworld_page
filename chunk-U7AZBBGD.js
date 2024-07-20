@@ -5,7 +5,7 @@ import {
   MatListItemTitle,
   MatListSubheaderCssMatStyler,
   TodayFormatPipe
-} from "./chunk-IPQO33EI.js";
+} from "./chunk-XQHKTGCF.js";
 import {
   DalService,
   DataAbstract,
@@ -13,14 +13,14 @@ import {
   HistoryService,
   MatDialog,
   MatSnackBar
-} from "./chunk-G6KUNCDA.js";
+} from "./chunk-ZIMSTWUK.js";
 import {
   ActivatedRoute,
   MatIcon,
   MatIconButton,
   MatRipple,
   Router
-} from "./chunk-XQIQEWOC.js";
+} from "./chunk-K6SENQKZ.js";
 import {
   NgClass,
   inject,
@@ -268,4 +268,4 @@ export {
   ChatHistoryMenuData,
   ListComponent
 };
-//# sourceMappingURL=chunk-GAU5FH6Q.js.map
+//# sourceMappingURL=chunk-U7AZBBGD.js.map

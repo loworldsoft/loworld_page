@@ -83,7 +83,7 @@ import {
   props,
   supportsScrollBehavior,
   toSignal
-} from "./chunk-XQIQEWOC.js";
+} from "./chunk-K6SENQKZ.js";
 import {
   animate,
   animateChild,
@@ -37273,4 +37273,4 @@ export {
    * SOFTWARE.
    *)
 */
-//# sourceMappingURL=chunk-G6KUNCDA.js.map
+//# sourceMappingURL=chunk-ZIMSTWUK.js.map

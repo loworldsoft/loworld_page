@@ -1,6 +1,6 @@
 import {
   ChatHistoryMenuData
-} from "./chunk-GAU5FH6Q.js";
+} from "./chunk-U7AZBBGD.js";
 import {
   CdkDrag,
   MatDrawer,
@@ -15,8 +15,8 @@ import {
   MatSlideToggle,
   MenuComponent,
   SharedModule
-} from "./chunk-IPQO33EI.js";
-import "./chunk-ZJEDGCY5.js";
+} from "./chunk-XQHKTGCF.js";
+import "./chunk-EBJGEC5I.js";
 import {
   DataAbstract,
   GlobalService,
@@ -29,7 +29,7 @@ import {
   MatTab,
   MatTabGroup,
   StoreAbstract
-} from "./chunk-G6KUNCDA.js";
+} from "./chunk-ZIMSTWUK.js";
 import {
   ActivatedRoute,
   DefaultValueAccessor,
@@ -42,7 +42,7 @@ import {
   NgModel,
   Router,
   RouterModule
-} from "./chunk-XQIQEWOC.js";
+} from "./chunk-K6SENQKZ.js";
 import "./chunk-KGFIP23Z.js";
 import {
   ElementRef,
@@ -1457,4 +1457,4 @@ var ChatflowModule = _ChatflowModule;
 export {
   ChatflowModule
 };
-//# sourceMappingURL=chunk-GFV4BPP5.js.map
+//# sourceMappingURL=chunk-43SVH2OF.js.map
