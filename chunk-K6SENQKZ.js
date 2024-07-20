@@ -30509,7 +30509,7 @@ var commonEnv = {
 // src/environments/environment.ts
 var env = {
   environmentName: EnvironmentName.Development,
-  base_url: "https://api.loworldsoft.com:8080/"
+  base_url: "https://api.loworldsoft.com:8080"
 };
 var environment = __spreadValues(__spreadValues({}, commonEnv), env);
 
