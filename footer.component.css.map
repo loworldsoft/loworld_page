@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["Modules/pages/membership/components/dialogs/dialog-layout/footer/footer.component.scss"],
+  "sourcesContent": [".spacer {\r\n    margin-left: 20px;\r\n}\r\n\r\n.container-bottom {\r\n    width: 90%;\r\n    margin-right: 15px;\r\n    margin-bottom: 10px;\r\n}"],
+  "mappings": ";AAAA,CAAA;AACI,eAAA;;AAGJ,CAAA;AACI,SAAA;AACA,gBAAA;AACA,iBAAA;;",
+  "names": []
+}

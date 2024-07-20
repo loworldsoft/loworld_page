@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["Modules/pages/category-manage/components/organisms/table/table.component.scss"],
+  "sourcesContent": ["table th {\r\n    font-weight: 700;\r\n    border-top: 1px solid #000;\r\n    border-bottom: 1px solid #000;\r\n}"],
+  "mappings": ";AAAA,MAAA;AACI,eAAA;AACA,cAAA,IAAA,MAAA;AACA,iBAAA,IAAA,MAAA;;",
+  "names": []
+}

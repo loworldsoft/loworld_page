@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["Modules/pages/sketchflow/components/row-input/row-input.component.scss"],
+  "sourcesContent": [".mg-10 {\r\n  margin: 10px;\r\n}"],
+  "mappings": ";AAAA,CAAA;AACE,UAAA;;",
+  "names": []
+}

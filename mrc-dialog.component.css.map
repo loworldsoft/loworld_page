@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["Modules/shared/components/molecules/mrc-dialog/mrc-dialog.component.scss"],
+  "sourcesContent": [".content{\r\n    height: 500px;\r\n    width: 500px;\r\n    overflow-y: auto;\r\n}"],
+  "mappings": ";AAAA,CAAA;AACI,UAAA;AACA,SAAA;AACA,cAAA;;",
+  "names": []
+}

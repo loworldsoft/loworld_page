@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["Modules/pages/membership/components/dialogs/check-account/check-account.component.scss"],
+  "sourcesContent": [".form-item {\r\n    display: flex;\r\n    align-items: start;\r\n}\r\n\r\n.divider {\r\n    margin-top: 10px;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.custom-form-field {\r\n    width: 90%;\r\n    /* 또는 원하는 폭 */\r\n    font-size: 16px;\r\n    /* 폰트 크기 조정 */\r\n}\r\n\r\n.btn-bottom {\r\n    margin-right: 10px;\r\n}\r\n\r\n.container-bottom {\r\n    width: 90%;\r\n    margin-right: 15px;\r\n    margin-bottom: 10px;\r\n}\r\n\r\n.inner-item {\r\n    margin-bottom: 10px;\r\n}\r\n\r\n.message-box{\r\n    font-size: 13px;\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n    height: auto;\r\n}\r\n\r\n.custom-form-field:disabled {\r\n    color: white;\r\n    //background-color: #3f51b5;\r\n    opacity: 1;\r\n}\r\n\r\n.card-header-content {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    width: 100%;\r\n}\r\n\r\n// .container-title {\r\n//     color: #3f51b5;\r\n// }"],
+  "mappings": ";;;AAAA,CAAA;AACI,WAAA;AACA,eAAA;;AAGJ,CAAA;AACI,cAAA;AACA,iBAAA;;AAGJ,CAAA;AACI,SAAA;AAEA,aAAA;;AAIJ,CAAA;AACI,gBAAA;;AAGJ,CAAA;AACI,SAAA;AACA,gBAAA;AACA,iBAAA;;AAGJ,CAAA;AACI,iBAAA;;AAGJ,CAAA;AACI,aAAA;AACA,eAAA;AACA,kBAAA;AACA,UAAA;;AAGJ,CA5BA,iBA4BA;AACI,SAAA;AAEA,WAAA;;AAGJ,CAAA;AACI,WAAA;AACA,mBAAA;AACA,eAAA;AACA,SAAA;;",
+  "names": []
+}

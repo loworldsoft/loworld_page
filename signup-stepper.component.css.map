@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["Modules/pages/membership/components/dialogs/signup-stepper/signup-stepper.component.scss"],
+  "sourcesContent": [".divider {\r\n    margin-top: 10px;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.error-message{\r\n    color: red;\r\n}\r\n\r\n.tab-first{\r\n    margin-top: 10px;\r\n}\r\n\r\n.card-header-content {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    width: 100%;\r\n}\r\n\r\n.container{\r\n    width: 100%;\r\n}\r\n\r\n.container-body{\r\n    width: 90%;\r\n    padding-left: 10px;\r\n}\r\n\r\n.custom-form-field{\r\n    width: 100%;\r\n}\r\n\r\n// .stepper-btn{\r\n//     display: flex;\r\n//     flex-direction: column;\r\n//     align-items: end;\r\n// }\r\n\r\n.spacer{\r\n    margin-left: 10px;\r\n}"],
+  "mappings": ";AAAA,CAAA;AACI,cAAA;AACA,iBAAA;;AAGJ,CAAA;AACI,SAAA;;AAGJ,CAAA;AACI,cAAA;;AAGJ,CAAA;AACI,WAAA;AACA,mBAAA;AACA,eAAA;AACA,SAAA;;AAGJ,CAAA;AACI,SAAA;;AAGJ,CAAA;AACI,SAAA;AACA,gBAAA;;AAGJ,CAAA;AACI,SAAA;;AASJ,CAAA;AACI,eAAA;;",
+  "names": []
+}

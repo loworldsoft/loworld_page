@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["Modules/pages/category-manage/components/page/category-manage-page/category-manage-page.component.scss"],
+  "sourcesContent": [".m-t25{\r\n    margin-top: 25px;\r\n}\r\n\r\n.m-t16{\r\n    margin-top: 16px;\r\n}\r\n\r\n"],
+  "mappings": ";AAAA,CAAA;AACI,cAAA;;AAGJ,CAAA;AACI,cAAA;;",
+  "names": []
+}

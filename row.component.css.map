@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["Modules/pages/sketchflow/components/row/row.component.scss"],
+  "sourcesContent": [".outer-box {\r\n  // border: 1px solid black;\r\n  color: black;\r\n}\r\n\r\n.flex-row {\r\n  display: flex;\r\n  flex-direction: row;\r\n}\r\n\r\n.inner-box {\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: white;\r\n  color: black;\r\n}\r\n\r\n.selected {\r\n  border: 3px dotted #227b4f;\r\n}\r\n\r\n.base {\r\n  border: 1px solid black;\r\n}"],
+  "mappings": ";AAAA,CAAA;AAEE,SAAA;;AAGF,CAAA;AACE,WAAA;AACA,kBAAA;;AAGF,CAAA;AACE,SAAA;AACA,UAAA;AACA,oBAAA;AACA,SAAA;;AAGF,CAAA;AACE,UAAA,IAAA,OAAA;;AAGF,CAAA;AACE,UAAA,IAAA,MAAA;;",
+  "names": []
+}

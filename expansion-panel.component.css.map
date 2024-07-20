@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["Modules/pages/chatflow/components/atom/expansion-panel/expansion-panel.component.scss"],
+  "sourcesContent": [".content-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 1rem;\r\n}\r\n\r\n.content-page {\r\n  align-self: flex-end;\r\n}\r\n\r\n.text-ellipsis {\r\n  // min-width: 100px;\r\n  overflow: hidden; /* 넘치는 내용 숨기기 */\r\n  white-space: nowrap; /* 텍스트를 한 줄로 표시 */\r\n  text-overflow: ellipsis; /* 말줄임표 표시 */\r\n  margin-bottom: 10px;\r\n}\r\n"],
+  "mappings": ";;;AAAA,CAAA;AACE,WAAA;AACA,kBAAA;AACA,OAAA;;AAGF,CAAA;AACE,cAAA;;AAGF,CAAA;AAEE,YAAA;AACA,eAAA;AACA,iBAAA;AACA,iBAAA;;",
+  "names": []
+}

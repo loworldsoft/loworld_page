@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["Modules/pages/chatflow/components/atom/chat-box/chat-box.component.scss"],
+  "sourcesContent": [".chat-box {\r\n  background-color: white;\r\n  overflow-y: scroll;\r\n  padding: 2rem 1rem;\r\n}\r\n\r\n.chat-box-scroll {\r\n  overflow-y: auto;\r\n  /* Chrome, Edge, Safari 등 웹킷 기반 브라우저용 스크롤바 숨김 */\r\n  &::-webkit-scrollbar {\r\n    display: none;\r\n  }\r\n  \r\n  /* Firefox용 스크롤바 숨김 */\r\n  scrollbar-width: none;\r\n  \r\n  /* IE, Edge(구버전)용 스크롤바 숨김 */\r\n  -ms-overflow-style: none;\r\n}"],
+  "mappings": ";;;AAAA,CAAA;AACE,oBAAA;AACA,cAAA;AACA,WAAA,KAAA;;AAGF,CAAA;AACE,cAAA;AAOA,mBAAA;AAGA,sBAAA;;AARA,CAHF,eAGE;AACE,WAAA;;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["Modules/shared/components/molecules/bottom-sheet/bottom-sheet.component.scss"],
+  "sourcesContent": [".bottom-sheet-top {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,eAAA;AACA,mBAAA;;",
+  "names": []
+}

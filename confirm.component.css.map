@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["Modules/pages/membership/components/dialogs/confirm/confirm.component.scss"],
+  "sourcesContent": [".container {\r\n    width: 100%;\r\n}\r\n\r\n// .container-title{\r\n//     color: #3f51b5;\r\n// }\r\n\r\n.container-body{\r\n    width: 80%;\r\n    margin: auto;\r\n    margin-bottom: 10px;\r\n}\r\n\r\n.container-message{\r\n    font-size: 15px;\r\n}\r\n\r\n.divider {\r\n    margin-top: 10px;\r\n    margin-bottom: 10px;\r\n}\r\n\r\n.spacer{\r\n    margin-left: 10px;\r\n}\r\n\r\n.container-bottom {\r\n    margin-top: 10px;\r\n    margin-bottom: 20px;\r\n}"],
+  "mappings": ";AAAA,CAAA;AACI,SAAA;;AAOJ,CAAA;AACI,SAAA;AACA,UAAA;AACA,iBAAA;;AAGJ,CAAA;AACI,aAAA;;AAGJ,CAAA;AACI,cAAA;AACA,iBAAA;;AAGJ,CAAA;AACI,eAAA;;AAGJ,CAAA;AACI,cAAA;AACA,iBAAA;;",
+  "names": []
+}

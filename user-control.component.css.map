@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["Modules/pages/membership/components/user-control/user-control.component.scss"],
+  "sourcesContent": [".container {\r\n    width: 95%;\r\n    margin: auto;\r\n    padding-top: 10px;\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.container-header {\r\n    padding-left: 10px;\r\n}\r\n\r\n.container-body {\r\n    padding: 10px;\r\n}\r\n\r\n.body-header {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: end;\r\n    margin-bottom: 10px;\r\n}\r\n\r\n.container-footer {\r\n    padding: 10px;\r\n}\r\n\r\n.header-title {\r\n    margin-bottom: 0;\r\n}\r\n\r\n.spacer {\r\n    margin-right: 10px;\r\n}\r\n\r\n.table-header {\r\n    text-align: center;\r\n}\r\n\r\n.mat-column-control {\r\n    text-align: center;\r\n    width: 20%;\r\n}"],
+  "mappings": ";AAAA,CAAA;AACI,SAAA;AACA,UAAA;AACA,eAAA;AACA,kBAAA;;AAGJ,CAAA;AACI,gBAAA;;AAGJ,CAAA;AACI,WAAA;;AAGJ,CAAA;AACI,WAAA;AACA,kBAAA;AACA,eAAA;AACA,iBAAA;;AAGJ,CAAA;AACI,WAAA;;AAGJ,CAAA;AACI,iBAAA;;AAGJ,CAAA;AACI,gBAAA;;AAGJ,CAAA;AACI,cAAA;;AAGJ,CAAA;AACI,cAAA;AACA,SAAA;;",
+  "names": []
+}
