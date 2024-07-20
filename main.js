@@ -4,7 +4,7 @@ import {
   pvFailureAction,
   pvSuccessAction,
   selectMonth
-} from "./chunk-GLLB5556.js";
+} from "./chunk-IH5UFRFR.js";
 import {
   AnimationDriver,
   AnimationEngine,
@@ -17,12 +17,12 @@ import {
 import {
   canActivate,
   roleGuard
-} from "./chunk-2VQOAEDE.js";
+} from "./chunk-5N37WQ6I.js";
 import {
   HeaderComponent,
   SharedModule
-} from "./chunk-XQHKTGCF.js";
-import "./chunk-EBJGEC5I.js";
+} from "./chunk-ERN7VB2F.js";
+import "./chunk-JCP2WD6C.js";
 import {
   JwtModule,
   LayoutService,
@@ -37,7 +37,7 @@ import {
   sortExpansionPanelBox,
   triggerAction,
   updateNode
-} from "./chunk-ZIMSTWUK.js";
+} from "./chunk-WWIBHEXQ.js";
 import {
   BrowserModule,
   DateTime,
@@ -47,6 +47,7 @@ import {
   HttpClient,
   HttpClientModule,
   HttpParams,
+  Router,
   RouterModule,
   RouterOutlet,
   ScannedActionsSubject,
@@ -62,7 +63,7 @@ import {
   platformBrowser,
   props,
   select
-} from "./chunk-K6SENQKZ.js";
+} from "./chunk-MZEG7Z3L.js";
 import "./chunk-KGFIP23Z.js";
 import {
   ANIMATION_MODULE_TYPE,
@@ -105,8 +106,8 @@ import {
   ɵɵdefineInjectable,
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
+  ɵɵdirectiveInject,
   ɵɵelement,
-  ɵɵgetInheritedFactory,
   ɵɵinject,
   ɵɵproperty
 } from "./chunk-A2LCPREI.js";
@@ -1135,36 +1136,36 @@ var routes = [
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-BCFNOKJO.js").then((m) => m.MainModule),
+    loadChildren: () => import("./chunk-E33BVTBK.js").then((m) => m.MainModule),
     canActivate: [canActivate]
   },
   {
     path: "chatbot",
-    loadChildren: () => import("./chunk-ITFJD5U5.js").then((m) => m.ChatbotModule),
+    loadChildren: () => import("./chunk-GFVWOTIK.js").then((m) => m.ChatbotModule),
     canActivate: [canActivate]
   },
   {
     path: "history",
-    loadChildren: () => import("./chunk-2DMUZR43.js").then((m) => m.HistoryModule),
+    loadChildren: () => import("./chunk-BW5ZW6NP.js").then((m) => m.HistoryModule),
     canActivate: [canActivate]
   },
   {
     path: "membership",
-    loadChildren: () => import("./chunk-4CYJJZLO.js").then((m) => m.MembershipModule)
+    loadChildren: () => import("./chunk-7PCU7ZHA.js").then((m) => m.MembershipModule)
   },
   {
     path: "logic",
-    loadChildren: () => import("./chunk-43SVH2OF.js").then((m) => m.ChatflowModule),
+    loadChildren: () => import("./chunk-5SN7DYJP.js").then((m) => m.ChatflowModule),
     canActivate: [canActivate]
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-OFTQRRMX.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-5SEKUJWH.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {
     path: "monitoring",
-    loadChildren: () => import("./chunk-NQ6JR5H4.js").then((m) => m.MonitoringModule),
+    loadChildren: () => import("./chunk-XLTVNDPV.js").then((m) => m.MonitoringModule),
     canActivate: [canActivate, roleGuard],
     data: {
       requiredRoles: [RoleName.SuperAdmin]
@@ -1185,40 +1186,40 @@ var devRoutes = [
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-BCFNOKJO.js").then((m) => m.MainModule),
+    loadChildren: () => import("./chunk-E33BVTBK.js").then((m) => m.MainModule),
     canActivate: [canActivate]
   },
   {
     path: "chatbot",
-    loadChildren: () => import("./chunk-ITFJD5U5.js").then((m) => m.ChatbotModule),
+    loadChildren: () => import("./chunk-GFVWOTIK.js").then((m) => m.ChatbotModule),
     canActivate: [canActivate]
   },
   {
     path: "history",
-    loadChildren: () => import("./chunk-2DMUZR43.js").then((m) => m.HistoryModule),
+    loadChildren: () => import("./chunk-BW5ZW6NP.js").then((m) => m.HistoryModule),
     canActivate: [canActivate]
   },
   {
     path: "membership",
-    loadChildren: () => import("./chunk-4CYJJZLO.js").then((m) => m.MembershipModule)
+    loadChildren: () => import("./chunk-7PCU7ZHA.js").then((m) => m.MembershipModule)
   },
   {
     path: "logic",
-    loadChildren: () => import("./chunk-43SVH2OF.js").then((m) => m.ChatflowModule),
+    loadChildren: () => import("./chunk-5SN7DYJP.js").then((m) => m.ChatflowModule),
     canActivate: [canActivate]
   },
   {
     path: "sketchflow",
-    loadChildren: () => import("./chunk-SEOUVJLT.js").then((m) => m.SketchflowModule)
+    loadChildren: () => import("./chunk-5S53EQFB.js").then((m) => m.SketchflowModule)
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-OFTQRRMX.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-5SEKUJWH.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {
     path: "monitoring",
-    loadChildren: () => import("./chunk-NQ6JR5H4.js").then((m) => m.MonitoringModule),
+    loadChildren: () => import("./chunk-XLTVNDPV.js").then((m) => m.MonitoringModule),
     canActivate: [canActivate, roleGuard],
     data: {
       requiredRoles: [RoleName.SuperAdmin]
@@ -1226,7 +1227,7 @@ var devRoutes = [
   },
   {
     path: "editor",
-    loadChildren: () => import("./chunk-IBOLFKG2.js").then((m) => m.EditorModule)
+    loadChildren: () => import("./chunk-RFUYXEKS.js").then((m) => m.EditorModule)
   },
   {
     path: "**",
@@ -1362,21 +1363,30 @@ Array.prototype.isEmpty = function() {
     return false;
 };
 var _AppComponent = class _AppComponent extends StoreAbstract {
-  constructor() {
-    super(...arguments);
+  constructor(router) {
+    super();
+    this.router = router;
     this.triggerType = "mainDrawer";
     this.sketchflowData = new SketchflowData();
   }
   ngOnInit() {
     this.layoutService.getBodyHeight();
+    this.redirectUrl();
+  }
+  redirectUrl() {
+    const previousUrl = localStorage.getItem("previousUrl");
+    if (previousUrl) {
+      const url = new URL(previousUrl);
+      const path = url.pathname;
+      this.router.navigateByUrl(path);
+      console.log("previousUrl", path);
+      localStorage.removeItem("previousUrl");
+    }
   }
 };
-_AppComponent.\u0275fac = /* @__PURE__ */ (() => {
-  let \u0275AppComponent_BaseFactory;
-  return function AppComponent_Factory(t) {
-    return (\u0275AppComponent_BaseFactory || (\u0275AppComponent_BaseFactory = \u0275\u0275getInheritedFactory(_AppComponent)))(t || _AppComponent);
-  };
-})();
+_AppComponent.\u0275fac = function AppComponent_Factory(t) {
+  return new (t || _AppComponent)(\u0275\u0275directiveInject(Router));
+};
 _AppComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AppComponent, selectors: [["app-root"]], features: [\u0275\u0275InheritDefinitionFeature], decls: 2, vars: 1, consts: [[3, "triggerType"]], template: function AppComponent_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275element(0, "app-header", 0)(1, "router-outlet");
@@ -1387,7 +1397,7 @@ _AppComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _A
 }, dependencies: [HeaderComponent, RouterOutlet], styles: ["\n\n/*# sourceMappingURL=app.component.css.map */"] });
 var AppComponent = _AppComponent;
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent", filePath: "src\\app\\app.component.ts", lineNumber: 42 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent", filePath: "src\\app\\app.component.ts", lineNumber: 43 });
 })();
 
 // src/app/app.module.ts
