@@ -4,7 +4,10 @@ import {
   pvFailureAction,
   pvSuccessAction,
   selectMonth
-} from "./chunk-IH5UFRFR.js";
+} from "./chunk-BKHG4K2V.js";
+import {
+  src_exports
+} from "./chunk-3L3N7GPT.js";
 import {
   AnimationDriver,
   AnimationEngine,
@@ -13,16 +16,16 @@ import {
   NoopAnimationDriver,
   WebAnimationsDriver,
   WebAnimationsStyleNormalizer
-} from "./chunk-F6Z3LXAW.js";
+} from "./chunk-NAW45VIM.js";
 import {
   canActivate,
   roleGuard
-} from "./chunk-5N37WQ6I.js";
+} from "./chunk-JFBNGNQH.js";
 import {
   HeaderComponent,
   SharedModule
-} from "./chunk-ERN7VB2F.js";
-import "./chunk-JCP2WD6C.js";
+} from "./chunk-ZBUN2E5R.js";
+import "./chunk-GZPQMA6M.js";
 import {
   JwtModule,
   LayoutService,
@@ -37,7 +40,7 @@ import {
   sortExpansionPanelBox,
   triggerAction,
   updateNode
-} from "./chunk-WWIBHEXQ.js";
+} from "./chunk-7TQE3YTV.js";
 import {
   BrowserModule,
   DateTime,
@@ -63,8 +66,8 @@ import {
   platformBrowser,
   props,
   select
-} from "./chunk-MZEG7Z3L.js";
-import "./chunk-KGFIP23Z.js";
+} from "./chunk-EWWERI3V.js";
+import "./chunk-N5CV7AUJ.js";
 import {
   ANIMATION_MODULE_TYPE,
   ChangeDetectionScheduler,
@@ -102,15 +105,24 @@ import {
   withLatestFrom,
   ɵsetClassDebugInfo,
   ɵɵInheritDefinitionFeature,
+  ɵɵadvance,
   ɵɵdefineComponent,
   ɵɵdefineInjectable,
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵdirectiveInject,
   ɵɵelement,
+  ɵɵelementContainer,
+  ɵɵelementEnd,
+  ɵɵelementStart,
   ɵɵinject,
-  ɵɵproperty
-} from "./chunk-A2LCPREI.js";
+  ɵɵloadQuery,
+  ɵɵnamespaceHTML,
+  ɵɵnamespaceSVG,
+  ɵɵproperty,
+  ɵɵqueryRefresh,
+  ɵɵviewQuery
+} from "./chunk-WWQYCCAG.js";
 
 // node_modules/@angular/platform-browser/fesm2022/animations.mjs
 var _InjectableAnimationEngine = class _InjectableAnimationEngine extends AnimationEngine {
@@ -270,7 +282,7 @@ var AsyncAnimationRendererFactory = class {
    * @internal
    */
   loadImpl() {
-    const moduleImpl = this.moduleImpl ?? import("./chunk-2O4CGHAB.js");
+    const moduleImpl = this.moduleImpl ?? import("./chunk-T2BR6JZB.js");
     return moduleImpl.catch((e) => {
       throw new RuntimeError(5300, (typeof ngDevMode === "undefined" || ngDevMode) && "Async loading for animations package was enabled, but loading failed. Angular falls back to using regular rendering. No animations will be displayed and their styles won't be applied.");
     }).then(({ \u0275createEngine, \u0275AnimationRendererFactory }) => {
@@ -1136,36 +1148,36 @@ var routes = [
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-E33BVTBK.js").then((m) => m.MainModule),
+    loadChildren: () => import("./chunk-ZF6CTZNH.js").then((m) => m.MainModule),
     canActivate: [canActivate]
   },
   {
     path: "chatbot",
-    loadChildren: () => import("./chunk-GFVWOTIK.js").then((m) => m.ChatbotModule),
+    loadChildren: () => import("./chunk-RSDWYXK6.js").then((m) => m.ChatbotModule),
     canActivate: [canActivate]
   },
   {
     path: "history",
-    loadChildren: () => import("./chunk-BW5ZW6NP.js").then((m) => m.HistoryModule),
+    loadChildren: () => import("./chunk-BGY7H4CO.js").then((m) => m.HistoryModule),
     canActivate: [canActivate]
   },
   {
     path: "membership",
-    loadChildren: () => import("./chunk-7PCU7ZHA.js").then((m) => m.MembershipModule)
+    loadChildren: () => import("./chunk-6PPJJHUR.js").then((m) => m.MembershipModule)
   },
   {
     path: "logic",
-    loadChildren: () => import("./chunk-5SN7DYJP.js").then((m) => m.ChatflowModule),
+    loadChildren: () => import("./chunk-UOKQ2AMF.js").then((m) => m.ChatflowModule),
     canActivate: [canActivate]
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-5SEKUJWH.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-6TF7GGYI.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {
     path: "monitoring",
-    loadChildren: () => import("./chunk-XLTVNDPV.js").then((m) => m.MonitoringModule),
+    loadChildren: () => import("./chunk-JVJTEWC3.js").then((m) => m.MonitoringModule),
     canActivate: [canActivate, roleGuard],
     data: {
       requiredRoles: [RoleName.SuperAdmin]
@@ -1186,40 +1198,40 @@ var devRoutes = [
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-E33BVTBK.js").then((m) => m.MainModule),
+    loadChildren: () => import("./chunk-ZF6CTZNH.js").then((m) => m.MainModule),
     canActivate: [canActivate]
   },
   {
     path: "chatbot",
-    loadChildren: () => import("./chunk-GFVWOTIK.js").then((m) => m.ChatbotModule),
+    loadChildren: () => import("./chunk-RSDWYXK6.js").then((m) => m.ChatbotModule),
     canActivate: [canActivate]
   },
   {
     path: "history",
-    loadChildren: () => import("./chunk-BW5ZW6NP.js").then((m) => m.HistoryModule),
+    loadChildren: () => import("./chunk-BGY7H4CO.js").then((m) => m.HistoryModule),
     canActivate: [canActivate]
   },
   {
     path: "membership",
-    loadChildren: () => import("./chunk-7PCU7ZHA.js").then((m) => m.MembershipModule)
+    loadChildren: () => import("./chunk-6PPJJHUR.js").then((m) => m.MembershipModule)
   },
   {
     path: "logic",
-    loadChildren: () => import("./chunk-5SN7DYJP.js").then((m) => m.ChatflowModule),
+    loadChildren: () => import("./chunk-UOKQ2AMF.js").then((m) => m.ChatflowModule),
     canActivate: [canActivate]
   },
   {
     path: "sketchflow",
-    loadChildren: () => import("./chunk-5S53EQFB.js").then((m) => m.SketchflowModule)
+    loadChildren: () => import("./chunk-STTJ3KSY.js").then((m) => m.SketchflowModule)
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-5SEKUJWH.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-6TF7GGYI.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {
     path: "monitoring",
-    loadChildren: () => import("./chunk-XLTVNDPV.js").then((m) => m.MonitoringModule),
+    loadChildren: () => import("./chunk-JVJTEWC3.js").then((m) => m.MonitoringModule),
     canActivate: [canActivate, roleGuard],
     data: {
       requiredRoles: [RoleName.SuperAdmin]
@@ -1227,7 +1239,7 @@ var devRoutes = [
   },
   {
     path: "editor",
-    loadChildren: () => import("./chunk-RFUYXEKS.js").then((m) => m.EditorModule)
+    loadChildren: () => import("./chunk-VOZXVZSQ.js").then((m) => m.EditorModule)
   },
   {
     path: "**",
@@ -1349,6 +1361,172 @@ var SketchflowData = class {
   }
 };
 
+// src/app/svg/background.svg.ts
+var _c0 = ["canvas"];
+var DrawType;
+(function(DrawType2) {
+  DrawType2["rect"] = "rect";
+  DrawType2["ellipse"] = "ellipse";
+  DrawType2["image"] = "image";
+  DrawType2["circle"] = "circle";
+  DrawType2["text"] = "text";
+  DrawType2["path"] = "path";
+  DrawType2["line"] = "line";
+  DrawType2["foreignObject"] = "foreignObject";
+  DrawType2["div"] = "xhtml:div";
+})(DrawType || (DrawType = {}));
+var _SvgBackground = class _SvgBackground {
+  constructor() {
+    this.d3 = src_exports;
+  }
+  ngOnInit() {
+    this.baseInit();
+    this.createLayout();
+  }
+  createStop(node, value) {
+    const item = node.append("stop").attr("offset", value.offset).attr("stop-color", value.stopColor);
+    return item;
+  }
+  baseInit(isCursor = false) {
+    this.componentSVG = this.d3.select(this.canvasElement.nativeElement);
+  }
+  createLayout() {
+    this.createGradientRect("backGradient1", "rgba(40, 218, 243, 1)", "rgba(40, 218, 243, 0)", "0.441602%", "34s", "13.744%", "1.18473%", {
+      attributeName: "x",
+      dur: "20s",
+      values: "25%;0%;25%",
+      repeatCount: "indefinite"
+    }, {
+      attributeName: "y",
+      dur: "21s",
+      values: "0%;25%;0%",
+      repeatCount: "indefinite"
+    }, {
+      attributeName: "transform",
+      type: "rotate",
+      from: "0 50 50",
+      to: "360 50 50",
+      dur: "7s",
+      repeatCount: "indefinite"
+    }, "rotate(334.41 50 50)");
+    this.createGradientRect("backGradient2", "rgba(110, 42, 243, 1)", "rgba(110, 42, 243, 0)", "2.68147%", "23.5s", "-2.17916%", "35.4267%", {
+      attributeName: "x",
+      dur: "23s",
+      values: "-25%;0%;-25%",
+      repeatCount: "indefinite"
+    }, {
+      attributeName: "y",
+      dur: "24s",
+      values: "0%;50%;0%",
+      repeatCount: "indefinite"
+    }, {
+      attributeName: "transform",
+      type: "rotate",
+      from: "0 50 50",
+      to: "360 50 50",
+      dur: "12s",
+      repeatCount: "indefinite"
+    }, "rotate(255.072 50 50)");
+    this.createGradientRect("backGradient3", "rgba(40, 104, 243, 1)", "rgba(40, 104, 243, 0)", "0.836536%", "21.5s", "9.00483%", "14.5733%", {
+      attributeName: "x",
+      dur: "25s",
+      values: "0%;25%;0%",
+      repeatCount: "indefinite"
+    }, {
+      attributeName: "y",
+      dur: "12s",
+      values: "0%;25%;0%",
+      repeatCount: "indefinite"
+    }, {
+      attributeName: "transform",
+      type: "rotate",
+      from: "360 50 50",
+      to: "0 50 50",
+      dur: "9s",
+      repeatCount: "indefinite"
+    }, "rotate(139.903 50 50)");
+  }
+  createAnimate(node, value) {
+    const item = node.append("animate").attr("attributeName", value.attributeName).attr("values", value.values).attr("keyTimes", value.keyTimes).attr("dur", value.dur).attr("repeatCount", value.repeatCount).attr("begin", value.begin);
+    return item;
+  }
+  createRadialGradient(node, value) {
+    const defs = node.append("defs");
+    const radialGradient = defs.append("radialGradient").attr("id", value.id).attr("cx", value.cx).attr("cy", value.cy).attr("fx", value.fx).attr("fy", value.fy).attr("r", value.r);
+    return radialGradient;
+  }
+  createGradientRect(id, color1, color2, fx, animationDur, x, y, animate1, animate2, animateTransform, rotate) {
+    const radialGradient = this.createRadialGradient(this.componentSVG, {
+      id,
+      cx: "50%",
+      cy: "50%",
+      fx,
+      fy: "50%",
+      r: 0.5
+    });
+    this.createAnimate(radialGradient, {
+      attributeName: "fx",
+      dur: animationDur,
+      values: "0%;3%;0%",
+      repeatCount: "indefinite"
+    });
+    this.createStop(radialGradient, {
+      offset: "0%",
+      stopColor: color1
+    });
+    this.createStop(radialGradient, {
+      offset: "100%",
+      stopColor: color2
+    });
+    const rect = this.createSVG(this.componentSVG, {
+      type: DrawType.rect,
+      x,
+      y,
+      width: "100%",
+      height: "100%",
+      fill: `url(#${id})`
+    });
+    rect.attr("transform", rotate);
+    this.createAnimate(rect, animate1);
+    this.createAnimate(rect, animate2);
+    this.createAnimateTransform(rect, animateTransform);
+  }
+  createAnimateTransform(node, value) {
+    const item = node.append("animateTransform").attr("attributeName", value.attributeName).attr("type", value.type).attr("from", value.from).attr("to", value.to).attr("dur", value.dur).attr("repeatCount", value.repeatCount);
+    return item;
+  }
+  createSVG(entity, values) {
+    const item = entity.append(values.type).attr("id", values.id).attr("class", values.class).attr("xlink:href", values.href).attr("d", values.geometry).attr("x", values.x).attr("x1", values.x1).attr("x2", values.x2).attr("y", values.y).attr("y1", values.y1).attr("y2", values.y2).attr("cx", values.cx).attr("cy", values.cy).attr("r", values.r).attr("rx", values.rx).attr("ry", values.ry).attr("width", values.width).attr("height", values.height).attr("fill", values.fill).attr("filter", values.filter).attr("clip-path", values.clipPath).attr("stroke", values.stroke).attr("stroke-dasharray", values.strokeDasharray).attr("stroke-width", values.strokeWidth).attr("stroke-linecap", values.strokeLinecap).attr("stroke-linejoin", values.strokeLinejoin).attr("stroke-miterlimit", values.strokeMiterlimit).attr("font-size", values.fontSize).attr("font-weight", values.fontWeight).attr("opacity", values.opacity).attr("fill-opacity", values.fillOpacity).attr("transform", `translate(${values.translate ? values.translate.x : 0}, ${values.translate ? values.translate.y : 0})`);
+    if (values.type === DrawType.text) {
+      item.text(values.text);
+    }
+    return item;
+  }
+};
+_SvgBackground.\u0275fac = function SvgBackground_Factory(t) {
+  return new (t || _SvgBackground)();
+};
+_SvgBackground.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _SvgBackground, selectors: [["svg-background"]], viewQuery: function SvgBackground_Query(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275viewQuery(_c0, 7);
+  }
+  if (rf & 2) {
+    let _t;
+    \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.canvasElement = _t.first);
+  }
+}, decls: 4, vars: 0, consts: [["viewBox", "0 0 100 100"], ["canvas", ""], ["container", ""]], template: function SvgBackground_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275namespaceSVG();
+    \u0275\u0275element(0, "svg", 0, 1);
+    \u0275\u0275namespaceHTML();
+    \u0275\u0275elementContainer(2, null, 2);
+  }
+}, encapsulation: 2 });
+var SvgBackground = _SvgBackground;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SvgBackground, { className: "SvgBackground", filePath: "src\\app\\svg\\background.svg.ts", lineNumber: 34 });
+})();
+
 // src/app/app.component.ts
 Array.prototype.last = function() {
   return this[this.length - 1];
@@ -1373,6 +1551,15 @@ var _AppComponent = class _AppComponent extends StoreAbstract {
     this.layoutService.getBodyHeight();
     this.redirectUrl();
   }
+  // private createBackground() {
+  //   const data = {
+  //     type: 'background',
+  //     component: SvgBackground,
+  //     position: { x: 0, y: 0 },
+  //     size: { width: 100, height: 500 },
+  //   };
+  //  this.bindComponent(data.type, this, data, this.mainCanvas.backgroundGroup);
+  // }
   redirectUrl() {
     const previousUrl = localStorage.getItem("previousUrl");
     if (previousUrl) {
@@ -1387,14 +1574,18 @@ var _AppComponent = class _AppComponent extends StoreAbstract {
 _AppComponent.\u0275fac = function AppComponent_Factory(t) {
   return new (t || _AppComponent)(\u0275\u0275directiveInject(Router));
 };
-_AppComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AppComponent, selectors: [["app-root"]], features: [\u0275\u0275InheritDefinitionFeature], decls: 2, vars: 1, consts: [[3, "triggerType"]], template: function AppComponent_Template(rf, ctx) {
+_AppComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AppComponent, selectors: [["app-root"]], features: [\u0275\u0275InheritDefinitionFeature], decls: 4, vars: 1, consts: [[1, "background", 2, "position", "absolute", "width", "100%", "height", "100%", "overflow", "hidden"], [3, "triggerType"]], template: function AppComponent_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "app-header", 0)(1, "router-outlet");
+    \u0275\u0275elementStart(0, "div", 0);
+    \u0275\u0275element(1, "svg-background");
+    \u0275\u0275elementEnd();
+    \u0275\u0275element(2, "app-header", 1)(3, "router-outlet");
   }
   if (rf & 2) {
+    \u0275\u0275advance(2);
     \u0275\u0275property("triggerType", ctx.triggerType);
   }
-}, dependencies: [HeaderComponent, RouterOutlet], styles: ["\n\n/*# sourceMappingURL=app.component.css.map */"] });
+}, dependencies: [HeaderComponent, RouterOutlet, SvgBackground], styles: ["\n\n/*# sourceMappingURL=app.component.css.map */"] });
 var AppComponent = _AppComponent;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent", filePath: "src\\app\\app.component.ts", lineNumber: 43 });

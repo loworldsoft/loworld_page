@@ -5,7 +5,7 @@ import {
   MatListItemTitle,
   MatListSubheaderCssMatStyler,
   TodayFormatPipe
-} from "./chunk-ERN7VB2F.js";
+} from "./chunk-ZBUN2E5R.js";
 import {
   DalService,
   DataAbstract,
@@ -13,14 +13,14 @@ import {
   HistoryService,
   MatDialog,
   MatSnackBar
-} from "./chunk-WWIBHEXQ.js";
+} from "./chunk-7TQE3YTV.js";
 import {
   ActivatedRoute,
   MatIcon,
   MatIconButton,
   MatRipple,
   Router
-} from "./chunk-MZEG7Z3L.js";
+} from "./chunk-EWWERI3V.js";
 import {
   NgClass,
   inject,
@@ -51,7 +51,7 @@ import {
   ɵɵtextInterpolate,
   ɵɵtextInterpolate1,
   ɵɵviewQuery
-} from "./chunk-A2LCPREI.js";
+} from "./chunk-WWQYCCAG.js";
 
 // Modules/pages/chatbot/components/classes/chat-history.rest.ts
 var ChatHistoryRest = class {
@@ -268,4 +268,4 @@ export {
   ChatHistoryMenuData,
   ListComponent
 };
-//# sourceMappingURL=chunk-X3CZYBXB.js.map
+//# sourceMappingURL=chunk-SKDODA3V.js.map

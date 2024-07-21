@@ -1,7 +1,7 @@
 import {
   canActivateLogin,
   roleGuard
-} from "./chunk-5N37WQ6I.js";
+} from "./chunk-JFBNGNQH.js";
 import {
   MatCell,
   MatCellDef,
@@ -14,7 +14,7 @@ import {
   MatRowDef,
   MatTable,
   MatTableModule
-} from "./chunk-FIOGHAD3.js";
+} from "./chunk-GATRSDOR.js";
 import {
   CardHeaderComponent,
   DialogCard,
@@ -22,10 +22,10 @@ import {
   MatSlideToggleModule,
   RoleUtility,
   SharedModule
-} from "./chunk-ERN7VB2F.js";
+} from "./chunk-ZBUN2E5R.js";
 import {
   MatToolbarModule
-} from "./chunk-JCP2WD6C.js";
+} from "./chunk-GZPQMA6M.js";
 import {
   CdkAccordionModule,
   CdkPortalOutlet,
@@ -58,7 +58,7 @@ import {
   passwordValidator,
   requiredForm,
   validatorMapper
-} from "./chunk-WWIBHEXQ.js";
+} from "./chunk-7TQE3YTV.js";
 import {
   BidiModule,
   DefaultValueAccessor,
@@ -103,7 +103,7 @@ import {
   hasModifierKey,
   isDataSource,
   ɵNgNoValidate
-} from "./chunk-MZEG7Z3L.js";
+} from "./chunk-EWWERI3V.js";
 import {
   animate,
   animateChild,
@@ -113,7 +113,7 @@ import {
   style,
   transition,
   trigger
-} from "./chunk-KGFIP23Z.js";
+} from "./chunk-N5CV7AUJ.js";
 import {
   ANIMATION_MODULE_TYPE,
   Attribute,
@@ -212,7 +212,7 @@ import {
   ɵɵtextInterpolate,
   ɵɵtextInterpolate1,
   ɵɵviewQuery
-} from "./chunk-A2LCPREI.js";
+} from "./chunk-WWQYCCAG.js";
 
 // Modules/pages/membership/dto/reset-password.dto.ts
 var ResetPasswordDto = class {
@@ -2617,7 +2617,7 @@ function unsubscribe() {
 // Modules/pages/membership/components/login/login.component.ts
 function LoginComponent_Conditional_23_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 17)(1, "span", 18);
+    \u0275\u0275elementStart(0, "div", 14)(1, "span", 15);
     \u0275\u0275text(2);
     \u0275\u0275elementEnd()();
   }
@@ -2759,7 +2759,7 @@ var LoginComponent = (_a = class {
   }
 }, _a.\u0275fac = function LoginComponent_Factory(t) {
   return new (t || _a)(\u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(MatDialog), \u0275\u0275directiveInject(MembershipService), \u0275\u0275directiveInject(DialogService), \u0275\u0275directiveInject(FormBuilder), \u0275\u0275directiveInject(GlobalService));
-}, _a.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _a, selectors: [["app-login"]], decls: 34, vars: 8, consts: [[1, "container"], [1, "example-card"], ["src", "./assets/svg/loworld.svg", "width", "40px"], [2, "margin-left", "10px"], [1, "divider"], ["align", "center"], [1, "form-filed", 3, "formGroup", "keydown.enter", "submit"], [1, "inner-item"], [1, "custom-form-field"], ["matInput", "", "formControlName", "id", "matTooltip", "\uC544\uC774\uB514 \uC785\uB825"], ["matInput", "", "formControlName", "password", "matTooltip", "\uBE44\uBC00\uBC88\uD638 \uC785\uB825", 3, "type"], ["mat-icon-button", "", "type", "button", "matSuffix", "", 3, "click"], ["class", "inner-item error-message"], ["mat-raised-button", "", 1, "custom-form-field", 3, "click"], ["align", "end"], [1, "container-bottom"], ["mat-button", "", 1, "btn-bottom", 3, "click"], [1, "inner-item", "error-message"], [1, ""]], template: function LoginComponent_Template(rf, ctx) {
+}, _a.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _a, selectors: [["app-login"]], decls: 28, vars: 8, consts: [[1, "container"], [1, "example-card"], ["src", "./assets/svg/light.svg", "width", "20px"], [2, "margin-left", "10px"], [1, "divider"], ["align", "center"], [1, "form-filed", 3, "formGroup", "keydown.enter", "submit"], [1, "inner-item"], [1, "custom-form-field"], ["matInput", "", "formControlName", "id", "matTooltip", "\uC544\uC774\uB514 \uC785\uB825"], ["matInput", "", "formControlName", "password", "matTooltip", "\uBE44\uBC00\uBC88\uD638 \uC785\uB825", 3, "type"], ["mat-icon-button", "", "type", "button", "matSuffix", "", 3, "click"], ["class", "inner-item error-message"], ["mat-raised-button", "", 1, "custom-form-field", 3, "click"], [1, "inner-item", "error-message"], [1, ""]], template: function LoginComponent_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 0)(1, "mat-card", 1)(2, "mat-card-header")(3, "mat-card-title");
     \u0275\u0275element(4, "img", 2);
@@ -2796,19 +2796,7 @@ var LoginComponent = (_a = class {
     });
     \u0275\u0275text(26, "\uB85C\uADF8\uC778");
     \u0275\u0275elementEnd()()()();
-    \u0275\u0275elementStart(27, "mat-card-actions", 14)(28, "div", 15)(29, "button", 16);
-    \u0275\u0275listener("click", function LoginComponent_Template_button_click_29_listener() {
-      return ctx.signUp();
-    });
-    \u0275\u0275text(30, "\uD68C\uC6D0\uAC00\uC785");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(31, "button", 16);
-    \u0275\u0275listener("click", function LoginComponent_Template_button_click_31_listener() {
-      return ctx.checkAccount();
-    });
-    \u0275\u0275text(32, "\uBE44\uBC00\uBC88\uD638 \uCD08\uAE30\uD654");
-    \u0275\u0275elementEnd()()();
-    \u0275\u0275element(33, "mat-card-footer", 5);
+    \u0275\u0275element(27, "mat-card-footer", 5);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -2825,7 +2813,7 @@ var LoginComponent = (_a = class {
     \u0275\u0275advance(2);
     \u0275\u0275styleProp("color", "white");
   }
-}, dependencies: [MatButton, MatIconButton, MatIcon, DefaultValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, MatFormField, MatLabel, MatSuffix, MatInput, MatTooltip, MatCard, MatCardActions, MatCardContent, MatCardFooter, MatCardHeader, MatCardTitle, MatDivider], styles: ['@charset "UTF-8";\n\n\n\n.container[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 40%;\n  min-width: 350px;\n  max-width: 500px;\n  padding: 0;\n}\n.form-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: start;\n}\n.divider[_ngcontent-%COMP%] {\n  margin-top: 10px;\n  margin-bottom: 20px;\n}\n.custom-form-field[_ngcontent-%COMP%] {\n  width: 90%;\n  font-size: 16px;\n}\n.btn-bottom[_ngcontent-%COMP%] {\n  margin-right: 10px;\n}\n.container-bottom[_ngcontent-%COMP%] {\n  width: 90%;\n  margin-right: 15px;\n}\n.inner-item[_ngcontent-%COMP%] {\n  margin-bottom: 10px;\n}\n.error-message[_ngcontent-%COMP%] {\n  color: red;\n}\n/*# sourceMappingURL=login.component.css.map */'] }), _a);
+}, dependencies: [MatButton, MatIconButton, MatIcon, DefaultValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, MatFormField, MatLabel, MatSuffix, MatInput, MatTooltip, MatCard, MatCardContent, MatCardFooter, MatCardHeader, MatCardTitle, MatDivider], styles: ['@charset "UTF-8";\n\n\n\n.container[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 40%;\n  min-width: 350px;\n  max-width: 500px;\n  padding: 0;\n}\n.form-item[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: start;\n}\n.divider[_ngcontent-%COMP%] {\n  margin-top: 10px;\n  margin-bottom: 20px;\n}\n.custom-form-field[_ngcontent-%COMP%] {\n  width: 90%;\n  font-size: 16px;\n}\n.btn-bottom[_ngcontent-%COMP%] {\n  margin-right: 10px;\n}\n.container-bottom[_ngcontent-%COMP%] {\n  width: 90%;\n  margin-right: 15px;\n}\n.inner-item[_ngcontent-%COMP%] {\n  margin-bottom: 10px;\n}\n.error-message[_ngcontent-%COMP%] {\n  color: red;\n}\n/*# sourceMappingURL=login.component.css.map */'] }), _a);
 LoginComponent = __decorate([
   unsubscribe()
 ], LoginComponent);
@@ -6174,4 +6162,4 @@ var MembershipModule = _MembershipModule;
 export {
   MembershipModule
 };
-//# sourceMappingURL=chunk-7PCU7ZHA.js.map
+//# sourceMappingURL=chunk-6PPJJHUR.js.map
