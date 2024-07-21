@@ -30509,7 +30509,8 @@ var commonEnv = {
 // src/environments/environment.ts
 var env = {
   environmentName: EnvironmentName.Development,
-  base_url: "https://api.loworldsoft.com:8080"
+  base_url: "https://api.loworldsoft.com:8080",
+  socket_url: "wss://api.loworldsoft.com:8080"
 };
 var environment = __spreadValues(__spreadValues({}, commonEnv), env);
 
@@ -30700,4 +30701,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-EWWERI3V.js.map
+//# sourceMappingURL=chunk-QWAJT647.js.map

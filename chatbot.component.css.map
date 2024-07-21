@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["Modules/pages/chatbot/chatbot.component.scss"],
-  "sourcesContent": [".history-scroll {\r\n  overflow-y: auto;\r\n  /* Chrome, Edge, Safari 등 웹킷 기반 브라우저용 스크롤바 숨김 */\r\n  &::-webkit-scrollbar {\r\n    display: none;\r\n  }\r\n  \r\n  /* Firefox용 스크롤바 숨김 */\r\n  scrollbar-width: none;\r\n  \r\n  /* IE, Edge(구버전)용 스크롤바 숨김 */\r\n  -ms-overflow-style: none;\r\n}\r\n\r\n.back-color{\r\n  background-color: #EDF4F2;\r\n}"],
-  "mappings": ";;;AAAA,CAAA;AACE,cAAA;AAOA,mBAAA;AAGA,sBAAA;;AARA,CAHF,cAGE;AACE,WAAA;;AAUJ,CAAA;AACE,oBAAA;;",
+  "sourcesContent": [".history-scroll {\r\n  overflow-y: auto;\r\n  /* Chrome, Edge, Safari 등 웹킷 기반 브라우저용 스크롤바 숨김 */\r\n  &::-webkit-scrollbar {\r\n    display: none;\r\n  }\r\n  \r\n  /* Firefox용 스크롤바 숨김 */\r\n  scrollbar-width: none;\r\n  \r\n  /* IE, Edge(구버전)용 스크롤바 숨김 */\r\n  -ms-overflow-style: none;\r\n}\r\n\r\n.back-color{\r\n  background: rgba(255, 255, 255, 0.3) !important; \r\n}"],
+  "mappings": ";;;AAAA,CAAA;AACE,cAAA;AAOA,mBAAA;AAGA,sBAAA;;AARA,CAHF,cAGE;AACE,WAAA;;AAUJ,CAAA;AACE,cAAA,KAAA,GAAA,EAAA,GAAA,EAAA,GAAA,EAAA;;",
   "names": []
 }

@@ -4,7 +4,7 @@ import {
   pvFailureAction,
   pvSuccessAction,
   selectMonth
-} from "./chunk-BKHG4K2V.js";
+} from "./chunk-PB6IJOTE.js";
 import {
   src_exports
 } from "./chunk-3L3N7GPT.js";
@@ -20,12 +20,12 @@ import {
 import {
   canActivate,
   roleGuard
-} from "./chunk-JFBNGNQH.js";
+} from "./chunk-DHGZVGP4.js";
 import {
   HeaderComponent,
   SharedModule
-} from "./chunk-ZBUN2E5R.js";
-import "./chunk-GZPQMA6M.js";
+} from "./chunk-T7NRAEYN.js";
+import "./chunk-JEJ25PGL.js";
 import {
   JwtModule,
   LayoutService,
@@ -40,7 +40,7 @@ import {
   sortExpansionPanelBox,
   triggerAction,
   updateNode
-} from "./chunk-7TQE3YTV.js";
+} from "./chunk-P6TI5SFJ.js";
 import {
   BrowserModule,
   DateTime,
@@ -66,7 +66,7 @@ import {
   platformBrowser,
   props,
   select
-} from "./chunk-EWWERI3V.js";
+} from "./chunk-QWAJT647.js";
 import "./chunk-N5CV7AUJ.js";
 import {
   ANIMATION_MODULE_TYPE,
@@ -913,7 +913,7 @@ function _provideForRootGuard() {
 }
 
 // Modules/core/core.module.ts
-var config = { url: `${environment.socket_url}/stream`, options: { autoConnect: false } };
+var config = { url: `${environment.socket_url}/stream`, options: {} };
 var _CoreModule = class _CoreModule {
 };
 _CoreModule.\u0275fac = function CoreModule_Factory(t) {
@@ -1148,36 +1148,36 @@ var routes = [
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-ZF6CTZNH.js").then((m) => m.MainModule),
+    loadChildren: () => import("./chunk-XMCVSY6K.js").then((m) => m.MainModule),
     canActivate: [canActivate]
   },
   {
     path: "chatbot",
-    loadChildren: () => import("./chunk-RSDWYXK6.js").then((m) => m.ChatbotModule),
+    loadChildren: () => import("./chunk-YOZTKW2J.js").then((m) => m.ChatbotModule),
     canActivate: [canActivate]
   },
   {
     path: "history",
-    loadChildren: () => import("./chunk-BGY7H4CO.js").then((m) => m.HistoryModule),
+    loadChildren: () => import("./chunk-YFYBBDJO.js").then((m) => m.HistoryModule),
     canActivate: [canActivate]
   },
   {
     path: "membership",
-    loadChildren: () => import("./chunk-6PPJJHUR.js").then((m) => m.MembershipModule)
+    loadChildren: () => import("./chunk-2LEGHS2L.js").then((m) => m.MembershipModule)
   },
   {
     path: "logic",
-    loadChildren: () => import("./chunk-UOKQ2AMF.js").then((m) => m.ChatflowModule),
+    loadChildren: () => import("./chunk-HZIQWDQG.js").then((m) => m.ChatflowModule),
     canActivate: [canActivate]
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-6TF7GGYI.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-X6YCI3PI.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {
     path: "monitoring",
-    loadChildren: () => import("./chunk-JVJTEWC3.js").then((m) => m.MonitoringModule),
+    loadChildren: () => import("./chunk-KJ6OPCCK.js").then((m) => m.MonitoringModule),
     canActivate: [canActivate, roleGuard],
     data: {
       requiredRoles: [RoleName.SuperAdmin]
@@ -1198,40 +1198,40 @@ var devRoutes = [
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-ZF6CTZNH.js").then((m) => m.MainModule),
+    loadChildren: () => import("./chunk-XMCVSY6K.js").then((m) => m.MainModule),
     canActivate: [canActivate]
   },
   {
     path: "chatbot",
-    loadChildren: () => import("./chunk-RSDWYXK6.js").then((m) => m.ChatbotModule),
+    loadChildren: () => import("./chunk-YOZTKW2J.js").then((m) => m.ChatbotModule),
     canActivate: [canActivate]
   },
   {
     path: "history",
-    loadChildren: () => import("./chunk-BGY7H4CO.js").then((m) => m.HistoryModule),
+    loadChildren: () => import("./chunk-YFYBBDJO.js").then((m) => m.HistoryModule),
     canActivate: [canActivate]
   },
   {
     path: "membership",
-    loadChildren: () => import("./chunk-6PPJJHUR.js").then((m) => m.MembershipModule)
+    loadChildren: () => import("./chunk-2LEGHS2L.js").then((m) => m.MembershipModule)
   },
   {
     path: "logic",
-    loadChildren: () => import("./chunk-UOKQ2AMF.js").then((m) => m.ChatflowModule),
+    loadChildren: () => import("./chunk-HZIQWDQG.js").then((m) => m.ChatflowModule),
     canActivate: [canActivate]
   },
   {
     path: "sketchflow",
-    loadChildren: () => import("./chunk-STTJ3KSY.js").then((m) => m.SketchflowModule)
+    loadChildren: () => import("./chunk-ESGIYPGP.js").then((m) => m.SketchflowModule)
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-6TF7GGYI.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-X6YCI3PI.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {
     path: "monitoring",
-    loadChildren: () => import("./chunk-JVJTEWC3.js").then((m) => m.MonitoringModule),
+    loadChildren: () => import("./chunk-KJ6OPCCK.js").then((m) => m.MonitoringModule),
     canActivate: [canActivate, roleGuard],
     data: {
       requiredRoles: [RoleName.SuperAdmin]
@@ -1239,7 +1239,7 @@ var devRoutes = [
   },
   {
     path: "editor",
-    loadChildren: () => import("./chunk-VOZXVZSQ.js").then((m) => m.EditorModule)
+    loadChildren: () => import("./chunk-GKCXND2X.js").then((m) => m.EditorModule)
   },
   {
     path: "**",
@@ -1574,7 +1574,7 @@ var _AppComponent = class _AppComponent extends StoreAbstract {
 _AppComponent.\u0275fac = function AppComponent_Factory(t) {
   return new (t || _AppComponent)(\u0275\u0275directiveInject(Router));
 };
-_AppComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AppComponent, selectors: [["app-root"]], features: [\u0275\u0275InheritDefinitionFeature], decls: 4, vars: 1, consts: [[1, "background", 2, "position", "absolute", "width", "100%", "height", "100%", "overflow", "hidden"], [3, "triggerType"]], template: function AppComponent_Template(rf, ctx) {
+_AppComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AppComponent, selectors: [["app-root"]], features: [\u0275\u0275InheritDefinitionFeature], decls: 4, vars: 1, consts: [[1, "background", 2, "position", "absolute", "width", "100%", "height", "100%", "overflow", "hidden", "z-index", "-1"], [3, "triggerType"]], template: function AppComponent_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 0);
     \u0275\u0275element(1, "svg-background");

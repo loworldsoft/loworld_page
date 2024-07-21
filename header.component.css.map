@@ -5,7 +5,3 @@
   "mappings": ";AAAA,CAAA;AACI,WAAA;AACA,mBAAA;AACA,eAAA;AACA,SAAA;;AAGJ,CAAA;AACI,cAAA;;",
   "names": []
 }
- 5px solid #afd667;\r\n}\r\n\r\n.color-green {\r\n  color: #D9F183;\r\n}\r\n\r\n.color-white {\r\n  color: white;\r\n}\r\nli a {\r\n  color: #fff;\r\n  padding: 10px 0 13px 0;\r\n  font-size: 18px;\r\n  font-weight: 500;\r\n}\r\n\r\nli a:hover {\r\n  color: #D9F183;\r\n  border-bottom: 5px solid #D9F183;\r\n}\r\n"],
-  "mappings": ";AAAA,CAAA;AACE,QAAA,EAAA,EAAA;;AAUF,CAAA;AACE,cAAA;AACA,WAAA;AACA,SAAA;AACA,iBAAA,IAAA,MAAA;;AAGF,CAAA;AACE,SAAA;;AAGF,CAAA;AACE,SAAA;;AAEF,GAAA;AACE,SAAA;AACA,WAAA,KAAA,EAAA,KAAA;AACA,aAAA;AACA,eAAA;;AAGF,GAAA,CAAA;AACE,SAAA;AACA,iBAAA,IAAA,MAAA;;",
-  "names": []
-}

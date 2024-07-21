@@ -1,20 +1,20 @@
 import {
   ChatHistoryRest,
   ListComponent
-} from "./chunk-SKDODA3V.js";
+} from "./chunk-DD5TNTJA.js";
 import {
   SharedModule,
   SplitterDirective
-} from "./chunk-ZBUN2E5R.js";
-import "./chunk-GZPQMA6M.js";
+} from "./chunk-T7NRAEYN.js";
+import "./chunk-JEJ25PGL.js";
 import {
   GlobalService,
   StoreAbstract
-} from "./chunk-7TQE3YTV.js";
+} from "./chunk-P6TI5SFJ.js";
 import {
   ActivatedRoute,
   RouterModule
-} from "./chunk-EWWERI3V.js";
+} from "./chunk-QWAJT647.js";
 import "./chunk-N5CV7AUJ.js";
 import {
   ElementRef,
@@ -232,7 +232,7 @@ _ChatbotComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type
     \u0275\u0275styleProp("height", ctx.layoutService.getBodyHeight())("width", ctx.layoutService.rightWidth, "%");
     \u0275\u0275property("pageId", ctx.chatPageId);
   }
-}, dependencies: [SplitterDirective, ChatComponent, ChatHistoryComponent], styles: ['@charset "UTF-8";\n\n\n\n.history-scroll[_ngcontent-%COMP%] {\n  overflow-y: auto;\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n}\n.history-scroll[_ngcontent-%COMP%]::-webkit-scrollbar {\n  display: none;\n}\n.back-color[_ngcontent-%COMP%] {\n  background-color: #EDF4F2;\n}\n/*# sourceMappingURL=chatbot.component.css.map */'] });
+}, dependencies: [SplitterDirective, ChatComponent, ChatHistoryComponent], styles: ['@charset "UTF-8";\n\n\n\n.history-scroll[_ngcontent-%COMP%] {\n  overflow-y: auto;\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n}\n.history-scroll[_ngcontent-%COMP%]::-webkit-scrollbar {\n  display: none;\n}\n.back-color[_ngcontent-%COMP%] {\n  background: rgba(255, 255, 255, 0.3) !important;\n}\n/*# sourceMappingURL=chatbot.component.css.map */'] });
 var ChatbotComponent = _ChatbotComponent;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ChatbotComponent, { className: "ChatbotComponent", filePath: "Modules\\pages\\chatbot\\chatbot.component.ts", lineNumber: 10 });
@@ -273,4 +273,4 @@ var ChatbotModule = _ChatbotModule;
 export {
   ChatbotModule
 };
-//# sourceMappingURL=chunk-RSDWYXK6.js.map
+//# sourceMappingURL=chunk-YOZTKW2J.js.map

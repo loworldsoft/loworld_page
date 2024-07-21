@@ -10,7 +10,7 @@
             "node": {
               "category": "intro",
               "result": [
-                "<h2 class='title'>무엇을 도와 드릴까요?</h2>안녕하세요<br>저는 한국환경공단의 AI 어시스턴스입니다. <br>저는 문서내의 내용을 카테고리별로 검색하고 요약할 수 있어요<br>",
+                "<h2 class='title'>무엇을 도와 드릴까요?</h2>안녕하세요<br>저는 loworldsoft의 AI 어시스턴스입니다. <br>저는 문서내의 내용을 카테고리별로 검색하고 요약할 수 있어요<br>",
                 "./assets/images/img-greeting.png"
               ],
               "isAwait": false

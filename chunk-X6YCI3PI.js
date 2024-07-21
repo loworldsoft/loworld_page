@@ -10,7 +10,7 @@ import {
   MatRowDef,
   MatTable,
   MatTableModule
-} from "./chunk-GATRSDOR.js";
+} from "./chunk-FAJXFOSB.js";
 import {
   ConfirmDialogComponent,
   MatList,
@@ -27,8 +27,8 @@ import {
   SharedModule,
   SplitterDirective,
   moveItemInArray
-} from "./chunk-ZBUN2E5R.js";
-import "./chunk-GZPQMA6M.js";
+} from "./chunk-T7NRAEYN.js";
+import "./chunk-JEJ25PGL.js";
 import {
   CategoryCode,
   GlobalService,
@@ -51,7 +51,7 @@ import {
   MatTooltipModule,
   StoreAbstract,
   TreeviewComponent
-} from "./chunk-7TQE3YTV.js";
+} from "./chunk-P6TI5SFJ.js";
 import {
   DefaultValueAccessor,
   MatButton,
@@ -63,7 +63,7 @@ import {
   NgModel,
   Router,
   RouterModule
-} from "./chunk-EWWERI3V.js";
+} from "./chunk-QWAJT647.js";
 import "./chunk-N5CV7AUJ.js";
 import {
   ChangeDetectionStrategy,
@@ -1263,7 +1263,7 @@ _CategoryManageTemplateComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineC
     \u0275\u0275advance(2);
     \u0275\u0275styleProp("height", ctx.layoutService.getCategorySideHeight())("width", ctx.layoutService.rightWidth, "%")("margin-top", 10, "px");
   }
-}, dependencies: [SplitterDirective], styles: ["\n\n.m-t25[_ngcontent-%COMP%] {\n  margin-top: 25px;\n}\n.m-t16[_ngcontent-%COMP%] {\n  margin-top: 16px;\n}\n.back-color[_ngcontent-%COMP%] {\n  background-color: #EDF4F2;\n}\n/*# sourceMappingURL=category-manage-template.component.css.map */"] });
+}, dependencies: [SplitterDirective], styles: ["\n\n.m-t25[_ngcontent-%COMP%] {\n  margin-top: 25px;\n}\n.m-t16[_ngcontent-%COMP%] {\n  margin-top: 16px;\n}\n/*# sourceMappingURL=category-manage-template.component.css.map */"] });
 var CategoryManageTemplateComponent = _CategoryManageTemplateComponent;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(CategoryManageTemplateComponent, { className: "CategoryManageTemplateComponent", filePath: "Modules\\pages\\category-manage\\components\\templates\\category-manage-template\\category-manage-template.component.ts", lineNumber: 10 });
@@ -2195,4 +2195,4 @@ var CategoryManageModule = _CategoryManageModule;
 export {
   CategoryManageModule
 };
-//# sourceMappingURL=chunk-6TF7GGYI.js.map
+//# sourceMappingURL=chunk-X6YCI3PI.js.map

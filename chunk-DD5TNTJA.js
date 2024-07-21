@@ -5,7 +5,7 @@ import {
   MatListItemTitle,
   MatListSubheaderCssMatStyler,
   TodayFormatPipe
-} from "./chunk-ZBUN2E5R.js";
+} from "./chunk-T7NRAEYN.js";
 import {
   DalService,
   DataAbstract,
@@ -13,14 +13,14 @@ import {
   HistoryService,
   MatDialog,
   MatSnackBar
-} from "./chunk-7TQE3YTV.js";
+} from "./chunk-P6TI5SFJ.js";
 import {
   ActivatedRoute,
   MatIcon,
   MatIconButton,
   MatRipple,
   Router
-} from "./chunk-EWWERI3V.js";
+} from "./chunk-QWAJT647.js";
 import {
   NgClass,
   inject,
@@ -257,7 +257,7 @@ _ListComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _
     \u0275\u0275advance();
     \u0275\u0275repeater(ctx.historyList);
   }
-}, dependencies: [NgClass, MatIconButton, MatRipple, MatIcon, MatList, MatListItem, MatListSubheaderCssMatStyler, MatListItemTitle, TodayFormatPipe], styles: ['@charset "UTF-8";\n\n\n\n.text-ellipsis[_ngcontent-%COMP%] {\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n}\n.checked[_ngcontent-%COMP%] {\n  font-weight: bold;\n  border-radius: 100px;\n  color: #227b4f;\n}\n.clicked[_ngcontent-%COMP%] {\n  font-weight: bold;\n  border-radius: 100px;\n  color: #227b4f !important;\n}\n.base[_ngcontent-%COMP%] {\n  color: rgb(71, 71, 71);\n}\n.example-spacer[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n}\n/*# sourceMappingURL=list.component.css.map */'] });
+}, dependencies: [NgClass, MatIconButton, MatRipple, MatIcon, MatList, MatListItem, MatListSubheaderCssMatStyler, MatListItemTitle, TodayFormatPipe], styles: ['@charset "UTF-8";\n\n\n\n.text-ellipsis[_ngcontent-%COMP%] {\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n}\n.checked[_ngcontent-%COMP%] {\n  font-weight: bold;\n  border-radius: 100px;\n  color: #3584ce;\n}\n.clicked[_ngcontent-%COMP%] {\n  font-weight: bold;\n  border-radius: 100px;\n  color: #3584ce !important;\n}\n.base[_ngcontent-%COMP%] {\n  color: rgb(71, 71, 71);\n}\n.example-spacer[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n}\n/*# sourceMappingURL=list.component.css.map */'] });
 var ListComponent = _ListComponent;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ListComponent, { className: "ListComponent", filePath: "Modules\\pages\\chatflow\\components\\atom\\list\\list.component.ts", lineNumber: 25 });
@@ -268,4 +268,4 @@ export {
   ChatHistoryMenuData,
   ListComponent
 };
-//# sourceMappingURL=chunk-SKDODA3V.js.map
+//# sourceMappingURL=chunk-DD5TNTJA.js.map
