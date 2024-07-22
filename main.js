@@ -1172,7 +1172,7 @@ var routes = [
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-BAOBDCNO.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-GTSC6Y2U.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {
@@ -1226,7 +1226,7 @@ var devRoutes = [
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-BAOBDCNO.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-GTSC6Y2U.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {

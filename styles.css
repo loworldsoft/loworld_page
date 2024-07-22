@@ -2934,6 +2934,14 @@ mat-toolbar {
 .mat-mdc-button:not(:disabled) {
   color: #3584ce !important;
 }
+.mat-mdc-dialog-panel {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.692);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.mat-mdc-card {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
 .mat-mdc-tab-group,
 .mat-mdc-tab-nav-bar {
   --mdc-tab-indicator-active-indicator-color: #3584ce;

@@ -1897,8 +1897,7 @@ var _FileComponent = class _FileComponent {
     this.fileRest = null;
     this.fileMenu = null;
     this.docTypes = [
-      { code: "default", name: "\uAE30\uBCF8" },
-      { code: "n_complaint", name: "\uAD6D\uBBFC\uC2E0\uBB38\uACE0" }
+      { code: "default", name: "\uAE30\uBCF8" }
     ];
     this.router = inject(Router);
   }
@@ -2188,4 +2187,4 @@ var CategoryManageModule = _CategoryManageModule;
 export {
   CategoryManageModule
 };
-//# sourceMappingURL=chunk-BAOBDCNO.js.map
+//# sourceMappingURL=chunk-GTSC6Y2U.js.map
