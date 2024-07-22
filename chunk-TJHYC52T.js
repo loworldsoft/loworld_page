@@ -59,7 +59,7 @@ import {
   passwordMatchValidate,
   passwordValidator,
   requiredForm
-} from "./chunk-P6TI5SFJ.js";
+} from "./chunk-E357REMM.js";
 import {
   A,
   ActiveDescendantKeyManager,
@@ -12134,7 +12134,7 @@ var _HeaderComponent = class _HeaderComponent extends StoreAbstract {
   constructor() {
     super(...arguments);
     this.menuList = [
-      { name: "Chatbot", select: false, url: "/chatbot", minRole: 100 },
+      { name: "Main", select: false, url: "/main", minRole: 100 },
       { name: "Category", select: false, url: "/category-manage", minRole: 100 },
       { name: "User", select: false, url: "/membership/user", minRole: 200 },
       { name: "Admin", select: false, url: "/membership/admin", minRole: 200 }
@@ -12187,7 +12187,7 @@ _HeaderComponent.\u0275fac = /* @__PURE__ */ (() => {
     return (\u0275HeaderComponent_BaseFactory || (\u0275HeaderComponent_BaseFactory = \u0275\u0275getInheritedFactory(_HeaderComponent)))(t || _HeaderComponent);
   };
 })();
-_HeaderComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HeaderComponent, selectors: [["app-header"]], inputs: { triggerType: "triggerType" }, features: [\u0275\u0275InheritDefinitionFeature], decls: 6, vars: 1, consts: [["src", "./assets/svg/loworld.svg", "width", "40px", "alt", "\uB85C\uC6D4\uB4DC\uC18C\uD504\uD2B8 \uB85C\uACE0", 1, "pointer", 3, "click"], [1, "gemini-gradient", 2, "margin-left", "10px", "font-weight", "bold"], [1, "example-spacer"], [1, "flex", "flex-v-center", 2, "width", "100%", "justify-content", "center", "gap", "40px"], [1, "flex", "flex-v-center"], [1, "flex", "flex-v-center", "pointer", 2, "gap", "10px", "font-size", "14px", 3, "matTooltip", "click"], ["src", "./assets/svg/light.svg", "width", "20px"], [1, "color-green"], ["mat-icon-button", "", 3, "click"], [1, "color-white"], ["menu", "matMenu"], ["mat-menu-item", "", 3, "click"], [2, "margin", "10px", "margin-left", "15px"], [3, "ngModel", "ngModelChange"], [1, "pointer", 3, "ngClass", "click"]], template: function HeaderComponent_Template(rf, ctx) {
+_HeaderComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HeaderComponent, selectors: [["app-header"]], inputs: { triggerType: "triggerType" }, features: [\u0275\u0275InheritDefinitionFeature], decls: 6, vars: 1, consts: [["src", "./assets/svg/loworld.svg", "width", "40px", "alt", "\uB85C\uC6D4\uB4DC\uC18C\uD504\uD2B8 \uB85C\uACE0", 1, "pointer", 3, "click"], [1, "gemini-gradient", "pointer", 2, "margin-left", "10px", "font-weight", "bold", 3, "click"], [1, "example-spacer"], [1, "flex", "flex-v-center", 2, "width", "100%", "justify-content", "center", "gap", "40px"], [1, "flex", "flex-v-center"], [1, "flex", "flex-v-center", "pointer", 2, "gap", "10px", "font-size", "14px", 3, "matTooltip", "click"], ["src", "./assets/svg/light.svg", "width", "20px"], [1, "color-green"], ["mat-icon-button", "", 3, "click"], [1, "color-white"], ["menu", "matMenu"], ["mat-menu-item", "", 3, "click"], [2, "margin", "10px", "margin-left", "15px"], [3, "ngModel", "ngModelChange"], [1, "pointer", 3, "ngClass", "click"]], template: function HeaderComponent_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "mat-toolbar")(1, "img", 0);
     \u0275\u0275listener("click", function HeaderComponent_Template_img_click_1_listener() {
@@ -12195,6 +12195,9 @@ _HeaderComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type:
     });
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(2, "span", 1);
+    \u0275\u0275listener("click", function HeaderComponent_Template_span_click_2_listener() {
+      return ctx.onMenuClick(ctx.menuList[0]);
+    });
     \u0275\u0275text(3, "loworld soft");
     \u0275\u0275elementEnd();
     \u0275\u0275element(4, "span", 2);
@@ -18292,4 +18295,4 @@ export {
   BottomSheetComponent,
   SharedModule
 };
-//# sourceMappingURL=chunk-YAHTS4HN.js.map
+//# sourceMappingURL=chunk-TJHYC52T.js.map

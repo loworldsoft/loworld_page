@@ -20,11 +20,11 @@ import {
 import {
   canActivate,
   roleGuard
-} from "./chunk-DHGZVGP4.js";
+} from "./chunk-TAI4FYLV.js";
 import {
   HeaderComponent,
   SharedModule
-} from "./chunk-YAHTS4HN.js";
+} from "./chunk-TJHYC52T.js";
 import "./chunk-JEJ25PGL.js";
 import {
   JwtModule,
@@ -40,7 +40,7 @@ import {
   sortExpansionPanelBox,
   triggerAction,
   updateNode
-} from "./chunk-P6TI5SFJ.js";
+} from "./chunk-E357REMM.js";
 import {
   BrowserModule,
   DateTime,
@@ -1148,31 +1148,31 @@ var routes = [
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-LMIAQVNN.js").then((m) => m.MainModule),
+    loadChildren: () => import("./chunk-CJGABOZZ.js").then((m) => m.MainModule),
     canActivate: [canActivate]
   },
   {
     path: "chatbot",
-    loadChildren: () => import("./chunk-VJAAGT4M.js").then((m) => m.ChatbotModule),
+    loadChildren: () => import("./chunk-UA4NWU5P.js").then((m) => m.ChatbotModule),
     canActivate: [canActivate]
   },
   {
     path: "history",
-    loadChildren: () => import("./chunk-GHNJV3LE.js").then((m) => m.HistoryModule),
+    loadChildren: () => import("./chunk-RBSONIYV.js").then((m) => m.HistoryModule),
     canActivate: [canActivate]
   },
   {
     path: "membership",
-    loadChildren: () => import("./chunk-6E4VMMZU.js").then((m) => m.MembershipModule)
+    loadChildren: () => import("./chunk-Y2LZF7GB.js").then((m) => m.MembershipModule)
   },
   {
     path: "logic",
-    loadChildren: () => import("./chunk-TBRLT4UF.js").then((m) => m.ChatflowModule),
+    loadChildren: () => import("./chunk-6YDSKQMQ.js").then((m) => m.ChatflowModule),
     canActivate: [canActivate]
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-Q5QGYNIE.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-BAOBDCNO.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {
@@ -1198,35 +1198,35 @@ var devRoutes = [
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-LMIAQVNN.js").then((m) => m.MainModule),
+    loadChildren: () => import("./chunk-CJGABOZZ.js").then((m) => m.MainModule),
     canActivate: [canActivate]
   },
   {
     path: "chatbot",
-    loadChildren: () => import("./chunk-VJAAGT4M.js").then((m) => m.ChatbotModule),
+    loadChildren: () => import("./chunk-UA4NWU5P.js").then((m) => m.ChatbotModule),
     canActivate: [canActivate]
   },
   {
     path: "history",
-    loadChildren: () => import("./chunk-GHNJV3LE.js").then((m) => m.HistoryModule),
+    loadChildren: () => import("./chunk-RBSONIYV.js").then((m) => m.HistoryModule),
     canActivate: [canActivate]
   },
   {
     path: "membership",
-    loadChildren: () => import("./chunk-6E4VMMZU.js").then((m) => m.MembershipModule)
+    loadChildren: () => import("./chunk-Y2LZF7GB.js").then((m) => m.MembershipModule)
   },
   {
     path: "logic",
-    loadChildren: () => import("./chunk-TBRLT4UF.js").then((m) => m.ChatflowModule),
+    loadChildren: () => import("./chunk-6YDSKQMQ.js").then((m) => m.ChatflowModule),
     canActivate: [canActivate]
   },
   {
     path: "sketchflow",
-    loadChildren: () => import("./chunk-GOFZLX2A.js").then((m) => m.SketchflowModule)
+    loadChildren: () => import("./chunk-K4TY35KH.js").then((m) => m.SketchflowModule)
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-Q5QGYNIE.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-BAOBDCNO.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {
@@ -1239,7 +1239,7 @@ var devRoutes = [
   },
   {
     path: "editor",
-    loadChildren: () => import("./chunk-GKCXND2X.js").then((m) => m.EditorModule)
+    loadChildren: () => import("./chunk-KQAPYZQ6.js").then((m) => m.EditorModule)
   },
   {
     path: "**",
@@ -1574,12 +1574,15 @@ var _AppComponent = class _AppComponent extends StoreAbstract {
 _AppComponent.\u0275fac = function AppComponent_Factory(t) {
   return new (t || _AppComponent)(\u0275\u0275directiveInject(Router));
 };
-_AppComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AppComponent, selectors: [["app-root"]], features: [\u0275\u0275InheritDefinitionFeature], decls: 4, vars: 1, consts: [[1, "background", 2, "position", "absolute", "width", "100%", "height", "100%", "overflow", "hidden", "z-index", "-1"], [3, "triggerType"]], template: function AppComponent_Template(rf, ctx) {
+_AppComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AppComponent, selectors: [["app-root"]], features: [\u0275\u0275InheritDefinitionFeature], decls: 5, vars: 1, consts: [[1, "background", 2, "position", "absolute", "width", "100%", "height", "100%", "overflow", "hidden", "z-index", "-1"], [3, "triggerType"], [2, "margin", "10px"]], template: function AppComponent_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 0);
     \u0275\u0275element(1, "svg-background");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(2, "app-header", 1)(3, "router-outlet");
+    \u0275\u0275element(2, "app-header", 1);
+    \u0275\u0275elementStart(3, "div", 2);
+    \u0275\u0275element(4, "router-outlet");
+    \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     \u0275\u0275advance(2);

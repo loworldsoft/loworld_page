@@ -3,7 +3,7 @@ import {
 } from "./chunk-3L3N7GPT.js";
 import {
   GlobalService
-} from "./chunk-P6TI5SFJ.js";
+} from "./chunk-E357REMM.js";
 import {
   RouterModule
 } from "./chunk-QWAJT647.js";
@@ -608,4 +608,4 @@ var EditorModule = _EditorModule;
 export {
   EditorModule
 };
-//# sourceMappingURL=chunk-GKCXND2X.js.map
+//# sourceMappingURL=chunk-KQAPYZQ6.js.map

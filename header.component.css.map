@@ -5,3 +5,7 @@
   "mappings": ";AAAA,CAAA;AACI,WAAA;AACA,mBAAA;AACA,eAAA;AACA,SAAA;;AAGJ,CAAA;AACI,cAAA;;",
   "names": []
 }
+order-bottom: 5px solid rgb(33, 33, 94, 0.8);\r\n}\r\n\r\n.color-green {\r\n  color: #3584ce;\r\n}\r\n\r\n.color-white {\r\n  color: rgb(59, 59, 59);\r\n}\r\nli a {\r\n  color:rgb(59, 59, 59);\r\n  padding: 10px 0 13px 0;\r\n  font-size: 18px;\r\n  font-weight: 500;\r\n}\r\n\r\nli a:hover {\r\n  color:rgb(33, 33, 94, 0.5);\r\n  border-bottom: 5px solid rgb(33, 33, 94, 0.5);\r\n}\r\n"],
+  "mappings": ";AAAA,CAAA;AACE,QAAA,EAAA,EAAA;;AAUF,CAAA;AACE,cAAA;AACA,WAAA;AACA,SAAA,KAAA,EAAA,EAAA,EAAA,EAAA,EAAA,EAAA;AACA,iBAAA,IAAA,MAAA,KAAA,EAAA,EAAA,EAAA,EAAA,EAAA,EAAA;;AAGF,CAAA;AACE,SAAA;;AAGF,CAAA;AACE,SAAA,IAAA,EAAA,EAAA,EAAA,EAAA;;AAEF,GAAA;AACE,SAAA,IAAA,EAAA,EAAA,EAAA,EAAA;AACA,WAAA,KAAA,EAAA,KAAA;AACA,aAAA;AACA,eAAA;;AAGF,GAAA,CAAA;AACE,SAAA,KAAA,EAAA,EAAA,EAAA,EAAA,EAAA,EAAA;AACA,iBAAA,IAAA,MAAA,KAAA,EAAA,EAAA,EAAA,EAAA,EAAA,EAAA;;",
+  "names": []
+}

@@ -21066,8 +21066,8 @@ var StoreAbstract = class {
     this.layoutService.isOpen = !this.layoutService.isOpen;
     if (this.layoutService.isOpen) {
       this.storeService.resize({
-        leftWidth: 15,
-        rightWidth: 85
+        leftWidth: 50,
+        rightWidth: 50
       });
     } else {
       this.storeService.resize({
@@ -31835,4 +31835,4 @@ export {
    * SOFTWARE.
    *)
 */
-//# sourceMappingURL=chunk-P6TI5SFJ.js.map
+//# sourceMappingURL=chunk-E357REMM.js.map
