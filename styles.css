@@ -2354,6 +2354,29 @@ html {
   justify-content: space-between;
   padding: 1.5rem 1.2rem;
 }
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.gemini-gradient {
+  background:
+    linear-gradient(
+      to right,
+      rgb(75, 75, 252),
+      rgb(250, 86, 86));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: gradientAnimation 5s ease infinite;
+}
 .container {
   width: 750px;
   margin: 20px auto;
