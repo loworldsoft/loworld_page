@@ -12039,23 +12039,23 @@ var TextComponent = _TextComponent;
 var _c09 = (a0) => ({ "select": a0 });
 function HeaderComponent_Conditional_5_For_2_Conditional_0_Template(rf, ctx) {
   if (rf & 1) {
-    const _r11 = \u0275\u0275getCurrentView();
+    const _r12 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "li")(1, "a", 14);
     \u0275\u0275listener("click", function HeaderComponent_Conditional_5_For_2_Conditional_0_Template_a_click_1_listener() {
-      \u0275\u0275restoreView(_r11);
-      const item_r3 = \u0275\u0275nextContext().$implicit;
-      const ctx_r9 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r9.onMenuClick(item_r3));
+      \u0275\u0275restoreView(_r12);
+      const item_r4 = \u0275\u0275nextContext().$implicit;
+      const ctx_r10 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r10.onMenuClick(item_r4));
     });
     \u0275\u0275text(2);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const item_r3 = \u0275\u0275nextContext().$implicit;
+    const item_r4 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance();
-    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(2, _c09, item_r3.select));
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(2, _c09, item_r4.select));
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(item_r3.name);
+    \u0275\u0275textInterpolate(item_r4.name);
   }
 }
 function HeaderComponent_Conditional_5_For_2_Template(rf, ctx) {
@@ -12063,22 +12063,22 @@ function HeaderComponent_Conditional_5_For_2_Template(rf, ctx) {
     \u0275\u0275template(0, HeaderComponent_Conditional_5_For_2_Conditional_0_Template, 3, 4, "li");
   }
   if (rf & 2) {
-    const item_r3 = ctx.$implicit;
-    const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275conditional(0, ctx_r1.currentUser.userData.role.roleId >= item_r3.minRole ? 0 : -1);
+    const item_r4 = ctx.$implicit;
+    const ctx_r2 = \u0275\u0275nextContext(2);
+    \u0275\u0275conditional(0, ctx_r2.currentUser.userData.role.roleId >= item_r4.minRole ? 0 : -1);
   }
 }
 function HeaderComponent_Conditional_5_Template(rf, ctx) {
   if (rf & 1) {
-    const _r14 = \u0275\u0275getCurrentView();
+    const _r15 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "ul", 3);
     \u0275\u0275repeaterCreate(1, HeaderComponent_Conditional_5_For_2_Template, 1, 1, null, null, \u0275\u0275repeaterTrackByIndex);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "div", 4)(4, "div", 5);
     \u0275\u0275listener("click", function HeaderComponent_Conditional_5_Template_div_click_4_listener() {
-      \u0275\u0275restoreView(_r14);
-      const ctx_r13 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r13.onClickAccount());
+      \u0275\u0275restoreView(_r15);
+      const ctx_r14 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r14.onClickAccount());
     });
     \u0275\u0275element(5, "img", 6);
     \u0275\u0275elementStart(6, "span", 7);
@@ -12088,18 +12088,18 @@ function HeaderComponent_Conditional_5_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(9, "button", 8);
     \u0275\u0275listener("click", function HeaderComponent_Conditional_5_Template_button_click_9_listener() {
-      \u0275\u0275restoreView(_r14);
-      const ctx_r15 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r15.logout());
+      \u0275\u0275restoreView(_r15);
+      const ctx_r16 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r16.logout());
     });
     \u0275\u0275elementStart(10, "div", 4)(11, "mat-icon", 9);
     \u0275\u0275text(12, "logout");
     \u0275\u0275elementEnd()()()();
     \u0275\u0275elementStart(13, "mat-menu", null, 10)(15, "button", 11);
     \u0275\u0275listener("click", function HeaderComponent_Conditional_5_Template_button_click_15_listener() {
-      \u0275\u0275restoreView(_r14);
-      const ctx_r16 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r16.dynamicLayoutService.selectCategory());
+      \u0275\u0275restoreView(_r15);
+      const ctx_r17 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r17.dynamicLayoutService.selectCategory());
     });
     \u0275\u0275elementStart(16, "mat-icon");
     \u0275\u0275text(17, "folder_open");
@@ -12109,9 +12109,9 @@ function HeaderComponent_Conditional_5_Template(rf, ctx) {
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(20, "div", 12)(21, "mat-slide-toggle", 13);
     \u0275\u0275listener("ngModelChange", function HeaderComponent_Conditional_5_Template_mat_slide_toggle_ngModelChange_21_listener($event) {
-      \u0275\u0275restoreView(_r14);
-      const ctx_r17 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r17.solutionService.isMasking = $event);
+      \u0275\u0275restoreView(_r15);
+      const ctx_r18 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r18.solutionService.isMasking = $event);
     });
     \u0275\u0275text(22);
     \u0275\u0275elementEnd()()();
@@ -12128,6 +12128,18 @@ function HeaderComponent_Conditional_5_Template(rf, ctx) {
     \u0275\u0275property("ngModel", ctx_r0.solutionService.isMasking);
     \u0275\u0275advance();
     \u0275\u0275textInterpolate1(" \uAC1C\uC778\uC815\uBCF4\uBCF4\uC548 ", ctx_r0.solutionService.isMasking ? "ON" : "OFF", "");
+  }
+}
+function HeaderComponent_Conditional_6_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "a", 15);
+    \u0275\u0275element(1, "img", 6);
+    \u0275\u0275elementStart(2, "span", 7);
+    \u0275\u0275text(3, "Gemini API \uB300\uD68C \uC791\uC5C5 \uB0B4\uC6A9 \uBCF4\uAE30");
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    \u0275\u0275property("matTooltip", "Gemini API \uB300\uD68C \uC791\uC5C5 \uB0B4\uC6A9 \uBCF4\uAE30");
   }
 }
 var _HeaderComponent = class _HeaderComponent extends StoreAbstract {
@@ -12187,7 +12199,7 @@ _HeaderComponent.\u0275fac = /* @__PURE__ */ (() => {
     return (\u0275HeaderComponent_BaseFactory || (\u0275HeaderComponent_BaseFactory = \u0275\u0275getInheritedFactory(_HeaderComponent)))(t || _HeaderComponent);
   };
 })();
-_HeaderComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HeaderComponent, selectors: [["app-header"]], inputs: { triggerType: "triggerType" }, features: [\u0275\u0275InheritDefinitionFeature], decls: 6, vars: 1, consts: [["src", "./assets/svg/loworld.svg", "width", "40px", "alt", "\uB85C\uC6D4\uB4DC\uC18C\uD504\uD2B8 \uB85C\uACE0", 1, "pointer", 3, "click"], [1, "gemini-gradient", "pointer", 2, "margin-left", "10px", "font-weight", "bold", 3, "click"], [1, "example-spacer"], [1, "flex", "flex-v-center", 2, "width", "100%", "justify-content", "center", "gap", "40px"], [1, "flex", "flex-v-center"], [1, "flex", "flex-v-center", "pointer", 2, "gap", "10px", "font-size", "14px", 3, "matTooltip", "click"], ["src", "./assets/svg/light.svg", "width", "20px"], [1, "color-green"], ["mat-icon-button", "", 3, "click"], [1, "color-white"], ["menu", "matMenu"], ["mat-menu-item", "", 3, "click"], [2, "margin", "10px", "margin-left", "15px"], [3, "ngModel", "ngModelChange"], [1, "pointer", 3, "ngClass", "click"]], template: function HeaderComponent_Template(rf, ctx) {
+_HeaderComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HeaderComponent, selectors: [["app-header"]], inputs: { triggerType: "triggerType" }, features: [\u0275\u0275InheritDefinitionFeature], decls: 7, vars: 1, consts: [["src", "./assets/svg/loworld.svg", "width", "40px", "alt", "\uB85C\uC6D4\uB4DC\uC18C\uD504\uD2B8 \uB85C\uACE0", 1, "pointer", 3, "click"], [1, "gemini-gradient", "pointer", 2, "margin-left", "10px", "font-weight", "bold", 3, "click"], [1, "example-spacer"], [1, "flex", "flex-v-center", 2, "width", "100%", "justify-content", "center", "gap", "40px"], [1, "flex", "flex-v-center"], [1, "flex", "flex-v-center", "pointer", 2, "gap", "10px", "font-size", "14px", 3, "matTooltip", "click"], ["src", "./assets/svg/light.svg", "width", "20px"], [1, "color-green"], ["mat-icon-button", "", 3, "click"], [1, "color-white"], ["menu", "matMenu"], ["mat-menu-item", "", 3, "click"], [2, "margin", "10px", "margin-left", "15px"], [3, "ngModel", "ngModelChange"], [1, "pointer", 3, "ngClass", "click"], ["href", "https://www.youtube.com/watch?v=YL12X7UJ_eM", 1, "flex", "flex-v-center", "pointer", 2, "gap", "10px", "font-size", "14px", 3, "matTooltip"]], template: function HeaderComponent_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "mat-toolbar")(1, "img", 0);
     \u0275\u0275listener("click", function HeaderComponent_Template_img_click_1_listener() {
@@ -12201,12 +12213,12 @@ _HeaderComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type:
     \u0275\u0275text(3, "loworld soft");
     \u0275\u0275elementEnd();
     \u0275\u0275element(4, "span", 2);
-    \u0275\u0275template(5, HeaderComponent_Conditional_5_Template, 23, 4);
+    \u0275\u0275template(5, HeaderComponent_Conditional_5_Template, 23, 4)(6, HeaderComponent_Conditional_6_Template, 4, 1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
     \u0275\u0275advance(5);
-    \u0275\u0275conditional(5, ctx.currentUser.isLogin() ? 5 : -1);
+    \u0275\u0275conditional(5, ctx.currentUser.isLogin() ? 5 : 6);
   }
 }, dependencies: [NgClass, MatIcon, MatIconButton, MatToolbar, MatTooltip, NgControlStatus, NgModel, MatMenu, MatMenuItem, MatSlideToggle], styles: ["\n\n.example-spacer[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n}\n.select[_ngcontent-%COMP%] {\n  margin-top: 10px;\n  outline: none;\n  color: rgba(33, 33, 94, 0.8) !important;\n  border-bottom: 5px solid rgba(33, 33, 94, 0.8);\n}\n.color-green[_ngcontent-%COMP%] {\n  color: #3584ce;\n}\n.color-white[_ngcontent-%COMP%] {\n  color: rgb(59, 59, 59);\n}\nli[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  color: rgb(59, 59, 59);\n  padding: 10px 0 13px 0;\n  font-size: 18px;\n  font-weight: 500;\n}\nli[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  color: rgba(33, 33, 94, 0.5);\n  border-bottom: 5px solid rgba(33, 33, 94, 0.5);\n}\n/*# sourceMappingURL=header.component.css.map */"] });
 var HeaderComponent = _HeaderComponent;
@@ -18295,4 +18307,4 @@ export {
   BottomSheetComponent,
   SharedModule
 };
-//# sourceMappingURL=chunk-TJHYC52T.js.map
+//# sourceMappingURL=chunk-EBMSAQJM.js.map
