@@ -1,6 +1,6 @@
 import {
   ChatHistoryMenuData
-} from "./chunk-IOFLPQW3.js";
+} from "./chunk-7Y54A4D7.js";
 import {
   CdkDrag,
   MatDrawer,
@@ -15,7 +15,7 @@ import {
   MatSlideToggle,
   MenuComponent,
   SharedModule
-} from "./chunk-EBMSAQJM.js";
+} from "./chunk-HFK3UAFY.js";
 import "./chunk-JEJ25PGL.js";
 import {
   DataAbstract,
@@ -1457,4 +1457,4 @@ var ChatflowModule = _ChatflowModule;
 export {
   ChatflowModule
 };
-//# sourceMappingURL=chunk-5CFPJU4P.js.map
+//# sourceMappingURL=chunk-Z2EOEYAY.js.map

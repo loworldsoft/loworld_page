@@ -12131,16 +12131,6 @@ function HeaderComponent_Conditional_5_Template(rf, ctx) {
   }
 }
 function HeaderComponent_Conditional_6_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "a", 15);
-    \u0275\u0275element(1, "img", 6);
-    \u0275\u0275elementStart(2, "span", 7);
-    \u0275\u0275text(3, "Gemini API \uB300\uD68C \uC791\uC5C5 \uB0B4\uC6A9 \uBCF4\uAE30");
-    \u0275\u0275elementEnd()();
-  }
-  if (rf & 2) {
-    \u0275\u0275property("matTooltip", "Gemini API \uB300\uD68C \uC791\uC5C5 \uB0B4\uC6A9 \uBCF4\uAE30");
-  }
 }
 var _HeaderComponent = class _HeaderComponent extends StoreAbstract {
   constructor() {
@@ -12199,7 +12189,7 @@ _HeaderComponent.\u0275fac = /* @__PURE__ */ (() => {
     return (\u0275HeaderComponent_BaseFactory || (\u0275HeaderComponent_BaseFactory = \u0275\u0275getInheritedFactory(_HeaderComponent)))(t || _HeaderComponent);
   };
 })();
-_HeaderComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HeaderComponent, selectors: [["app-header"]], inputs: { triggerType: "triggerType" }, features: [\u0275\u0275InheritDefinitionFeature], decls: 7, vars: 1, consts: [["src", "./assets/svg/loworld.svg", "width", "40px", "alt", "\uB85C\uC6D4\uB4DC\uC18C\uD504\uD2B8 \uB85C\uACE0", 1, "pointer", 3, "click"], [1, "gemini-gradient", "pointer", 2, "margin-left", "10px", "font-weight", "bold", 3, "click"], [1, "example-spacer"], [1, "flex", "flex-v-center", 2, "width", "100%", "justify-content", "center", "gap", "40px"], [1, "flex", "flex-v-center"], [1, "flex", "flex-v-center", "pointer", 2, "gap", "10px", "font-size", "14px", 3, "matTooltip", "click"], ["src", "./assets/svg/light.svg", "width", "20px"], [1, "color-green"], ["mat-icon-button", "", 3, "click"], [1, "color-white"], ["menu", "matMenu"], ["mat-menu-item", "", 3, "click"], [2, "margin", "10px", "margin-left", "15px"], [3, "ngModel", "ngModelChange"], [1, "pointer", 3, "ngClass", "click"], ["href", "https://www.youtube.com/watch?v=YL12X7UJ_eM", 1, "flex", "flex-v-center", "pointer", 2, "gap", "10px", "font-size", "14px", 3, "matTooltip"]], template: function HeaderComponent_Template(rf, ctx) {
+_HeaderComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HeaderComponent, selectors: [["app-header"]], inputs: { triggerType: "triggerType" }, features: [\u0275\u0275InheritDefinitionFeature], decls: 7, vars: 1, consts: [["src", "./assets/svg/loworld.svg", "width", "40px", "alt", "\uB85C\uC6D4\uB4DC\uC18C\uD504\uD2B8 \uB85C\uACE0", 1, "pointer", 3, "click"], [1, "gemini-gradient", "pointer", 2, "margin-left", "10px", "font-weight", "bold", 3, "click"], [1, "example-spacer"], [1, "flex", "flex-v-center", 2, "width", "100%", "justify-content", "center", "gap", "40px"], [1, "flex", "flex-v-center"], [1, "flex", "flex-v-center", "pointer", 2, "gap", "10px", "font-size", "14px", 3, "matTooltip", "click"], ["src", "./assets/svg/light.svg", "width", "20px"], [1, "color-green"], ["mat-icon-button", "", 3, "click"], [1, "color-white"], ["menu", "matMenu"], ["mat-menu-item", "", 3, "click"], [2, "margin", "10px", "margin-left", "15px"], [3, "ngModel", "ngModelChange"], [1, "pointer", 3, "ngClass", "click"]], template: function HeaderComponent_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "mat-toolbar")(1, "img", 0);
     \u0275\u0275listener("click", function HeaderComponent_Template_img_click_1_listener() {
@@ -12213,7 +12203,7 @@ _HeaderComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type:
     \u0275\u0275text(3, "loworld soft");
     \u0275\u0275elementEnd();
     \u0275\u0275element(4, "span", 2);
-    \u0275\u0275template(5, HeaderComponent_Conditional_5_Template, 23, 4)(6, HeaderComponent_Conditional_6_Template, 4, 1);
+    \u0275\u0275template(5, HeaderComponent_Conditional_5_Template, 23, 4)(6, HeaderComponent_Conditional_6_Template, 0, 0);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -18307,4 +18297,4 @@ export {
   BottomSheetComponent,
   SharedModule
 };
-//# sourceMappingURL=chunk-EBMSAQJM.js.map
+//# sourceMappingURL=chunk-HFK3UAFY.js.map
