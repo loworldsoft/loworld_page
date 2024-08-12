@@ -1,0 +1,148 @@
+[
+  {
+    "id": 1,
+    "name": "판타지 소설",
+    "rootId": 1,
+    "depth": 0,
+    "type": "local",
+    "children": [2]
+  },
+  {
+    "id": 2,
+    "name": "1장: 숲의 노래, 강의 속삭임",
+    "rootId": 1,
+    "depth": 1,
+    "type": "local",
+    "children": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+  },
+  {
+    "id": 3,
+    "name": "고요한 숲의 풍경",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "햇살이 부서져 내리는 숲, 새와 풀벌레 소리, 푸른 이끼 바위, 에메랄드빛 아르카 강",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 4,
+    "name": "리나의 기도",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "리나가 아르카 강에 기도를 올리고, 손끝에서 녹색 빛이 흘러나와 강물을 정화함",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 5,
+    "name": "숲의 수호자 리나",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "리나의 역할과 아르카 강의 중요성 설명, 리나가 매일 강을 정화하는 이유",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 6,
+    "name": "자연과의 교감",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "리나가 눈을 감고 자연의 기운을 느끼며 평온함을 느낌",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 7,
+    "name": "불길한 소리",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "숲 속에서 나뭇가지 부러지는 소리가 들림",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 8,
+    "name": "쓰러진 남자",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "피투성이가 된 남자 디온이 덤불 사이에서 비틀거리며 쓰러짐",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 9,
+    "name": "리나의 구조",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "리나가 디온을 발견하고 오두막으로 데려감",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 10,
+    "name": "치유의 마법",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "리나가 녹색 빛 마법으로 디온의 상처를 치료함",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 11,
+    "name": "밤샘 간호",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "리나가 디온 곁을 지키며 밤을 새우고, 디온의 슬픈 얼굴에 궁금증을 느낌",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 12,
+    "name": "운명적인 만남",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "디온이 깨어나 리나에게 감사를 표하고, 두 사람은 서로에게 끌림을 느낌",
+      "titleValue": "",
+      "originValue": ""
+    }
+  }
+]

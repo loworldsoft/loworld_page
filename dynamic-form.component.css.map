@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["Modules/pages/slots/form/dynamic-form/dynamic-form.component.scss"],
+  "sourcesContent": [".form-full-layout {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin: 10px;\r\n    gap: 1rem;\r\n}\r\n\r\n/* 스크롤바 숨기기 (모던 브라우저) */\r\n.hide-scrollbar {\r\n    overflow: auto;\r\n    /* 스크롤은 유지 */\r\n}\r\n\r\n.hide-scrollbar::-webkit-scrollbar {\r\n    width: 0px;\r\n    background: transparent;\r\n    /* 웹킷 기반 브라우저 (크롬, 사파리)에서 스크롤바 숨기기 */\r\n}\r\n\r\n.hide-scrollbar {\r\n    -ms-overflow-style: none;\r\n    /* IE and Edge에서 스크롤바 숨기기 */\r\n    scrollbar-width: none;\r\n    /* Firefox에서 스크롤바 숨기기 */\r\n}"],
+  "mappings": ";;;AAAA,CAAA;AACI,WAAA;AACA,kBAAA;AACA,UAAA;AACA,OAAA;;AAIJ,CAAA;AACI,YAAA;;AAIJ,CALA,cAKA;AACI,SAAA;AACA,cAAA;;AAIJ,CAXA;AAYI,sBAAA;AAEA,mBAAA;;",
+  "names": []
+}

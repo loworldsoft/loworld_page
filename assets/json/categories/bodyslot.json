@@ -1,0 +1,148 @@
+[
+  {
+    "key": "TEST 1",
+    "value": {
+      "selectedIndices": [
+        42, 43, 44, 45, 46, 47, 48, 49, 63, 64, 65, 66, 67, 68, 69, 70, 84, 85,
+        86, 87, 88, 89, 90, 91, 105, 106, 107, 108, 109, 110, 111, 112, 126,
+        127, 128, 129, 130, 131, 132, 133, 147, 148, 149, 150, 151, 152, 153,
+        154, 168, 169, 170, 171, 172, 173, 174, 175, 189, 190, 191, 192, 193,
+        194, 195, 196, 210, 211, 212, 213, 214, 215, 216, 217, 231, 232, 233,
+        234, 235, 236, 237, 238, 252, 253, 254, 255, 256, 257, 258, 259
+      ],
+      "size": { "width": 400, "height": 550, "position": { "x": 0, "y": 100 } },
+      "corners": {
+        "topLeft": { "x": 0, "y": 100 },
+        "topRight": { "x": 400, "y": 100 },
+        "bottomLeft": { "x": 0, "y": 650 },
+        "bottomRight": { "x": 400, "y": 650 }
+      },
+      "title": "flow_item_category",
+      "isBodyBind": true,
+      "id": "0a3c3810-04f1-40c9-b871-f65fb2ee7514",
+      "customData": {}
+    }
+  },
+  {
+    "key": "TEST 1",
+    "value": {
+      "selectedIndices": [273, 274, 275, 276, 277, 278, 279, 280],
+      "size": { "width": 400, "height": 50, "position": { "x": 0, "y": 650 } },
+      "corners": {
+        "topLeft": { "x": 0, "y": 650 },
+        "topRight": { "x": 400, "y": 650 },
+        "bottomLeft": { "x": 0, "y": 700 },
+        "bottomRight": { "x": 400, "y": 700 }
+      },
+      "title": "story_input",
+      "isBodyBind": true,
+      "id": "304344f3-0bd0-4617-9aad-d0e3c2c72ce4",
+      "customData": {}
+    }
+  },
+  {
+    "key": "TEST 1",
+    "value": {
+      "selectedIndices": [50, 51, 52, 53, 54, 55, 56],
+      "size": {
+        "width": 350,
+        "height": 50,
+        "position": { "x": 400, "y": 100 }
+      },
+      "corners": {
+        "topLeft": { "x": 400, "y": 100 },
+        "topRight": { "x": 750, "y": 100 },
+        "bottomLeft": { "x": 400, "y": 150 },
+        "bottomRight": { "x": 750, "y": 150 }
+      },
+      "title": "form_input",
+      "isBodyBind": true,
+      "id": "7fbce0a1-ac17-4235-bc20-3cc91028b702",
+      "customData": {}
+    }
+  },
+  {
+    "key": "TEST 1",
+    "value": {
+      "selectedIndices": [
+        71, 72, 73, 74, 75, 76, 77, 92, 93, 94, 95, 96, 97, 98, 113, 114, 115,
+        116, 117, 118, 119, 134, 135, 136, 137, 138, 139, 140, 155, 156, 157,
+        158, 159, 160, 161
+      ],
+      "size": {
+        "width": 350,
+        "height": 250,
+        "position": { "x": 400, "y": 150 }
+      },
+      "corners": {
+        "topLeft": { "x": 400, "y": 150 },
+        "topRight": { "x": 750, "y": 150 },
+        "bottomLeft": { "x": 400, "y": 400 },
+        "bottomRight": { "x": 750, "y": 400 }
+      },
+      "title": "form_textarea",
+      "isBodyBind": true,
+      "id": "c3396f57-71df-4591-82c5-48e597d701f9",
+      "customData": { "key": "contentValue" }
+    }
+  },
+  {
+    "key": "TEST 1",
+    "value": {
+      "selectedIndices": [
+        176, 177, 178, 179, 180, 181, 182, 197, 198, 199, 200, 201, 202, 203,
+        218, 219, 220, 221, 222, 223, 224, 239, 240, 241, 242, 243, 244, 245,
+        260, 261, 262, 263, 264, 265, 266
+      ],
+      "size": {
+        "width": 350,
+        "height": 250,
+        "position": { "x": 400, "y": 400 }
+      },
+      "corners": {
+        "topLeft": { "x": 400, "y": 400 },
+        "topRight": { "x": 750, "y": 400 },
+        "bottomLeft": { "x": 400, "y": 650 },
+        "bottomRight": { "x": 750, "y": 650 }
+      },
+      "title": "form_textarea",
+      "isBodyBind": true,
+      "id": "94e65dd5-609d-4832-8cba-10d532b6e6a8",
+      "customData": { "key": "aiValue" }
+    }
+  },
+  {
+    "key": "TEST 1",
+    "value": {
+      "selectedIndices": [281],
+      "size": { "width": 50, "height": 50, "position": { "x": 400, "y": 650 } },
+      "corners": {
+        "topLeft": { "x": 400, "y": 650 },
+        "topRight": { "x": 450, "y": 650 },
+        "bottomLeft": { "x": 400, "y": 700 },
+        "bottomRight": { "x": 450, "y": 700 }
+      },
+      "title": "story_ai_sender",
+      "isBodyBind": true,
+      "id": "4ad822e2-2ad0-4b9a-bd87-8e98b7855e01",
+      "customData": {}
+    }
+  },
+  {
+    "key": "TEST 1",
+    "value": {
+      "selectedIndices": [287],
+      "size": { "width": 50, "height": 50, "position": { "x": 700, "y": 650 } },
+      "corners": {
+        "topLeft": { "x": 700, "y": 650 },
+        "topRight": { "x": 750, "y": 650 },
+        "bottomLeft": { "x": 700, "y": 700 },
+        "bottomRight": { "x": 750, "y": 700 }
+      },
+      "title": "story_save_sender",
+      "isBodyBind": true,
+      "id": "d80c04b8-4040-47c8-90b3-c45ca73cca47",
+      "customData": {}
+    }
+  }
+]

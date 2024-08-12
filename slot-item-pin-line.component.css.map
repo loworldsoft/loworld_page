@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["Modules/pages/slots/items/slot-item-pin-line/slot-item-pin-line.component.scss"],
+  "sourcesContent": [".svgFill {\r\n    fill: red;\r\n}"],
+  "mappings": ";AAAA,CAAA;AACI,QAAA;;",
+  "names": []
+}

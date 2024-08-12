@@ -1,0 +1,26 @@
+[
+  {
+    "key": "form-values",
+    "value": [
+      {
+        "category": "input",
+        "type": "text",
+        "name": "title",
+        "value": "",
+        "placeholder": "provide a value",
+        "validations": [
+          {
+            "name": "required",
+            "validator": "required",
+            "message": "Please provide a value"
+          },
+          {
+            "name": "maxLength",
+            "validator": "maxLength-40",
+            "message": "Please enter less than 40 characters"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,187 @@
+[
+  {
+    "id": 1,
+    "name": "오브젝트 관리",
+    "rootId": 1,
+    "depth": 0,
+    "type": "local",
+    "children": [2]
+  },
+  {
+    "id": 2,
+    "name": "캐릭터",
+    "rootId": 1,
+    "depth": 1,
+    "type": "local",
+    "children": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+  },
+  {
+    "id": 3,
+    "name": "아리아",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "밝고 호기심 많은 녹색 눈의 엘프 소녀. 동물과 교감하는 능력을 지니고 있으며, 빛의 힘을 계승할 운명을 타고났다.",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 4,
+    "name": "카이든",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "젊고 용감한 인간 전사. 정의감이 강하며 어둠의 마법사에게 복수를 꿈꾼다. 아리아의 든든한 조력자이자 친구가 된다.",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 5,
+    "name": "어둠의마법사",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": " 강력한 어둠 마법을 사용하는 악당. 엘프 마을을 습격하고 빛의 힘을 노린다.",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 6,
+    "name": "아리아의 부모",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "엘프 마을의 존경받는 장로. 아리아를 따뜻하게 사랑하고 보살핀다.",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 7,
+    "name": "엘프 마을 장로",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "아리아에게 마법을 가르치고 빛의 힘을 일깨우는 데 도움을 준다.",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 8,
+    "name": "수수께끼 노인",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "황폐한 숲에서 만나는 지혜로운 노인. 아리아와 카이든에게 어둠의 마법사에 대한 단서를 제공한다.",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 9,
+    "name": "빛의 수호자",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "빛의 성지에 살고 있는 강력한 존재. 아리아의 빛의 힘을 시험하고 강화시킨다.",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 10,
+    "name": "어둠의 생물들",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "어둠의 땅에 서식하는 괴물들. 아리아와 카이든의 앞을 가로막는다.",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 11,
+    "name": "엘프 친구들",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "둠의 습격 이전에 아리아와 함께 즐거운 시간을 보냈던 친구들.",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 12,
+    "name": "동료 전사",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "카이든과 함께 어둠의 마법사에게 맞서 싸우는 용감한 전사들.",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 13,
+    "name": "마법사의 부하",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "둠의 마법사의 명령을 따르는 악당들. 아리아와 카이든의 여정을 방해한다.",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 14,
+    "name": "예언자",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "아리아의 운명에 대한 예언을 전달하는 신비로운 존재.",
+      "titleValue": "",
+      "originValue": ""
+    }
+  },
+  {
+    "id": 15,
+    "name": "빛의 정령",
+    "rootId": 2,
+    "depth": 2,
+    "type": "local",
+    "children": [],
+    "data": {
+      "contentValue": "아리아의 빛의 힘을 돕고 인도하는 정령.",
+      "titleValue": "",
+      "originValue": ""
+    }
+  }
+]

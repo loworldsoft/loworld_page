@@ -4,10 +4,10 @@ import {
   pvFailureAction,
   pvSuccessAction,
   selectMonth
-} from "./chunk-PB6IJOTE.js";
+} from "./chunk-H4IFIEB7.js";
 import {
   src_exports
-} from "./chunk-3L3N7GPT.js";
+} from "./chunk-GTNDQURS.js";
 import {
   AnimationDriver,
   AnimationEngine,
@@ -16,22 +16,21 @@ import {
   NoopAnimationDriver,
   WebAnimationsDriver,
   WebAnimationsStyleNormalizer
-} from "./chunk-NAW45VIM.js";
+} from "./chunk-NXDW4Y7X.js";
 import {
   canActivate,
   roleGuard
-} from "./chunk-TAI4FYLV.js";
+} from "./chunk-BIXPJA64.js";
 import {
   HeaderComponent,
   SharedModule
-} from "./chunk-HFK3UAFY.js";
-import "./chunk-JEJ25PGL.js";
+} from "./chunk-CJ667REI.js";
+import "./chunk-REOKLIIO.js";
 import {
+  AppComponent,
   JwtModule,
-  LayoutService,
   RoleName,
   SocketIoModule,
-  StoreAbstract,
   addExpansionPanelBox,
   addNode,
   clearNode,
@@ -40,7 +39,7 @@ import {
   sortExpansionPanelBox,
   triggerAction,
   updateNode
-} from "./chunk-E357REMM.js";
+} from "./chunk-OYNGIGU4.js";
 import {
   BrowserModule,
   DateTime,
@@ -50,7 +49,6 @@ import {
   HttpClient,
   HttpClientModule,
   HttpParams,
-  Router,
   RouterModule,
   RouterOutlet,
   ScannedActionsSubject,
@@ -66,8 +64,8 @@ import {
   platformBrowser,
   props,
   select
-} from "./chunk-QWAJT647.js";
-import "./chunk-N5CV7AUJ.js";
+} from "./chunk-6FQVR65V.js";
+import "./chunk-JCOLDGJ5.js";
 import {
   ANIMATION_MODULE_TYPE,
   ChangeDetectionScheduler,
@@ -84,8 +82,6 @@ import {
   RuntimeError,
   Subject,
   __decorate,
-  __spreadProps,
-  __spreadValues,
   catchError,
   dematerialize,
   exhaustMap,
@@ -104,25 +100,24 @@ import {
   take,
   withLatestFrom,
   ɵsetClassDebugInfo,
-  ɵɵInheritDefinitionFeature,
-  ɵɵadvance,
   ɵɵdefineComponent,
   ɵɵdefineInjectable,
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
-  ɵɵdirectiveInject,
   ɵɵelement,
   ɵɵelementContainer,
-  ɵɵelementEnd,
-  ɵɵelementStart,
   ɵɵinject,
   ɵɵloadQuery,
   ɵɵnamespaceHTML,
   ɵɵnamespaceSVG,
-  ɵɵproperty,
   ɵɵqueryRefresh,
+  ɵɵsetComponentScope,
   ɵɵviewQuery
-} from "./chunk-WWQYCCAG.js";
+} from "./chunk-GPHGQ6Z6.js";
+import {
+  __spreadProps,
+  __spreadValues
+} from "./chunk-REJARLXV.js";
 
 // node_modules/@angular/platform-browser/fesm2022/animations.mjs
 var _InjectableAnimationEngine = class _InjectableAnimationEngine extends AnimationEngine {
@@ -282,7 +277,7 @@ var AsyncAnimationRendererFactory = class {
    * @internal
    */
   loadImpl() {
-    const moduleImpl = this.moduleImpl ?? import("./chunk-T2BR6JZB.js");
+    const moduleImpl = this.moduleImpl ?? import("./chunk-2SMLIFZO.js");
     return moduleImpl.catch((e) => {
       throw new RuntimeError(5300, (typeof ngDevMode === "undefined" || ngDevMode) && "Async loading for animations package was enabled, but loading failed. Angular falls back to using regular rendering. No animations will be displayed and their styles won't be applied.");
     }).then(({ \u0275createEngine, \u0275AnimationRendererFactory }) => {
@@ -1148,36 +1143,36 @@ var routes = [
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-MQTP2XLN.js").then((m) => m.MainModule),
+    loadChildren: () => import("./chunk-5FURBZ4U.js").then((m) => m.MainModule),
     canActivate: [canActivate]
   },
   {
     path: "chatbot",
-    loadChildren: () => import("./chunk-7DZW7EML.js").then((m) => m.ChatbotModule),
+    loadChildren: () => import("./chunk-6HTMIUY5.js").then((m) => m.ChatbotModule),
     canActivate: [canActivate]
   },
   {
     path: "history",
-    loadChildren: () => import("./chunk-IEJW3GQR.js").then((m) => m.HistoryModule),
+    loadChildren: () => import("./chunk-TQOQXRBR.js").then((m) => m.HistoryModule),
     canActivate: [canActivate]
   },
   {
     path: "membership",
-    loadChildren: () => import("./chunk-OAFQTVXM.js").then((m) => m.MembershipModule)
+    loadChildren: () => import("./chunk-PE3G574E.js").then((m) => m.MembershipModule)
   },
   {
     path: "logic",
-    loadChildren: () => import("./chunk-Z2EOEYAY.js").then((m) => m.ChatflowModule),
+    loadChildren: () => import("./chunk-4DZR7LJK.js").then((m) => m.ChatflowModule),
     canActivate: [canActivate]
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-AC24POT4.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-TLDLYLP4.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {
     path: "monitoring",
-    loadChildren: () => import("./chunk-KJ6OPCCK.js").then((m) => m.MonitoringModule),
+    loadChildren: () => import("./chunk-TNMNECL6.js").then((m) => m.MonitoringModule),
     canActivate: [canActivate, roleGuard],
     data: {
       requiredRoles: [RoleName.SuperAdmin]
@@ -1193,45 +1188,49 @@ var routes = [
 var devRoutes = [
   {
     path: "",
-    redirectTo: "/membership",
+    redirectTo: "/main",
     pathMatch: "full"
   },
   {
+    path: "slot",
+    loadChildren: () => import("./chunk-YELOT6FV.js").then((m) => m.SlotModule)
+  },
+  {
     path: "main",
-    loadChildren: () => import("./chunk-MQTP2XLN.js").then((m) => m.MainModule),
+    loadChildren: () => import("./chunk-5FURBZ4U.js").then((m) => m.MainModule),
     canActivate: [canActivate]
   },
   {
     path: "chatbot",
-    loadChildren: () => import("./chunk-7DZW7EML.js").then((m) => m.ChatbotModule),
+    loadChildren: () => import("./chunk-6HTMIUY5.js").then((m) => m.ChatbotModule),
     canActivate: [canActivate]
   },
   {
     path: "history",
-    loadChildren: () => import("./chunk-IEJW3GQR.js").then((m) => m.HistoryModule),
+    loadChildren: () => import("./chunk-TQOQXRBR.js").then((m) => m.HistoryModule),
     canActivate: [canActivate]
   },
   {
     path: "membership",
-    loadChildren: () => import("./chunk-OAFQTVXM.js").then((m) => m.MembershipModule)
+    loadChildren: () => import("./chunk-PE3G574E.js").then((m) => m.MembershipModule)
   },
   {
     path: "logic",
-    loadChildren: () => import("./chunk-Z2EOEYAY.js").then((m) => m.ChatflowModule),
+    loadChildren: () => import("./chunk-4DZR7LJK.js").then((m) => m.ChatflowModule),
     canActivate: [canActivate]
   },
   {
     path: "sketchflow",
-    loadChildren: () => import("./chunk-OKZEFWBM.js").then((m) => m.SketchflowModule)
+    loadChildren: () => import("./chunk-RYNHKXN7.js").then((m) => m.SketchflowModule)
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-AC24POT4.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-TLDLYLP4.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {
     path: "monitoring",
-    loadChildren: () => import("./chunk-KJ6OPCCK.js").then((m) => m.MonitoringModule),
+    loadChildren: () => import("./chunk-TNMNECL6.js").then((m) => m.MonitoringModule),
     canActivate: [canActivate, roleGuard],
     data: {
       requiredRoles: [RoleName.SuperAdmin]
@@ -1239,7 +1238,7 @@ var devRoutes = [
   },
   {
     path: "editor",
-    loadChildren: () => import("./chunk-KQAPYZQ6.js").then((m) => m.EditorModule)
+    loadChildren: () => import("./chunk-GCSOHRKL.js").then((m) => m.EditorModule)
   },
   {
     path: "**",
@@ -1267,99 +1266,6 @@ _AppRoutingModule.\u0275fac = function AppRoutingModule_Factory(t) {
 _AppRoutingModule.\u0275mod = /* @__PURE__ */ \u0275\u0275defineNgModule({ type: _AppRoutingModule });
 _AppRoutingModule.\u0275inj = /* @__PURE__ */ \u0275\u0275defineInjector({ imports: [RouterModule.forRoot(loadRouter(environment.environmentName)), RouterModule] });
 var AppRoutingModule = _AppRoutingModule;
-
-// Modules/pages/sketchflow/classes/data/sketchflow.data.ts
-var SketchflowData = class {
-  constructor() {
-    this.layoutService = inject(LayoutService);
-    this.chatbot = {
-      key: "chatbot",
-      value: [
-        {
-          id: "0",
-          type: "row",
-          name: "row1",
-          value: "",
-          size: {
-            width: this.layoutService.getInnerWidth(),
-            height: "200px"
-          },
-          position: {
-            x: 10,
-            y: 10
-          },
-          cell: {
-            colSpan: 0
-          },
-          path: "",
-          boxs: []
-        },
-        {
-          id: "1",
-          type: "row",
-          name: "row2",
-          value: "",
-          size: {
-            width: this.layoutService.getInnerWidth(),
-            height: "200px"
-          },
-          position: {
-            x: 10,
-            y: 10
-          },
-          cell: {
-            colSpan: 0
-          },
-          path: "",
-          boxs: []
-        },
-        {
-          id: "2",
-          type: "row",
-          name: "row3",
-          value: "",
-          size: {
-            width: this.layoutService.getInnerWidth(),
-            height: "200px"
-          },
-          position: {
-            x: 10,
-            y: 10
-          },
-          cell: {
-            colSpan: 0
-          },
-          path: "",
-          boxs: []
-        }
-      ]
-    };
-    this.login = {
-      key: "login",
-      value: [
-        {
-          id: "0",
-          type: "row",
-          name: "row1",
-          value: "",
-          size: {
-            width: this.layoutService.getInnerWidth(),
-            height: "200px"
-          },
-          position: {
-            x: 10,
-            y: 10
-          },
-          cell: {
-            colSpan: 0
-          },
-          path: "",
-          boxs: []
-        }
-      ]
-    };
-  }
-};
 
 // src/app/svg/background.svg.ts
 var _c0 = ["canvas"];
@@ -1527,73 +1433,6 @@ var SvgBackground = _SvgBackground;
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SvgBackground, { className: "SvgBackground", filePath: "src\\app\\svg\\background.svg.ts", lineNumber: 34 });
 })();
 
-// src/app/app.component.ts
-Array.prototype.last = function() {
-  return this[this.length - 1];
-};
-Array.prototype.first = function() {
-  return this[0];
-};
-Array.prototype.isEmpty = function() {
-  if (this.length === 0)
-    return true;
-  else
-    return false;
-};
-var _AppComponent = class _AppComponent extends StoreAbstract {
-  constructor(router) {
-    super();
-    this.router = router;
-    this.triggerType = "mainDrawer";
-    this.sketchflowData = new SketchflowData();
-  }
-  ngOnInit() {
-    this.layoutService.getBodyHeight();
-    this.redirectUrl();
-  }
-  // private createBackground() {
-  //   const data = {
-  //     type: 'background',
-  //     component: SvgBackground,
-  //     position: { x: 0, y: 0 },
-  //     size: { width: 100, height: 500 },
-  //   };
-  //  this.bindComponent(data.type, this, data, this.mainCanvas.backgroundGroup);
-  // }
-  redirectUrl() {
-    const previousUrl = localStorage.getItem("previousUrl");
-    if (previousUrl) {
-      const url = new URL(previousUrl);
-      const path = url.pathname;
-      this.router.navigateByUrl(path);
-      console.log("previousUrl", path);
-      localStorage.removeItem("previousUrl");
-    }
-  }
-};
-_AppComponent.\u0275fac = function AppComponent_Factory(t) {
-  return new (t || _AppComponent)(\u0275\u0275directiveInject(Router));
-};
-_AppComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AppComponent, selectors: [["app-root"]], features: [\u0275\u0275InheritDefinitionFeature], decls: 5, vars: 1, consts: [[1, "background", 2, "position", "absolute", "width", "100%", "height", "100%", "overflow", "hidden", "z-index", "-1"], [3, "triggerType"], [2, "margin", "10px"]], template: function AppComponent_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 0);
-    \u0275\u0275element(1, "svg-background");
-    \u0275\u0275elementEnd();
-    \u0275\u0275element(2, "app-header", 1);
-    \u0275\u0275elementStart(3, "div", 2);
-    \u0275\u0275element(4, "router-outlet");
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    \u0275\u0275advance(2);
-    \u0275\u0275property("triggerType", ctx.triggerType);
-  }
-}, dependencies: [HeaderComponent, RouterOutlet, SvgBackground], styles: ["\n\n/*# sourceMappingURL=app.component.css.map */"] });
-var AppComponent = _AppComponent;
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent", filePath: "src\\app\\app.component.ts", lineNumber: 43 });
-})();
-
 // src/app/app.module.ts
 function tokenGetter() {
   return localStorage.getItem("accessToken");
@@ -1639,6 +1478,9 @@ _AppModule.\u0275inj = /* @__PURE__ */ \u0275\u0275defineInjector({ providers: [
   })
 ] });
 var AppModule = _AppModule;
+\u0275\u0275setComponentScope(AppComponent, function() {
+  return [HeaderComponent, RouterOutlet, SvgBackground];
+}, []);
 
 // src/main.ts
 platformBrowser().bootstrapModule(AppModule).catch((err) => console.error(err));

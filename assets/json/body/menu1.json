@@ -1,0 +1,113 @@
+[
+  {
+    "key": "MENU 1",
+    "value": {
+      "selectedIndices": [
+        63, 64, 65, 66, 67, 68, 69, 84, 85, 86, 87, 88, 89, 90, 105, 106, 107,
+        108, 109, 110, 111, 126, 127, 128, 129, 130, 131, 132, 147, 148, 149,
+        150, 151, 152, 153, 168, 169, 170, 171, 172, 173, 174, 189, 190, 191,
+        192, 193, 194, 195, 210, 211, 212, 213, 214, 215, 216, 231, 232, 233,
+        234, 235, 236, 237, 252, 253, 254, 255, 256, 257, 258
+      ],
+      "size": { "width": 350, "height": 500, "position": { "x": 0, "y": 150 } },
+      "corners": {
+        "topLeft": { "x": 0, "y": 150 },
+        "topRight": { "x": 350, "y": 150 },
+        "bottomLeft": { "x": 0, "y": 650 },
+        "bottomRight": { "x": 350, "y": 650 }
+      },
+      "title": "AI 소설 생성 툴",
+      "isBodyBind": true,
+      "id": "6f16d6b1-2c44-4ff9-9ba6-22073ea1569b",
+      "customData": {}
+    }
+  },
+  {
+    "key": "MENU 1",
+    "value": {
+      "selectedIndices": [273, 274, 275, 276, 277, 278, 279],
+      "size": { "width": 350, "height": 50, "position": { "x": 0, "y": 650 } },
+      "corners": {
+        "topLeft": { "x": 0, "y": 650 },
+        "topRight": { "x": 350, "y": 650 },
+        "bottomLeft": { "x": 0, "y": 700 },
+        "bottomRight": { "x": 350, "y": 700 }
+      },
+      "title": "AI 소설 수동 입력",
+      "isBodyBind": true,
+      "id": "11d05771-56d7-43c8-9235-574d95a6cc6c",
+      "customData": {}
+    }
+  },
+  {
+    "key": "MENU 1",
+    "value": {
+      "selectedIndices": [70, 71, 72, 73, 74, 75, 76],
+      "size": {
+        "width": 350,
+        "height": 50,
+        "position": { "x": 350, "y": 150 }
+      },
+      "corners": {
+        "topLeft": { "x": 350, "y": 150 },
+        "topRight": { "x": 700, "y": 150 },
+        "bottomLeft": { "x": 350, "y": 200 },
+        "bottomRight": { "x": 700, "y": 200 }
+      },
+      "title": "AI 소설 타이틀",
+      "isBodyBind": true,
+      "id": "85010f1d-1158-426c-88a0-7ada88df0def",
+      "customData": {}
+    }
+  },
+  {
+    "key": "MENU 1",
+    "value": {
+      "selectedIndices": [
+        91, 92, 93, 94, 95, 96, 97, 112, 113, 114, 115, 116, 117, 118, 133, 134,
+        135, 136, 137, 138, 139, 154, 155, 156, 157, 158, 159, 160, 175, 176,
+        177, 178, 179, 180, 181
+      ],
+      "size": {
+        "width": 350,
+        "height": 250,
+        "position": { "x": 350, "y": 200 }
+      },
+      "corners": {
+        "topLeft": { "x": 350, "y": 200 },
+        "topRight": { "x": 700, "y": 200 },
+        "bottomLeft": { "x": 350, "y": 450 },
+        "bottomRight": { "x": 700, "y": 450 }
+      },
+      "title": "AI 소설 오브젝트 상세 설정",
+      "isBodyBind": true,
+      "id": "5f2b5a84-78ad-4d13-b187-2161dcd9a261",
+      "customData": {}
+    }
+  },
+  {
+    "key": "MENU 1",
+    "value": {
+      "selectedIndices": [
+        196, 197, 198, 199, 200, 201, 202, 217, 218, 219, 220, 221, 222, 223,
+        238, 239, 240, 241, 242, 243, 244, 259, 260, 261, 262, 263, 264, 265,
+        280, 281, 282, 283, 284, 285, 286
+      ],
+      "size": {
+        "width": 350,
+        "height": 250,
+        "position": { "x": 350, "y": 450 }
+      },
+      "corners": {
+        "topLeft": { "x": 350, "y": 450 },
+        "topRight": { "x": 700, "y": 450 },
+        "bottomLeft": { "x": 350, "y": 700 },
+        "bottomRight": { "x": 700, "y": 700 }
+      },
+      "title": "AI 소설 오브젝트 상세 설정",
+      "isBodyBind": true,
+      "id": "75853c7c-3ee4-4b4e-9957-1f12c1f8af41",
+      "customData": {}
+    }
+  }
+]

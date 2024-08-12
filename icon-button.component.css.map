@@ -5,3 +5,8 @@
   "mappings": "",
   "names": []
 }
+component.scss"],
+  "sourcesContent": [".button-layout {\r\n  display: flex;\r\n  flex-direction: column;\r\n  border-radius: 15%;\r\n  cursor: pointer;\r\n  padding: 10px 20px;\r\n  transition: background-color 0.3s;\r\n}\r\n\r\n.button-layout:hover {\r\n  background-color: #ececec;\r\n}\r\n\r\nmat-icon {\r\n  display: block; /* 아이콘을 블록 요소로 만들어 세로 정렬 */\r\n  margin: auto; /* 아이콘 가로 중앙 정렬 */\r\n}\r\n"],
+  "mappings": ";;;AAAA,CAAA;AACE,WAAA;AACA,kBAAA;AACA,iBAAA;AACA,UAAA;AACA,WAAA,KAAA;AACA,cAAA,iBAAA;;AAGF,CATA,aASA;AACE,oBAAA;;AAGF;AACE,WAAA;AACA,UAAA;;",
+  "names": []
+}
