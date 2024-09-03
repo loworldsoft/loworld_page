@@ -4,10 +4,11 @@ import {
   pvFailureAction,
   pvSuccessAction,
   selectMonth
-} from "./chunk-H4IFIEB7.js";
+} from "./chunk-3ZICMNMA.js";
 import {
+  select_default,
   src_exports
-} from "./chunk-GTNDQURS.js";
+} from "./chunk-S34LXEKR.js";
 import {
   AnimationDriver,
   AnimationEngine,
@@ -16,16 +17,16 @@ import {
   NoopAnimationDriver,
   WebAnimationsDriver,
   WebAnimationsStyleNormalizer
-} from "./chunk-NXDW4Y7X.js";
+} from "./chunk-WUKLNXWU.js";
 import {
   canActivate,
   roleGuard
-} from "./chunk-BIXPJA64.js";
+} from "./chunk-V2AFS6GB.js";
 import {
   HeaderComponent,
   SharedModule
-} from "./chunk-CJ667REI.js";
-import "./chunk-REOKLIIO.js";
+} from "./chunk-UD4ZWNTN.js";
+import "./chunk-ZG6TFU3E.js";
 import {
   AppComponent,
   JwtModule,
@@ -39,7 +40,7 @@ import {
   sortExpansionPanelBox,
   triggerAction,
   updateNode
-} from "./chunk-OYNGIGU4.js";
+} from "./chunk-3LOGTTFB.js";
 import {
   BrowserModule,
   DateTime,
@@ -64,8 +65,8 @@ import {
   platformBrowser,
   props,
   select
-} from "./chunk-6FQVR65V.js";
-import "./chunk-JCOLDGJ5.js";
+} from "./chunk-WDMB75ZP.js";
+import "./chunk-JBIIG4YR.js";
 import {
   ANIMATION_MODULE_TYPE,
   ChangeDetectionScheduler,
@@ -74,6 +75,7 @@ import {
   Inject,
   Injectable,
   InjectionToken,
+  NgIf,
   NgModule,
   NgZone,
   Observable,
@@ -82,6 +84,8 @@ import {
   RuntimeError,
   Subject,
   __decorate,
+  __spreadProps,
+  __spreadValues,
   catchError,
   dematerialize,
   exhaustMap,
@@ -113,11 +117,7 @@ import {
   ɵɵqueryRefresh,
   ɵɵsetComponentScope,
   ɵɵviewQuery
-} from "./chunk-GPHGQ6Z6.js";
-import {
-  __spreadProps,
-  __spreadValues
-} from "./chunk-REJARLXV.js";
+} from "./chunk-MCEJEMSJ.js";
 
 // node_modules/@angular/platform-browser/fesm2022/animations.mjs
 var _InjectableAnimationEngine = class _InjectableAnimationEngine extends AnimationEngine {
@@ -277,7 +277,7 @@ var AsyncAnimationRendererFactory = class {
    * @internal
    */
   loadImpl() {
-    const moduleImpl = this.moduleImpl ?? import("./chunk-2SMLIFZO.js");
+    const moduleImpl = this.moduleImpl ?? import("./chunk-WRO66N6W.js");
     return moduleImpl.catch((e) => {
       throw new RuntimeError(5300, (typeof ngDevMode === "undefined" || ngDevMode) && "Async loading for animations package was enabled, but loading failed. Angular falls back to using regular rendering. No animations will be displayed and their styles won't be applied.");
     }).then(({ \u0275createEngine, \u0275AnimationRendererFactory }) => {
@@ -908,7 +908,7 @@ function _provideForRootGuard() {
 }
 
 // Modules/core/core.module.ts
-var config = { url: `${environment.socket_url}/stream`, options: {} };
+var config = { url: `${environment.socket_url}/stream`, options: { autoConnect: false } };
 var _CoreModule = class _CoreModule {
 };
 _CoreModule.\u0275fac = function CoreModule_Factory(t) {
@@ -1143,36 +1143,36 @@ var routes = [
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-5FURBZ4U.js").then((m) => m.MainModule),
+    loadChildren: () => import("./chunk-FST2Q44F.js").then((m) => m.MainModule),
     canActivate: [canActivate]
   },
   {
     path: "chatbot",
-    loadChildren: () => import("./chunk-6HTMIUY5.js").then((m) => m.ChatbotModule),
+    loadChildren: () => import("./chunk-SHYEIONC.js").then((m) => m.ChatbotModule),
     canActivate: [canActivate]
   },
   {
     path: "history",
-    loadChildren: () => import("./chunk-TQOQXRBR.js").then((m) => m.HistoryModule),
+    loadChildren: () => import("./chunk-AKVJ2N66.js").then((m) => m.HistoryModule),
     canActivate: [canActivate]
   },
   {
     path: "membership",
-    loadChildren: () => import("./chunk-PE3G574E.js").then((m) => m.MembershipModule)
+    loadChildren: () => import("./chunk-CUTIDPQK.js").then((m) => m.MembershipModule)
   },
   {
     path: "logic",
-    loadChildren: () => import("./chunk-4DZR7LJK.js").then((m) => m.ChatflowModule),
+    loadChildren: () => import("./chunk-25BFCQP3.js").then((m) => m.ChatflowModule),
     canActivate: [canActivate]
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-TLDLYLP4.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-XWJ3DIDX.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {
     path: "monitoring",
-    loadChildren: () => import("./chunk-TNMNECL6.js").then((m) => m.MonitoringModule),
+    loadChildren: () => import("./chunk-GCFSBXZA.js").then((m) => m.MonitoringModule),
     canActivate: [canActivate, roleGuard],
     data: {
       requiredRoles: [RoleName.SuperAdmin]
@@ -1193,44 +1193,44 @@ var devRoutes = [
   },
   {
     path: "slot",
-    loadChildren: () => import("./chunk-YELOT6FV.js").then((m) => m.SlotModule)
+    loadChildren: () => import("./chunk-25YL2U4M.js").then((m) => m.SlotModule)
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-5FURBZ4U.js").then((m) => m.MainModule),
+    loadChildren: () => import("./chunk-FST2Q44F.js").then((m) => m.MainModule),
     canActivate: [canActivate]
   },
   {
     path: "chatbot",
-    loadChildren: () => import("./chunk-6HTMIUY5.js").then((m) => m.ChatbotModule),
+    loadChildren: () => import("./chunk-SHYEIONC.js").then((m) => m.ChatbotModule),
     canActivate: [canActivate]
   },
   {
     path: "history",
-    loadChildren: () => import("./chunk-TQOQXRBR.js").then((m) => m.HistoryModule),
+    loadChildren: () => import("./chunk-AKVJ2N66.js").then((m) => m.HistoryModule),
     canActivate: [canActivate]
   },
   {
     path: "membership",
-    loadChildren: () => import("./chunk-PE3G574E.js").then((m) => m.MembershipModule)
+    loadChildren: () => import("./chunk-CUTIDPQK.js").then((m) => m.MembershipModule)
   },
   {
     path: "logic",
-    loadChildren: () => import("./chunk-4DZR7LJK.js").then((m) => m.ChatflowModule),
+    loadChildren: () => import("./chunk-25BFCQP3.js").then((m) => m.ChatflowModule),
     canActivate: [canActivate]
   },
   {
     path: "sketchflow",
-    loadChildren: () => import("./chunk-RYNHKXN7.js").then((m) => m.SketchflowModule)
+    loadChildren: () => import("./chunk-M3YE66GG.js").then((m) => m.SketchflowModule)
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-TLDLYLP4.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-XWJ3DIDX.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {
     path: "monitoring",
-    loadChildren: () => import("./chunk-TNMNECL6.js").then((m) => m.MonitoringModule),
+    loadChildren: () => import("./chunk-GCFSBXZA.js").then((m) => m.MonitoringModule),
     canActivate: [canActivate, roleGuard],
     data: {
       requiredRoles: [RoleName.SuperAdmin]
@@ -1238,7 +1238,7 @@ var devRoutes = [
   },
   {
     path: "editor",
-    loadChildren: () => import("./chunk-GCSOHRKL.js").then((m) => m.EditorModule)
+    loadChildren: () => import("./chunk-2NKQJFWY.js").then((m) => m.EditorModule)
   },
   {
     path: "**",
@@ -1284,6 +1284,20 @@ var DrawType;
 var _SvgBackground = class _SvgBackground {
   constructor() {
     this.d3 = src_exports;
+    this.gradientColorsDark = {
+      backGradient1: {
+        color1: "rgba(40, 218, 243, 1)",
+        color2: "rgba(40, 218, 243, 0)"
+      },
+      backGradient2: {
+        color1: "rgba(110, 42, 243, 1)",
+        color2: "rgba(110, 42, 243, 0)"
+      },
+      backGradient3: {
+        color1: "rgba(40, 104, 243, 1)",
+        color2: "rgba(40, 104, 243, 0)"
+      }
+    };
   }
   ngOnInit() {
     this.baseInit();
@@ -1296,61 +1310,138 @@ var _SvgBackground = class _SvgBackground {
   baseInit(isCursor = false) {
     this.componentSVG = this.d3.select(this.canvasElement.nativeElement);
   }
+  // private gradientColorsDark = {
+  //   backGradient1: {
+  //     color1: 'rgba(10, 54, 60, 1)',  // 더욱 어두운 파란색
+  //     color2: 'rgba(10, 54, 60, 0)', 
+  //   },
+  //   backGradient2: {
+  //     color1: 'rgba(27, 10, 60, 1)',  // 더욱 어두운 보라색
+  //     color2: 'rgba(27, 10, 60, 0)', 
+  //   },
+  //   backGradient3: {
+  //     color1: 'rgba(10, 26, 60, 1)',  // 더욱 어두운 파란색
+  //     color2: 'rgba(10, 26, 60, 0)', 
+  //   },
+  // };
+  // 색상 변경 함수 추가
+  changeColorsToWhite() {
+    this.gradientColorsDark = {
+      backGradient1: {
+        color1: "rgba(255, 255, 255, 1)",
+        color2: "rgba(255, 255, 255, 0)"
+      },
+      backGradient2: {
+        color1: "rgba(240, 240, 240, 1)",
+        color2: "rgba(240, 240, 240, 0)"
+      },
+      backGradient3: {
+        color1: "rgba(220, 220, 220, 1)",
+        color2: "rgba(220, 220, 220, 0)"
+      }
+    };
+    this.updategradientColorsDark();
+  }
+  // SVG 그라디언트 색상 업데이트 함수
+  updategradientColorsDark() {
+    select_default(`#backGradient1`).selectAll("stop").data(Object.values(this.gradientColorsDark.backGradient1)).attr("stop-color", (d) => d);
+    select_default(`#backGradient2`).selectAll("stop").data(Object.values(this.gradientColorsDark.backGradient2)).attr("stop-color", (d) => d);
+    select_default(`#backGradient3`).selectAll("stop").data(Object.values(this.gradientColorsDark.backGradient3)).attr("stop-color", (d) => d);
+  }
   createLayout() {
-    this.createGradientRect("backGradient1", "rgba(40, 218, 243, 1)", "rgba(40, 218, 243, 0)", "0.441602%", "34s", "13.744%", "1.18473%", {
-      attributeName: "x",
-      dur: "20s",
-      values: "25%;0%;25%",
-      repeatCount: "indefinite"
-    }, {
-      attributeName: "y",
-      dur: "21s",
-      values: "0%;25%;0%",
-      repeatCount: "indefinite"
-    }, {
-      attributeName: "transform",
-      type: "rotate",
-      from: "0 50 50",
-      to: "360 50 50",
-      dur: "7s",
-      repeatCount: "indefinite"
-    }, "rotate(334.41 50 50)");
-    this.createGradientRect("backGradient2", "rgba(110, 42, 243, 1)", "rgba(110, 42, 243, 0)", "2.68147%", "23.5s", "-2.17916%", "35.4267%", {
-      attributeName: "x",
-      dur: "23s",
-      values: "-25%;0%;-25%",
-      repeatCount: "indefinite"
-    }, {
-      attributeName: "y",
-      dur: "24s",
-      values: "0%;50%;0%",
-      repeatCount: "indefinite"
-    }, {
-      attributeName: "transform",
-      type: "rotate",
-      from: "0 50 50",
-      to: "360 50 50",
-      dur: "12s",
-      repeatCount: "indefinite"
-    }, "rotate(255.072 50 50)");
-    this.createGradientRect("backGradient3", "rgba(40, 104, 243, 1)", "rgba(40, 104, 243, 0)", "0.836536%", "21.5s", "9.00483%", "14.5733%", {
-      attributeName: "x",
-      dur: "25s",
-      values: "0%;25%;0%",
-      repeatCount: "indefinite"
-    }, {
-      attributeName: "y",
-      dur: "12s",
-      values: "0%;25%;0%",
-      repeatCount: "indefinite"
-    }, {
-      attributeName: "transform",
-      type: "rotate",
-      from: "360 50 50",
-      to: "0 50 50",
-      dur: "9s",
-      repeatCount: "indefinite"
-    }, "rotate(139.903 50 50)");
+    this.createGradientRect(
+      "backGradient1",
+      this.gradientColorsDark.backGradient1.color1,
+      // 전역 색상 사용
+      this.gradientColorsDark.backGradient1.color2,
+      "0.441602%",
+      "34s",
+      "13.744%",
+      "1.18473%",
+      {
+        attributeName: "x",
+        dur: "20s",
+        values: "25%;0%;25%",
+        repeatCount: "indefinite"
+      },
+      {
+        attributeName: "y",
+        dur: "21s",
+        values: "0%;25%;0%",
+        repeatCount: "indefinite"
+      },
+      {
+        attributeName: "transform",
+        type: "rotate",
+        from: "0 50 50",
+        to: "360 50 50",
+        dur: "7s",
+        repeatCount: "indefinite"
+      },
+      "rotate(334.41 50 50)"
+    );
+    this.createGradientRect(
+      "backGradient2",
+      this.gradientColorsDark.backGradient2.color1,
+      // 전역 색상 사용
+      this.gradientColorsDark.backGradient2.color2,
+      "2.68147%",
+      "23.5s",
+      "-2.17916%",
+      "35.4267%",
+      {
+        attributeName: "x",
+        dur: "23s",
+        values: "-25%;0%;-25%",
+        repeatCount: "indefinite"
+      },
+      {
+        attributeName: "y",
+        dur: "24s",
+        values: "0%;50%;0%",
+        repeatCount: "indefinite"
+      },
+      {
+        attributeName: "transform",
+        type: "rotate",
+        from: "0 50 50",
+        to: "360 50 50",
+        dur: "12s",
+        repeatCount: "indefinite"
+      },
+      "rotate(255.072 50 50)"
+    );
+    this.createGradientRect(
+      "backGradient3",
+      this.gradientColorsDark.backGradient3.color1,
+      // 전역 색상 사용
+      this.gradientColorsDark.backGradient3.color2,
+      "0.836536%",
+      "21.5s",
+      "9.00483%",
+      "14.5733%",
+      {
+        attributeName: "x",
+        dur: "25s",
+        values: "0%;25%;0%",
+        repeatCount: "indefinite"
+      },
+      {
+        attributeName: "y",
+        dur: "12s",
+        values: "0%;25%;0%",
+        repeatCount: "indefinite"
+      },
+      {
+        attributeName: "transform",
+        type: "rotate",
+        from: "360 50 50",
+        to: "0 50 50",
+        dur: "9s",
+        repeatCount: "indefinite"
+      },
+      "rotate(139.903 50 50)"
+    );
   }
   createAnimate(node, value) {
     const item = node.append("animate").attr("attributeName", value.attributeName).attr("values", value.values).attr("keyTimes", value.keyTimes).attr("dur", value.dur).attr("repeatCount", value.repeatCount).attr("begin", value.begin);
@@ -1479,7 +1570,7 @@ _AppModule.\u0275inj = /* @__PURE__ */ \u0275\u0275defineInjector({ providers: [
 ] });
 var AppModule = _AppModule;
 \u0275\u0275setComponentScope(AppComponent, function() {
-  return [HeaderComponent, RouterOutlet, SvgBackground];
+  return [NgIf, HeaderComponent, RouterOutlet, SvgBackground];
 }, []);
 
 // src/main.ts
