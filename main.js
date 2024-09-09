@@ -25,7 +25,7 @@ import {
 import {
   HeaderComponent,
   SharedModule
-} from "./chunk-UD4ZWNTN.js";
+} from "./chunk-7EJGC4OO.js";
 import "./chunk-ZG6TFU3E.js";
 import {
   AppComponent,
@@ -1143,31 +1143,31 @@ var routes = [
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-FST2Q44F.js").then((m) => m.MainModule),
+    loadChildren: () => import("./chunk-WIOWLOLV.js").then((m) => m.MainModule),
     canActivate: [canActivate]
   },
   {
     path: "chatbot",
-    loadChildren: () => import("./chunk-SHYEIONC.js").then((m) => m.ChatbotModule),
+    loadChildren: () => import("./chunk-QJUJLJY4.js").then((m) => m.ChatbotModule),
     canActivate: [canActivate]
   },
   {
     path: "history",
-    loadChildren: () => import("./chunk-AKVJ2N66.js").then((m) => m.HistoryModule),
+    loadChildren: () => import("./chunk-RXFWRPXR.js").then((m) => m.HistoryModule),
     canActivate: [canActivate]
   },
   {
     path: "membership",
-    loadChildren: () => import("./chunk-CUTIDPQK.js").then((m) => m.MembershipModule)
+    loadChildren: () => import("./chunk-RUBI4WAV.js").then((m) => m.MembershipModule)
   },
   {
     path: "logic",
-    loadChildren: () => import("./chunk-25BFCQP3.js").then((m) => m.ChatflowModule),
+    loadChildren: () => import("./chunk-NCD3TRWV.js").then((m) => m.ChatflowModule),
     canActivate: [canActivate]
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-XWJ3DIDX.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-AZBQ6ARA.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {
@@ -1193,39 +1193,39 @@ var devRoutes = [
   },
   {
     path: "slot",
-    loadChildren: () => import("./chunk-25YL2U4M.js").then((m) => m.SlotModule)
+    loadChildren: () => import("./chunk-SOL5AUIN.js").then((m) => m.SlotModule)
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-FST2Q44F.js").then((m) => m.MainModule),
+    loadChildren: () => import("./chunk-WIOWLOLV.js").then((m) => m.MainModule),
     canActivate: [canActivate]
   },
   {
     path: "chatbot",
-    loadChildren: () => import("./chunk-SHYEIONC.js").then((m) => m.ChatbotModule),
+    loadChildren: () => import("./chunk-QJUJLJY4.js").then((m) => m.ChatbotModule),
     canActivate: [canActivate]
   },
   {
     path: "history",
-    loadChildren: () => import("./chunk-AKVJ2N66.js").then((m) => m.HistoryModule),
+    loadChildren: () => import("./chunk-RXFWRPXR.js").then((m) => m.HistoryModule),
     canActivate: [canActivate]
   },
   {
     path: "membership",
-    loadChildren: () => import("./chunk-CUTIDPQK.js").then((m) => m.MembershipModule)
+    loadChildren: () => import("./chunk-RUBI4WAV.js").then((m) => m.MembershipModule)
   },
   {
     path: "logic",
-    loadChildren: () => import("./chunk-25BFCQP3.js").then((m) => m.ChatflowModule),
+    loadChildren: () => import("./chunk-NCD3TRWV.js").then((m) => m.ChatflowModule),
     canActivate: [canActivate]
   },
   {
     path: "sketchflow",
-    loadChildren: () => import("./chunk-M3YE66GG.js").then((m) => m.SketchflowModule)
+    loadChildren: () => import("./chunk-OK3WFPYR.js").then((m) => m.SketchflowModule)
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-XWJ3DIDX.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-AZBQ6ARA.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {

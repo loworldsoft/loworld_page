@@ -1,11 +1,11 @@
 import {
   ChatHistoryRest,
   ListComponent
-} from "./chunk-JIC45RKI.js";
+} from "./chunk-4DU3AKEP.js";
 import {
   SharedModule,
   SplitterDirective
-} from "./chunk-UD4ZWNTN.js";
+} from "./chunk-7EJGC4OO.js";
 import "./chunk-ZG6TFU3E.js";
 import {
   GlobalService,
@@ -273,4 +273,4 @@ var ChatbotModule = _ChatbotModule;
 export {
   ChatbotModule
 };
-//# sourceMappingURL=chunk-SHYEIONC.js.map
+//# sourceMappingURL=chunk-QJUJLJY4.js.map
