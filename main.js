@@ -1193,12 +1193,11 @@ var devRoutes = [
   },
   {
     path: "slot",
-    loadChildren: () => import("./chunk-SOL5AUIN.js").then((m) => m.SlotModule)
+    loadChildren: () => import("./chunk-U6SCWHUE.js").then((m) => m.SlotModule)
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-WIOWLOLV.js").then((m) => m.MainModule),
-    canActivate: [canActivate]
+    loadChildren: () => import("./chunk-WIOWLOLV.js").then((m) => m.MainModule)
   },
   {
     path: "chatbot",
