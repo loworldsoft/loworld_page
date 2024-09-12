@@ -1,11 +1,6 @@
 {
   "version": 3,
-  "sources": [],
-  "sourcesContent": [],
-  "mappings": "",
-  "names": []
-}
-onent.scss"],
+  "sources": ["Modules/pages/chatflow/components/details/select/select.component.scss"],
   "sourcesContent": ["mat-form-field {\r\n  width: 100%;\r\n}"],
   "mappings": ";AAAA;AACE,SAAA;;",
   "names": []

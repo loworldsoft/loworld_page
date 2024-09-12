@@ -1,7 +1,11 @@
 {
   "version": 3,
-  "sources": ["Modules/pages/chatbot/components/bottom-sheet/bottom-sheet.component.scss"],
-  "sourcesContent": [".full-bottom-sheet {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.bottom-sheet-top {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}"],
+  "sources": ["Modules/shared/components/molecules/bottom-sheet/bottom-sheet.component.scss"],
+  "sourcesContent": [".bottom-sheet-top {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,eAAA;AACA,mBAAA;;",
+  "names": []
+}
+,
   "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,kBAAA;;AAGF,CAAA;AACE,WAAA;AACA,eAAA;AACA,mBAAA;;",
   "names": []
 }
