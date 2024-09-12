@@ -154,7 +154,7 @@ _NotionComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type:
     \u0275\u0275text(114, "[\uBE0C\uB77C\uC6B0\uC800\uC5D0\uC11C \uD638\uCD9C]");
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(115, "figure", 42)(116, "a", 43)(117, "div", 34)(118, "div", 35)(119, "div", 36);
-    \u0275\u0275text(120, "persona on server api using javascript");
+    \u0275\u0275text(120, "on server api using javascript");
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(121, "div", 37);
     \u0275\u0275element(122, "img", 38);
