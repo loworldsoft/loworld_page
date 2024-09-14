@@ -5,8 +5,8 @@
   "mappings": "",
   "names": []
 }
-ent.scss"],
-  "sourcesContent": ["mat-form-field {\r\n  width: 100%;\r\n}"],
-  "mappings": ";AAAA;AACE,SAAA;;",
+.scss"],
+  "sourcesContent": [".form-field {\r\n  //flex: 1; /* form-field가 가능한 많은 공간을 차지하도록 설정 */\r\n  width: 100%;\r\n  height: 100%;\r\n}"],
+  "mappings": ";AAAA,CAAA;AAEE,SAAA;AACA,UAAA;;",
   "names": []
 }
