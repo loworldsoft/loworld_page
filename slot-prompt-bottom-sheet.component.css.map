@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["Modules/pages/slots/slot/prompt-bottom-sheet/slot-prompt-bottom-sheet.component.scss"],
-  "sourcesContent": [".full-bottom-sheet {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.bottom-sheet-top {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n.example-form {\r\n  min-width: 150px;\r\n  max-width: 500px;\r\n  width: 100%;\r\n}\r\n\r\n.example-full-width {\r\n  width: 100%;\r\n}\r\n\r\n.example-option-img {\r\n  vertical-align: middle;\r\n  margin-right: 8px;\r\n}\r\n\r\n[dir='rtl'] .example-option-img {\r\n  margin-right: 0;\r\n  margin-left: 8px;\r\n}"],
+  "sourcesContent": [".full-bottom-sheet {\n  display: flex;\n  flex-direction: column;\n}\n\n.bottom-sheet-top {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.example-form {\n  min-width: 150px;\n  max-width: 500px;\n  width: 100%;\n}\n\n.example-full-width {\n  width: 100%;\n}\n\n.example-option-img {\n  vertical-align: middle;\n  margin-right: 8px;\n}\n\n[dir='rtl'] .example-option-img {\n  margin-right: 0;\n  margin-left: 8px;\n}"],
   "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,kBAAA;;AAGF,CAAA;AACE,WAAA;AACA,eAAA;AACA,mBAAA;;AAGF,CAAA;AACE,aAAA;AACA,aAAA;AACA,SAAA;;AAGF,CAAA;AACE,SAAA;;AAGF,CAAA;AACE,kBAAA;AACA,gBAAA;;AAGF,CAAA,SAAA,CALA;AAME,gBAAA;AACA,eAAA;;",
   "names": []
 }

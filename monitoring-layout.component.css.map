@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["Modules/pages/monitoring/components/monitoring-layout/monitoring-layout.component.scss"],
-  "sourcesContent": [".example-spacer {\r\n    flex: 1 1 auto;\r\n}\r\n\r\n// .container {\r\n//     width: 100%;\r\n// }\r\n\r\n// .container-body{\r\n//     width: 100%;\r\n//     display: flex;\r\n// }"],
+  "sourcesContent": [".example-spacer {\n    flex: 1 1 auto;\n}\n\n// .container {\n//     width: 100%;\n// }\n\n// .container-body{\n//     width: 100%;\n//     display: flex;\n// }"],
   "mappings": ";AAAA,CAAA;AACI,QAAA,EAAA,EAAA;;",
   "names": []
 }

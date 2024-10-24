@@ -6,7 +6,7 @@
   "names": []
 }
 onent.scss"],
-  "sourcesContent": ["mat-form-field {\r\n  width: 100%;\r\n}"],
+  "sourcesContent": ["mat-form-field {\n  width: 100%;\n}"],
   "mappings": ";AAAA;AACE,SAAA;;",
   "names": []
 }

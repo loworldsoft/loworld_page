@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["Modules/pages/membership/molecules/radio-field/radio-field.component.scss"],
-  "sourcesContent": [".inner-form {\r\n    display: flex;\r\n    flex-direction: row;\r\n    width: 90%;\r\n    text-align: left;\r\n    font-size: 16px;\r\n    padding-left: 10px;\r\n}\r\n\r\n.item-left {\r\n    width: 30%;\r\n}\r\n\r\n.item-right {\r\n    width: 100%;\r\n}\r\n\r\n.form-row {\r\n    margin-top: 18px;\r\n}\r\n\r\n.form-radio {\r\n    margin-top: 10px;\r\n}"],
+  "sourcesContent": [".inner-form {\n    display: flex;\n    flex-direction: row;\n    width: 90%;\n    text-align: left;\n    font-size: 16px;\n    padding-left: 10px;\n}\n\n.item-left {\n    width: 30%;\n}\n\n.item-right {\n    width: 100%;\n}\n\n.form-row {\n    margin-top: 18px;\n}\n\n.form-radio {\n    margin-top: 10px;\n}"],
   "mappings": ";AAAA,CAAA;AACI,WAAA;AACA,kBAAA;AACA,SAAA;AACA,cAAA;AACA,aAAA;AACA,gBAAA;;AAGJ,CAAA;AACI,SAAA;;AAGJ,CAAA;AACI,SAAA;;AAGJ,CAAA;AACI,cAAA;;AAGJ,CAAA;AACI,cAAA;;",
   "names": []
 }

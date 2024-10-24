@@ -4,7 +4,7 @@ import {
   pvFailureAction,
   pvSuccessAction,
   selectMonth
-} from "./chunk-3ZICMNMA.js";
+} from "./chunk-KB5ZQKYN.js";
 import {
   select_default,
   src_exports
@@ -21,12 +21,12 @@ import {
 import {
   canActivate,
   roleGuard
-} from "./chunk-V2AFS6GB.js";
+} from "./chunk-LVLHTED7.js";
 import {
   HeaderComponent,
   SharedModule
-} from "./chunk-7EJGC4OO.js";
-import "./chunk-ZG6TFU3E.js";
+} from "./chunk-P7S4K4IA.js";
+import "./chunk-ITDXBH2M.js";
 import {
   AppComponent,
   JwtModule,
@@ -40,7 +40,7 @@ import {
   sortExpansionPanelBox,
   triggerAction,
   updateNode
-} from "./chunk-3LOGTTFB.js";
+} from "./chunk-EHYLDEJU.js";
 import {
   BrowserModule,
   DateTime,
@@ -65,7 +65,7 @@ import {
   platformBrowser,
   props,
   select
-} from "./chunk-WDMB75ZP.js";
+} from "./chunk-H75O5MZX.js";
 import "./chunk-JBIIG4YR.js";
 import {
   ANIMATION_MODULE_TYPE,
@@ -1143,36 +1143,36 @@ var routes = [
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-Z62JVD2H.js").then((m) => m.MainModule),
+    loadChildren: () => import("./chunk-NQ7A7WAQ.js").then((m) => m.MainModule),
     canActivate: [canActivate]
   },
   {
     path: "chatbot",
-    loadChildren: () => import("./chunk-QJUJLJY4.js").then((m) => m.ChatbotModule),
+    loadChildren: () => import("./chunk-OC44ISWH.js").then((m) => m.ChatbotModule),
     canActivate: [canActivate]
   },
   {
     path: "history",
-    loadChildren: () => import("./chunk-RXFWRPXR.js").then((m) => m.HistoryModule),
+    loadChildren: () => import("./chunk-4IO7AZ7K.js").then((m) => m.HistoryModule),
     canActivate: [canActivate]
   },
   {
     path: "membership",
-    loadChildren: () => import("./chunk-RUBI4WAV.js").then((m) => m.MembershipModule)
+    loadChildren: () => import("./chunk-Y7OYFBLA.js").then((m) => m.MembershipModule)
   },
   {
     path: "logic",
-    loadChildren: () => import("./chunk-NCD3TRWV.js").then((m) => m.ChatflowModule),
+    loadChildren: () => import("./chunk-HLBEWVLH.js").then((m) => m.ChatflowModule),
     canActivate: [canActivate]
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-AZBQ6ARA.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-HWSXUXDL.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {
     path: "monitoring",
-    loadChildren: () => import("./chunk-GCFSBXZA.js").then((m) => m.MonitoringModule),
+    loadChildren: () => import("./chunk-MZVLQLWB.js").then((m) => m.MonitoringModule),
     canActivate: [canActivate, roleGuard],
     data: {
       requiredRoles: [RoleName.SuperAdmin]
@@ -1193,43 +1193,43 @@ var devRoutes = [
   },
   {
     path: "slot",
-    loadChildren: () => import("./chunk-MGDUXYJD.js").then((m) => m.SlotModule)
+    loadChildren: () => import("./chunk-OMUTE6UV.js").then((m) => m.SlotModule)
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-Z62JVD2H.js").then((m) => m.MainModule)
+    loadChildren: () => import("./chunk-NQ7A7WAQ.js").then((m) => m.MainModule)
   },
   {
     path: "chatbot",
-    loadChildren: () => import("./chunk-QJUJLJY4.js").then((m) => m.ChatbotModule),
+    loadChildren: () => import("./chunk-OC44ISWH.js").then((m) => m.ChatbotModule),
     canActivate: [canActivate]
   },
   {
     path: "history",
-    loadChildren: () => import("./chunk-RXFWRPXR.js").then((m) => m.HistoryModule),
+    loadChildren: () => import("./chunk-4IO7AZ7K.js").then((m) => m.HistoryModule),
     canActivate: [canActivate]
   },
   {
     path: "membership",
-    loadChildren: () => import("./chunk-RUBI4WAV.js").then((m) => m.MembershipModule)
+    loadChildren: () => import("./chunk-Y7OYFBLA.js").then((m) => m.MembershipModule)
   },
   {
     path: "logic",
-    loadChildren: () => import("./chunk-NCD3TRWV.js").then((m) => m.ChatflowModule),
+    loadChildren: () => import("./chunk-HLBEWVLH.js").then((m) => m.ChatflowModule),
     canActivate: [canActivate]
   },
   {
     path: "sketchflow",
-    loadChildren: () => import("./chunk-OK3WFPYR.js").then((m) => m.SketchflowModule)
+    loadChildren: () => import("./chunk-OCIQT7BJ.js").then((m) => m.SketchflowModule)
   },
   {
     path: "category-manage",
-    loadChildren: () => import("./chunk-AZBQ6ARA.js").then((m) => m.CategoryManageModule),
+    loadChildren: () => import("./chunk-HWSXUXDL.js").then((m) => m.CategoryManageModule),
     canActivate: [canActivate]
   },
   {
     path: "monitoring",
-    loadChildren: () => import("./chunk-GCFSBXZA.js").then((m) => m.MonitoringModule),
+    loadChildren: () => import("./chunk-MZVLQLWB.js").then((m) => m.MonitoringModule),
     canActivate: [canActivate, roleGuard],
     data: {
       requiredRoles: [RoleName.SuperAdmin]
@@ -1237,7 +1237,7 @@ var devRoutes = [
   },
   {
     path: "editor",
-    loadChildren: () => import("./chunk-2NKQJFWY.js").then((m) => m.EditorModule)
+    loadChildren: () => import("./chunk-XXZHH6GF.js").then((m) => m.EditorModule)
   },
   {
     path: "**",
@@ -1520,7 +1520,7 @@ _SvgBackground.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _
 }, encapsulation: 2 });
 var SvgBackground = _SvgBackground;
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SvgBackground, { className: "SvgBackground", filePath: "src\\app\\svg\\background.svg.ts", lineNumber: 34 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SvgBackground, { className: "SvgBackground" });
 })();
 
 // src/app/app.module.ts

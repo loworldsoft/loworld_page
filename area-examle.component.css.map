@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["Modules/pages/monitoring/components/area-examle/area-examle.component.scss"],
-  "sourcesContent": ["    // rect {\r\n    //     pointer-events: all;\r\n    //     fill-opacity: 0;\r\n    //     stroke-opacity: 0;\r\n    //     z-index: 1;\r\n    // }\r\n\r\n    .chart-tooltip {\r\n        position: absolute;\r\n        padding: 5px;\r\n        background-color: rgb(11, 40, 65);\r\n        color: white;\r\n        border: 0px solid white;\r\n        border-radius: 0px;\r\n        display: none;\r\n        opacity: .75;\r\n        font-size: 14px;\r\n    }\r\n\r\n    .tooltip-line {\r\n        stroke-opacity: 0.5;\r\n    }"],
+  "sourcesContent": ["    // rect {\n    //     pointer-events: all;\n    //     fill-opacity: 0;\n    //     stroke-opacity: 0;\n    //     z-index: 1;\n    // }\n\n    .chart-tooltip {\n        position: absolute;\n        padding: 5px;\n        background-color: rgb(11, 40, 65);\n        color: white;\n        border: 0px solid white;\n        border-radius: 0px;\n        display: none;\n        opacity: .75;\n        font-size: 14px;\n    }\n\n    .tooltip-line {\n        stroke-opacity: 0.5;\n    }"],
   "mappings": ";AAOI,CAAA;AACI,YAAA;AACA,WAAA;AACA,oBAAA,IAAA,EAAA,EAAA,EAAA,EAAA;AACA,SAAA;AACA,UAAA,IAAA,MAAA;AACA,iBAAA;AACA,WAAA;AACA,WAAA;AACA,aAAA;;AAGJ,CAAA;AACI,kBAAA;;",
   "names": []
 }

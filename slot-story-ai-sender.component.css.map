@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["Modules/pages/slots/items/slot-story-ai-sender/slot-story-ai-sender.component.scss"],
-  "sourcesContent": [".shimmer-container {\r\n  overflow: hidden;\r\n}\r\n$gemini-blue: #0062ff;\r\n$gemini-orange: #ff9900;\r\n.shimmer-animation {\r\n  width: 100%;\r\n  height: 100%;\r\n  background: linear-gradient(-45deg, $gemini-blue 25%, $gemini-orange 50%, $gemini-blue 75%);\r\n  background-size: 400% 400%;\r\n  animation: shimmer 2s linear infinite;\r\n}\r\n\r\n@keyframes shimmer {\r\n  0% { background-position: 0% 0%; }\r\n  100% { background-position: 100% 100%; }\r\n}"],
+  "sourcesContent": [".shimmer-container {\n  overflow: hidden;\n}\n$gemini-blue: #0062ff;\n$gemini-orange: #ff9900;\n.shimmer-animation {\n  width: 100%;\n  height: 100%;\n  background: linear-gradient(-45deg, $gemini-blue 25%, $gemini-orange 50%, $gemini-blue 75%);\n  background-size: 400% 400%;\n  animation: shimmer 2s linear infinite;\n}\n\n@keyframes shimmer {\n  0% { background-position: 0% 0%; }\n  100% { background-position: 100% 100%; }\n}"],
   "mappings": ";AAAA,CAAA;AACE,YAAA;;AAIF,CAAA;AACE,SAAA;AACA,UAAA;AACA;IAAA;MAAA,MAAA;MAAA,QAAA,GAAA;MAAA,QAAA,GAAA;MAAA,QAAA;AACA,mBAAA,KAAA;AACA,aAAA,QAAA,GAAA,OAAA;;AAGF,WAHE;AAIA;AAAK,yBAAA,GAAA;;AACL;AAAO,yBAAA,KAAA;;;",
   "names": []
 }

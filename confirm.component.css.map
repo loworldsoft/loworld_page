@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["Modules/pages/membership/components/dialogs/confirm/confirm.component.scss"],
-  "sourcesContent": [".container {\r\n    width: 100%;\r\n}\r\n\r\n// .container-title{\r\n//     color: #3f51b5;\r\n// }\r\n\r\n.container-body{\r\n    width: 80%;\r\n    margin: auto;\r\n    margin-bottom: 10px;\r\n}\r\n\r\n.container-message{\r\n    font-size: 15px;\r\n}\r\n\r\n.divider {\r\n    margin-top: 10px;\r\n    margin-bottom: 10px;\r\n}\r\n\r\n.spacer{\r\n    margin-left: 10px;\r\n}\r\n\r\n.container-bottom {\r\n    margin-top: 10px;\r\n    margin-bottom: 20px;\r\n}"],
+  "sourcesContent": [".container {\n    width: 100%;\n}\n\n// .container-title{\n//     color: #3f51b5;\n// }\n\n.container-body{\n    width: 80%;\n    margin: auto;\n    margin-bottom: 10px;\n}\n\n.container-message{\n    font-size: 15px;\n}\n\n.divider {\n    margin-top: 10px;\n    margin-bottom: 10px;\n}\n\n.spacer{\n    margin-left: 10px;\n}\n\n.container-bottom {\n    margin-top: 10px;\n    margin-bottom: 20px;\n}"],
   "mappings": ";AAAA,CAAA;AACI,SAAA;;AAOJ,CAAA;AACI,SAAA;AACA,UAAA;AACA,iBAAA;;AAGJ,CAAA;AACI,aAAA;;AAGJ,CAAA;AACI,cAAA;AACA,iBAAA;;AAGJ,CAAA;AACI,eAAA;;AAGJ,CAAA;AACI,cAAA;AACA,iBAAA;;",
   "names": []
 }

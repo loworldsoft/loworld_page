@@ -1,7 +1,7 @@
 {
   "version": 3,
-  "sources": ["Modules/pages/membership/components/dialogs/dialog-layout/header/header.component.scss"],
-  "sourcesContent": [".card-header-content {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    width: 100%;\r\n}\r\n\r\n.divider{\r\n    margin-top: 10px;\r\n}"],
-  "mappings": ";AAAA,CAAA;AACI,WAAA;AACA,mBAAA;AACA,eAAA;AACA,SAAA;;AAGJ,CAAA;AACI,cAAA;;",
+  "sources": ["Modules/shared/components/layouts/header/header.component.scss"],
+  "sourcesContent": [".example-spacer {\n  flex: 1 1 auto;\n}\n\n// .select-nav:focus {\n//   margin-top: 10px;\n//   outline: none;\n//   color: #2cc02c !important;\n//   border-bottom: 1px solid #2cc02c;\n// }\n\n.select {\n  margin-top: 10px;\n  outline: none;\n  color: rgb(33, 33, 94, 0.8) !important;\n  border-bottom: 5px solid rgb(33, 33, 94, 0.8);\n}\n\n.color-green {\n  color: #3584ce;\n}\n\n.color-white {\n  color: rgb(59, 59, 59);\n}\nli a {\n  color:rgb(59, 59, 59);\n  padding: 10px 0 13px 0;\n  font-size: 18px;\n  font-weight: 500;\n}\n\nli a:hover {\n  color:rgb(33, 33, 94, 0.5);\n  border-bottom: 5px solid rgb(33, 33, 94, 0.5);\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,QAAA,EAAA,EAAA;;AAUF,CAAA;AACE,cAAA;AACA,WAAA;AACA,SAAA,KAAA,EAAA,EAAA,EAAA,EAAA,EAAA,EAAA;AACA,iBAAA,IAAA,MAAA,KAAA,EAAA,EAAA,EAAA,EAAA,EAAA,EAAA;;AAGF,CAAA;AACE,SAAA;;AAGF,CAAA;AACE,SAAA,IAAA,EAAA,EAAA,EAAA,EAAA;;AAEF,GAAA;AACE,SAAA,IAAA,EAAA,EAAA,EAAA,EAAA;AACA,WAAA,KAAA,EAAA,KAAA;AACA,aAAA;AACA,eAAA;;AAGF,GAAA,CAAA;AACE,SAAA,KAAA,EAAA,EAAA,EAAA,EAAA,EAAA,EAAA;AACA,iBAAA,IAAA,MAAA,KAAA,EAAA,EAAA,EAAA,EAAA,EAAA,EAAA;;",
   "names": []
 }

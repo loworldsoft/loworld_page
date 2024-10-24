@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["Modules/pages/chatflow/components/atom/card/card.component.scss"],
-  "sourcesContent": [".text-ellipsis {\r\n  // min-width: 100px;\r\n  overflow: hidden; /* 넘치는 내용 숨기기 */\r\n  white-space: nowrap; /* 텍스트를 한 줄로 표시 */\r\n  text-overflow: ellipsis; /* 말줄임표 표시 */\r\n}"],
+  "sourcesContent": [".text-ellipsis {\n  // min-width: 100px;\n  overflow: hidden; /* 넘치는 내용 숨기기 */\n  white-space: nowrap; /* 텍스트를 한 줄로 표시 */\n  text-overflow: ellipsis; /* 말줄임표 표시 */\n}"],
   "mappings": ";;;AAAA,CAAA;AAEE,YAAA;AACA,eAAA;AACA,iBAAA;;",
   "names": []
 }

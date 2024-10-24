@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["Modules/pages/chatbot/components/chat/chat.component.scss"],
-  "sourcesContent": [".full-balloon {\r\n  overflow-y: scroll;\r\n  padding: 2rem 1rem;\r\n}\r\n\r\n.form-full-bottom {\r\n  display: flex;\r\n  flex-direction: column;\r\n  margin-top: 2.5rem;\r\n}\r\n\r\n.form-property, .form-input-bottom {\r\n  display: flex;\r\n  flex-direction: row;\r\n}\r\n\r\n.form-property button {\r\n  flex: 0 0 auto; /* flex-grow: 0, flex-shrink: 0, flex-basis: auto */\r\n}\r\n\r\n.form-field {\r\n  flex: 1; /* form-field가 가능한 많은 공간을 차지하도록 설정 */\r\n}\r\n\r\n/* Button의 크기가 너무 커지지 않도록 조절 */\r\n.form-property button, .form-input-bottom button {\r\n  flex: 0 0 auto; /* flex-grow: 0, flex-shrink: 0, flex-basis: auto */\r\n}\r\n"],
+  "sourcesContent": [".full-balloon {\n  overflow-y: scroll;\n  padding: 2rem 1rem;\n}\n\n.form-full-bottom {\n  display: flex;\n  flex-direction: column;\n  margin-top: 2.5rem;\n}\n\n.form-property, .form-input-bottom {\n  display: flex;\n  flex-direction: row;\n}\n\n.form-property button {\n  flex: 0 0 auto; /* flex-grow: 0, flex-shrink: 0, flex-basis: auto */\n}\n\n.form-field {\n  flex: 1; /* form-field가 가능한 많은 공간을 차지하도록 설정 */\n}\n\n/* Button의 크기가 너무 커지지 않도록 조절 */\n.form-property button, .form-input-bottom button {\n  flex: 0 0 auto; /* flex-grow: 0, flex-shrink: 0, flex-basis: auto */\n}\n"],
   "mappings": ";;;AAAA,CAAA;AACE,cAAA;AACA,WAAA,KAAA;;AAGF,CAAA;AACE,WAAA;AACA,kBAAA;AACA,cAAA;;AAGF,CAAA;AAAA,CAAA;AACE,WAAA;AACA,kBAAA;;AAGF,CALA,cAKA;AACE,QAAA,EAAA,EAAA;;AAGF,CAAA;AACE,QAAA;;AAIF,CAdA,cAcA;AAAA,CAdA,kBAcA;AACE,QAAA,EAAA,EAAA;;",
   "names": []
 }
