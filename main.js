@@ -1143,7 +1143,7 @@ var routes = [
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-NQ7A7WAQ.js").then((m) => m.MainModule),
+    loadChildren: () => import("./chunk-ICWRZBHR.js").then((m) => m.MainModule),
     canActivate: [canActivate]
   },
   {
@@ -1193,11 +1193,11 @@ var devRoutes = [
   },
   {
     path: "slot",
-    loadChildren: () => import("./chunk-OMUTE6UV.js").then((m) => m.SlotModule)
+    loadChildren: () => import("./chunk-SMCH4XEI.js").then((m) => m.SlotModule)
   },
   {
     path: "main",
-    loadChildren: () => import("./chunk-NQ7A7WAQ.js").then((m) => m.MainModule)
+    loadChildren: () => import("./chunk-ICWRZBHR.js").then((m) => m.MainModule)
   },
   {
     path: "chatbot",
