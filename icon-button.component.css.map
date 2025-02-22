@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/shared/components/molecules/icon-button/icon-button.component.scss"],
-  "sourcesContent": [".button-layout {\n  display: flex;\n  flex-direction: column;\n  border-radius: 15%;\n  cursor: pointer;\n  padding: 10px 20px;\n  transition: background-color 0.3s;\n}\n\n.button-layout:hover {\n  background-color: #ececec;\n}\n\nmat-icon {\n  display: block; /* 아이콘을 블록 요소로 만들어 세로 정렬 */\n  margin: auto; /* 아이콘 가로 중앙 정렬 */\n}\n"],
-  "mappings": ";;;AAAA,CAAA;AACE,WAAA;AACA,kBAAA;AACA,iBAAA;AACA,UAAA;AACA,WAAA,KAAA;AACA,cAAA,iBAAA;;AAGF,CATA,aASA;AACE,oBAAA;;AAGF;AACE,WAAA;AACA,UAAA;;",
-  "names": []
-}

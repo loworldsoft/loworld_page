@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/pages/monitoring/components/monitoring-layout/usage-graph/usage-graph.component.scss"],
-  "sourcesContent": [".container {\n    width: 100%;\n    margin: 10px;\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n}\n"],
-  "mappings": ";AAAA,CAAA;AACI,SAAA;AACA,UAAA;AACA,WAAA;AACA,kBAAA;AACA,aAAA;;",
-  "names": []
-}

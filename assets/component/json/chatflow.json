@@ -1,0 +1,58 @@
+{
+  "logics": {
+    "scenarios": [
+      {
+        "key": "mrc",
+        "value": [
+          {
+            "id": "655d47f2-bd89-4caf-80f2-c157677bb311",
+            "type": "behavior",
+            "node": {
+              "category": "llm",
+              "result": [
+                "문서 조회 중"
+              ],
+              "isAwait": true
+            },
+            "index": 0,
+            "left": false,
+            "right": false
+          },
+          {
+            "id": "655d47f2-bd89-4caf-80f2-c157677bb311",
+            "type": "behavior",
+            "node": {
+              "category": "speak",
+              "result": [
+                "문서 조회가 끝났습니다."
+              ],
+              "isAwait": true
+            },
+            "index": 1,
+            "left": false,
+            "right": false
+          }
+        ]
+      },
+      {
+        "key": "chatbot",
+        "value": [
+          {
+            "id": "655d47f2-bd89-4caf-80f2-c157677bb311",
+            "type": "behavior",
+            "node": {
+              "category": "llm",
+              "result": [
+                "llm 조회 중"
+              ],
+              "isAwait": true
+            },
+            "index": 0,
+            "left": false,
+            "right": false
+          }
+        ]
+      }
+    ]
+  }
+}

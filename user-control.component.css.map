@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/pages/membership/components/user-control/user-control.component.scss"],
-  "sourcesContent": [".container {\n    width: 95%;\n    margin: auto;\n    padding-top: 10px;\n    padding-bottom: 10px;\n}\n\n.container-header {\n    padding-left: 10px;\n}\n\n.container-body {\n    padding: 10px;\n}\n\n.body-header {\n    display: flex;\n    flex-direction: column;\n    align-items: end;\n    margin-bottom: 10px;\n}\n\n.container-footer {\n    padding: 10px;\n}\n\n.header-title {\n    margin-bottom: 0;\n}\n\n.spacer {\n    margin-right: 10px;\n}\n\n.table-header {\n    text-align: center;\n}\n\n.mat-column-control {\n    text-align: center;\n    width: 20%;\n}"],
-  "mappings": ";AAAA,CAAA;AACI,SAAA;AACA,UAAA;AACA,eAAA;AACA,kBAAA;;AAGJ,CAAA;AACI,gBAAA;;AAGJ,CAAA;AACI,WAAA;;AAGJ,CAAA;AACI,WAAA;AACA,kBAAA;AACA,eAAA;AACA,iBAAA;;AAGJ,CAAA;AACI,WAAA;;AAGJ,CAAA;AACI,iBAAA;;AAGJ,CAAA;AACI,gBAAA;;AAGJ,CAAA;AACI,cAAA;;AAGJ,CAAA;AACI,cAAA;AACA,SAAA;;",
-  "names": []
-}

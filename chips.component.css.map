@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/pages/chatflow/components/atom/chips/chips.component.scss"],
-  "sourcesContent": [".custom-tooltip {\n    white-space: pre-line; /* 줄바꿈 허용 */\n    max-width: 200px; /* 툴팁 최대 너비 설정 */\n}"],
-  "mappings": ";;;AAAA,CAAA;AACI,eAAA;AACA,aAAA;;",
-  "names": []
-}

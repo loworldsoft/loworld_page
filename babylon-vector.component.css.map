@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/pages/slots/components/babylon-vector/babylon-vector.component.scss"],
-  "sourcesContent": ["canvas {\n    width: 100%;\n    height: 70vh\n}\n\n.quiz {\n    z-index: 100;\n    position: absolute;\n}"],
-  "mappings": ";AAAA;AACI,SAAA;AACA,UAAA;;AAGJ,CAAA;AACI,WAAA;AACA,YAAA;;",
-  "names": []
-}

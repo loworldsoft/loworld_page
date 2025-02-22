@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/pages/membership/components/login/login.component.scss"],
-  "sourcesContent": [".container{\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    width: 40%;\n    min-width: 350px;\n    max-width: 500px;\n    padding: 0;\n}\n\n.form-item{\n    display: flex;\n    align-items: start;\n}\n.divider{\n    margin-top: 10px;\n    margin-bottom: 20px;\n}\n\n.custom-form-field {\n    width: 90%;\n    /* 또는 원하는 폭 */\n    font-size: 16px;\n    /* 폰트 크기 조정 */\n}\n\n.btn-bottom{\n    margin-right: 10px;\n}\n\n.container-bottom{\n    width: 90%;\n    margin-right: 15px;\n}\n\n.inner-item{\n    margin-bottom: 10px;\n}\n\n.error-message{\n    color: red;\n}"],
-  "mappings": ";;;AAAA,CAAA;AACI,YAAA;AACA,OAAA;AACA,QAAA;AACA,aAAA,UAAA,IAAA,EAAA;AACA,SAAA;AACA,aAAA;AACA,aAAA;AACA,WAAA;;AAGJ,CAAA;AACI,WAAA;AACA,eAAA;;AAEJ,CAAA;AACI,cAAA;AACA,iBAAA;;AAGJ,CAAA;AACI,SAAA;AAEA,aAAA;;AAIJ,CAAA;AACI,gBAAA;;AAGJ,CAAA;AACI,SAAA;AACA,gBAAA;;AAGJ,CAAA;AACI,iBAAA;;AAGJ,CAAA;AACI,SAAA;;",
-  "names": []
-}

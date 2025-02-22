@@ -1,0 +1,95 @@
+{
+    "projects": [
+      {
+        "status": "not_receive",
+        "startDate": "2024-09-01",
+        "endDate": "2024-09-05",
+        "manager": "김철수",
+        "detail": "프로젝트의 초기 기획과 목표 설정",
+        "projectIdx": "1",
+        "projectName": "프로젝트 기획"
+      },
+      {
+        "status": "receive",
+        "startDate": "2024-09-06",
+        "endDate": "2024-09-10",
+        "manager": "이영희",
+        "detail": "UI/UX 디자인 및 와이어프레임 작성",
+        "projectIdx": "2",
+        "projectName": "디자인 작업"
+      },
+      {
+        "status": "progress",
+        "startDate": "2024-09-03",
+        "endDate": "2024-09-04",
+        "manager": "박민수",
+        "detail": "개발 환경 구축 및 설정",
+        "projectIdx": "3",
+        "projectName": "개발 환경 설정"
+      },
+      {
+        "status": "progress",
+        "startDate": "2024-09-11",
+        "endDate": "2024-09-20",
+        "manager": "최수정",
+        "detail": "React를 이용한 프론트엔드 기능 개발",
+        "projectIdx": "4",
+        "projectName": "프론트엔드 개발"
+      },
+      {
+        "status": "receive",
+        "startDate": "2024-09-11",
+        "endDate": "2024-09-22",
+        "manager": "정우성",
+        "detail": "Node.js를 이용한 백엔드 API 개발",
+        "projectIdx": "5",
+        "projectName": "백엔드 개발"
+      },
+      {
+        "status": "not_receive",
+        "startDate": "2024-09-15",
+        "endDate": "2024-09-17",
+        "manager": "김하나",
+        "detail": "시스템 테스트 케이스 작성 및 계획",
+        "projectIdx": "6",
+        "projectName": "테스트 케이스 작성"
+      },
+      {
+        "status": "progress",
+        "startDate": "2024-09-23",
+        "endDate": "2024-09-25",
+        "manager": "오준호",
+        "detail": "전체 시스템 통합 테스트 수행",
+        "projectIdx": "7",
+        "projectName": "통합 테스트"
+      },
+      {
+        "status": "receive",
+        "startDate": "2024-09-26",
+        "endDate": "2024-09-27",
+        "manager": "유진아",
+        "detail": "테스트 결과에 따른 버그 수정",
+        "projectIdx": "8",
+        "projectName": "버그 수정"
+      },
+      {
+        "status": "complete",
+        "startDate": "2024-09-28",
+        "endDate": "2024-09-29",
+        "manager": "김철수",
+        "detail": "전체 기능 및 UI 최종 검토",
+        "projectIdx": "9",
+        "projectName": "최종 검토"
+      },
+      {
+        "status": "complete",
+        "startDate": "2024-09-30",
+        "endDate": "2024-10-01",
+        "manager": "이지은",
+        "detail": "배포를 위한 최종 준비 및 문서화",
+        "projectIdx": "10",
+        "projectName": "배포 준비"
+      }
+    ],
+    "sibling": ["receive", "progress", "complete"]
+}

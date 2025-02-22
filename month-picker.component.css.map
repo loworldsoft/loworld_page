@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/pages/monitoring/components/month-picker/month-picker.component.scss"],
-  "sourcesContent": [".container{\n    display: flex;\n    border: 1px #d9d9e3 solid;\n    border-radius: 10%;\n    padding-top: 5px;\n    padding-bottom: 5px;\n    margin-left: 10px;\n    margin-right: 10px;\n}\n\n// .month-text{\n    // padding-top: 12px;\n    // font-size: medium;\n// }\n\n.arrow-left{\n    vertical-align: middle;\n    margin-right: 10px;\n    margin-left: 10px;\n    // color: #d9d9e3;\n}\n\n.arrow-right{\n    vertical-align: middle;\n    margin-right: 10px;\n    margin-left: 10px;\n}"],
-  "mappings": ";AAAA,CAAA;AACI,WAAA;AACA,UAAA,IAAA,QAAA;AACA,iBAAA;AACA,eAAA;AACA,kBAAA;AACA,eAAA;AACA,gBAAA;;AAQJ,CAAA;AACI,kBAAA;AACA,gBAAA;AACA,eAAA;;AAIJ,CAAA;AACI,kBAAA;AACA,gBAAA;AACA,eAAA;;",
-  "names": []
-}

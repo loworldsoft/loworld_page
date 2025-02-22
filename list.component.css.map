@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/pages/chatflow/components/atom/list/list.component.scss"],
-  "sourcesContent": [".text-ellipsis {\n  overflow: hidden; /* 넘치는 내용 숨기기 */\n  white-space: nowrap; /* 텍스트를 한 줄로 표시 */\n  text-overflow: ellipsis; /* 말줄임표 표시 */\n}\n\n.checked {\n  font-weight: bold;\n  border-radius: 100px;\n  color: #3584ce\n}\n\n.clicked {\n  font-weight: bold;\n  border-radius: 100px;\n  color: #3584ce !important;\n}\n\n.base {\n  color: rgb(71, 71, 71);\n}\n\n.example-spacer {\n  flex: 1 1 auto;\n}"],
-  "mappings": ";;;AAAA,CAAA;AACE,YAAA;AACA,eAAA;AACA,iBAAA;;AAGF,CAAA;AACE,eAAA;AACA,iBAAA;AACA,SAAA;;AAGF,CAAA;AACE,eAAA;AACA,iBAAA;AACA,SAAA;;AAGF,CAAA;AACE,SAAA,IAAA,EAAA,EAAA,EAAA,EAAA;;AAGF,CAAA;AACE,QAAA,EAAA,EAAA;;",
-  "names": []
-}

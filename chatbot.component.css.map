@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/pages/chatbot/chatbot.component.scss"],
-  "sourcesContent": [".history-scroll {\n  overflow-y: auto;\n  /* Chrome, Edge, Safari 등 웹킷 기반 브라우저용 스크롤바 숨김 */\n  &::-webkit-scrollbar {\n    display: none;\n  }\n  \n  /* Firefox용 스크롤바 숨김 */\n  scrollbar-width: none;\n  \n  /* IE, Edge(구버전)용 스크롤바 숨김 */\n  -ms-overflow-style: none;\n}\n\n.back-color{\n  background: rgba(255, 255, 255, 0.3) !important; \n}"],
-  "mappings": ";;;AAAA,CAAA;AACE,cAAA;AAOA,mBAAA;AAGA,sBAAA;;AARA,CAHF,cAGE;AACE,WAAA;;AAUJ,CAAA;AACE,cAAA,KAAA,GAAA,EAAA,GAAA,EAAA,GAAA,EAAA;;",
-  "names": []
-}

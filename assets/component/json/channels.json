@@ -1,0 +1,410 @@
+{
+    "total_records": 5,
+    "channels": [
+        {
+            "id": "1",
+            "name": "해쭈",
+            "url": "https://www.youtube.com/@HAEJOOOOO",
+            "method": "영상변경",
+            "uploadTime": "매주 목요일 18:30",
+            "videos": [
+                {
+                    "id": "01",
+                    "title": "머리하고 왔는데 어쩐지 많은 것을 닮아버린 유튜버",
+                    "uploadTime": "매주 목요일 18:30",
+                    "status": "수정대기",
+                    "thumbnail": "./assets/component/images/1.jpeg",
+                    "resources": [
+                        {
+                            "id": "4c760bab-44f5-43d0-ab6c-39cbffe64799",
+                            "name": "머리",
+                            "action": "getResource",
+                            "prompt": "미용실에 가서 커트를 했어"
+                        },
+                        {
+                            "id": "26be05ec-f23d-426c-af3f-89166ec243a3",
+                            "name": "야구선수 오타니",
+                            "action": "getResource",
+                            "prompt": "내가 헤어스타일을 바꾸니 야구선수 오타니와 닮았어"
+                        },
+                        {
+                            "id": "cb982721-6540-4e2a-9897-b9271c780118",
+                            "name": "라이브 방송",
+                            "action": "getResource",
+                            "prompt": "영상은 라이브 방송의 형태로 구성되면 좋겠어"
+                        }
+                    ],
+                    "clips": []
+                },
+                {
+                    "id": "02",
+                    "title": "[먹는브이로그] 새해..새로운 나...! 이미 아는 맛도 새로운 마음으로 먹는다...!!!",
+                    "uploadTime": "매주 목요일 18:30",
+                    "status": "수정대기",
+                    "thumbnail": "./assets/component/images/2.jpeg",
+                    "resources": [
+                        {
+                            "id": "d8baf0e6-f8a7-4d7f-b94d-5546e5be6136",
+                            "name": "먹방",
+                            "action": "getResource",
+                            "prompt": "여러가지 음식을 먹는 방송이야"
+                        },
+                        {
+                            "id": "758f7518-ab10-4e07-8f42-6b298bc31764",
+                            "name": "음식 종류",
+                            "action": "getResource",
+                            "prompt": "영상의 주인공은 파스타, 피자, 삼겹살을 먹는 거야"
+                        }
+                    ],
+                    "clips": []
+                },
+                {
+                    "id": "03",
+                    "title": "제주도 신혼여행인 척하는 4박 5일 동안 먹는 브이로그! Our very first Jeju Island trip!",
+                    "uploadTime": "매주 목요일 18:30",
+                    "status": "업로드대기",
+                    "thumbnail": "./assets/component/images/3.jpeg",
+                    "resources": [
+                        {
+                            "id": "f98e0c10-4523-45bd-9faa-60a042fcfca5",
+                            "name": "제주도",
+                            "action": "getResource",
+                            "prompt": "신혼여행으로 제주도 여행을 간 영상이야. 제주도를 처음 방문해"
+                        },
+                        {
+                            "id": "5c5910aa-aa40-4727-9024-fea6f1ae7ac0",
+                            "name": "먹방",
+                            "action": "getResource",
+                            "prompt": "제주도에서 4박 5일동안 제주도 맛집을 다닐거야"
+                        }
+                    ],
+                    "clips": []
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "name": "HAEJOO",
+            "url": "https://www.youtube.com/@HAEJOOOOO",
+            "method": "영상재생산",
+            "uploadTime": "매주 목요일 18:30",
+            "videos": [
+                {
+                    "id": "04",
+                    "title": "머리하고 왔는데 어쩐지 많은 것을 닮아버린 유튜버",
+                    "uploadTime": "매주 목요일 18:30",
+                    "status": "업로드대기",
+                    "thumbnail": "./assets/component/images/1.jpeg",
+                    "resources": [
+                        {
+                            "id": "4c760bab-44f5-43d0-ab6c-39cbffe64799",
+                            "name": "머리",
+                            "action": "getResource",
+                            "prompt": "미용실에 가서 커트를 했어"
+                        },
+                        {
+                            "id": "26be05ec-f23d-426c-af3f-89166ec243a3",
+                            "name": "야구선수 오타니",
+                            "action": "getResource",
+                            "prompt": "내가 헤어스타일을 바꾸니 야구선수 오타니와 닮았어"
+                        },
+                        {
+                            "id": "cb982721-6540-4e2a-9897-b9271c780118",
+                            "name": "라이브 방송",
+                            "action": "getResource",
+                            "prompt": "영상은 라이브 방송의 형태로 구성되면 좋겠어"
+                        }
+                    ],
+                    "clips": []
+                },
+                {
+                    "id": "05",
+                    "title": "[먹는브이로그] 새해..새로운 나...! 이미 아는 맛도 새로운 마음으로 먹는다...!!!",
+                    "uploadTime": "매주 목요일 18:30",
+                    "status": "업로드대기",
+                    "thumbnail": "./assets/component/images/2.jpeg",
+                    "resources": [
+                        {
+                            "id": "d8baf0e6-f8a7-4d7f-b94d-5546e5be6136",
+                            "name": "먹방",
+                            "action": "getResource",
+                            "prompt": "여러가지 음식을 먹는 방송이야"
+                        },
+                        {
+                            "id": "758f7518-ab10-4e07-8f42-6b298bc31764",
+                            "name": "음식 종류",
+                            "action": "getResource",
+                            "prompt": "영상의 주인공은 파스타, 피자, 삼겹살을 먹는 거야"
+                        }
+                    ],
+                    "clips": []
+                },
+                {
+                    "id": "06",
+                    "title": "제주도 신혼여행인 척하는 4박 5일 동안 먹는 브이로그! Our very first Jeju Island trip!",
+                    "uploadTime": "매주 목요일 18:30",
+                    "status": "업로드 완료",
+                    "thumbnail": "./assets/component/images/3.jpeg",
+                    "resources": [
+                        {
+                            "id": "f98e0c10-4523-45bd-9faa-60a042fcfca5",
+                            "name": "제주도",
+                            "action": "getResource",
+                            "prompt": "신혼여행으로 제주도 여행을 간 영상이야. 제주도를 처음 방문해"
+                        },
+                        {
+                            "id": "5c5910aa-aa40-4727-9024-fea6f1ae7ac0",
+                            "name": "먹방",
+                            "action": "getResource",
+                            "prompt": "제주도에서 4박 5일동안 제주도 맛집을 다닐거야"
+                        }
+                    ],
+                    "clips": []
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "name": "[HAEJOO]",
+            "url": "https://www.youtube.com/@HAEJOOOOO",
+            "method": "URL 텍스트",
+            "uploadTime": "매주 목요일 18:30",
+            "videos": [
+                {
+                    "id": "07",
+                    "title": "머리하고 왔는데 어쩐지 많은 것을 닮아버린 유튜버",
+                    "uploadTime": "매주 목요일 18:30",
+                    "status": "업로드 완료",
+                    "thumbnail": "./assets/component/images/1.jpeg",
+                    "resources": [
+                        {
+                            "id": "4c760bab-44f5-43d0-ab6c-39cbffe64799",
+                            "name": "머리",
+                            "action": "getResource",
+                            "prompt": "미용실에 가서 커트를 했어"
+                        },
+                        {
+                            "id": "26be05ec-f23d-426c-af3f-89166ec243a3",
+                            "name": "야구선수 오타니",
+                            "action": "getResource",
+                            "prompt": "내가 헤어스타일을 바꾸니 야구선수 오타니와 닮았어"
+                        },
+                        {
+                            "id": "cb982721-6540-4e2a-9897-b9271c780118",
+                            "name": "라이브 방송",
+                            "action": "getResource",
+                            "prompt": "영상은 라이브 방송의 형태로 구성되면 좋겠어"
+                        }
+                    ],
+                    "clips": []
+                },
+                {
+                    "id": "08",
+                    "title": "[먹는브이로그] 새해..새로운 나...! 이미 아는 맛도 새로운 마음으로 먹는다...!!!",
+                    "uploadTime": "매주 목요일 18:30",
+                    "status": "업로드 완료",
+                    "thumbnail": "./assets/component/images/2.jpeg",
+                    "resources": [
+                        {
+                            "id": "d8baf0e6-f8a7-4d7f-b94d-5546e5be6136",
+                            "name": "먹방",
+                            "action": "getResource",
+                            "prompt": "여러가지 음식을 먹는 방송이야"
+                        },
+                        {
+                            "id": "758f7518-ab10-4e07-8f42-6b298bc31764",
+                            "name": "음식 종류",
+                            "action": "getResource",
+                            "prompt": "영상의 주인공은 파스타, 피자, 삼겹살을 먹는 거야"
+                        }
+                    ],
+                    "clips": []
+                },
+                {
+                    "id": "09",
+                    "title": "제주도 신혼여행인 척하는 4박 5일 동안 먹는 브이로그! Our very first Jeju Island trip!",
+                    "uploadTime": "매주 목요일 18:30",
+                    "status": "수정대기",
+                    "thumbnail": "./assets/component/images/3.jpeg",
+                    "resources": [
+                        {
+                            "id": "f98e0c10-4523-45bd-9faa-60a042fcfca5",
+                            "name": "제주도",
+                            "action": "getResource",
+                            "prompt": "신혼여행으로 제주도 여행을 간 영상이야. 제주도를 처음 방문해"
+                        },
+                        {
+                            "id": "5c5910aa-aa40-4727-9024-fea6f1ae7ac0",
+                            "name": "먹방",
+                            "action": "getResource",
+                            "prompt": "제주도에서 4박 5일동안 제주도 맛집을 다닐거야"
+                        }
+                    ],
+                    "clips": []
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "name": "해쭈4",
+            "url": "https://www.youtube.com/@HAEJOOOOO",
+            "method": "URL 랭킹",
+            "uploadTime": "매주 목요일 18:30",
+            "videos": [
+                {
+                    "id": "010",
+                    "title": "머리하고 왔는데 어쩐지 많은 것을 닮아버린 유튜버",
+                    "uploadTime": "매주 목요일 18:30",
+                    "status": "업로드대기",
+                    "thumbnail": "./assets/component/images/1.jpeg",
+                    "resources": [
+                        {
+                            "id": "4c760bab-44f5-43d0-ab6c-39cbffe64799",
+                            "name": "머리",
+                            "action": "getResource",
+                            "prompt": "미용실에 가서 커트를 했어"
+                        },
+                        {
+                            "id": "26be05ec-f23d-426c-af3f-89166ec243a3",
+                            "name": "야구선수 오타니",
+                            "action": "getResource",
+                            "prompt": "내가 헤어스타일을 바꾸니 야구선수 오타니와 닮았어"
+                        },
+                        {
+                            "id": "cb982721-6540-4e2a-9897-b9271c780118",
+                            "name": "라이브 방송",
+                            "action": "getResource",
+                            "prompt": "영상은 라이브 방송의 형태로 구성되면 좋겠어"
+                        }
+                    ],
+                    "clips": []
+                },
+                {
+                    "id": "011",
+                    "title": "[먹는브이로그] 새해..새로운 나...! 이미 아는 맛도 새로운 마음으로 먹는다...!!!",
+                    "uploadTime": "매주 목요일 18:30",
+                    "status": "수정대기",
+                    "thumbnail": "./assets/component/images/2.jpeg",
+                    "resources": [
+                        {
+                            "id": "d8baf0e6-f8a7-4d7f-b94d-5546e5be6136",
+                            "name": "먹방",
+                            "action": "getResource",
+                            "prompt": "여러가지 음식을 먹는 방송이야"
+                        },
+                        {
+                            "id": "758f7518-ab10-4e07-8f42-6b298bc31764",
+                            "name": "음식 종류",
+                            "action": "getResource",
+                            "prompt": "영상의 주인공은 파스타, 피자, 삼겹살을 먹는 거야"
+                        }
+                    ],
+                    "clips": []
+                },
+                {
+                    "id": "012",
+                    "title": "제주도 신혼여행인 척하는 4박 5일 동안 먹는 브이로그! Our very first Jeju Island trip!",
+                    "uploadTime": "매주 목요일 18:30",
+                    "status": "업로드 완료",
+                    "thumbnail": "./assets/component/images/3.jpeg",
+                    "resources": [
+                        {
+                            "id": "f98e0c10-4523-45bd-9faa-60a042fcfca5",
+                            "name": "제주도",
+                            "action": "getResource",
+                            "prompt": "신혼여행으로 제주도 여행을 간 영상이야. 제주도를 처음 방문해"
+                        },
+                        {
+                            "id": "5c5910aa-aa40-4727-9024-fea6f1ae7ac0",
+                            "name": "먹방",
+                            "action": "getResource",
+                            "prompt": "제주도에서 4박 5일동안 제주도 맛집을 다닐거야"
+                        }
+                    ],
+                    "clips": []
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "name": "HAEJOO5",
+            "url": "https://www.youtube.com/@HAEJOOOOO",
+            "method": "프롬프트",
+            "uploadTime": "매주 목요일 18:30",
+            "videos": [
+                {
+                    "id": "013",
+                    "title": "머리하고 왔는데 어쩐지 많은 것을 닮아버린 유튜버",
+                    "status": "업로드 완료",
+                    "thumbnail": "./assets/component/images/1.jpeg",
+                    "uploadTime": "매주 목요일 18:30",
+                    "resources": [
+                        {
+                            "id": "4c760bab-44f5-43d0-ab6c-39cbffe64799",
+                            "name": "머리",
+                            "action": "getResource",
+                            "prompt": "미용실에 가서 커트를 했어"
+                        },
+                        {
+                            "id": "26be05ec-f23d-426c-af3f-89166ec243a3",
+                            "name": "야구선수 오타니",
+                            "action": "getResource",
+                            "prompt": "내가 헤어스타일을 바꾸니 야구선수 오타니와 닮았어"
+                        },
+                        {
+                            "id": "cb982721-6540-4e2a-9897-b9271c780118",
+                            "name": "라이브 방송",
+                            "action": "getResource",
+                            "prompt": "영상은 라이브 방송의 형태로 구성되면 좋겠어"
+                        }
+                    ],
+                    "clips": []
+                },
+                {
+                    "id": "014",
+                    "title": "[먹는브이로그] 새해..새로운 나...! 이미 아는 맛도 새로운 마음으로 먹는다...!!!",
+                    "status": "업로드대기",
+                    "uploadTime": "매주 목요일 18:30",
+                    "thumbnail": "./assets/component/images/2.jpeg",
+                    "resources": [
+                        {
+                            "id": "d8baf0e6-f8a7-4d7f-b94d-5546e5be6136",
+                            "name": "먹방",
+                            "action": "getResource",
+                            "prompt": "여러가지 음식을 먹는 방송이야"
+                        },
+                        {
+                            "id": "758f7518-ab10-4e07-8f42-6b298bc31764",
+                            "name": "음식 종류",
+                            "action": "getResource",
+                            "prompt": "영상의 주인공은 파스타, 피자, 삼겹살을 먹는 거야"
+                        }
+                    ],
+                    "clips": []
+                },
+                {
+                    "id": "015",
+                    "title": "제주도 신혼여행인 척하는 4박 5일 동안 먹는 브이로그! Our very first Jeju Island trip!",
+                    "status": "수정대기",
+                    "uploadTime": "매주 목요일 18:30",
+                    "thumbnail": "./assets/component/images/3.jpeg",
+                    "resources": [
+                        {
+                            "id": "f98e0c10-4523-45bd-9faa-60a042fcfca5",
+                            "name": "제주도",
+                            "action": "getResource",
+                            "prompt": "신혼여행으로 제주도 여행을 간 영상이야. 제주도를 처음 방문해"
+                        },
+                        {
+                            "id": "5c5910aa-aa40-4727-9024-fea6f1ae7ac0",
+                            "name": "먹방",
+                            "action": "getResource",
+                            "prompt": "제주도에서 4박 5일동안 제주도 맛집을 다닐거야"
+                        }
+                    ],
+                    "clips": []
+                }
+            ]
+        }
+    ]
+}

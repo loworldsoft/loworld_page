@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/pages/monitoring/components/monitoring-layout/usage-toolbar/usage-toolbar.component.scss"],
-  "sourcesContent": [".example-spacer {\n    flex: 1 1 auto;\n}"],
-  "mappings": ";AAAA,CAAA;AACI,QAAA,EAAA,EAAA;;",
-  "names": []
-}

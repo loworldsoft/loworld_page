@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/pages/chatflow/components/details/list-box/list-box.component.scss"],
-  "sourcesContent": ["mat-chip-listbox, mat-form-field {\n  width: 100%;\n}\n\n"],
-  "mappings": ";AAAA;AAAA;AACE,SAAA;;",
-  "names": []
-}

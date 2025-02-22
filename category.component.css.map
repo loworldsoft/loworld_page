@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/pages/category-manage/components/organisms/category/category.component.scss"],
-  "sourcesContent": [".color-back {\n    background-color: #CFE0DA;\n}"],
-  "mappings": ";AAAA,CAAA;AACI,oBAAA;;",
-  "names": []
-}

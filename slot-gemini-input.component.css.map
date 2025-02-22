@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/pages/slots/items/forms/slot-gemini-input/slot-gemini-input.component.scss"],
-  "sourcesContent": [".shimmer-loading {\n    background: linear-gradient(to right,#00BFFF, #f07816, #00BFFF,);\n    background-size: 1200px 104px;\n    position: relative;\n    animation: loading 2s linear infinite;\n  }\n  \n  @keyframes loading {\n    0% {\n      background-position: 0px 0;\n    }\n    50% {\n      background-position: 1200px 0;\n    }\n    100% {\n      background-position: 0px 0;\n    }\n  }"],
-  "mappings": ";AAAA,CAAA;AACI;IAAA;MAAA,GAAA,KAAA;MAAA,OAAA;MAAA,OAAA;MAAA;AACA,mBAAA,OAAA;AACA,YAAA;AACA,aAAA,QAAA,GAAA,OAAA;;AAGF,WAHE;AAIA;AACE,yBAAA,IAAA;;AAEF;AACE,yBAAA,OAAA;;AAEF;AACE,yBAAA,IAAA;;;",
-  "names": []
-}

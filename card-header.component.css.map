@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/pages/membership/components/dialogs/card-header/card-header.component.scss"],
-  "sourcesContent": [".card-header-content {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    width: 100%;\n}\n\n// .container-title {\n//     color: #3f51b5;\n// }"],
-  "mappings": ";AAAA,CAAA;AACI,WAAA;AACA,mBAAA;AACA,eAAA;AACA,SAAA;;",
-  "names": []
-}

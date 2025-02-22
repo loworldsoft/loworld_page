@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/shared/components/layouts/navigation/navigation.component.scss"],
-  "sourcesContent": [".sidenav {\n    display:flex; \n    flex-direction: column;\n}"],
-  "mappings": ";AAAA,CAAA;AACI,WAAA;AACA,kBAAA;;",
-  "names": []
-}

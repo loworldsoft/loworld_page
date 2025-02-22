@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/pages/monitoring/components/area-examle/area-examle.component.scss"],
-  "sourcesContent": ["    // rect {\n    //     pointer-events: all;\n    //     fill-opacity: 0;\n    //     stroke-opacity: 0;\n    //     z-index: 1;\n    // }\n\n    .chart-tooltip {\n        position: absolute;\n        padding: 5px;\n        background-color: rgb(11, 40, 65);\n        color: white;\n        border: 0px solid white;\n        border-radius: 0px;\n        display: none;\n        opacity: .75;\n        font-size: 14px;\n    }\n\n    .tooltip-line {\n        stroke-opacity: 0.5;\n    }"],
-  "mappings": ";AAOI,CAAA;AACI,YAAA;AACA,WAAA;AACA,oBAAA,IAAA,EAAA,EAAA,EAAA,EAAA;AACA,SAAA;AACA,UAAA,IAAA,MAAA;AACA,iBAAA;AACA,WAAA;AACA,WAAA;AACA,aAAA;;AAGJ,CAAA;AACI,kBAAA;;",
-  "names": []
-}

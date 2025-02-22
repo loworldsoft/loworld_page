@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/pages/slots/components/bar-navigation/navigation-bar.component.scss"],
-  "sourcesContent": [".spacer {\n    flex: 1 1 auto;\n}\n\n.active {\n    background-color: #f0f0f0;\n    /* 활성화된 페이지 스타일 */\n}\n\n.selected-menu-item {\n    color: rgb(235, 160, 29); /* 글자색 변경 */\n  }\n"],
-  "mappings": ";;;AAAA,CAAA;AACI,QAAA,EAAA,EAAA;;AAGJ,CAAA;AACI,oBAAA;;AAIJ,CAAA;AACI,SAAA,IAAA,GAAA,EAAA,GAAA,EAAA;;",
-  "names": []
-}

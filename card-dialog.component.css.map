@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/shared/components/molecules/card-dialog/card-dialog.component.scss"],
-  "sourcesContent": ["/* 스크롤바 숨기기 (모던 브라우저) */\n.hide-scrollbar {\n  overflow: auto;\n  /* 스크롤은 유지 */\n}\n\n.hide-scrollbar::-webkit-scrollbar {\n  width: 0px;\n  background: transparent;\n  /* 웹킷 기반 브라우저 (크롬, 사파리)에서 스크롤바 숨기기 */\n}\n\n.hide-scrollbar {\n  -ms-overflow-style: none;\n  /* IE and Edge에서 스크롤바 숨기기 */\n  scrollbar-width: none;\n  /* Firefox에서 스크롤바 숨기기 */\n}\n\n.disc-li {\n  list-style-type: disc !important;\n}"],
-  "mappings": ";;;AACA,CAAA;AACE,YAAA;;AAIF,CALA,cAKA;AACE,SAAA;AACA,cAAA;;AAIF,CAXA;AAYE,sBAAA;AAEA,mBAAA;;AAIF,CAAA;AACE,mBAAA;;",
-  "names": []
-}

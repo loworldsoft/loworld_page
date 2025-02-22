@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/pages/chatbot/components/bottom-sheet/bottom-sheet.component.scss"],
-  "sourcesContent": [".full-bottom-sheet {\n  display: flex;\n  flex-direction: column;\n}\n\n.bottom-sheet-top {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}"],
-  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,kBAAA;;AAGF,CAAA;AACE,WAAA;AACA,eAAA;AACA,mBAAA;;",
-  "names": []
-}

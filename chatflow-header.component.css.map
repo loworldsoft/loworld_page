@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/pages/chatflow/components/chatflow-header/chatflow-header.component.scss"],
-  "sourcesContent": [".button-margin {\n  margin: 0 2.5px;\n}"],
-  "mappings": ";AAAA,CAAA;AACE,UAAA,EAAA;;",
-  "names": []
-}

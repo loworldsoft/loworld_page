@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["Modules/pages/sketchflow/sketchflow.component.scss"],
-  "sourcesContent": [".sketchflow-background-layer {\n  position: absolute; \n  width: 100%;\n  background-color: grey;\n  opacity: 0.3;\n}\n\n.sketchflow-row {\n  position: absolute;\n  width: 100%;\n  background-color: transparent; \n}"],
-  "mappings": ";AAAA,CAAA;AACE,YAAA;AACA,SAAA;AACA,oBAAA;AACA,WAAA;;AAGF,CAAA;AACE,YAAA;AACA,SAAA;AACA,oBAAA;;",
-  "names": []
-}

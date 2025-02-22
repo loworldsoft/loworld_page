@@ -1,0 +1,237 @@
+{
+  "syncBITreeData": [
+    {
+      "name": "Sync BI 1",
+      "depth": 0,
+      "metaData": {
+        "type": "component",
+        "param": ""
+      },
+      "children": [
+        {
+          "name": "chat",
+          "depth": 1,
+          "metaData": {
+            "type": "component",
+            "param": ""
+          },
+          "children": [
+            {
+              "name": "Sync BI 2",
+              "depth": 2,
+              "metaData": {
+                "type": "component",
+                "param": ""
+              },
+              "children": [
+                {
+                  "name": "chat",
+                  "depth": 3,
+                  "metaData": {
+                    "type": "component",
+                    "param": "chat"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "project",
+                  "depth": 3,
+                  "metaData": {
+                    "type": "component",
+                    "param": "project"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "calendar",
+                  "depth": 3,
+                  "metaData": {
+                    "type": "component",
+                    "param": "calendar"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "diary",
+                  "depth": 3,
+                  "metaData": {
+                    "type": "component",
+                    "param": "diary"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "channeltalk",
+                  "depth": 3,
+                  "metaData": {
+                    "type": "component",
+                    "param": "channeltalk"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "project",
+          "depth": 1,
+          "metaData": {
+            "type": "component",
+            "param": "project"
+          },
+          "children": []
+        },
+        {
+          "name": "calendar",
+          "depth": 1,
+          "metaData": {
+            "type": "component",
+            "param": "calendar"
+          },
+          "children": []
+        },
+        {
+          "name": "diary",
+          "depth": 1,
+          "metaData": {
+            "type": "component",
+            "param": "diary"
+          },
+          "children": []
+        },
+        {
+          "name": "channeltalk",
+          "depth": 1,
+          "metaData": {
+            "type": "component",
+            "param": "channeltalk"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Sync BI 2",
+      "depth": 0,
+      "metaData": {
+        "type": "component",
+        "param": ""
+      },
+      "children": [
+        {
+          "name": "chat",
+          "depth": 1,
+          "metaData": {
+            "type": "component",
+            "param": "chat"
+          },
+          "children": []
+        },
+        {
+          "name": "project",
+          "depth": 1,
+          "metaData": {
+            "type": "component",
+            "param": "project"
+          },
+          "children": []
+        },
+        {
+          "name": "calendar",
+          "depth": 1,
+          "metaData": {
+            "type": "component",
+            "param": "calendar"
+          },
+          "children": []
+        },
+        {
+          "name": "diary",
+          "depth": 1,
+          "metaData": {
+            "type": "component",
+            "param": "diary"
+          },
+          "children": []
+        },
+        {
+          "name": "channeltalk",
+          "depth": 1,
+          "metaData": {
+            "type": "component",
+            "param": "channeltalk"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Sync BI 3",
+      "depth": 0,
+      "metaData": {
+        "type": "component",
+        "param": ""
+      },
+      "children": [
+        {
+          "name": "chat",
+          "depth": 1,
+          "metaData": {
+            "type": "component",
+            "param": "chat"
+          },
+          "children": []
+        },
+        {
+          "name": "project",
+          "depth": 1,
+          "metaData": {
+            "type": "component",
+            "param": "project"
+          },
+          "children": []
+        },
+        {
+          "name": "calendar",
+          "depth": 1,
+          "metaData": {
+            "type": "component",
+            "param": "calendar"
+          },
+          "children": []
+        },
+        {
+          "name": "diary",
+          "depth": 1,
+          "metaData": {
+            "type": "component",
+            "param": "diary"
+          },
+          "children": []
+        },
+        {
+          "name": "channeltalk",
+          "depth": 1,
+          "metaData": {
+            "type": "component",
+            "param": "channeltalk"
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "menuData": [
+    {
+      "icon": "delete",
+      "label": "삭제",
+      "param": "delete"
+    },
+    {
+      "icon": "add_circle",
+      "label": "자식 추가",
+      "param": "create"
+    }
+  ]
+}
