@@ -1,0 +1,145 @@
+{
+    "calendar": {
+        "schedules": [
+            {
+                "scheduleId": "1",
+                "scheduleName": "팀 회의",
+                "startDate": "2024-09-15",
+                "endDate": "2024-09-30",
+                "scheduleDetail": "프로젝트 업데이트를 위한 월간 팀 회의",
+                "participants": [
+                    "kim@example.com",
+                    "lee@example.com",
+                    "park@example.com"
+                ],
+                "color": "#FF5733"
+            },
+            {
+                "scheduleId": "2",
+                "scheduleName": "고객 프레젠테이션",
+                "startDate": "2024-09-21",
+                "endDate": "2024-09-21",
+                "scheduleDetail": "신제품을 소개하는 고객 대상 프레젠테이션",
+                "participants": [
+                    "choi@example.com",
+                    "jang@example.com",
+                    "kim@example.com"
+                ],
+                "color": "#33FF57"
+            },
+            {
+                "scheduleId": "3",
+                "scheduleName": "마케팅 전략 회의",
+                "startDate": "2024-09-22",
+                "endDate": "2024-09-22",
+                "scheduleDetail": "새로운 마케팅 전략 수립을 위한 회의",
+                "participants": [
+                    "park@example.com",
+                    "choi@example.com",
+                    "kim@example.com"
+                ],
+                "color": "#3357FF"
+            },
+            {
+                "scheduleId": "4",
+                "scheduleName": "프로젝트 발표",
+                "startDate": "2024-09-23",
+                "endDate": "2024-09-23",
+                "scheduleDetail": "내부 프로젝트 발표 및 피드백 세션",
+                "participants": [
+                    "lee@example.com",
+                    "choi@example.com"
+                ],
+                "color": "#FF33A8"
+            },
+            {
+                "scheduleId": "5",
+                "scheduleName": "디자인 리뷰",
+                "startDate": "2024-09-24",
+                "endDate": "2024-09-26",
+                "scheduleDetail": "디자인 팀과 함께하는 제품 디자인 리뷰",
+                "participants": [
+                    "kim@example.com",
+                    "choi@example.com",
+                    "jang@example.com"
+                ],
+                "color": "#33FFF5"
+            },
+            {
+                "scheduleId": "6",
+                "scheduleName": "연구 발표",
+                "startDate": "2024-09-25",
+                "endDate": "2024-09-25",
+                "scheduleDetail": "신기술 연구 결과 발표",
+                "participants": [
+                    "jang@example.com",
+                    "kim@example.com"
+                ],
+                "color": "#FFC233"
+            },
+            {
+                "scheduleId": "7",
+                "scheduleName": "개발 스프린트 계획",
+                "startDate": "2024-09-26",
+                "endDate": "2024-09-26",
+                "scheduleDetail": "다음 스프린트의 개발 목표를 설정하는 회의",
+                "participants": [
+                    "lee@example.com",
+                    "park@example.com",
+                    "kim@example.com"
+                ],
+                "color": "#FF3333"
+            },
+            {
+                "scheduleId": "8",
+                "scheduleName": "HR 면접",
+                "startDate": "2024-09-27",
+                "endDate": "2024-09-27",
+                "scheduleDetail": "신입 사원 면접",
+                "participants": [
+                    "choi@example.com",
+                    "lee@example.com"
+                ],
+                "color": "#33FFBD"
+            },
+            {
+                "scheduleId": "9",
+                "scheduleName": "고객 지원 회의",
+                "startDate": "2024-09-28",
+                "endDate": "2024-09-28",
+                "scheduleDetail": "고객 지원 전략을 논의하는 회의",
+                "participants": [
+                    "kim@example.com",
+                    "choi@example.com",
+                    "jang@example.com"
+                ],
+                "color": "#FF33D6"
+            },
+            {
+                "scheduleId": "10",
+                "scheduleName": "주간 회의",
+                "startDate": "2024-09-29",
+                "endDate": "2024-09-29",
+                "scheduleDetail": "주간 업무 진행 상황 공유 회의",
+                "participants": [
+                    "park@example.com",
+                    "jang@example.com",
+                    "lee@example.com"
+                ],
+                "color": "#33FF33"
+            }
+        ]
+    },
+    "colorPalette": {
+        "red": "#FF5733",
+        "green": "#33FF57",
+        "blue": "#3357FF",
+        "pink": "#FF33A8",
+        "cyan": "#33FFF5",
+        "yellow": "#FFC233",
+        "darkRed": "#FF3333",
+        "mint": "#33FFBD",
+        "magenta": "#FF33D6",
+        "lightGreen": "#33FF33"
+    }
+}
