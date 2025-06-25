@@ -72,18 +72,40 @@
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <h1 class="text-xl font-bold text-gray-900">Loworld AI</h1>
-            <!-- 모바일에서는 숨기고, 데스크탑에서만 보이는 네비게이션 -->
-            <div class="hidden md:flex space-x-8">
-                <a href="#introduction" class="text-gray-600 hover:text-blue-600">패러다임 전환</a>
-                <a href="#technology" class="text-gray-600 hover:text-blue-600">핵심 기술</a>
-                <a href="#market" class="text-gray-600 hover:text-blue-600">시장과 비전</a>
-                <a href="#advantage" class="text-gray-600 hover:text-blue-600">독보적 강점</a>
+            <!-- 모바일 메뉴 버튼 -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-700 focus:outline-none" aria-label="메뉴 열기">
+                ☰
+            </button>
+            <!-- 데스크탑 메뉴 (핵심 메뉴만) -->
+            <div class="hidden md:flex flex-wrap gap-x-6 gap-y-2 items-center max-w-3xl">
+                <a href="#technology" class="text-gray-600 hover:text-blue-600 whitespace-nowrap">핵심 기술</a>
+                <a href="#advantage" class="text-gray-600 hover:text-blue-600 whitespace-nowrap">독보적 강점</a>
+                <a href="#dominance" class="text-gray-600 hover:text-blue-600 whitespace-nowrap">AI 경쟁력</a>
+                <a href="#revenue-growth" class="text-gray-600 hover:text-blue-600 whitespace-nowrap">성장 로드맵</a>
             </div>
-            <!-- 모바일에서는 숨기고, 데스크탑에서만 보이는 버튼 -->
+            <!-- 데스크탑 전용 버튼 -->
             <a href="https://api.loworldsoft.com"
-                class="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">AI
-                Agent</a>
+                class="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors whitespace-nowrap">AI Agent</a>
         </nav>
+        <!-- 모바일 메뉴 드롭다운 (배경 추가) -->
+        <div id="mobile-menu" class="md:hidden fixed inset-0 z-50 hidden">
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="absolute top-0 right-0 w-64 bg-white h-full shadow-lg flex flex-col p-6 space-y-4 z-10">
+                <button id="mobile-menu-close" class="self-end text-2xl text-gray-700 mb-4" aria-label="메뉴 닫기">×</button>
+                <a href="#introduction" class="block text-gray-700 hover:text-blue-600 py-2">패러다임 전환</a>
+                <a href="#technology" class="block text-gray-700 hover:text-blue-600 py-2">핵심 기술</a>
+                <a href="#market" class="block text-gray-700 hover:text-blue-600 py-2">시장과 비전</a>
+                <a href="#advantage" class="block text-gray-700 hover:text-blue-600 py-2">독보적 강점</a>
+                <a href="#process" class="block text-gray-700 hover:text-blue-600 py-2">혁신 3단계</a>
+                <a href="#revenue-growth" class="block text-gray-700 hover:text-blue-600 py-2">성장 로드맵</a>
+                <a href="#revenue-mix" class="block text-gray-700 hover:text-blue-600 py-2">수익 구조</a>
+                <a href="#dominance" class="block text-gray-700 hover:text-blue-600 py-2">AI 경쟁력</a>
+                <a href="#opportunity" class="block text-gray-700 hover:text-blue-600 py-2">AI팩토리 활용</a>
+                <a href="#contact" class="block text-gray-700 hover:text-blue-600 py-2">문의</a>
+                <a href="https://api.loworldsoft.com"
+                    class="block bg-blue-600 text-white text-center px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors mt-4">AI Agent</a>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -595,6 +617,28 @@
                     });
                 });
             });
+        });
+
+        // 모바일 메뉴 토글
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+            if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('hidden');
+                });
+                mobileMenuClose.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+                // 메뉴 클릭 시 자동 닫힘
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
         });
     </script>
 
