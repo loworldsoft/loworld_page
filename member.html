@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loworld AI 팀원 역량 분석 인포그래픽</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- 
+    Palette Name: Energetic & Playful
+    Narrative Plan:
+    1. Introduction: Introduce the development team.
+    2. Team Experience Overview: Bar chart comparing total work experience.
+    3. Specialization Breakdown: Donut chart showing the distribution of key technical expertise.
+    4. Individual Profiles: Grid of cards for each member with their details.
+    
+    Visualization Plan:
+    - Total Experience: Goal: Compare -> Ordered Bar Chart (Chart.js, Canvas). Justification: Clearly ranks members by experience length.
+    - Specialization Breakdown: Goal: Composition -> Donut Chart (Chart.js, Canvas). Justification: Shows the proportion of key skills within the team effectively.
+    - Individual Profiles: Goal: Organize -> Styled HTML/CSS Grid. Justification: Presents detailed individual information in a structured and clean layout.
+    
+    Constraint Confirmation: NEITHER Mermaid JS NOR SVG were used. All visualizations are rendered on Canvas via Chart.js or styled with HTML/CSS.
+    -->
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f8fafc;
+        }
+        /* Chart containers should handle their own sizing via Tailwind classes for responsiveness */
+        /* This style is kept minimal for general canvas container properties if needed */
+        .chart-container {
+            position: relative;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #00A6ED, #72D33A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2 gradient-text">Loworld AI 팀원</h1>
+            <p class="text-lg text-gray-600">데이터와 기술을 선도하는 최고의 전문가들</p>
+        </header>
+
+        <main class="space-y-12">
+            <section>
+                <h2 class="text-3xl font-bold text-center mb-8">Team Profiles</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="bg-white rounded-2xl shadow-lg p-6 transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold text-gray-900">안상현</h3>
+                        <p class="text-blue-500 font-semibold mb-4">19년 3개월</p>
+                        <div class="space-y-3 text-gray-700">
+                            <p><strong>🎓 학력:</strong> 동서대학교 디지털디자인과 (중퇴)</p>
+                            <p><strong>🚀 전문 분야:</strong> 풀스택 개발, 데이터 시각화, 3D 엔진, AI 모델 개발, 모바일 아키텍처</p>
+                            <p><a href="https://drive.google.com/file/d/1JVAfn7MJgVL1YH2GRc6fgMccUhvo-Cs/view?usp=drive_link" target="_blank" class="text-blue-600 hover:underline">이력서 보기</a></p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg p-6 transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold text-gray-900">곽민준</h3>
+                        <p class="text-blue-500 font-semibold mb-4">2년 9개월</p>
+                        <div class="space-y-3 text-gray-700">
+                            <p><strong>🎓 학력:</strong> 동명대학교 항만물류시스템학과</p>
+                            <p><strong>🚀 전문 분야:</strong> AI/메타버스 서비스 개발, IoT, 웹/모바일 앱, 블록체인</p>
+                            <p><a href="https://drive.google.com/file/d/1zTsboeDUr-wUUi21E147jrNEdSUmbPX6/view?usp=drive_link" target="_blank" class="text-blue-600 hover:underline">이력서 보기</a></p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg p-6 transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold text-gray-900">박의민</h3>
+                        <p class="text-blue-500 font-semibold mb-4">2년 5개월</p>
+                        <div class="space-y-3 text-gray-700">
+                            <p><strong>🎓 학력:</strong> 전남대학교 전자상거래 학사, 광주인공지능사관학교 수료</p>
+                            <p><strong>🚀 전문 분야:</strong> 풀스택 개발, 데이터 시각화, 서버 배포/자동화, 실시간 통신, RPA</p>
+                            <p><a href="https://drive.google.com/file/d/11-xvHhds60TDzFiJXrFcrj6tvS8SdQJB/view?usp=drive_link" target="_blank" class="text-blue-600 hover:underline">이력서 보기</a></p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg p-6 transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold text-gray-900">임연정</h3>
+                        <p class="text-blue-500 font-semibold mb-4">2년 5개월</p>
+                        <div class="space-y-3 text-gray-700">
+                            <p><strong>🎓 학력:</strong> 숙명여자대학교 IT공학전공 학사</p>
+                            <p><strong>🚀 전문 분야:</strong> 풀스택 개발, AI/영상 자동화, VR 게임, 웹 컴포넌트, 클라우드 배포</p>
+                            <p><a href="https://drive.google.com/file/d/1ZFyhx-ZPRDZFpCcb3j2KuMtXun1WSros/view?usp=drive_link" target="_blank" class="text-blue-600 hover:underline">이력서 보기</a></p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg p-6 transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold text-gray-900">홍희수</h3>
+                        <p class="text-blue-500 font-semibold mb-4">2년 5개월</p>
+                        <div class="space-y-3 text-gray-700">
+                           <p><strong>🎓 학력:</strong> 숙명여자대학교 컴퓨터과학/통계학과, NKU 교환학생</p>
+                           <p><strong>🚀 전문 분야:</strong> SW 엔지니어, AI/광고 자동화 솔루션, B2B 솔루션, 웹 컴포넌트</p>
+                           <p><a href="https://drive.google.com/file/d/1N19vMERz0KBB36v2zrOWWIXfD5XtXotP/view?usp=drive_link" target="_blank" class="text-blue-600 hover:underline">이력서 보기</a></p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg p-6 transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold text-gray-900">한진아</h3>
+                        <p class="text-blue-500 font-semibold mb-4">2년 9개월</p>
+                        <div class="space-y-3 text-gray-700">
+                           <p><strong>🎓 학력:</strong> 이화여자대학교 불어불문/경영학과, 팀노바 수료</p>
+                           <p><strong>🚀 전문 분야:</strong> AI/메타버스 서비스 개발, IoT, 웹/모바일 앱, 블록체인</p>
+                           <p><a href="https://drive.google.com/file/d/1a4F8VBgLM8zEP7ft1FhkprsjPu_ImpI2/view?usp=drive_link" target="_blank" class="text-blue-600 hover:underline">이력서 보기</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="bg-white rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-shadow duration-300">
+                <h2 class="text-2xl font-bold mb-1 text-gray-900">경력 기간 비교 (년)</h2>
+                <p class="text-gray-600 mb-6">팀원들의 총 경력을 시각적으로 비교하여 팀의 경험적 깊이를 보여줍니다.</p>
+                <div class="chart-container w-full h-96 md:h-[450px] max-w-2xl mx-auto">
+                    <canvas id="experienceChart"></canvas>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-shadow duration-300">
+                <h2 class="text-2xl font-bold mb-1 text-gray-900">팀 핵심역량 분포</h2>
+                <p class="text-gray-600 mb-6">팀의 주요 기술 전문 분야 분포를 통해 기술적 강점을 파악할 수 있습니다.</p>
+                <div class="chart-container w-full h-80 md:h-96 max-w-md mx-auto">
+                    <canvas id="skillsChart"></canvas>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-12 pt-8 border-t border-gray-200">
+            <p class="text-gray-500">&copy; 2025 Team Analytics. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const memberData = [
+                { name: '안상현', experience: 19 * 12 + 3, role: '풀스택 개발, 데이터 시각화, 3D 엔진, AI 모델 개발, 모바일 아키텍처' },
+                { name: '곽민준', experience: 2 * 12 + 9, role: 'AI/메타버스 서비스 개발, IoT, 웹/모바일 앱, 블록체인' },
+                { name: '박의민', experience: 2 * 12 + 5, role: '풀스택 개발, 데이터 시각화, 서버 배포/자동화, 실시간 통신, RPA' },
+                { name: '임연정', experience: 2 * 12 + 5, role: '풀스택 개발, AI/영상 자동화, VR 게임, 웹 컴포넌트, 클라우드 배포' },
+                { name: '홍희수', experience: 2 * 12 + 5, role: 'SW 엔지니어, AI/광고 자동화 솔루션, B2B 솔루션, 웹 컴포넌트' },
+                { name: '한진아', experience: 2 * 12 + 9, role: 'AI/메타버스 서비스 개발, IoT, 웹/모바일 앱, 블록체인' }
+            ];
+            
+            // Convert months to years for the chart data
+            const memberDataInYears = memberData.map(m => ({
+                ...m,
+                experience: parseFloat((m.experience / 12).toFixed(2)) // Convert months to years, 2 decimal places
+            }));
+
+            memberDataInYears.sort((a, b) => b.experience - a.experience);
+
+            const palette = {
+                blue: '#00A6ED',
+                green: '#72D33A',
+                yellow: '#FFC800',
+                orange: '#FF802B',
+                pink: '#F54D73',
+                lightBlue: '#89D6F5',
+                lightGreen: '#B2E691',
+            };
+
+            const processLabel = (label) => {
+                if (typeof label !== 'string' || label.length <= 16) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + word).length > 16) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                  return label.join(' ');
+                } else {
+                  return label;
+                }
+            };
+            
+            const chartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 14,
+                                family: "'Noto Sans KR', sans-serif"
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback,
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    label += context.parsed.y + ' 년';
+                                }
+                                return label;
+                            }
+                        },
+                        titleFont: {
+                            size: 16,
+                            family: "'Noto Sans KR', sans-serif"
+                        },
+                        bodyFont: {
+                           size: 14,
+                           family: "'Noto Sans KR', sans-serif"
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 12,
+                                family: "'Noto Sans KR', sans-serif"
+                            }
+                        },
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            font: {
+                                size: 12,
+                                family: "'Noto Sans KR', sans-serif"
+                            },
+                             callback: function(value) {
+                                return value + ' 년'; /* Add '년' to y-axis labels */
+                            }
+                        },
+                         grid: {
+                            color: '#e5e7eb'
+                        }
+                    }
+                }
+            };
+
+            const expCtx = document.getElementById('experienceChart').getContext('2d');
+            new Chart(expCtx, {
+                type: 'bar',
+                data: {
+                    labels: memberDataInYears.map(m => m.name),
+                    datasets: [{
+                        label: '총 경력 (년)',
+                        data: memberDataInYears.map(m => m.experience),
+                        backgroundColor: [
+                            palette.blue,
+                            palette.green,
+                            palette.yellow,
+                            palette.orange,
+                            palette.pink,
+                            palette.lightBlue
+                        ],
+                        borderColor: 'rgba(255, 255, 255, 0.5)',
+                        borderWidth: 1,
+                        borderRadius: 5,
+                    }]
+                },
+                options: { ...chartOptions, indexAxis: 'x' }
+            });
+
+            const skills = {};
+            memberData.forEach(m => {
+                const memberSkills = m.role.split(/, |\/| /).map(s => s.trim());
+                const skillKeywords = {
+                    'AI': ['AI', '인공지능'],
+                    '풀스택': ['풀스택'],
+                    '자동화': ['자동화', 'RPA'],
+                    '데이터 시각화': ['데이터 시각화'],
+                    '웹/모바일': ['웹/모바일', '모바일'],
+                    '블록체인': ['블록체인'],
+                    '웹 컴포넌트': ['웹 컴포넌트'],
+                    'IoT': ['IoT'],
+                    'VR/3D': ['VR', '3D']
+                };
+
+                Object.keys(skillKeywords).forEach(key => {
+                    if (skillKeywords[key].some(keyword => m.role.includes(keyword))) {
+                        skills[key] = (skills[key] || 0) + 1;
+                    }
+                });
+            });
+            
+            const skillLabels = Object.keys(skills);
+            const skillData = Object.values(skills);
+
+            const skillsCtx = document.getElementById('skillsChart').getContext('2d');
+            new Chart(skillsCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: skillLabels,
+                    datasets: [{
+                        label: '팀원 수',
+                        data: skillData,
+                        backgroundColor: Object.values(palette),
+                        borderColor: '#f8fafc',
+                        borderWidth: 4,
+                        hoverOffset: 10
+                    }]
+                },
+                options: {
+                     responsive: true,
+                     maintainAspectRatio: false,
+                     plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                font: {
+                                    size: 14,
+                                    family: "'Noto Sans KR', sans-serif"
+                                },
+                                boxWidth: 20,
+                                padding: 20,
+                            }
+                        },
+                        tooltip: {
+                             callbacks: {
+                                title: tooltipTitleCallback,
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += context.parsed;
+                                    }
+                                    return label + ' 명';
+                                }
+                             }
+                        }
+                     }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
