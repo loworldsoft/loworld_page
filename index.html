@@ -43,6 +43,13 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .flow-arrow {
+            color: #0079E0;
+            font-size: 2.5rem;
+            line-height: 1;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 smooth-scroll">
@@ -203,6 +210,124 @@
                 </div>
             </div>
         </section>
+
+
+            <section id="process" class="bg-white rounded-xl shadow-lg p-6 md:p-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-center text-[#004AAD]">3단계의 소프트웨어 혁명</h2>
+                <p class="text-center text-gray-600 mt-2 mb-8 md:mb-12">아이디어가 실제 작동하는 소프트웨어가 되는 가장 빠른 길</p>
+                <div class="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-4">
+                    
+                    <div class="text-center flex-1">
+                        <div class="bg-[#89D2FF] rounded-full w-24 h-24 mx-auto flex items-center justify-center">
+                            <span class="text-4xl">1</span>
+                        </div>
+                        <h3 class="font-bold text-xl mt-4 text-[#004AAD]">목표 및 데이터 정의</h3>
+                        <p class="mt-2 text-sm text-gray-600">코딩 대신, 원하는 목표와<br>데이터를 '슬롯'에 삽입</p>
+                    </div>
+
+                    <div class="flow-arrow transform md:rotate-0 rotate-90">→</div>
+                    
+                    <div class="text-center flex-1">
+                        <div class="bg-[#0079E0] text-white rounded-full w-24 h-24 mx-auto flex items-center justify-center">
+                             <span class="text-4xl">2</span>
+                        </div>
+                        <h3 class="font-bold text-xl mt-4 text-[#004AAD]">AI Agent의 자동 설계</h3>
+                        <p class="mt-2 text-sm text-gray-600">AI가 목표를 분석하여<br>최적의 기능을 자동 조립</p>
+                    </div>
+
+                    <div class="flow-arrow transform md:rotate-0 rotate-90">→</div>
+
+                    <div class="text-center flex-1">
+                        <div class="bg-[#00B5AD] text-white rounded-full w-24 h-24 mx-auto flex items-center justify-center">
+                             <span class="text-4xl">3</span>
+                        </div>
+                        <h3 class="font-bold text-xl mt-4 text-[#004AAD]">원클릭 멀티플랫폼 배포</h3>
+                        <p class="mt-2 text-sm text-gray-600">웹, 모바일, 데스크톱 앱을<br>한 번에 생성 및 자율 운영</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="revenue-growth" class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+                <div class="md:col-span-2">
+                    <h2 class="text-2xl md:text-3xl font-bold text-[#004AAD]">4개년 성장 로드맵</h2>
+                    <p class="mt-3 text-gray-600">초기 안정적인 수익 확보 후, SaaS 중심으로 전환하여 기하급수적 성장을 목표로 합니다. 각 단계는 다음 성장을 위한 발판이 됩니다.</p>
+                    <div class="mt-6 bg-blue-100 border-l-4 border-[#0079E0] p-4 rounded-r-lg">
+                        <p class="text-4xl md:text-5xl font-black text-[#004AAD]">400<span class="text-2xl font-bold">억</span></p>
+                        <p class="font-bold text-gray-700 mt-1">4차년도 목표 매출</p>
+                    </div>
+                </div>
+                <div class="md:col-span-3 bg-white rounded-xl shadow-lg p-6">
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section id="revenue-mix" class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+                 <div class="md:col-span-3 bg-white rounded-xl shadow-lg p-6 md:order-2">
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="revenueMixChart"></canvas>
+                    </div>
+                </div>
+                <div class="md:col-span-2 md:order-1">
+                    <h2 class="text-2xl md:text-3xl font-bold text-[#004AAD]">미래 수익 구조 (4차년도)</h2>
+                    <p class="mt-3 text-gray-600">궁극적으로 플랫폼 구독(SaaS) 수익이 핵심 비즈니스 모델이 됩니다. 자체 서비스와 외주 개발은 플랫폼의 기술력을 증명하고 성장을 가속화하는 역할을 수행합니다.</p>
+                </div>
+            </section>
+
+            <section id="dominance" class="bg-white rounded-xl shadow-lg p-6 md:p-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-center text-[#004AAD]">누가 진짜 AI를 지배할 것인가?</h2>
+                <p class="text-center text-gray-600 mt-2 mb-8 md:mb-12">단순한 '지식'을 넘어, '실행력'을 갖춘 AI가 미래를 만듭니다.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="border border-gray-200 rounded-lg p-6">
+                        <h3 class="text-2xl font-bold text-center text-gray-500">문과적 AI (LLM)</h3>
+                        <p class="text-center text-lg mt-2 font-semibold text-gray-400">"똑똑한 조언자"</p>
+                        <ul class="mt-6 space-y-3 text-gray-600">
+                            <li class="flex items-start"><span class="mr-3 text-[#0079E0]">●</span>아이디어와 코드 조각 제공</li>
+                            <li class="flex items-start"><span class="mr-3 text-[#0079E0]">●</span>언어 이해 및 생성에 탁월</li>
+                            <li class="flex items-start"><span class="mr-3 text-[#0079E0]">●</span>범용 기술로 상향 평준화</li>
+                            <li class="flex items-start"><span class="mr-3 text-red-500 font-bold">❌</span>완성된 소프트웨어 실행 불가</li>
+                        </ul>
+                    </div>
+                     <div class="border-2 border-[#00B5AD] bg-teal-50 rounded-lg p-6">
+                        <h3 class="text-2xl font-bold text-center text-[#004AAD]">공학적 AI (AI Factory)</h3>
+                        <p class="text-center text-lg mt-2 font-semibold text-[#00B5AD]">"유능한 엔지니어"</p>
+                         <ul class="mt-6 space-y-3 text-gray-700">
+                            <li class="flex items-start"><span class="mr-3 text-[#00B5AD]">◆</span>실제 작동하는 시스템 구축</li>
+                            <li class="flex items-start"><span class="mr-3 text-[#00B5AD]">◆</span>비즈니스 로직과 데이터 처리</li>
+                            <li class="flex items-start"><span class="mr-3 text-[#00B5AD]">◆</span>'마지막 1마일'을 연결해 가치 창출</li>
+                            <li class="flex items-start"><span class="mr-3 text-green-500 font-bold">✔️</span>아이디어를 완전한 제품으로 실현</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="opportunity">
+                 <h2 class="text-2xl md:text-3xl font-bold text-center text-[#004AAD]">Ai 팩토리로 가능한 것들</h2>
+                 <p class="text-center text-gray-600 mt-2 mb-8 md:mb-12">소프트웨어 개발의 경계를 허물고, 누구나 혁신가가 될 수 있습니다.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                        <span class="text-5xl">🏢</span>
+                        <h3 class="font-bold text-lg mt-4 text-[#004AAD]">맞춤형 ERP/CRM</h3>
+                        <p class="text-sm mt-2 text-gray-600">내 비즈니스에 꼭 맞는 관리 시스템을 코딩 없이 며칠 만에 구축합니다.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                        <span class="text-5xl">🚀</span>
+                        <h3 class="font-bold text-lg mt-4 text-[#004AAD]">영업/마케팅 자동화</h3>
+                        <p class="text-sm mt-2 text-gray-600">캠페인 생성부터 성과 분석까지, 마케팅 전 과정을 완전 자동화합니다.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                        <span class="text-5xl">💻</span>
+                        <h3 class="font-bold text-lg mt-4 text-[#004AAD]">레거시 시스템 현대화</h3>
+                        <p class="text-sm mt-2 text-gray-600">오래된 시스템을 데이터 손실 없이 최신 클라우드 앱으로 전환합니다.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                        <span class="text-5xl">🧑‍💻</span>
+                        <h3 class="font-bold text-lg mt-4 text-[#004AAD]">1인 창업가 서비스</h3>
+                        <p class="text-sm mt-2 text-gray-600">아이디어만 있다면, 비싼 외주 없이 자신만의 서비스를 즉시 출시합니다.</p>
+                    </div>
+                </div>
+            </section>
     </main>
 
     <!-- Footer -->
@@ -218,6 +343,107 @@
     </footer>
 
     <script>
+
+         const tooltipCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+
+        const revenueData = {
+            labels: ['1차년도 (2025)', '2차년도 (2026)', '3차년도 (2027)', '4차년도 (2028)'],
+            datasets: [
+                {
+                    label: '외주 개발',
+                    data: [15, 30, 40, 50],
+                    backgroundColor: '#89D2FF',
+                },
+                {
+                    label: '자체 서비스',
+                    data: [5, 20, 40, 100],
+                    backgroundColor: '#00B5AD',
+                },
+                {
+                    label: 'SaaS 구독',
+                    data: [0, 50, 120, 250],
+                    backgroundColor: '#0079E0',
+                }
+            ]
+        };
+
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'bar',
+            data: revenueData,
+            options: {
+                ...tooltipCallback,
+                maintainAspectRatio: false,
+                responsive: true,
+                scales: {
+                    x: {
+                        stacked: true,
+                    },
+                    y: {
+                        stacked: true,
+                        title: {
+                            display: true,
+                            text: '매출 (억 원)'
+                        }
+                    }
+                },
+                plugins: {
+                    ...tooltipCallback.plugins,
+                    title: {
+                        display: true,
+                        text: '연도별 예상 매출 성장',
+                        font: { size: 16 }
+                    }
+                }
+            }
+        });
+
+        const revenueMixData = {
+            labels: ['SaaS 구독', '자체 서비스', '외주 개발'],
+            datasets: [{
+                data: [250, 100, 50],
+                backgroundColor: ['#0079E0', '#00B5AD', '#89D2FF'],
+                hoverOffset: 4
+            }]
+        };
+
+        const revenueMixCtx = document.getElementById('revenueMixChart').getContext('2d');
+        new Chart(revenueMixCtx, {
+            type: 'doughnut',
+            data: revenueMixData,
+            options: {
+                ...tooltipCallback,
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    ...tooltipCallback.plugins,
+                    title: {
+                        display: true,
+                        text: '4차년도 목표 매출 구성비',
+                        font: { size: 16 }
+                    },
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
             const marketGrowthData = {
                 labels: ['2024년', '2025년', '2030년'],
