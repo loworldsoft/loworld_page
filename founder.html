@@ -11,8 +11,6 @@
             font-family: 'Inter', sans-serif;
             background-color: #f0f2f5;
         }
-        /* .container의 max-width를 Tailwind 클래스로 대체하므로 CSS에서 제거 */
-        /* .container { max-width: 960px; } */
         
         .section-title {
             position: relative;
@@ -103,8 +101,6 @@
                 font-size: 2.25rem; /* md:text-4xl */
             }
         }
-
-        /* Larger screens (lg, xl, 2xl) inherit md styles or can be further customized */
     </style>
 </head>
 <body class="p-6 md:p-10">
@@ -139,7 +135,8 @@
         <section class="mb-12 card p-8">
             <h2 class="section-title text-3xl sm:text-4xl font-bold text-gray-800 mb-6">주요 문제 해결 경험</h2>
 
-            <div class="mb-8 p-6 bg-indigo-50 bg-opacity-75 rounded-lg border border-indigo-200">
+            <!-- 박스 제거 및 padding-y, border-b 추가로 구분 -->
+            <div class="py-6 border-b border-gray-200 last:border-b-0">
                 <h3 class="text-2xl sm:text-3xl problem-title font-semibold text-gray-800 mb-3">해외 박물관에 전시된 PixelSense 메모리 누수 문제 해결</h3>
                 <p class="text-gray-700 leading-relaxed mb-3">
                     디스트릭트(d'strict)는 혁신적인 프로젝트 진행 중 발생하는 기술적 난관 해결을 위해 저에게 자문을 요청하곤 했습니다. 특히 기억에 남는 사례는 해외 고객사의 대규모 인터랙티브 전시 시스템에서 발생한 퍼포먼스 이슈였습니다.
@@ -149,15 +146,20 @@
                     심층 분석 결과, WPF(PixelSense) 프레임워크 기반 UI 레이아웃에서 중첩 Grid 사용으로 인한 이벤트 버블링이 과도한 메모리 사용을 야기하고 있음을 발견했습니다. 이에 이벤트 핸들러 최적화 및 메모리 관리 전략 개선을 통해 문제를 해결하고, 원격 패치를 통해 시스템 안정성을 확보했습니다.
                 </p>
                 <p class="text-gray-700 leading-relaxed mb-4">
-                    이러한 경험을 통해 저는 원격 환경에서의 문제 해결 능력과 복잡한 시스템 아키텍처에 대한 깊이 있는 이해를 바탕으로 실질적인 솔루션을 제공하는 전문성을 입증했습니다. (지금은 없어진 MS PixelSense)
+                    이러한 경험을 통해 저는 원격 환경에서의 문제 해결 능력과 복잡한 시스템 아키텍처에 대한 깊이 있는 이해를 바탕으로 실질적인 솔루션을 제공하는 전문성을 입증했습니다.
                 </p>
-                <a href="https://www.youtube.com/watch?v=qh9cOlVFItQ" target="_blank" class="link-button">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm4.553 10.45l-6 3a1 1 0 01-1.553-.832V7.382a1 1 0 011.553-.832l6 3a1 1 0 010 1.699z"></path></svg>
-                    관련 영상 보기
-                </a>
+                <!-- YouTube 영상 임베드 -->
+                <div class="aspect-video w-full rounded-lg shadow-md overflow-hidden">
+                    <iframe src="https://www.youtube.com/embed/qh9cOlVFItQ" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen 
+                            class="w-full h-full">
+                    </iframe>
+                </div>
             </div>
 
-            <div class="mb-8 p-6 bg-indigo-50 bg-opacity-75 rounded-lg border border-indigo-200">
+            <div class="py-6 border-b border-gray-200 last:border-b-0">
                 <h3 class="text-2xl sm:text-3xl problem-title font-semibold text-gray-800 mb-3">실시간 억단위 빅데이터 병렬/분산 처리 및 Virtual Gantt Chart 개발 (줌/펜)</h3>
                 <p class="text-gray-700 leading-relaxed mb-3">
                     삼성 디스플레이의 고도화된 자동화 생산 라인은 높은 생산성을 자랑했지만, 수많은 지연 요소로 인해 병목 현상 분석에 어려움을 겪고 있었습니다. 이를 해결하기 위해 모든 공정 요소에 센서를 적용하여 실시간 데이터를 수집하는 시스템이 필요했습니다.
@@ -171,7 +173,7 @@
                 </p>
             </div>
 
-            <div class="mb-8 p-6 bg-indigo-50 bg-opacity-75 rounded-lg border border-indigo-200">
+            <div class="py-6 border-b border-gray-200 last:border-b-0">
                 <h3 class="text-2xl sm:text-3xl problem-title font-semibold text-gray-800 mb-3">클라우드 기반 병원 의료 정보 시스템의 Rule Engine (Logic Flow) 개발</h3>
                 <p class="text-gray-700 leading-relaxed mb-3">
                     서울대학교병원 차세대 병원정보시스템(C-HIS) 개발 프로젝트에 기술 자문(Technical Assistance)으로 참여하면서, 복잡한 환자별 보험 적용 로직 관리 문제를 해결했습니다. 기존 시스템은 건강보험심사평가원의 규정 변경 시마다 개발자가 소스 코드를 수정하고 재배포해야 하는 비효율적인 구조였습니다.
@@ -184,7 +186,7 @@
                 </p>
             </div>
 
-            <div class="mb-8 p-6 bg-indigo-50 bg-opacity-75 rounded-lg border border-indigo-200">
+            <div class="py-6 border-b border-gray-200 last:border-b-0">
                 <h3 class="text-2xl sm:text-3xl problem-title font-semibold text-gray-800 mb-3">글로벌은행 SPA 프레임워크 IOS/Android 적용</h3>
                 <p class="text-gray-700 leading-relaxed mb-3">
                     한국 시티은행 모바일 앱은 국내 기술 기반 생체 인증 및 비대면 서비스를 네이티브 기능으로 제공하고 있었습니다. 이로 인해 리전 팀에서 주도하는 Angular 기반 Odyssey 프레임워크의 기술적 통합에 어려움을 겪고 있었습니다. 특히, Odyssey 엔진이 Apache Cordova를 통해 네이티브 기능과 연동되는 구조는 기존 앱의 네이티브 서비스와 호환되지 않는 문제를 야기했습니다.
@@ -197,7 +199,7 @@
                 </p>
             </div>
 
-            <div class="mb-8 p-6 bg-indigo-50 bg-opacity-75 rounded-lg border border-indigo-200">
+            <div class="py-6 border-b border-gray-200 last:border-b-0">
                 <h3 class="text-2xl sm:text-3xl problem-title font-semibold text-gray-800 mb-3">KB FCC 프로젝트 - ONE 챗봇</h3>
                 <p class="text-gray-700 leading-relaxed mb-3">
                     KB금융그룹 통합 챗봇 플랫폼 구축 프로젝트(KB FCC ONE 챗봇)는 KB지주사들의 다양한 업무를 단일 챗봇 시스템으로 통합하는 것을 목표로 했습니다. 하지만 1년 이상 진행된 프로젝트는 KB국민은행 앱의 기술적 문제, 계열사 간 시스템 이질성 등으로 인해 난항을 겪고 있었습니다.
@@ -211,7 +213,7 @@
                 </p>
             </div>
 
-            <div class="p-6 bg-indigo-50 bg-opacity-75 rounded-lg border border-indigo-200">
+            <div class="py-6 border-b border-gray-200 last:border-b-0">
                 <h3 class="text-2xl sm:text-3xl problem-title font-semibold text-gray-800 mb-3">여러 매거진 (모바일, 데스크, 통합 맴버쉽)을 MVVM 패턴으로 한번에 완성</h3>
                 <p class="text-gray-700 leading-relaxed mb-3">
                     광고 기반 서비스 플랫폼 개발 시, 반응형 웹 기술은 모바일 환경 최적화에 유리하지만 데스크톱의 다양한 광고 배치 및 UX 요구사항을 충족시키기 어려워 별도 개발이 필요한 경우가 많습니다. 허스트중앙의 다수 매거진 사이트 통합 개발 프로젝트 역시 이러한 문제에 직면했습니다. 짧은 개발 기간 내에 4개 매거진의 모바일/데스크톱 버전(총 8개 사이트)을 구축하고, 공통 로그인 및 OK 캐쉬백 연동 등 복잡한 요구사항을 충족해야 했습니다.
@@ -229,7 +231,7 @@
         <section class="mb-12 card p-8">
             <h2 class="section-title text-3xl sm:text-4xl font-bold text-gray-800 mb-6">포트폴리오</h2>
 
-            <div class="mb-8 p-6 bg-indigo-50 bg-opacity-75 rounded-lg border border-indigo-200">
+            <div class="py-6 border-b border-gray-200 last:border-b-0">
                 <h3 class="text-2xl sm:text-3xl problem-title font-semibold text-gray-800 mb-3">AI : RAG + LLM</h3>
                 <p class="text-gray-700 leading-relaxed mb-3">
                     AI 기술 자문을 제공하던 중, 기존 제품의 성능 및 결과물 문제가 심각한 상황에 직면했습니다. 특히 분산 처리 및 처리 속도 개선이 시급했으며, 프로젝트 완료까지 2개월밖에 남지 않은 촉박한 일정이었습니다.
@@ -242,13 +244,18 @@
                     촉박한 일정 속에서도 팀원들과 긴밀하게 협력하여 2개월 만에 새로운 AI 시스템을 성공적으로 개발하고 납품했습니다. 이 시스템은 높은 성능과 정확도를 인정받아 환경부에서 추가적인 활용을 위한 계약까지 체결하게 되었습니다.
                     이 프로젝트는 제한된 리소스, 촉박한 일정, 기술적 난관 등 어려운 상황 속에서도 팀을 이끌고 성공적인 결과를 달성한 경험입니다.
                 </p>
-                <a href="https://www.youtube.com/watch?v=48_ti21OQuM" target="_blank" class="link-button">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm4.553 10.45l-6 3a1 1 0 01-1.553-.832V7.382a1 1 0 011.553-.832l6 3a1 1 0 010 1.699z"></path></svg>
-                    관련 영상 보기
-                </a>
+                <!-- YouTube 영상 임베드 -->
+                <div class="aspect-video w-full rounded-lg shadow-md overflow-hidden">
+                    <iframe src="https://www.youtube.com/embed/48_ti21OQuM" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen 
+                            class="w-full h-full">
+                    </iframe>
+                </div>
             </div>
 
-            <div class="mb-8 p-6 bg-indigo-50 bg-opacity-75 rounded-lg border border-indigo-200">
+            <div class="py-6 border-b border-gray-200 last:border-b-0">
                 <h3 class="text-2xl sm:text-3xl problem-title font-semibold text-gray-800 mb-3">APM : 모니터링 서비스</h3>
                 <p class="text-gray-700 leading-relaxed mb-3">
                     한 기업의 연구 과제 프로젝트로 1년 동안 진행되었으나 기존 개발팀의 이탈로 인해 프리랜서 개발자로써 단독으로 설계도 없는 4개월이라는 촉박한 기간 내에 결과물을 완성해야 하는 위기에 처했습니다. 더욱이 고객사는 명확한 요구사항 정의 없이 기술 및 디자인 측면에서 추상적인 기대치만을 제시하여 어려움이 가중되었습니다.
@@ -259,13 +266,18 @@
                 <p class="text-gray-700 leading-relaxed">
                     짧은 개발 기간에도 불구하고 핵심 기능을 우선 구현하고, 고객사와의 긴밀한 소통을 통해 요구사항을 구체화하며 프로젝트를 성공적으로 완료했습니다. 이는 뛰어난 문제 해결 능력과 커뮤니케이션 능력, 그리고 다양한 기술 스택에 대한 깊이 있는 이해를 바탕으로 이루어낸 결과입니다.
                 </p>
-                <a href="https://www.youtube.com/watch?v=QaN8ceI3Dho" target="_blank" class="link-button">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm4.553 10.45l-6 3a1 1 0 01-1.553-.832V7.382a1 1 0 011.553-.832l6 3a1 1 0 010 1.699z"></path></svg>
-                    관련 영상 보기
-                </a>
+                <!-- YouTube 영상 임베드 -->
+                <div class="aspect-video w-full rounded-lg shadow-md overflow-hidden">
+                    <iframe src="https://www.youtube.com/embed/QaN8ceI3Dho" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen 
+                            class="w-full h-full">
+                    </iframe>
+                </div>
             </div>
 
-            <div class="mb-8 p-6 bg-indigo-50 bg-opacity-75 rounded-lg border border-indigo-200">
+            <div class="py-6 border-b border-gray-200 last:border-b-0">
                 <h3 class="text-2xl sm:text-3xl problem-title font-semibold text-gray-800 mb-3">3D : SVG 기반 WebGL 엔진 개발</h3>
                 <p class="text-gray-700 leading-relaxed mb-3">
                     중국 교육 기관의 학습용 소프트웨어 개발 프로젝트에 참여하여, 복잡한 데이터 관계 시각화 문제를 해결했습니다. 초기에는 SVG 기반 2D 시각화를 시도했으나, 데이터 중첩으로 인해 정보 전달력이 저하되는 문제가 발생했습니다.
@@ -276,13 +288,18 @@
                 <p class="text-gray-700 leading-relaxed">
                     프로젝트 수행 과정에서 3차원 기하학 및 컴퓨터 그래픽스 기술에 대한 깊이 있는 이해를 얻을 수 있었습니다.
                 </p>
-                <a href="https://www.youtube.com/watch?v=ms9WVs4V-Hc" target="_blank" class="link-button">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm4.553 10.45l-6 3a1 1 0 01-1.553-.832V7.382a1 1 0 011.553-.832l6 3a1 1 0 010 1.699z"></path></svg>
-                    관련 영상 보기
-                </a>
+                <!-- YouTube 영상 임베드 -->
+                <div class="aspect-video w-full rounded-lg shadow-md overflow-hidden">
+                    <iframe src="https://www.youtube.com/embed/ms9WVs4V-Hc" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen 
+                            class="w-full h-full">
+                    </iframe>
+                </div>
             </div>
 
-            <div class="p-6 bg-indigo-50 bg-opacity-75 rounded-lg border border-indigo-200">
+            <div class="py-6 border-b border-gray-200 last:border-b-0">
                 <h3 class="text-2xl sm:text-3xl problem-title font-semibold text-gray-800 mb-3">로월드소프트 : 노코드 엔진</h3>
                 <p class="text-gray-700 leading-relaxed mb-3">
                     개발자로서의 커리어를 쌓아가는 동안, 혁신적인 노코드 플랫폼 개발을 통해 창업의 꿈을 실현하고자 했습니다. 이를 위해 주말과 여가 시간을 활용하여 데이터 중심 컴포넌트 기반의 노코드 엔진 개발에 매진했습니다. 사용자가 코딩 없이도 원하는 결과물을 만들 수 있도록 직관적인 인터페이스와 유연한 컴포넌트 조합 기능을 제공하는 것을 목표로 했습니다.
@@ -293,10 +310,15 @@
                 <p class="text-gray-700 leading-relaxed mb-4">
                     앞으로는 축적된 AI 기술 노하우를 노코드 엔진에 접목하여 사용자의 데이터 분석 및 활용 능력을 향상시키고, 보다 지능적인 자동화 기능을 제공하는 혁신적인 플랫폼을 구축할 계획입니다.
                 </p>
-                <a href="https://www.youtube.com/watch?v=1obly0lMhpA" target="_blank" class="link-button">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm4.553 10.45l-6 3a1 1 0 01-1.553-.832V7.382a1 1 0 011.553-.832l6 3a1 1 0 010 1.699z"></path></svg>
-                    관련 영상 보기
-                </a>
+                <!-- YouTube 영상 임베드 -->
+                <div class="aspect-video w-full rounded-lg shadow-md overflow-hidden">
+                    <iframe src="https://www.youtube.com/embed/1obly0lMhpA" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen 
+                            class="w-full h-full">
+                    </iframe>
+                </div>
             </div>
         </section>
 
