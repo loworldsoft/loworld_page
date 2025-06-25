@@ -11,9 +11,9 @@
             font-family: 'Inter', sans-serif;
             background-color: #f0f2f5;
         }
-        .container {
-            max-width: 960px; /* 최대 너비 설정 */
-        }
+        /* .container의 max-width를 Tailwind 클래스로 대체하므로 CSS에서 제거 */
+        /* .container { max-width: 960px; } */
+        
         .section-title {
             position: relative;
             padding-bottom: 0.5rem;
@@ -108,10 +108,11 @@
     </style>
 </head>
 <body class="p-6 md:p-10">
-    <div class="container mx-auto">
+    <!-- 메인 컨테이너에 w-full과 반응형 max-width 적용 -->
+    <div class="container mx-auto w-full md:max-w-3xl lg:max-w-4xl">
         <!-- 헤더 섹션 -->
         <header class="text-center mb-12 p-6 sm:p-8 md:p-10 rounded-xl shadow-2xl header-with-bg">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">Loworld AI 창업자 이력</h1>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">Loworld AI 안상현</h1>
             <p class="text-xl sm:text-2xl md:text-3xl font-light">AI Agent로 미래를 이끌어갈 Loworld AI</p>
         </header>
 
@@ -148,9 +149,12 @@
                     심층 분석 결과, WPF(PixelSense) 프레임워크 기반 UI 레이아웃에서 중첩 Grid 사용으로 인한 이벤트 버블링이 과도한 메모리 사용을 야기하고 있음을 발견했습니다. 이에 이벤트 핸들러 최적화 및 메모리 관리 전략 개선을 통해 문제를 해결하고, 원격 패치를 통해 시스템 안정성을 확보했습니다.
                 </p>
                 <p class="text-gray-700 leading-relaxed mb-4">
-                    이러한 경험을 통해 저는 원격 환경에서의 문제 해결 능력과 복잡한 시스템 아키텍처에 대한 깊이 있는 이해를 바탕으로 실질적인 솔루션을 제공하는 전문성을 입증했습니다. 
+                    이러한 경험을 통해 저는 원격 환경에서의 문제 해결 능력과 복잡한 시스템 아키텍처에 대한 깊이 있는 이해를 바탕으로 실질적인 솔루션을 제공하는 전문성을 입증했습니다. (지금은 없어진 MS PixelSense)
                 </p>
-               
+                <a href="https://www.youtube.com/watch?v=qh9cOlVFItQ" target="_blank" class="link-button">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm4.553 10.45l-6 3a1 1 0 01-1.553-.832V7.382a1 1 0 011.553-.832l6 3a1 1 0 010 1.699z"></path></svg>
+                    관련 영상 보기
+                </a>
             </div>
 
             <div class="mb-8 p-6 bg-indigo-50 bg-opacity-75 rounded-lg border border-indigo-200">
