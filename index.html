@@ -412,9 +412,42 @@
             <h2 class="text-2xl md:text-3xl font-bold text-center text-[#004AAD] mb-8">더 살펴보기</h2>
             <!-- 링크 버튼 그룹 -->
             <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-4">
-                <button type="button" onclick="toggleIframe('agent')" class="underline text-blue-700 hover:text-blue-400 transition-colors font-semibold">Loworld Agent 소개</button>
-                <button type="button" onclick="toggleIframe('mile')" class="underline text-blue-700 hover:text-blue-400 transition-colors font-semibold">마일스톤</button>
-                <button type="button" onclick="toggleIframe('bm')" class="underline text-blue-700 hover:text-blue-400 transition-colors font-semibold">비즈니스 모델</button>
+                <button
+                    type="button"
+                    onclick="toggleIframe('agent')"
+                    class="relative px-8 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-bold shadow-lg hover:from-blue-600 hover:to-cyan-500 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                >
+                    <span class="inline-flex items-center gap-2">
+                        <svg class="w-5 h-5 text-white opacity-80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"/>
+                        </svg>
+                        Loworld Agent 소개
+                    </span>
+                </button>
+                <button
+                    type="button"
+                    onclick="toggleIframe('mile')"
+                    class="relative px-8 py-3 rounded-lg bg-gradient-to-r from-teal-500 to-blue-400 text-white font-bold shadow-lg hover:from-teal-600 hover:to-blue-500 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-300"
+                >
+                    <span class="inline-flex items-center gap-2">
+                        <svg class="w-5 h-5 text-white opacity-80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        마일스톤
+                    </span>
+                </button>
+                <button
+                    type="button"
+                    onclick="toggleIframe('bm')"
+                    class="relative px-8 py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-blue-700 text-white font-bold shadow-lg hover:from-indigo-600 hover:to-blue-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                >
+                    <span class="inline-flex items-center gap-2">
+                        <svg class="w-5 h-5 text-white opacity-80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M3 17v-2a4 4 0 014-4h10a4 4 0 014 4v2M16 3.13a4 4 0 010 7.75M8 3.13a4 4 0 000 7.75"/>
+                        </svg>
+                        비즈니스 모델
+                    </span>
+                </button>
             </div>
             <!-- iframe 영역 -->
             <div id="iframe-container" class="mt-6 hidden">
@@ -427,7 +460,18 @@
                     style="min-height:400px;background:white;display:block;"
                     allowfullscreen
                 ></iframe>
-                <button type="button" onclick="closeIframe()" class="mt-2 text-gray-500 hover:text-blue-600 underline">닫기</button>
+                <div class="flex justify-center mt-4">
+        <button
+            type="button"
+            onclick="closeIframe()"
+            class="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-gray-400 via-gray-600 to-gray-800 text-white font-semibold shadow-md hover:from-gray-500 hover:to-gray-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        >
+            <svg class="w-5 h-5 text-white opacity-80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+            닫기
+        </button>
+    </div>
             </div>
         </section>
     </main>
@@ -442,14 +486,6 @@
                 혁신할 수 있는지 직접 확인해보세요.</p>
             <a href="mailto:loworldsoft@gmail.com"
                 class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors">문의하기</a>
-            <div class="mt-10 flex flex-col md:flex-row justify-center items-center gap-4">
-                <a href="https://loworldsoft.com/loworld_agent.html" target="_blank" rel="noopener"
-                    class="underline hover:text-blue-400 transition-colors">Loworld Agent 소개</a>
-                <a href="https://loworldsoft.com/mile.html" target="_blank" rel="noopener"
-                    class="underline hover:text-blue-400 transition-colors">마일스톤</a>
-                <a href="https://loworldsoft.com/bm.html" target="_blank" rel="noopener"
-                    class="underline hover:text-blue-400 transition-colors">비즈니스 모델</a>
-            </div>
             <div class="mt-10 text-gray-400 text-sm">
                 &copy; 2025 Loworld AI. All rights reserved.
             </div>
