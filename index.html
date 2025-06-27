@@ -119,6 +119,8 @@
                 <a href="https://api.loworldsoft.com"
                     class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors">AI
                     Agent</a>
+
+
             </div>
         </section>
 
@@ -402,6 +404,31 @@
                     <p class="text-sm mt-2 text-gray-600">아이디어만 있다면, 비싼 외주 없이 자신만의 서비스를 즉시 출시합니다.</p>
                 </div>
             </div>
+
+ 
+        </section>
+
+        <section id="more-info" class="py-16 md:py-24 px-4 md:px-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-[#004AAD] mb-8">더 살펴보기</h2>
+            <!-- 링크 버튼 그룹 -->
+            <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-4">
+                <button type="button" onclick="toggleIframe('agent')" class="underline text-blue-700 hover:text-blue-400 transition-colors font-semibold">Loworld Agent 소개</button>
+                <button type="button" onclick="toggleIframe('mile')" class="underline text-blue-700 hover:text-blue-400 transition-colors font-semibold">마일스톤</button>
+                <button type="button" onclick="toggleIframe('bm')" class="underline text-blue-700 hover:text-blue-400 transition-colors font-semibold">비즈니스 모델</button>
+            </div>
+            <!-- iframe 영역 -->
+            <div id="iframe-container" class="mt-6 hidden">
+                <iframe
+                    id="dynamic-iframe"
+                    src=""
+                    width="100%"
+                    height="600"
+                    class="rounded-xl border shadow-lg mx-auto"
+                    style="min-height:400px;background:white;display:block;"
+                    allowfullscreen
+                ></iframe>
+                <button type="button" onclick="closeIframe()" class="mt-2 text-gray-500 hover:text-blue-600 underline">닫기</button>
+            </div>
         </section>
     </main>
 
@@ -415,6 +442,14 @@
                 혁신할 수 있는지 직접 확인해보세요.</p>
             <a href="mailto:loworldsoft@gmail.com"
                 class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors">문의하기</a>
+            <div class="mt-10 flex flex-col md:flex-row justify-center items-center gap-4">
+                <a href="https://loworldsoft.com/loworld_agent.html" target="_blank" rel="noopener"
+                    class="underline hover:text-blue-400 transition-colors">Loworld Agent 소개</a>
+                <a href="https://loworldsoft.com/mile.html" target="_blank" rel="noopener"
+                    class="underline hover:text-blue-400 transition-colors">마일스톤</a>
+                <a href="https://loworldsoft.com/bm.html" target="_blank" rel="noopener"
+                    class="underline hover:text-blue-400 transition-colors">비즈니스 모델</a>
+            </div>
             <div class="mt-10 text-gray-400 text-sm">
                 &copy; 2025 Loworld AI. All rights reserved.
             </div>
@@ -641,6 +676,25 @@
                 });
             }
         });
+
+        function toggleIframe(type) {
+            const container = document.getElementById('iframe-container');
+            const iframe = document.getElementById('dynamic-iframe');
+            let url = '';
+            if (type === 'agent') url = 'https://loworldsoft.com/loworld_agent.html';
+            if (type === 'mile') url = 'https://loworldsoft.com/mile.html';
+            if (type === 'bm') url = 'https://loworldsoft.com/bm.html';
+            iframe.src = url;
+            container.classList.remove('hidden');
+            // 스크롤 이동(선택)
+            container.scrollIntoView({ behavior: 'smooth' });
+        }
+        function closeIframe() {
+            const container = document.getElementById('iframe-container');
+            const iframe = document.getElementById('dynamic-iframe');
+            iframe.src = '';
+            container.classList.add('hidden');
+        }
     </script>
 
 </body>
