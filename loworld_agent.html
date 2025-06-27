@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loworld AI Agent: The Future of Software Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- 
+    Narrative & Structure Plan:
+    1. Hero Section: Catchy title to hook the user.
+    2. What is Loworld?: Introduction to the "software factory" concept.
+    3. How It Works (Process Flow): A visual flowchart using HTML/CSS.
+    4. Core Features Section: A grid layout with cards for each feature.
+    5. Comparative Analysis (Loworld vs. Traditional ERP): A horizontal bar chart for clear comparison.
+    6. Development Efficiency Section: A donut chart to highlight a key performance indicator.
+    7. Conclusion: A summary of the value proposition.
+
+    Visualization Selection:
+    - Process Flow: Goal: Organize. Chosen Visualization: HTML/CSS Flowchart. Justification: Best for showing a process without using prohibited SVG/Mermaid JS.
+    - Comparative Analysis: Goal: Compare. Chosen Visualization: Chart.js Horizontal Bar Chart. Justification: Ideal for comparing two entities across multiple distinct categories.
+    - Development Efficiency: Goal: Inform. Chosen Visualization: Chart.js Donut Chart. Justification: Excellent for showing a single, powerful percentage-based KPI.
+    - NEITHER Mermaid JS NOR SVG was used anywhere in this output.
+
+    Color Palette Selection:
+    - Chosen Palette Name: Brilliant Blues.
+    -->
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .donut-chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 350px;
+        }
+        .flow-arrow {
+            position: relative;
+        }
+        .flow-arrow::after {
+            content: '→';
+            font-size: 2.5rem;
+            color: #94d2bd;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .bg-main { background-color: #001219; }
+        .bg-card { background-color: #003f48; }
+        .text-accent-light { color: #94d2bd; }
+        .text-accent-orange { color: #ee9b00; }
+        .text-primary { color: #e9d8a6; }
+        .border-accent { border-color: #0a9396; }
+    </style>
+</head>
+<body class="bg-main text-white">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center my-12 md:my-20">
+            <h1 class="text-4xl md:text-6xl font-black text-accent-light mb-4">Loworld AI Agent</h1>
+            <p class="text-xl md:text-2xl text-primary">소프트웨어 개발의 미래를 재정의하다</p>
+        </header>
+
+        <section id="intro" class="my-16 md:my-24">
+            <div class="max-w-4xl mx-auto text-center bg-card p-8 rounded-2xl shadow-2xl">
+                <h2 class="text-3xl font-bold mb-4 text-accent-light">"소프트웨어 공장"의 탄생</h2>
+                <p class="text-lg text-primary leading-relaxed">
+                    Loworld AI Agent는 단순한 개발 도구를 넘어, 아이디어를 현실로 만드는 지능형 '소프트웨어 공장'입니다. AI가 사용자의 요구를 실시간으로 분석하여 소프트웨어를 자동으로 구축, 배포하고 지속적으로 개선합니다. 코딩의 장벽 없이, 누구나 혁신의 주체가 될 수 있습니다.
+                </p>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="my-16 md:my-24">
+            <h2 class="text-3xl font-bold text-center mb-12 text-accent-light">작동 방식: 아이디어에서 진화하는 소프트웨어까지</h2>
+            <div class="grid grid-cols-1 md:grid-cols-5 items-center gap-8 text-center">
+                <div class="bg-card p-6 rounded-xl shadow-lg h-full flex flex-col justify-center">
+                    <div class="text-4xl mb-3">💡</div>
+                    <h3 class="text-xl font-bold text-primary">사용자 아이디어</h3>
+                    <p class="text-gray-300 mt-2">필요한 기능과 요구사항 정의</p>
+                </div>
+                <div class="flow-arrow hidden md:block h-24"></div>
+                <div class="bg-card p-6 rounded-xl shadow-lg h-full flex flex-col justify-center">
+                    <div class="text-4xl mb-3">🤖</div>
+                    <h3 class="text-xl font-bold text-primary">AI Agent 분석 및 생성</h3>
+                    <p class="text-gray-300 mt-2">UI/UX, 비즈니스 로직 자동 생성</p>
+                </div>
+                <div class="flow-arrow hidden md:block h-24"></div>
+                <div class="bg-card p-6 rounded-xl shadow-lg h-full flex flex-col justify-center">
+                    <div class="text-4xl mb-3">🚀</div>
+                    <h3 class="text-xl font-bold text-primary">배포 및 지속적 진화</h3>
+                    <p class="text-gray-300 mt-2">피드백을 학습하여 자동 업그레이드</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="my-16 md:my-24">
+            <h2 class="text-3xl font-bold text-center mb-12 text-accent-light">핵심 기능</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-card p-8 rounded-2xl shadow-lg text-center transition-transform transform hover:scale-105">
+                    <div class="text-5xl mb-4">🌐</div>
+                    <h3 class="text-2xl font-bold mb-2 text-primary">동적 생성</h3>
+                    <p class="text-gray-300">데이터 기반으로 UI/UX와 비즈니스 로직을 실시간으로 최적화합니다.</p>
+                </div>
+                <div class="bg-card p-8 rounded-2xl shadow-lg text-center transition-transform transform hover:scale-105">
+                    <div class="text-5xl mb-4">👩‍💻</div>
+                    <h3 class="text-2xl font-bold mb-2 text-primary">개발의 민주화</h3>
+                    <p class="text-gray-300">코딩 없이 아이디어만으로 누구나 소프트웨어를 제작하고 수정할 수 있습니다.</p>
+                </div>
+                <div class="bg-card p-8 rounded-2xl shadow-lg text-center transition-transform transform hover:scale-105">
+                    <div class="text-5xl mb-4">🧠</div>
+                    <h3 class="text-2xl font-bold mb-2 text-primary">AI 기반 업그레이드</h3>
+                    <p class="text-gray-300">사용자 피드백과 트렌드를 AI가 학습하여 소프트웨어를 자동으로 개선합니다.</p>
+                </div>
+                <div class="bg-card p-8 rounded-2xl shadow-lg text-center transition-transform transform hover:scale-105">
+                    <div class="text-5xl mb-4">📱</div>
+                    <h3 class="text-2xl font-bold mb-2 text-primary">멀티 디바이스 지원</h3>
+                    <p class="text-gray-300">PC, 모바일 등 모든 기기에서 최적화된 사용 경험을 제공합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="comparison" class="my-16 md:my-24 bg-card p-6 md:p-10 rounded-2xl shadow-2xl">
+            <h2 class="text-3xl font-bold text-center mb-4 text-accent-light">Loworld vs 기존 ERP 시스템</h2>
+            <p class="text-center max-w-3xl mx-auto mb-10 text-primary">
+                기존의 복잡하고 경직된 ERP 시스템과 비교하여 Loworld AI Agent가 제공하는 압도적인 유연성과 효율성을 확인해 보세요.
+            </p>
+            <div class="chart-container">
+                <canvas id="comparisonChart"></canvas>
+            </div>
+        </section>
+
+        <section id="efficiency" class="my-16 md:my-24">
+             <h2 class="text-3xl font-bold text-center mb-4 text-accent-light">혁신적인 개발 효율성</h2>
+            <div class="md:flex md:items-center md:justify-center md:gap-12">
+                <div class="donut-chart-container mb-8 md:mb-0">
+                    <canvas id="efficiencyChart"></canvas>
+                </div>
+                <div class="text-center md:text-left max-w-md">
+                    <p class="text-2xl text-primary leading-relaxed">
+                        AI 기반 자동화를 통해 개발 기간과 비용을
+                        <span class="text-5xl font-black block my-3 text-accent-orange">최대 90%</span>
+                        까지 절감할 수 있습니다. 기업은 핵심 비즈니스에 더욱 집중하고, 시장 변화에 민첩하게 대응할 수 있습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-20 mb-10">
+            <p class="text-2xl font-bold text-accent-light">지금, Loworld와 함께 미래를 경험하세요.</p>
+            <p class="text-primary mt-2">변화에 민첩하게 대응하고, 비용을 절감하며, IT 기술 격차 없이 혁신을 가속화할 수 있습니다.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const wrapLabel = (label, maxLength = 16) => {
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        };
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const comparisonChartCtx = document.getElementById('comparisonChart').getContext('2d');
+        new Chart(comparisonChartCtx, {
+            type: 'bar',
+            data: {
+                labels: ['유연성', '개발 속도', '비용 효율성', '통합 용이성', '지속적 진화'],
+                datasets: [
+                    {
+                        label: 'Loworld AI Agent',
+                        data: [95, 90, 85, 80, 98],
+                        backgroundColor: '#0a9396',
+                        borderColor: '#94d2bd',
+                        borderWidth: 2,
+                        borderRadius: 5,
+                    },
+                    {
+                        label: '기존 ERP 시스템',
+                        data: [20, 30, 25, 40, 10],
+                        backgroundColor: '#ee9b00',
+                        borderColor: '#e9d8a6',
+                        borderWidth: 2,
+                        borderRadius: 5,
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: {
+                            color: 'rgba(148, 210, 189, 0.2)'
+                        },
+                        ticks: {
+                            color: '#94d2bd',
+                            font: {
+                                size: 14,
+                            },
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    },
+                    y: {
+                         grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#e9d8a6',
+                            font: {
+                                size: 16,
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: '#e9d8a6',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        const efficiencyChartCtx = document.getElementById('efficiencyChart').getContext('2d');
+        new Chart(efficiencyChartCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['개발 기간/비용 절감', '기존 소요 시간/비용'],
+                datasets: [{
+                    data: [90, 10],
+                    backgroundColor: ['#ee9b00', '#003f48'],
+                    borderColor: ['#e9d8a6', '#0a9396'],
+                    borderWidth: 2,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback,
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    label += context.parsed + '%';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
