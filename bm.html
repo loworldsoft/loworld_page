@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loworld AI Agent Factory 인포그래픽</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #334155;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .section-title {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700; /* font-bold */
+            color: #1e293b; /* slate-900 */
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .card {
+            background-color: #f8fafc; /* slate-50 */
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease-in-out;
+            display: flex; /* Flexbox for vertical alignment */
+            flex-direction: column;
+            justify-content: space-between; /* Push button to bottom */
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .icon {
+            font-size: 2.5rem;
+            color: #2563eb; /* blue-600 */
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .sub-heading {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600; /* font-semibold */
+            color: #334155; /* slate-700 */
+            margin-bottom: 0.75rem;
+        }
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+        .list-item::before {
+            content: '•';
+            color: #2563eb;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            margin-right: 0.5em;
+        }
+        .detail-text {
+            font-size: 0.95rem;
+            color: #475569; /* slate-600 */
+            margin-top: 0.5rem;
+        }
+        .detail-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .detail-content.expanded {
+            max-height: 500px; /* Adjust as needed for content */
+            transition: max-height 0.5s ease-in;
+        }
+        .toggle-button {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #2563eb;
+            color: white;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            align-self: center; /* Center the button */
+        }
+        .toggle-button:hover {
+            background-color: #1d4ed8;
+        }
+        canvas {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            margin-top: 2rem;
+            width: 100%; /* Make canvas responsive */
+            height: 350px; /* Increased height for chart and legend */
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-right: 1rem;
+        }
+        .legend-color-box {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 0.25rem;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body class="p-4">
+    <div class="container">
+        <h1 class="text-4xl font-extrabold text-center text-blue-800 mb-8 rounded-lg p-4 bg-gradient-to-r from-blue-100 to-indigo-100 shadow-md">
+            Loworld AI Agent Factory: 미래 수익 모델 및 성장 전략
+        </h1>
+
+        <!-- Company Goal Section -->
+        <div class="mb-10 p-6 bg-blue-50 rounded-xl shadow-inner border border-blue-200">
+            <h2 class="section-title text-blue-700">기업 목표: 소프트웨어 개발 시장 혁신</h2>
+            <p class="text-lg text-center text-gray-700">
+                Loworld AI Agent Factory는 독자적인 <span class="font-bold text-blue-600">AI 노코드 에이전트 기술</span>을 통해
+                기존의 복잡하고 시간 소모적인 소프트웨어 개발 과정을 자동화하고,
+                모든 규모의 기업이 쉽고 빠르게 맞춤형 솔루션을 구축할 수 있도록 지원하여
+                소프트웨어 개발 시장에 혁명을 일으키는 것을 목표로 합니다.
+                나아가 <span class="font-bold text-blue-600">콘텐츠 자동화</span>를 시작으로 <span class="font-bold text-blue-600">게임 산업</span>까지
+                영역을 확장하며 새로운 가치를 창출할 것입니다.
+            </p>
+        </div>
+
+        <!-- Revenue Model Pillars Section -->
+        <h2 class="section-title">수익 모델의 핵심 기둥</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <!-- Pillar 1: Outsourcing -->
+            <div class="card flex flex-col items-center text-center">
+                <div class="flex-grow flex flex-col items-center">
+                    <div class="icon">💻</div>
+                    <h3 class="sub-heading">AI 노코드 에이전트 기반 아웃소싱</h3>
+                    <ul class="text-gray-600 text-left w-full pl-4">
+                        <li class="list-item">초기 및 지속적인 수익원 확보</li>
+                        <li class="list-item">중소기업부터 대기업까지 맞춤형 소프트웨어 개발</li>
+                        <li class="list-item">빠르고 효율적인 커스텀 솔루션 제공</li>
+                        <li class="list-item">프로젝트당 예상 수익: 수백만 ~ 수억원</li>
+                    </ul>
+                </div>
+                <button class="toggle-button" onclick="toggleDetails(this)">자세히 보기</button>
+                <div class="detail-content text-left w-full pl-4">
+                    <p class="detail-text">
+                        <span class="font-semibold">예시:</span> 특정 비즈니스 프로세스 자동화, 맞춤형 고객 관리 시스템(CRM) 구축 등.
+                        AI 에이전트가 개발 과정을 단축하여 비용 효율적인 아웃소싱 서비스를 제공합니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Pillar 2: SaaS Subscriptions -->
+            <div class="card flex flex-col items-center text-center">
+                <div class="flex-grow flex flex-col items-center">
+                    <div class="icon">📊</div>
+                    <h3 class="sub-heading">AI 에이전트 기반 SaaS 솔루션 구독</h3>
+                    <ul class="text-gray-600 text-left w-full pl-4">
+                        <li class="list-item">핵심 성장 동력으로 반복 매출 창출</li>
+                        <li class="list-item">월/연간 구독료 부과 (서비스 범위에 따라 차등)</li>
+                        <li class="list-item">일반 서비스: 수만원 ~ 수백만원</li>
+                        <li class="list-item">고부가가치 솔루션 (ERP/EMR 등): 연 수천만 ~ 수억원</li>
+                    </ul>
+                </div>
+                <button class="toggle-button" onclick="toggleDetails(this)">자세히 보기</button>
+                <div class="detail-content text-left w-full pl-4">
+                    <p class="detail-text">
+                        <span class="font-semibold">예시:</span> 중소기업용 통합 비즈니스 관리 솔루션, 병원용 전자의무기록(EMR) 시스템 등.
+                        사용자는 필요한 기능을 구독하여 지속적으로 이용합니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Pillar 3: Licensing & API Integration -->
+            <div class="card flex flex-col items-center text-center">
+                <div class="flex-grow flex flex-col items-center">
+                    <div class="icon">🔗</div>
+                    <h3 class="sub-heading">AI 에이전트 솔루션 라이선싱 및 API 연동</h3>
+                    <ul class="text-gray-600 text-left w-full pl-4">
+                        <li class="list-item">장기적 확장 모델 및 고수익 창출</li>
+                        <li class="list-item">타 플랫폼에 AI 노코드 에이전트 엔진/기능 통합</li>
+                        <li class="list-item">연 수억 ~ 수십억원 규모의 고부가가치 계약 기대</li>
+                    </ul>
+                </div>
+                <button class="toggle-button" onclick="toggleDetails(this)">자세히 보기</button>
+                <div class="detail-content text-left w-full pl-4">
+                    <p class="detail-text">
+                        <span class="font-semibold">O2O 서비스 모방 예시:</span>
+                        <ul class="list-disc list-inside ml-4 mt-2">
+                            <li><span class="font-semibold text-blue-600">배달/물류 최적화:</span> 소규모 식당이나 상점이 자체 배달 앱 또는 물류 관리 시스템을 AI 에이전트로 빠르게 구축하여, 기존 배달 플랫폼 수수료 부담을 줄이고 고객 데이터를 직접 관리. (예: '우리 동네 배달 앱' 자동 생성)</li>
+                            <li><span class="font-semibold text-blue-600">예약/매칭 플랫폼:</span> 개인 강사, 소규모 학원, 뷰티샵 등이 AI 에이전트를 활용해 자신만의 맞춤형 예약 및 고객-서비스 매칭 플랫폼을 노코드로 구현. (예: '내 강좌 예약 시스템', '우리 미용실 예약 앱')</li>
+                            <li><span class="font-semibold text-blue-600">부동산/중개 서비스:</span> 개별 공인중개사나 소규모 부동산 사무소가 AI 에이전트로 맞춤형 매물 관리 및 고객 상담 챗봇 기능을 통합한 웹/앱을 구축하여, 특정 지역이나 매물 유형에 특화된 서비스 제공. (예: 'OO동 아파트 전문 앱')</li>
+                            <li><span class="font-semibold text-blue-600">현장 서비스 연결:</span> 특정 기술자(에어컨 수리, 청소 등)나 프리랜서 그룹이 AI 에이전트를 통해 고객 요청 접수, 스케줄링, 결제까지 가능한 간이 O2O 서비스 플랫폼을 직접 생성. (예: '우리 동네 수리공 연결 서비스')</li>
+                        </ul>
+                        이처럼 AI 에이전트 기술을 라이선싱하여 기존 O2O 서비스의 핵심 기능을 소규모 사업자나 특정 니즈를 가진 기업이 자체적으로 구축할 수 있도록 지원하며, 이를 통해 새로운 시장을 창출하고 고수익을 기대합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ambitious Revenue Targets Section -->
+        <h2 class="section-title">야심찬 매출 목표</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- 2025 Target -->
+            <div class="card p-6 bg-green-50 border border-green-200">
+                <div class="flex-grow flex flex-col items-center">
+                    <h3 class="sub-heading text-green-700 mb-3">2025년 목표: 10억원 이상</h3>
+                    <p class="text-gray-700 text-lg">
+                        <span class="font-bold text-green-600">10억원 이상</span> 달성
+                    </p>
+                    <ul class="text-gray-600 text-left w-full pl-4 mt-2">
+                        <li class="list-item">주요 전략: 전자상거래 플랫폼 구축 및 고부가가치 아웃소싱 프로젝트 집중</li>
+                    </ul>
+                </div>
+                <button class="toggle-button" onclick="toggleDetails(this)">자세히 보기</button>
+                <div class="detail-content text-left w-full pl-4">
+                    <ul class="text-gray-600 text-left w-full pl-4 mt-2">
+                        <li class="list-item">세부 계획: 초기 시장 진입 및 성공 사례 확보를 통한 기반 다지기</li>
+                        <li class="list-item">예상 주요 고객: 소규모 온라인 쇼핑몰, 스타트업 등</li>
+                        <li class="list-item">성장 동력: AI 에이전트를 활용한 빠른 개발 및 비용 절감 효과 부각</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2026 Target -->
+            <div class="card p-6 bg-yellow-50 border border-yellow-200">
+                <div class="flex-grow flex flex-col items-center">
+                    <h3 class="sub-heading text-yellow-700 mb-3">2026년 목표: 100억원</h3>
+                    <p class="text-gray-700 text-lg">
+                        <span class="font-bold text-yellow-600">100억원</span> 달성
+                    </p>
+                    <ul class="text-gray-600 text-left w-full pl-4 mt-2">
+                        <li class="list-item">주요 전략: 국내 SaaS 시장 본격 진출 및 ERP/EMR 등 전문 분야 확장</li>
+                    </ul>
+                </div>
+                <button class="toggle-button" onclick="toggleDetails(this)">자세히 보기</button>
+                <div class="detail-content text-left w-full pl-4">
+                    <ul class="text-gray-600 text-left w-full pl-4 mt-2">
+                        <li class="list-item">세부 계획: 대규모 고객 유치 및 서비스 포트폴리오 다각화</li>
+                        <li class="list-item">예상 주요 고객: 중견기업, 병원, 교육기관 등</li>
+                        <li class="list-item">성장 동력: 맞춤형 SaaS 솔루션의 안정성과 확장성 강조</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2027 Target -->
+            <div class="card p-6 bg-purple-50 border border-purple-200">
+                <div class="flex-grow flex flex-col items-center">
+                    <h3 class="sub-heading text-purple-700 mb-3">2027년 목표: 가속화된 성장</h3>
+                    <p class="text-gray-700 text-lg">
+                        <span class="font-bold text-purple-600">가속화된 성장</span>
+                    </p>
+                    <ul class="text-gray-600 text-left w-full pl-4 mt-2">
+                        <li class="list-item">주요 전략: 일본 시장 진출, 특히 헬스케어 IT 분야 집중 공략</li>
+                    </ul>
+                </div>
+                <button class="toggle-button" onclick="toggleDetails(this)">자세히 보기</button>
+                <div class="detail-content text-left w-full pl-4">
+                    <ul class="text-gray-600 text-left w-full pl-4 mt-2">
+                        <li class="list-item">세부 계획: 해외 파트너십 구축 및 현지화 전략 실행</li>
+                        <li class="list-item">예상 주요 고객: 일본 내 병원, 제약사, 의료기기 업체 등</li>
+                        <li class="list-item">성장 동력: 일본 시장의 높은 IT 수요와 노코드 솔루션의 효율성 결합</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2028 Target -->
+            <div class="card p-6 bg-red-50 border border-red-200">
+                <div class="flex-grow flex flex-col items-center">
+                    <h3 class="sub-heading text-red-700 mb-3">2028년 목표: 최소 400억원</h3>
+                    <p class="text-gray-700 text-lg">
+                        <span class="font-bold text-red-600">최소 400억원</span> 달성
+                    </p>
+                    <ul class="text-gray-600 text-left w-full pl-4 mt-2">
+                        <li class="list-item">주요 전략: 아시아 및 북미 지역으로 글로벌 확장</li>
+                    </ul>
+                </div>
+                <button class="toggle-button" onclick="toggleDetails(this)">자세히 보기</button>
+                <div class="detail-content text-left w-full pl-4">
+                    <ul class="text-gray-600 text-left w-full pl-4 mt-2">
+                        <li class="list-item">세부 계획: 검증된 기술 및 비즈니스 모델을 기반으로 한 공격적인 시장 확대</li>
+                        <li class="list-item">예상 주요 고객: 글로벌 기업, 다국적 기업, 각 지역의 중소기업</li>
+                        <li class="list-item">성장 동력: 글로벌 표준에 맞는 솔루션 제공 및 현지 파트너십 강화</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2030 Target -->
+            <div class="card p-6 bg-blue-50 border border-blue-200">
+                <div class="flex-grow flex flex-col items-center">
+                    <h3 class="sub-heading text-blue-700 mb-3">2030년 목표: 1,000억원</h3>
+                    <p class="text-gray-700 text-lg">
+                        <span class="font-bold text-blue-600">1,000억원</span> 달성
+                    </p>
+                    <ul class="text-gray-600 text-left w-full pl-4 mt-2">
+                        <li class="list-item">주요 전략: AI 에이전트 기술의 전 산업 분야 확산 및 선도적 위치 확보</li>
+                    </ul>
+                </div>
+                <button class="toggle-button" onclick="toggleDetails(this)">자세히 보기</button>
+                <div class="detail-content text-left w-full pl-4">
+                    <ul class="list-disc list-inside ml-4 mt-2">
+                        <li class="list-item">세부 계획: 신규 시장 개척, 전략적 M&A, 기술 고도화를 통한 경쟁 우위 확보</li>
+                        <li class="list-item">예상 주요 고객: 전 세계 대기업, 정부 기관, 혁신 스타트업 등</li>
+                        <li class="list-item">성장 동력: AI 노코드 에이전트 생태계 구축 및 글로벌 리더십 강화</li>
+                        <li class="list-item"><span class="font-semibold text-blue-600">콘텐츠 자동화 및 게임 산업 진출:</span> AI 기반 콘텐츠(텍스트, 이미지, 오디오 등) 자동 생성, 게임 개발 도구 제공, 사용자 맞춤형 게임 경험 구현 등을 통해 새로운 수익 모델 창출.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Revenue Targets Chart Section -->
+        <h2 class="section-title mt-10">매출 목표 시각화: 제품별 기여도</h2>
+        <canvas id="revenueChart"></canvas>
+        <div class="flex flex-wrap justify-center mt-4 text-sm text-gray-700">
+            <div class="legend-item">
+                <div class="legend-color-box" style="background-color: #4CAF50;"></div>
+                아웃소싱
+            </div>
+            <div class="legend-item">
+                <div class="legend-color-box" style="background-color: #2196F3;"></div>
+                SaaS 구독
+            </div>
+            <div class="legend-item">
+                <div class="legend-color-box" style="background-color: #FFC107;"></div>
+                라이선싱 & API 연동
+            </div>
+            <div class="legend-item">
+                <div class="legend-color-box" style="background-color: #9C27B0;"></div>
+                콘텐츠 자동화 & 게임
+            </div>
+        </div>
+
+        <div class="mt-10 p-6 bg-blue-50 rounded-xl shadow-inner border border-blue-200">
+            <p class="text-lg text-center text-gray-700">
+                Loworld AI Agent Factory는 혁신적인 AI 기술과 명확한 수익 전략을 바탕으로
+                글로벌 시장에서 강력한 성장을 목표로 하고 있으며, 각 단계별 구체적인 계획을 통해
+                목표 달성을 위한 로드맵을 구축하고 있습니다.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript 함수: 자세히 보기/간략히 보기 토글
+        function toggleDetails(button) {
+            const detailContent = button.nextElementSibling; // 'detail-content' div
+            if (detailContent.classList.contains('expanded')) {
+                detailContent.classList.remove('expanded');
+                button.textContent = '자세히 보기';
+            } else {
+                detailContent.classList.add('expanded');
+                button.textContent = '간략히 보기';
+            }
+        }
+
+        // 차트 그리기 함수
+        function drawChart() {
+            const canvas = document.getElementById('revenueChart');
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = 350; // Adjusted height for legend
+
+            // Revenue data breakdown by year and category (in billions KRW)
+            const revenueData = {
+                '2025': { '아웃소싱': 6, 'SaaS 구독': 4, '라이선싱 & API 연동': 0, '콘텐츠 자동화 & 게임': 0 },
+                '2026': { '아웃소싱': 30, 'SaaS 구독': 60, '라이선싱 & API 연동': 10, '콘텐츠 자동화 & 게임': 0 },
+                '2027': { '아웃소싱': 20, 'SaaS 구독': 120, '라이선싱 & API 연동': 60, '콘텐츠 자동화 & 게임': 0 },
+                '2028': { '아웃소싱': 20, 'SaaS 구독': 200, '라이선싱 & API 연동': 150, '콘텐츠 자동화 & 게임': 30 },
+                '2030': { '아웃소싱': 50, 'SaaS 구독': 400, '라이선싱 & API 연동': 350, '콘텐츠 자동화 & 게임': 200 }
+            };
+
+            const categories = ['아웃소싱', 'SaaS 구독', '라이선싱 & API 연동', '콘텐츠 자동화 & 게임'];
+            const categoryColors = {
+                '아웃소싱': '#4CAF50', // Green
+                'SaaS 구독': '#2196F3', // Blue
+                '라이선싱 & API 연동': '#FFC107', // Amber
+                '콘텐츠 자동화 & 게임': '#9C27B0' // Purple
+            };
+
+            const labels = Object.keys(revenueData);
+            const totalValues = labels.map(year => {
+                return categories.reduce((sum, category) => sum + revenueData[year][category], 0);
+            });
+
+            const chartWidth = canvas.width - 80;
+            const chartHeight = canvas.height - 80;
+            const startX = 60;
+            const startY = canvas.height - 40;
+
+            const maxValue = Math.max(...totalValues);
+            const barWidth = chartWidth / (labels.length * 1.5);
+            const barSpacing = chartWidth / labels.length - barWidth;
+
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw Y-axis
+            ctx.beginPath();
+            ctx.moveTo(startX, startY);
+            ctx.lineTo(startX, startY - chartHeight);
+            ctx.strokeStyle = '#64748b';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Draw X-axis
+            ctx.beginPath();
+            ctx.moveTo(startX, startY);
+            ctx.lineTo(startX + chartWidth, startY);
+            ctx.strokeStyle = '#64748b';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Draw Y-axis labels and grid lines
+            ctx.font = '12px Inter';
+            ctx.fillStyle = '#475569';
+            const numYLabels = 5;
+            for (let i = 0; i <= numYLabels; i++) {
+                const yValue = (Math.ceil(maxValue / numYLabels / 100) * 100) * i;
+                const yPos = startY - (yValue / maxValue) * chartHeight;
+                ctx.fillText(`${yValue}억`, startX - 50, yPos + 5);
+                if (i > 0) {
+                    ctx.beginPath();
+                    ctx.moveTo(startX, yPos);
+                    ctx.lineTo(startX + chartWidth, yPos);
+                    ctx.strokeStyle = '#cbd5e1';
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                }
+            }
+
+            // Draw stacked bars and X-axis labels
+            for (let i = 0; i < labels.length; i++) {
+                const year = labels[i];
+                const xPos = startX + i * (barWidth + barSpacing) + barSpacing / 2;
+                let currentY = startY;
+
+                // Draw each segment of the stacked bar
+                for (let j = 0; j < categories.length; j++) {
+                    const category = categories[j];
+                    const value = revenueData[year][category];
+                    const segmentHeight = (value / maxValue) * chartHeight;
+
+                    ctx.fillStyle = categoryColors[category];
+                    ctx.fillRect(xPos, currentY - segmentHeight, barWidth, segmentHeight);
+                    currentY -= segmentHeight;
+                }
+
+                // Draw total value on top of the stacked bar
+                ctx.fillStyle = '#1e293b';
+                ctx.fillText(`${totalValues[i]}억`, xPos + barWidth / 2 - ctx.measureText(`${totalValues[i]}억`).width / 2, currentY - 10);
+
+                // Draw year label below bar
+                ctx.fillText(year, xPos + barWidth / 2 - ctx.measureText(year).width / 2, startY + 20);
+            }
+        }
+
+        // Call drawChart when the window loads and on resize
+        window.onload = function() {
+            drawChart();
+        };
+        window.onresize = function() {
+            drawChart();
+        };
+    </script>
+</body>
+</html>
