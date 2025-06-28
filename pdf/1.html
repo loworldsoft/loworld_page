@@ -1,685 +1,1076 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 기반 차세대 PDF 솔루션 프로젝트 상세 인포그래픽</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Chart.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Google Fonts - Noto Sans KR -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>PDF 뷰어</title>
     <style>
-        /* Apply Noto Sans KR font to the body */
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        /* Chart container styling for responsiveness */
-        .chart-container {
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .top-menu-bar {
+            background: #fff;
+            color: rgb(56, 56, 56);
+            padding: 0px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 14px;
             position: relative;
+            z-index: 1000;
+        }
+
+        .top-menu-bar .brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+            font-size: 20px;
+            color: rgb(18, 18, 18);
+            margin-right: 32px;
+            letter-spacing: 1px;
+            user-select: none;
+        }
+
+        .top-menu-bar .brand-name {
+            color: rgb(46, 46, 46);
+        }
+
+        .top-menu-bar .menu-center {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .top-menu-bar ul {
+            display: flex;
+            gap: 4px;
+            /* 기존 16px에서 4px로 간격 축소 */
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-menu-bar .menu-center li {
+            position: relative;
+            cursor: pointer;
+            transition: color 0.2s;
+            color: rgb(57, 57, 57);
+            font-size: 12px;
+            font-weight: 500;
+            padding: 0 4px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .top-menu-bar .menu-center li::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 2px;
+            height: 2px;
+            background: #e0e0e0;
+            border-radius: 1px;
+        }
+
+        .top-menu-bar li:hover {
+            /* color: #ffcc00; */
+        }
+
+        .top-menu-bar .menu-center li:hover {
+            /* color:  rgb(255, 98, 0); */
+        }
+
+        .top-menu-bar .menu-center li:hover::after {
+            background: rgb(255, 98, 0);
+        }
+
+        .header {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+            font-size: 20px;
+            color: #007acc;
+            margin-right: 24px;
+            letter-spacing: 1px;
+            user-select: none;
+        }
+
+        .brand-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-name {
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .file-tab {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 4px 4px 0 0;
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .toolbar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toolbar-btn {
+            background: none;
+            border: none;
+            padding: 6px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .toolbar-btn:hover {
+            background: #f0f0f0;
+        }
+
+        .header-center {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .page-input {
+            width: 60px;
+            padding: 4px 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .zoom-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .search-box {
+            padding: 6px 32px 6px 12px;
+            /* 오른쪽에 아이콘 공간 확보 */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 180px;
+            font-size: 13px;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: auto;
+            position: relative;
+        }
+
+        .main-container {
+            display: flex;
+            height: calc(100vh - 60px);
+            position: relative;
+            /* 추가: 패널 위치 기준 */
+        }
+
+        .sidebar,
+        .properties-panel {
+            transition: transform 0.25s cubic-bezier(.4, 1.4, .6, 1), opacity 0.25s cubic-bezier(.4, 1.4, .6, 1);
+        }
+
+        .sidebar {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .sidebar.closed {
+            transform: translateX(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .properties-panel {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .properties-panel.closed {
+            transform: translateX(100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .sidebar {
+            width: 200px;
+            background: #fff;
+            border-right: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            margin-left: 40px;
+            /* 패널만큼 여백 */
+        }
+
+        .sidebar-header {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .thumbnail-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 8px;
+        }
+
+        .thumbnail {
+            width: 100%;
+            margin-bottom: 8px;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: border-color 0.2s;
+            position: relative;
+        }
+
+        .thumbnail.active {
+            border-color: #007acc;
+        }
+
+        .thumbnail-image {
+            width: 100%;
+            height: 120px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strawberry-icon {
+            font-size: 48px;
+            color: #d32f2f;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 4px;
+            left: 4px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-size: 11px;
+        }
+
+        .page-title {
+            margin-top: 4px;
+            font-size: 11px;
+            text-align: center;
+            color: #666;
+        }
+
+        .viewer-container {
+            flex: 1;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .pdf-page {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .page-content {
+            padding: 40px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content-header {
+            text-align: left;
             width: 100%;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 350px; /* Default height for charts */
-            max-height: 400px; /* Max height for larger screens */
         }
-        /* Responsive adjustments for chart container height */
-        @media (max-width: 768px) {
-            .chart-container {
-                height: 300px;
-                max-height: 350px;
-            }
+
+        .content-title {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #333;
         }
-        /* Custom styling for flow arrows (not explicitly used in provided code but good to keep if intended) */
-        .flow-arrow {
-            font-size: 2rem;
-            color: #A3D5FF;
-            line-height: 1;
+
+        .content-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 40px;
         }
-        /* Timeline item styling */
-        .timeline-item::before {
-            content: '';
+
+        .strawberry-image {
+            width: 300px;
+            height: 200px;
+            background: linear-gradient(135deg, #ff6b6b, #d32f2f);
+            border-radius: 50%;
+            position: relative;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .strawberry-texture {
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle at 30% 30%, #ff8a80 0%, #e53935 50%, #b71c1c 100%);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strawberry-seeds {
             position: absolute;
-            top: 50%;
-            left: -20px; /* Position the dot relative to the timeline line */
-            transform: translateY(-50%);
-            width: 12px;
-            height: 12px;
-            border-radius: 9999px; /* Make it a perfect circle */
-            background-color: #0A6EBD; /* Accent color for the dot */
-            border: 2px solid #F0F8FF; /* Border matches background color for pop-out effect */
+            width: 100%;
+            height: 100%;
         }
-        /* Timeline vertical line styling */
-        .timeline-line {
+
+        .seed {
+            position: absolute;
+            width: 4px;
+            height: 6px;
+            background: #2e7d32;
+            border-radius: 50%;
+        }
+
+        .strawberry-leaves {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 2px;
+        }
+
+        .leaf {
+            width: 20px;
+            height: 30px;
+            background: #2e7d32;
+            border-radius: 0 50% 50% 50%;
+            transform: rotate(-30deg);
+        }
+
+        .leaf:nth-child(2) {
+            transform: rotate(-10deg);
+        }
+
+        .leaf:nth-child(3) {
+            transform: rotate(10deg);
+        }
+
+        .leaf:nth-child(4) {
+            transform: rotate(30deg);
+        }
+
+        .properties-panel {
+            width: 250px;
+            background: #fff;
+            border-left: 1px solid #e0e0e0;
+            padding: 16px;
+            overflow-y: auto;
+            margin-right: 40px;
+            /* 패널만큼 여백 */
+        }
+
+        .panel-section {
+            margin-bottom: 24px;
+        }
+
+        .panel-title {
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .property-group {
+            margin-bottom: 16px;
+        }
+
+        .property-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .property-input {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .property-buttons {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+
+        .property-btn {
+            flex: 1;
+            padding: 6px;
+            border: 1px solid #ccc;
+            background: #f8f8f8;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .property-btn.active {
+            background: #007acc;
+            color: white;
+            border-color: #007acc;
+        }
+
+        .color-picker {
+            display: flex;
+            gap: 4px;
+            margin-top: 8px;
+        }
+
+        .color-swatch {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .color-swatch.active {
+            border-color: #333;
+        }
+
+        .vertical-menu {
+            width: 40px;
+            background: #fff;
+            /* border-radius: 10px; */
+            /* 기존 라운드 제거 */
+            border-radius: 0;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 0;
             position: absolute;
             top: 0;
             bottom: 0;
-            left: -15px; /* Position relative to the timeline items */
-            width: 2px;
-            background-color: #A3D5FF; /* Line color */
+            z-index: 10;
         }
-        /* Styling for feature icons */
-        .feature-icon {
-            color: #0A6EBD; /* Accent color */
-            margin-right: 0.75rem; /* Spacing from text */
-            width: 1.5rem; /* Fixed width for consistent alignment */
-            text-align: center;
+
+        .vertical-menu.left {
+            left: 0;
         }
-        /* Table specific styles for better readability and aesthetics */
-        .project-table th, .project-table td {
-            padding: 1rem;
-            border: 1px solid #e2e8f0; /* Tailwind's gray-200 */
-            vertical-align: top;
-            text-align: left;
+
+        .vertical-menu.right {
+            right: 0;
         }
-        .project-table th {
-            background-color: #e0f2fe; /* Tailwind's light blue-100 */
-            color: #004AAD;
-            font-weight: 700;
+
+        .vertical-menu button {
+            width: 40px;
+            height: 40px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #555;
+            /* border-radius: 8px; */
+            /* 버튼 라운드 제거 */
+            border-radius: 0;
+            transition: background 0.15s;
         }
-        .project-table tr:nth-child(even) {
-            background-color: #f8fafc; /* Tailwind's gray-50 */
+
+        .vertical-menu button:hover {
+            background: #f0f0f0;
         }
-        .project-table ul {
-            list-style-type: disc;
-            margin-left: 1.25rem;
-            padding-left: 0;
+
+        /* 탭 바 스타일 */
+        .tab-bar {
+            display: flex;
+            align-items: center;
+            background: #f4f6fa;
+            height: 38px;
+            padding: 0 8px;
+            gap: 2px;
+            z-index: 1100;
+            position: relative;
         }
-        .project-table ul li {
-            margin-bottom: 0.25rem;
+
+        .tab-bar .tab {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 6px 6px 0 0;
+            margin-right: 4px;
+            padding: 0 16px 0 8px;
+            font-size: 13px;
+            color: #444;
+            height: 32px;
+            position: relative;
+            gap: 6px;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+            /* 아래 속성 추가 */
+            margin-bottom: -4px;
+        }
+
+        .tab-bar .tab.active {
+            background: #fff;
+            color: #007acc;
+            border-bottom: 2px solid #007acc;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .tab-bar .tab-close-btn {
+            background: none;
+            border: none;
+            font-size: 15px;
+            color: #888;
+            cursor: pointer;
+            margin-left: 6px;
+            padding: 0 2px;
+            border-radius: 3px;
+            transition: background 0.15s;
+            position: static;
+            top: auto;
+            right: auto;
+            transform: none;
+        }
+
+        .tab-bar .tab-close-btn:hover {
+            background: #ececec;
+        }
+
+        .tab-bar .tab-add-btn {
+            background: #f4f6fa;
+            color: #888;
+            border: 0px solid #e0e0e0;
+            border-radius: 6px 6px 0 0;
+            font-size: 18px;
+            width: 32px;
+            height: 32px;
+            margin-left: 2px;
+            cursor: pointer;
+            transition: background 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tab-bar .tab-add-btn:hover {
+            background: #e0e0e0;
         }
     </style>
 </head>
-<body class="bg-[#F0F8FF] text-gray-800">
 
-    <!-- Main container for content, centered with responsive padding -->
-    <div class="container mx-auto p-4 md:p-8">
+<body>
+    <!-- 탭 기능 추가 -->
+    <div class="tab-bar">
+        <!-- ezreader 로고/텍스트 -->
+        <span class="tab-ezreader" style="display:flex; align-items:center; font-weight:bold; color:#007acc; font-size:16px; margin-right:12px;">
+            ezreader
+        </span>
+        <!-- 홈 아이콘만 단독으로 배치 -->
+        <span class="tab-home-icon" style="margin-right:8px; display:flex; align-items:center;">
+            🏠
+        </span>
+        <!-- 그 다음부터 탭 시작 -->
+        <div class="tab">
+            파일이름.pdf
+            <button class="tab-close-btn" title="닫기">&times;</button>
+        </div>
+        <button class="tab-add-btn" title="새 탭 추가">+</button>
+    </div>
+    <!-- 기존 상단 메뉴바 -->
+    <nav class="top-menu-bar">
+        <div class="brand">
+            <div class="toolbar" style="margin-left:16px;">
+                <button class="toolbar-btn" title="인쇄">🖨️</button>
+                <button class="toolbar-btn" title="저장">💾</button>
+                <button class="toolbar-btn" title="이메일">📧</button>
+                <button class="toolbar-btn" title="더보기">⋯</button>
+                <button class="toolbar-btn" title="실행취소">↶</button>
+                <button class="toolbar-btn" title="다시실행">↷</button>
+            </div>
+        </div>
+        <div class="menu-center">
+            <ul>
+                <li>홈</li>
+                <li>편집</li>
+                <li>파일변환</li>
+                <li>구성</li>
+                <li>보안</li>
+            </ul>
+        </div>
+        <div class="menu-right">
+            <input type="text" class="search-box" placeholder="텍스트 검색">
+            <span class="search-icon">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                    <circle cx="9" cy="9" r="7" stroke="#888" stroke-width="2" />
+                    <line x1="14.5" y1="14.5" x2="19" y2="19" stroke="#888" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </span>
+        </div>
+    </nav>
+    <div class="header">
+        <div class="header-left">
+            <!-- <div class="file-tab">
+                <span>📄</span>
+                파일이름.pdf
+                <button class="close-btn">×</button>
+            </div> -->
+            <!-- <div class="toolbar">
+                <button class="toolbar-btn" title="홈">🏠</button>
+                <button class="toolbar-btn" title="인쇄">🖨️</button>
+                <button class="toolbar-btn" title="저장">💾</button>
+                <button class="toolbar-btn" title="이메일">📧</button>
+                <button class="toolbar-btn" title="더보기">⋯</button>
+                <button class="toolbar-btn" title="실행취소">↶</button>
+                <button class="toolbar-btn" title="다시실행">↷</button>
+            </div> -->
+        </div>
 
-        <!-- Header section -->
-        <header class="text-center mb-12 md:mb-16">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-[#004AAD]">AI 기반 차세대 PDF 솔루션</h1>
-            <p class="mt-4 text-lg md:text-xl text-[#0A6EBD]">모든 기능을 담아낸 궁극의 PDF 솔루션, AI로 완성되다.</p>
-        </header>
+        <div class="header-center">
+            <div class="nav-controls">
+                <!-- 확대 아이콘 -->
+                <button class="toolbar-btn" title="확대">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="9" cy="9" r="7" stroke="#007acc" stroke-width="2" />
+                        <line x1="9" y1="5" x2="9" y2="13" stroke="#007acc" stroke-width="2" stroke-linecap="round" />
+                        <line x1="5" y1="9" x2="13" y2="9" stroke="#007acc" stroke-width="2" stroke-linecap="round" />
+                        <line x1="14.5" y1="14.5" x2="19" y2="19" stroke="#007acc" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                </button>
+                <!-- 축소 아이콘 -->
+                <button class="toolbar-btn" title="축소">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="9" cy="9" r="7" stroke="#007acc" stroke-width="2" />
+                        <line x1="5" y1="9" x2="13" y2="9" stroke="#007acc" stroke-width="2" stroke-linecap="round" />
+                        <line x1="14.5" y1="14.5" x2="19" y2="19" stroke="#007acc" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                </button>
+                <button class="toolbar-btn">✏️</button>
+                <button class="toolbar-btn">🔗</button>
+                <button class="toolbar-btn">📝</button>
+                <button class="toolbar-btn">📊</button>
+            </div>
+        </div>
 
-        <main>
-            <!-- Project Goals Section -->
-            <section id="goals" class="mb-16">
-                <h2 class="text-3xl font-bold text-center mb-10 text-[#004AAD]">🎯 프로젝트 핵심 목표</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Goal 1: Advanced Features -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-5xl mb-4">🏅</div>
-                        <h3 class="text-xl font-bold text-[#004AAD] mb-2">고급 기능 제공</h3>
-                        <p class="text-gray-600">전문가 수준의 PDF 뷰어 및 편집 기능으로 시장을 선도합니다.</p>
+        <div class="header-right">
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="vertical-menu left">
+            <button title="홈">🏠</button>
+            <button title="검색">🔍</button>
+            <button title="설정">⚙️</button>
+            <button class="panel-toggle-btn" data-target="properties-panel" title="속성 패널 열기"
+                style="display:none;">▶️</button>
+        </div>
+        <div class="sidebar" id="sidebar-panel">
+            <div class="sidebar-header">
+                페이지
+                <button class="close-panel-btn" data-target="sidebar-panel" title="닫기"
+                    style="float:right;background:none;border:none;font-size:16px;cursor:pointer;">✖️</button>
+            </div>
+            <div class="thumbnail-container">
+                <div class="thumbnail active">
+                    <div class="thumbnail-image">
+                        <div class="strawberry-icon">🍓</div>
+                        <div class="page-number">1</div>
                     </div>
-                    <!-- Goal 2: AI Integration -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-5xl mb-4">🧠</div>
-                        <h3 class="text-xl font-bold text-[#004AAD] mb-2">AI 기술 통합</h3>
-                        <p class="text-gray-600">문서 요약, 번역, OCR 등 AI 기능으로 사용자 생산성을 극대화합니다.</p>
-                    </div>
-                    <!-- Goal 3: High Performance & Scalability -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-5xl mb-4">⚙️</div>
-                        <h3 class="text-xl font-bold text-[#004AAD] mb-2">고성능 및 확장성</h3>
-                        <p class="text-gray-600">빠른 속도와 안정성, 그리고 미래를 위한 확장 가능한 구조를 설계합니다.</p>
-                    </div>
-                    <!-- Goal 4: Cross-Platform Support -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-5xl mb-4">💻</div>
-                        <h3 class="text-xl font-bold text-[#004AAD] mb-2">크로스플랫폼 지원</h3>
-                        <p class="text-gray-600">PC, 모바일, 태블릿 모든 환경에서 끊김 없는 경험을 제공합니다.</p>
-                    </div>
+                    <div class="page-title">Suisse Typeface</div>
                 </div>
-            </section>
-
-            <!-- Full Features Section -->
-            <section id="full-features" class="mb-16">
-                <h2 class="text-3xl font-bold text-center mb-10 text-[#004AAD]">✨ 모든 기능을 한눈에: 상세 기능 명세</h2>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                    <!-- AI-based Smart Features -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-bold text-[#0A6EBD] mb-4">🔮 AI 기반 스마트 기능</h3>
-                        <p class="mb-4 text-gray-600">문서 작업의 패러다임을 바꾸는 지능형 기능들입니다. 유료/무료 사용자에 따라 최적화된 AI 모델을 제공합니다.</p>
-                        <ul class="space-y-3 text-gray-700">
-                            <li class="flex items-start"><span class="feature-icon">📑</span><strong>문서 요약:</strong> AI가 PDF 전체 내용을 핵심 문장으로 자동 요약</li>
-                            <li class="flex items-start"><span class="feature-icon">🌐</span><strong>전체 번역:</strong> 문서를 영어/일본어/대만어 등으로 통번역하여 새 창으로 제공</li>
-                            <li class="flex items-start"><span class="feature-icon">🖱️</span><strong>스마트 드래그:</strong> 드래그 시 번역, 단어 설명, 요약, OCR 기능 툴팁 표시</li>
-                            <li class="flex items-start"><span class="feature-icon">👁️</span><strong>OCR 텍스트 인식:</strong> 이미지 기반 PDF에서도 텍스트를 인식하여 복사/검색</li>
-                            <li class="flex items-start"><span class="feature-icon">🤖</span><strong>AI 모델:</strong> OpenAI(유료), 로컬 탑재 AI(무료) 이원화 운영</li>
-                        </ul>
+                <div class="thumbnail">
+                    <div class="thumbnail-image">
+                        <div class="strawberry-icon">🍓</div>
+                        <div class="page-number">2</div>
                     </div>
-                    <!-- Basic Document Viewing -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-bold text-[#0A6EBD] mb-4">📖 기본 문서 보기</h3>
-                        <p class="mb-4 text-gray-600">빠르고 직관적인 문서 열람 환경을 제공하여 사용자의 가독성을 높입니다.</p>
-                        <ul class="space-y-3 text-gray-700">
-                            <li class="flex items-start"><span class="feature-icon">📂</span><strong>문서 열람:</strong> 멀티 탭(PC)으로 여러 파일 동시 열람</li>
-                            <li class="flex items-start"><span class="feature-icon">🔍</span><strong>탐색 및 검색:</strong> 썸네일/목차 보기 및 실시간 텍스트 하이라이팅 검색</li>
-                            <li class="flex items-start"><span class="feature-icon">🔄</span><strong>화면 제어:</strong> 확대/축소(15% 단위), 페이지 맞춤, 90도 회전</li>
-                            <li class="flex items-start"><span class="feature-icon">🌙</span><strong>다크 모드:</strong> 눈의 피로를 줄여주는 어두운 테마 지원</li>
-                            <li class="flex items-start"><span class="feature-icon">🕒</span><strong>최근 문서:</strong> 최근 열람/수정한 문서 목록 바로가기</li>
-                        </ul>
-                    </div>
+                    <div class="page-title">Suisse Typeface</div>
                 </div>
-
-                <!-- Advanced Document Editing and Page Manipulation -->
-                <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
-                    <h3 class="text-2xl font-bold text-center text-[#0A6EBD] mb-2">🎨 고급 문서 편집 및 페이지 조작</h3>
-                    <p class="text-center mb-6 text-gray-600">문서의 모든 요소를 자유롭게 제어하고 재구성할 수 있는 강력한 편집 도구를 제공합니다.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- Text Editing -->
-                        <div>
-                            <h4 class="font-bold text-lg text-[#004AAD] mb-2">텍스트 편집</h4>
-                            <ul class="space-y-2 text-sm text-gray-600">
-                                <li>✓ 글꼴, 크기, 색상, 스타일</li>
-                                <li>✓ 정렬(좌/우/중간/양쪽)</li>
-                                <li>✓ 간격(행간, 자간, 단락)</li>
-                            </ul>
-                        </div>
-                        <!-- Shapes and Images -->
-                        <div>
-                            <h4 class="font-bold text-lg text-[#004AAD] mb-2">도형 및 이미지</h4>
-                            <ul class="space-y-2 text-sm text-gray-600">
-                                <li>✓ 사각형, 화살표, 선, 원 등</li>
-                                <li>✓ 테두리, 채우기, 선 종류</li>
-                                <li>✓ 이미지 크기, 투명도, 교체</li>
-                            </ul>
-                        </div>
-                        <!-- Pen & Highlight -->
-                        <div>
-                            <h4 class="font-bold text-lg text-[#004AAD] mb-2">펜 & 강조</h4>
-                            <ul class="space-y-2 text-sm text-gray-600">
-                                <li>✓ 펜/형광펜 굵기, 색상, 투명도</li>
-                                <li>✓ 지우개 기능</li>
-                                <li>✓ 실행취소/되돌리기</li>
-                            </ul>
-                        </div>
-                        <!-- Page Management -->
-                        <div>
-                            <h4 class="font-bold text-lg text-[#004AAD] mb-2">페이지 관리</h4>
-                            <ul class="space-y-2 text-sm text-gray-600">
-                                <li>✓ 추가/삭제/분할/병합/추출</li>
-                                <li>✓ 순서 변경 (드래그앤드롭)</li>
-                                <li>✓ 페이지 회전 (짝/홀/모두)</li>
-                            </ul>
-                        </div>
-                        <!-- Page Numbering -->
-                        <div>
-                            <h4 class="font-bold text-lg text-[#004AAD] mb-2">페이지 번호</h4>
-                            <ul class="space-y-2 text-sm text-gray-600">
-                                <li>✓ 내용, 글꼴, 크기, 색상, 위치</li>
-                                <li>✓ 적용 페이지 지정 가능</li>
-                                <li>✓ 실시간 뷰어 제공</li>
-                            </ul>
-                        </div>
-                        <!-- Watermark -->
-                        <div>
-                            <h4 class="font-bold text-lg text-[#004AAD] mb-2">워터마크</h4>
-                            <ul class="space-y-2 text-sm text-gray-600">
-                                <li>✓ 텍스트/이미지 워터마크</li>
-                                <li>✓ 각도, 투명도, 패턴 형태</li>
-                                <li>✓ 실시간 뷰어 제공</li>
-                            </ul>
-                        </div>
+                <div class="thumbnail">
+                    <div class="thumbnail-image">
+                        <div class="strawberry-icon">🍓</div>
+                        <div class="page-number">3</div>
                     </div>
+                    <div class="page-title">Suisse Typeface</div>
                 </div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <!-- Electronic Signature and Security -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-bold text-[#0A6EBD] mb-4">🖋️ 전자 서명 및 보안</h3>
-                        <p class="mb-4 text-gray-600">강력한 보안 기능으로 문서를 안전하게 보호하고, 간편한 전자 서명으로 계약 프로세스를 단축합니다.</p>
-                        <ul class="space-y-3 text-gray-700">
-                            <li class="flex items-start"><span class="feature-icon">✍️</span><strong>다양한 서명 방식:</strong> 이미지 삽입, 텍스트 입력, 직접 그리기</li>
-                            <li class="flex items-start"><span class="feature-icon">🕰️</span><strong>타임스탬프:</strong> 서명 시점의 시간 정보를 기록하여 법적 효력 강화</li>
-                            <li class="flex items-start"><span class="feature-icon">🔒</span><strong>문서 잠금:</strong> 암호 설정으로 열람 제한</li>
-                            <li class="flex items-start"><span class="feature-icon">🚫</span><strong>권한 제어:</b> 복사, 인쇄, 편집 등 특정 기능 제한</li>
-                        </ul>
+            </div>
+        </div>
+
+        <div class="viewer-container">
+            <div class="pdf-page">
+                <div class="page-content">
+                    <div class="content-header">
+                        <h1 class="content-title">Most legible and<br>Harmonious means for<br>Structuring information—
+                        </h1>
+                        <p class="content-description">
+                            Suisse Int'l is the best Swiss Grotesk available in digital form. Inspired by the Swiss
+                            Style design movement that emerged around in the 1950s, it aims to preserve your design
+                            objectively. Suisse Int'l is the present-day equivalent of the type used by the pioneers in
+                            Switzerland and beyond.Whether you want to perpetuate their modernist approach, whether your
+                            design references this aesthetic in more playful, even ironic ways, or whether you're just
+                            looking for a plain, hard-working sans serif – Suisse Int'l won't let you down.
+                        </p>
                     </div>
 
-                    <!-- File Conversion and Export -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-bold text-[#0A6EBD] mb-4">🔄 파일 변환 및 내보내기</h3>
-                        <p class="mb-4 text-gray-600">PDF를 중심으로 다양한 포맷과 자유롭게 상호 작용합니다.</p>
-                        <ul class="space-y-3 text-gray-700">
-                            <li class="flex items-start"><span class="feature-icon">⇆</span><strong>상호 변환:</strong> PDF ↔ PPT, Word, Excel, JPG 등</li>
-                            <li class="flex items-start"><span class="feature-icon">📦</span><strong>PDF 압축:</strong> 용량이 큰 PDF 파일을 최적화하여 저장</li>
-                            <li class="flex items-start"><span class="feature-icon">🖨️</span><strong>인쇄:</strong> PC 환경에서 표준 프린터로 출력</li>
-                            <li class="flex items-start"><span class="feature-icon">📲</span><strong>공유:</b> 모바일에서 SNS, 메일, 메시지로 간편하게 공유</li>
-                        </ul>
-                    </div>
-
-                    <!-- Form Support -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-bold text-[#0A6EBD] mb-4">📋 폼(Form) 지원</h3>
-                        <p class="mb-4 text-gray-600">문서 내 입력 양식을 자동으로 인식하여 데이터 입력을 편리하게 합니다.</p>
-                        <ul class="space-y-3 text-gray-700">
-                            <li class="flex items-start"><span class="feature-icon">📝</span><strong>필드 자동 인식:</strong> 입력 가능한 필드를 자동으로 감지하여 활성화</li>
-                            <li class="flex items-start"><span class="feature-icon">✔️</span><strong>다양한 입력 요소:</strong> 텍스트, 체크박스, 라디오, 드롭다운, 날짜 지원</li>
-                        </ul>
-                    </div>
-
-                    <!-- User System -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-bold text-[#0A6EBD] mb-4">👥 사용자 시스템</h3>
-                        <p class="mb-4 text-gray-600">간편한 로그인부터 개인화된 마이페이지까지, 사용자 중심의 시스템을 구축합니다.</p>
-                        <ul class="space-y-3 text-gray-700">
-                            <li class="flex items-start"><span class="feature-icon">🔗</span><strong>SNS 간편 로그인:</strong> 카카오, 네이버, 구글 등으로 빠른 시작</li>
-                            <li class="flex items-start"><span class="feature-icon">👤</span><strong>마이페이지:</strong> 프로필 관리 및 최근 열람 문서 확인</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Comparison Chart Section -->
-            <section id="comparison-chart" class="mb-16">
-                <h2 class="text-3xl font-bold text-center mb-10 text-[#004AAD]">📊 기능 경쟁력 분석</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <!-- Radar Chart for Capabilities Comparison -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-bold text-center text-[#0A6EBD] mb-4">종합 역량 비교 (Radar Chart)</h3>
-                        <p class="text-center mb-6 text-gray-600">텍스트, 도형/이미지 편집, 페이지 관리, AI 기능 등 모든 핵심 역량에서 경쟁사를 압도하는 것을 목표로 합니다.</p>
-                        <div class="chart-container h-[320px] md:h-[350px]">
-                            <canvas id="capabilitiesRadarChart"></canvas>
-                        </div>
-                    </div>
-                    <!-- Doughnut Chart for Platform Development Resource Distribution -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-bold text-center text-[#0A6EBD] mb-4">플랫폼별 개발 리소스 분배</h3>
-                        <p class="text-center mb-6 text-gray-600">안정적이고 강력한 기능 제공을 위해 PC 플랫폼에 초기 리소스를 집중하고, 순차적으로 모바일과 태블릿으로 지원을 확장합니다.</p>
-                        <div class="chart-container h-[320px] md:h-[350px]">
-                            <canvas id="platformFocusChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Development Environment and Roadmap Section -->
-            <section id="timeline" class="mb-16">
-                <h2 class="text-3xl font-bold text-center mb-10 text-[#004AAD]">🛠️ 개발 환경 및 로드맵</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <!-- Technology Stack -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-bold text-[#0A6EBD] mb-4">기술 스택 구성</h3>
-                        <p class="mb-6 text-gray-600">확정된 Windows 클라이언트 기술을 기반으로, 모바일 및 서버 환경에 대한 최적의 기술 스택을 제안받아 유연하고 확장 가능한 시스템을 구축합니다.</p>
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-bold text-lg">클라이언트 (PC) - 확정</h4>
-                                <div class="flex gap-2 mt-1">
-                                    <span class="bg-[#004AAD] text-white py-1 px-3 rounded-full text-sm font-semibold">C#</span>
-                                    <span class="bg-[#004AAD] text-white py-1 px-3 rounded-full text-sm font-semibold">WPF</span>
-                                </div>
+                    <div class="strawberry-image">
+                        <div class="strawberry-texture">
+                            <div class="strawberry-seeds">
+                                <div class="seed" style="top: 20%; left: 25%;"></div>
+                                <div class="seed" style="top: 35%; left: 15%;"></div>
+                                <div class="seed" style="top: 45%; left: 30%;"></div>
+                                <div class="seed" style="top: 25%; left: 45%;"></div>
+                                <div class="seed" style="top: 40%; left: 55%;"></div>
+                                <div class="seed" style="top: 55%; left: 40%;"></div>
+                                <div class="seed" style="top: 30%; left: 65%;"></div>
+                                <div class="seed" style="top: 50%; left: 70%;"></div>
+                                <div class="seed" style="top: 65%; left: 25%;"></div>
+                                <div class="seed" style="top: 75%; left: 45%;"></div>
+                                <div class="seed" style="top: 60%; left: 60%;"></div>
+                                <div class="seed" style="top: 70%; left: 80%;"></div>
                             </div>
-                            <div>
-                                <h4 class="font-bold text-lg">기타 영역 (제안 필요)</h4>
-                                <div class="flex flex-wrap gap-2 mt-1">
-                                    <span class="bg-[#A3D5FF] text-[#004AAD] py-1 px-3 rounded-full text-sm font-semibold">모바일 앱 (Android/iOS)</span>
-                                    <span class="bg-[#A3D5FF] text-[#004AAD] py-1 px-3 rounded-full text-sm font-semibold">서버/DB</span>
-                                    <span class="bg-[#A3D5FF] text-[#004AAD] py-1 px-3 rounded-full text-sm font-semibold">AI 연동 기술</span>
-                                    <span class="bg-[#A3D5FF] text-[#004AAD] py-1 px-3 rounded-full text-sm font-semibold">PDF 렌더링/편집 엔진</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 2025 Release Roadmap -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-bold text-[#0A6EBD] mb-4">2025년 출시 로드맵</h3>
-                        <p class="mb-6 text-gray-600">체계적인 단계를 거쳐 2025년 내 성공적인 출시를 목표로 합니다.</p>
-                        <div class="relative pl-5">
-                            <div class="timeline-line"></div>
-                            <div class="space-y-6">
-                                <div class="relative timeline-item">
-                                    <h4 class="font-bold">기획 및 설계 (Q3'24)</h4>
-                                    <p class="text-sm text-gray-500">기술 검토 및 시스템 아키텍처 설계</p>
-                                </div>
-                                <div class="relative timeline-item">
-                                    <h4 class="font-bold">핵심 기능 개발 (Q4'24 - Q2'25)</h4>
-                                    <p class="text-sm text-gray-500">PC 클라이언트 및 서버/AI 기능 개발</p>
-                                </div>
-                                <div class="relative timeline-item">
-                                    <h4 class="font-bold">QA 및 안정화 (Q3'25)</h4>
-                                    <p class="text-sm text-gray-500">통합 테스트, 버그 수정, 모바일 개발 착수</p>
-                                </div>
-                                <div class="relative timeline-item">
-                                    <h4 class="font-bold">정식 출시 (Q4'25)</h4>
-                                    <p class="text-sm text-gray-500">PC 버전 출시 및 마케팅 시작</p>
-                                </div>
+                            <div class="strawberry-leaves">
+                                <div class="leaf"></div>
+                                <div class="leaf"></div>
+                                <div class="leaf"></div>
+                                <div class="leaf"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
 
-            <!-- Collaboration Section -->
-            <section id="collaboration" class="mb-16">
-                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                    <h2 class="text-3xl font-bold text-[#004AAD] mb-4">🤝 협업 및 다음 단계</h2>
-                    <p class="text-lg text-gray-700 max-w-3xl mx-auto">
-                        본 프로젝트의 성공적인 수행을 위해 긴밀한 협력을 기대합니다. 로그인 관련 API는 귀사에서 제공해주실 예정이며, 저희는 해당 명세에 맞춰 완벽한 UI/UX와 처리 로직을 구현하겠습니다. 함께 시장을 선도할 혁신적인 제품을 만들어가길 바랍니다.
-                    </p>
+        <div class="properties-panel" id="properties-panel">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+                <div class="panel-title">속성</div>
+                <button class="close-panel-btn" data-target="properties-panel" title="닫기"
+                    style="background:none;border:none;font-size:16px;cursor:pointer;">✖️</button>
+            </div>
+            <div class="panel-section">
+                <div class="panel-title">속성</div>
+                <div class="property-group">
+                    <div class="property-label">글꼴</div>
+                    <select class="property-input">
+                        <option>Suisse</option>
+                        <option>Arial</option>
+                        <option>Helvetica</option>
+                    </select>
                 </div>
-            </section>
+                <div class="property-group">
+                    <div class="property-label">크기</div>
+                    <input type="number" class="property-input" value="30">
+                </div>
+            </div>
 
-            <!-- Project Phases and Deliverables Table Section -->
-            <section id="project-phases-summary" class="mb-16">
-                <h2 class="text-3xl font-bold text-center mb-10 text-[#004AAD]">📈 프로젝트 단계별 업무 및 결과물 요약</h2>
-                <div class="bg-white p-6 rounded-xl shadow-lg overflow-x-auto">
-                    <table class="w-full text-sm text-left text-gray-700 project-table">
-                        <thead class="text-xs uppercase bg-blue-100 text-blue-900">
-                            <tr>
-                                <th scope="col" class="py-3 px-6">구분</th>
-                                <th scope="col" class="py-3 px-6">1차 프로젝트 업무</th>
-                                <th scope="col" class="py-3 px-6">2차 프로젝트 업무</th>
-                                <th scope="col" class="py-3 px-6">3차 프로젝트 업무</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row" class="py-4 px-6 font-bold text-blue-800 whitespace-nowrap">개발 업무</th>
-                                <td class="py-4 px-6">
-                                    <h4 class="font-semibold text-blue-700">클라이언트 개발:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>Windows OS 데스크탑, Android, iOS Mobile 및 Tablet 애플리케이션 개발</li>
-                                        <li>OS별 해상도별 레이아웃 구성</li>
-                                        <li>OS별 PDF 문서 보기 (테스트 앱 제공)</li>
-                                    </ul>
-                                    <h4 class="font-semibold text-blue-700 mt-2">API 연동 및 개발:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>OS별 해상도별 레이아웃 구성</li>
-                                        <li>OS별 PDF 문서 보기 (테스트 앱 제공)</li>
-                                    </ul>
-                                    <h4 class="font-semibold text-blue-700 mt-2">서버 및 DB 구축:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>개발 환경을 통한 구축 ([개발 서버])</li>
-                                        <li>[API 연동] 및 개발</li>
-                                    </ul>
-                                </td>
-                                <td class="py-4 px-6">
-                                    <h4 class="font-semibold text-blue-700">클라이언트 개발:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>Windows OS 데스크탑, Android, iOS Mobile 및 Tablet 애플리케이션 개발</li>
-                                        <li>문서 편집 및 페이지 조작</li>
-                                        <li>AI 기반 스마트 기능</li>
-                                    </ul>
-                                    <h4 class="font-semibold text-blue-700 mt-2">API 연동 및 개발:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>문서 편집 및 페이지 조작</li>
-                                        <li>AI 기반 스마트 기능</li>
-                                    </ul>
-                                    <h4 class="font-semibold text-blue-700 mt-2">서버 및 DB 구축:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>개발 환경을 통한 구축 ([개발 서버])</li>
-                                        <li>[API 연동] 및 개발</li>
-                                    </ul>
-                                </td>
-                                <td class="py-4 px-6">
-                                    <h4 class="font-semibold text-blue-700">클라이언트 개발:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>Windows OS 데스크탑, Android, iOS Mobile 및 Tablet 애플리케이션 개발</li>
-                                        <li>전자 서명 및 보안</li>
-                                        <li>파일 변환 및 내보내기</li>
-                                        <li>폼(Form) 지원</li>
-                                        <li>사용자 시스템 및 UI</li>
-                                        <li>해상도 최적화</li>
-                                        <li>앱 스토어 등록</li>
-                                    </ul>
-                                    <h4 class="font-semibold text-blue-700 mt-2">API 연동 및 개발:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>전자 서명 및 보안</li>
-                                        <li>파일 변환 및 내보내기</li>
-                                        <li>폼(Form) 지원</li>
-                                        <li>사용자 시스템 및 UI</li>
-                                        <li>해상도 최적화</li>
-                                        <li>앱 스토어 등록</li>
-                                    </ul>
-                                    <h4 class="font-semibold text-blue-700 mt-2">서버 및 DB 구축:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>개발 환경을 통한 구축 ([개발 서버])</li>
-                                        <li>[운영 서버]에 배포</li>
-                                        <li>[API 연동] 및 개발</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="py-4 px-6 font-bold text-blue-800 whitespace-nowrap">테스트</th>
-                                <td class="py-4 px-6">없음</td>
-                                <td class="py-4 px-6">없음</td>
-                                <td class="py-4 px-6">
-                                    <h4 class="font-semibold text-blue-700">수급인 자체 기능 단위 테스트:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>별도 산출물 없음</li>
-                                    </ul>
-                                    <h4 class="font-semibold text-blue-700 mt-2">수급인 자체 통합 단위 테스트:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>AI 기능에 대한 PC 및 모바일 환경별 테스트</li>
-                                        <li>로컬 AI 기능 중점 테스트</li>
-                                    </ul>
-                                    <h4 class="font-semibold text-blue-700 mt-2">오류 사항 대응</h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="py-4 px-6 font-bold text-blue-800 whitespace-nowrap">스토어 등록</th>
-                                <td class="py-4 px-6">없음</td>
-                                <td class="py-4 px-6">없음</td>
-                                <td class="py-4 px-6">
-                                    <ul class="list-disc ml-4">
-                                        <li>[구글 플레이스토어 등록]</li>
-                                        <li>[애플 앱스토어 등록]</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="py-4 px-6 font-bold text-blue-800 whitespace-nowrap">개발 및 지원 환경</th>
-                                <td class="py-4 px-6" colspan="3">
-                                    <h4 class="font-semibold text-blue-700">개발 언어 & 프레임워크:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>Android: 코틀린 (선언형 방식)</li>
-                                        <li>iOS: 스위프트 (선언형 방식)</li>
-                                        <li>Windows: WPF</li>
-                                        <li>백엔드: Nest.js</li>
-                                        <li>DB: MySQL</li>
-                                    </ul>
-                                    <h4 class="font-semibold text-blue-700 mt-2">지원 환경:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>OS별 디스플레이 해상도 최적화 지원</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="py-4 px-6 font-bold text-blue-800 whitespace-nowrap">결과물</th>
-                                <td class="py-4 px-6">
-                                    <h4 class="font-semibold text-blue-700">개발 결과물:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>클라이언트 개발 산출물 (개발 원본 소스 코드, 빌드된 실행 파일: APK, IPA, EXE)</li>
-                                        <li>API 연동 및 개발 (개발 원본 소스 코드)</li>
-                                        <li>서버 및 DB 구축 산출물 (개발 원본 소스 코드)</li>
-                                    </ul>
-                                </td>
-                                <td class="py-4 px-6">
-                                    <h4 class="font-semibold text-blue-700">개발 결과물:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>클라이언트 개발 산출물 (개발 원본 소스 코드, 빌드된 실행 파일: APK, IPA, EXE)</li>
-                                        <li>API 연동 및 개발 (개발 원본 소스 코드)</li>
-                                        <li>서버 및 DB 구축 산출물 (개발 원본 소스 코드)</li>
-                                    </ul>
-                                </td>
-                                <td class="py-4 px-6">
-                                    <h4 class="font-semibold text-blue-700">개발 결과물:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>클라이언트 개발 산출물 (개발 원본 소스 코드, 빌드된 실행 파일: APK, IPA, EXE)</li>
-                                        <li>API 연동 및 개발 (개발 원본 소스 코드)</li>
-                                        <li>서버 및 DB 구축 산출물 (개발 원본 소스 코드)</li>
-                                    </ul>
-                                    <h4 class="font-semibold text-blue-700 mt-2">문서 결과물:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>DB 스키마 문서</li>
-                                        <li>개발 함수별 설명 문서</li>
-                                        <li>사용 방법에 대한 매뉴얼 문서</li>
-                                    </ul>
-                                    <h4 class="font-semibold text-blue-700 mt-2">스토어 등록:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>Android 스토어 심사 통과 스크린샷</li>
-                                        <li>iOS 스토어 심사 통과 스크린샷</li>
-                                    </ul>
-                                    <h4 class="font-semibold text-blue-700 mt-2">인수인계:</h4>
-                                    <ul class="list-disc ml-4">
-                                        <li>도급인 요청만큼 오프라인 및 화상 미팅으로 1차, 2차, 3차 결과물에 대한 인수인계 제공</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="panel-section">
+                <div class="panel-title">편집</div>
+                <div class="property-group">
+                    <div class="property-buttons">
+                        <button class="property-btn active">B</button>
+                        <button class="property-btn">I</button>
+                        <button class="property-btn">U</button>
+                        <button class="property-btn">S</button>
+                    </div>
                 </div>
-            </section>
-        </main>
+                <div class="property-group">
+                    <div class="property-buttons">
+                        <button class="property-btn">⊣</button>
+                        <button class="property-btn">⊣⊢</button>
+                        <button class="property-btn">⊢</button>
+                        <button class="property-btn">≡</button>
+                    </div>
+                </div>
+                <div class="property-group">
+                    <div class="property-label">간격</div>
+                    <div style="display: flex; gap: 8px;">
+                        <input type="number" class="property-input" value="0" style="width: 50%;">
+                        <input type="number" class="property-input" value="10" style="width: 50%;">
+                    </div>
+                </div>
+                <div class="property-group">
+                    <div style="display: flex; gap: 8px;">
+                        <input type="number" class="property-input" value="0" style="width: 50%;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-section">
+                <div class="panel-title">효과</div>
+                <div class="property-group">
+                    <div class="property-buttons">
+                        <button class="property-btn">↺</button>
+                        <button class="property-btn">↻</button>
+                        <button class="property-btn">⟲</button>
+                        <button class="property-btn">⟳</button>
+                        <button class="property-btn">⊗</button>
+                        <button class="property-btn">📋</button>
+                    </div>
+                </div>
+                <div class="property-group">
+                    <div class="property-label">배경</div>
+                    <div class="color-picker">
+                        <div class="color-swatch" style="background: #fff; border-color: #333;" title="흰색"></div>
+                        <div class="color-swatch" style="background: #000;" title="검은색"></div>
+                        <div class="color-swatch" style="background: #f00;" title="빨간색"></div>
+                        <div class="color-swatch" style="background: #0f0;" title="초록색"></div>
+                        <div class="color-swatch" style="background: #00f;" title="파란색"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="vertical-menu right">
+            <button title="정보">ℹ️</button>
+            <button title="공유">🔗</button>
+            <button class="panel-toggle-btn" data-target="sidebar-panel" title="페이지 패널 열기"
+                style="display:none;">◀️</button>
+        </div>
     </div>
 
     <script>
-        // Define a color palette for consistent styling
-        const brilliantBlues = {
-            darkBlue: '#004AAD',
-            midBlue: '#0A6EBD',
-            lightBlue: '#A3D5FF',
-            paleBlue: '#CBE7FF',
-            background: '#F0F8FF'
-        };
+        // 썸네일 클릭 이벤트
+        document.querySelectorAll('.thumbnail').forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', function () {
+                document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
 
-        // Function to wrap long labels in charts (for better readability)
-        const wrapLabel = (label, maxLength) => {
-            if (typeof label !== 'string' || label.length <= maxLength) {
-                return label;
-            }
-            const words = label.split(' ');
-            const lines = [];
-            let currentLine = '';
-            for (const word of words) {
-                if ((currentLine + ' ' + word).trim().length > maxLength && currentLine.length > 0) {
-                    lines.push(currentLine);
-                    currentLine = word;
-                } else {
-                    currentLine = (currentLine + ' ' + word).trim();
-                }
-            }
-            if (currentLine.length > 0) {
-                lines.push(currentLine);
-            }
-            return lines;
-        };
+                // 페이지 전환 효과
+                const viewer = document.querySelector('.viewer-container');
+                viewer.style.opacity = '0.5';
+                setTimeout(() => {
+                    viewer.style.opacity = '1';
+                }, 200);
+            });
+        });
 
-        // Custom tooltip title callback for Chart.js to handle wrapped labels
-        const tooltipTitleCallback = (tooltipItems) => {
-            const item = tooltipItems[0];
-            let label = item.chart.data.labels[item.dataIndex];
-            if (Array.isArray(label)) {
-              return label.join(' ');
-            }
-            return label;
-        };
-        
-        // Common options for all charts to ensure consistent styling
-        const commonChartOptions = {
-            responsive: true,
-            maintainAspectRatio: false, // Allows chart to fill its container
-            plugins: {
-                legend: {
-                    labels: {
-                        color: brilliantBlues.darkBlue, // Legend text color
-                        font: {
-                            family: "'Noto Sans KR', sans-serif", // Font for legend
-                            weight: '500'
-                        }
-                    }
-                },
-                tooltip: {
-                    callbacks: {
-                        title: tooltipTitleCallback // Use custom title callback
-                    },
-                    titleFont: {
-                        family: "'Noto Sans KR', sans-serif", // Font for tooltip title
-                    },
-                    bodyFont: {
-                        family: "'Noto Sans KR', sans-serif", // Font for tooltip body
+        // 속성 버튼 토글
+        document.querySelectorAll('.property-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                if (this.parentElement.classList.contains('property-buttons')) {
+                    // 같은 그룹의 다른 버튼들의 active 제거 (일부 버튼 그룹의 경우)
+                    if (this.textContent === 'B' || this.textContent === 'I' || this.textContent === 'U' || this.textContent === 'S') {
+                        this.classList.toggle('active');
+                    } else {
+                        this.parentElement.querySelectorAll('.property-btn').forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
                     }
                 }
-            }
-        };
+            });
+        });
 
-        // Radar Chart for Capabilities Comparison
-        const capabilitiesRadarCtx = document.getElementById('capabilitiesRadarChart').getContext('2d');
-        new Chart(capabilitiesRadarCtx, {
-            type: 'radar',
-            data: {
-                labels: ['텍스트 편집', '도형/이미지', '페이지 관리', '보안/서명', 'AI 스마트 기능', '파일 호환성'],
-                datasets: [{
-                    label: '경쟁사 평균',
-                    data: [80, 75, 70, 65, 20, 85], // Example data for competitors
-                    backgroundColor: 'rgba(163, 213, 255, 0.4)', // Light blue with transparency
-                    borderColor: brilliantBlues.lightBlue,
-                    pointBackgroundColor: brilliantBlues.lightBlue,
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: brilliantBlues.lightBlue
-                }, {
-                    label: '본 프로젝트 목표',
-                    data: [95, 90, 95, 90, 100, 100], // Example data for project goals
-                    backgroundColor: 'rgba(0, 74, 173, 0.4)', // Dark blue with transparency
-                    borderColor: brilliantBlues.darkBlue,
-                    pointBackgroundColor: brilliantBlues.darkBlue,
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: brilliantBlues.darkBlue
-                }]
-            },
-            options: {
-                ...commonChartOptions, // Include common options
-                scales: {
-                    r: {
-                        angleLines: { color: brilliantBlues.paleBlue }, // Radial lines color
-                        grid: { color: brilliantBlues.paleBlue }, // Grid lines color
-                        pointLabels: { 
-                            color: brilliantBlues.midBlue, // Label color for points
-                            font: { 
-                                size: 13,
-                                family: "'Noto Sans KR', sans-serif" // Font for point labels
-                            }
-                        },
-                        ticks: {
-                            color: brilliantBlues.midBlue, // Tick label color
-                            backdropColor: 'rgba(255, 255, 255, 0.75)' // Background for tick labels
-                        },
-                        min: 0,
-                        max: 100, // Max value for radar chart scale
-                    }
-                }
+        // 색상 스와치 클릭
+        document.querySelectorAll('.color-swatch').forEach(swatch => {
+            swatch.addEventListener('click', function () {
+                document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // 툴바 버튼 호버 효과
+        document.querySelectorAll('.toolbar-btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function () {
+                this.style.transform = 'scale(1.1)';
+            });
+            btn.addEventListener('mouseleave', function () {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // 확대/축소 효과 (마우스 휠)
+        let zoomLevel = 1;
+        document.querySelector('.viewer-container').addEventListener('wheel', function (e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+                const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                zoomLevel *= delta;
+                zoomLevel = Math.max(0.5, Math.min(3, zoomLevel));
+
+                const pdfPage = document.querySelector('.pdf-page');
+                pdfPage.style.transform = `scale(${zoomLevel})`;
+                pdfPage.style.transformOrigin = 'center center';
             }
         });
 
-        // Doughnut Chart for Platform Development Resource Distribution
-        const platformFocusCtx = document.getElementById('platformFocusChart').getContext('2d');
-        new Chart(platformFocusCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['PC (Windows)', '모바일 (iOS/Android)', '태블릿'],
-                datasets: [{
-                    label: '개발 리소스 분배 (%)',
-                    data: [50, 30, 20], // Resource distribution data
-                    backgroundColor: [
-                        brilliantBlues.darkBlue,
-                        brilliantBlues.midBlue,
-                        brilliantBlues.lightBlue
-                    ],
-                    borderColor: brilliantBlues.background, // Border color matches page background
-                    hoverOffset: 4 // Offset on hover
-                }]
-            },
-            options: { ...commonChartOptions } // Include common options
+        // 드래그 앤 드롭 기능
+        let isDragging = false;
+        let startX, startY, scrollLeft, scrollTop;
+
+        document.querySelector('.viewer-container').addEventListener('mousedown', function (e) {
+            if (e.button === 1 || e.ctrlKey) { // 중간 클릭 또는 Ctrl+클릭
+                isDragging = true;
+                startX = e.pageX - this.offsetLeft;
+                startY = e.pageY - this.offsetTop;
+                scrollLeft = this.scrollLeft;
+                scrollTop = this.scrollTop;
+                this.style.cursor = 'grabbing';
+            }
+        });
+
+        document.addEventListener('mousemove', function (e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            const container = document.querySelector('.viewer-container');
+            const x = e.pageX - container.offsetLeft;
+            const y = e.pageY - container.offsetTop;
+            const walkX = (x - startX) * 2;
+            const walkY = (y - startY) * 2;
+            container.scrollLeft = scrollLeft - walkX;
+            container.scrollTop = scrollTop - walkY;
+        });
+
+        document.addEventListener('mouseup', function () {
+            isDragging = false;
+            document.querySelector('.viewer-container').style.cursor = 'default';
+        });
+
+        // 패널 닫기/열기 기능 (애니메이션 적용)
+        document.querySelectorAll('.close-panel-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const target = this.getAttribute('data-target');
+                const panel = document.getElementById(target);
+                if (panel) {
+                    panel.classList.add('closed');
+                    setTimeout(() => {
+                        panel.style.display = 'none';
+                        // 닫힌 패널의 toggle-btn을 같은 쪽 vertical-menu에만 보이게
+                        if (target === 'sidebar-panel') {
+                            // 페이지 패널(오른쪽) → 오른쪽 vertical-menu
+                            document.querySelector('.vertical-menu.right .panel-toggle-btn').style.display = '';
+                        } else if (target === 'properties-panel') {
+                            // 속성 패널(왼쪽) → 왼쪽 vertical-menu
+                            document.querySelector('.vertical-menu.left .panel-toggle-btn').style.display = '';
+                        }
+                    }, 250);
+                }
+            });
+        });
+        document.querySelectorAll('.panel-toggle-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const target = this.getAttribute('data-target');
+                const panel = document.getElementById(target);
+                if (panel) {
+                    panel.style.display = '';
+                    // 강제로 리플로우 발생시켜 트랜지션 정상 동작
+                    void panel.offsetWidth;
+                    panel.classList.remove('closed');
+                    // 열리는 패널의 toggle-btn만 감추기
+                    if (target === 'sidebar-panel') {
+                        // 페이지 패널(오른쪽) → 오른쪽 vertical-menu
+                        document.querySelector('.vertical-menu.right .panel-toggle-btn').style.display = 'none';
+                    } else if (target === 'properties-panel') {
+                        // 속성 패널(왼쪽) → 왼쪽 vertical-menu
+                        document.querySelector('.vertical-menu.left .panel-toggle-btn').style.display = 'none';
+                    }
+                }
+            });
         });
     </script>
 </body>
+
 </html>
