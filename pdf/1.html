@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF 뷰어</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .header {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .file-tab {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 4px 4px 0 0;
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .toolbar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toolbar-btn {
+            background: none;
+            border: none;
+            padding: 6px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .toolbar-btn:hover {
+            background: #f0f0f0;
+        }
+
+        .header-center {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .page-input {
+            width: 60px;
+            padding: 4px 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .zoom-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .search-box {
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            width: 200px;
+            font-size: 13px;
+        }
+
+        .main-container {
+            display: flex;
+            height: calc(100vh - 60px);
+        }
+
+        .sidebar {
+            width: 200px;
+            background: #fff;
+            border-right: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .thumbnail-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 8px;
+        }
+
+        .thumbnail {
+            width: 100%;
+            margin-bottom: 8px;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: border-color 0.2s;
+            position: relative;
+        }
+
+        .thumbnail.active {
+            border-color: #007acc;
+        }
+
+        .thumbnail-image {
+            width: 100%;
+            height: 120px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strawberry-icon {
+            font-size: 48px;
+            color: #d32f2f;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 4px;
+            left: 4px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-size: 11px;
+        }
+
+        .page-title {
+            margin-top: 4px;
+            font-size: 11px;
+            text-align: center;
+            color: #666;
+        }
+
+        .viewer-container {
+            flex: 1;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .pdf-page {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .page-content {
+            padding: 40px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content-header {
+            text-align: left;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .content-title {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .content-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .strawberry-image {
+            width: 300px;
+            height: 200px;
+            background: linear-gradient(135deg, #ff6b6b, #d32f2f);
+            border-radius: 50%;
+            position: relative;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .strawberry-texture {
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle at 30% 30%, #ff8a80 0%, #e53935 50%, #b71c1c 100%);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strawberry-seeds {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .seed {
+            position: absolute;
+            width: 4px;
+            height: 6px;
+            background: #2e7d32;
+            border-radius: 50%;
+        }
+
+        .strawberry-leaves {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 2px;
+        }
+
+        .leaf {
+            width: 20px;
+            height: 30px;
+            background: #2e7d32;
+            border-radius: 0 50% 50% 50%;
+            transform: rotate(-30deg);
+        }
+
+        .leaf:nth-child(2) { transform: rotate(-10deg); }
+        .leaf:nth-child(3) { transform: rotate(10deg); }
+        .leaf:nth-child(4) { transform: rotate(30deg); }
+
+        .properties-panel {
+            width: 250px;
+            background: #fff;
+            border-left: 1px solid #e0e0e0;
+            padding: 16px;
+            overflow-y: auto;
+        }
+
+        .panel-section {
+            margin-bottom: 24px;
+        }
+
+        .panel-title {
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .property-group {
+            margin-bottom: 16px;
+        }
+
+        .property-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .property-input {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .property-buttons {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+
+        .property-btn {
+            flex: 1;
+            padding: 6px;
+            border: 1px solid #ccc;
+            background: #f8f8f8;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .property-btn.active {
+            background: #007acc;
+            color: white;
+            border-color: #007acc;
+        }
+
+        .color-picker {
+            display: flex;
+            gap: 4px;
+            margin-top: 8px;
+        }
+
+        .color-swatch {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .color-swatch.active {
+            border-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <div class="file-tab">
+                <span>📄</span>
+                파일이름.pdf
+                <button class="close-btn">×</button>
+            </div>
+            <div class="toolbar">
+                <button class="toolbar-btn" title="홈">🏠</button>
+                <button class="toolbar-btn" title="인쇄">🖨️</button>
+                <button class="toolbar-btn" title="저장">💾</button>
+                <button class="toolbar-btn" title="이메일">📧</button>
+                <button class="toolbar-btn" title="더보기">⋯</button>
+                <button class="toolbar-btn" title="실행취소">↶</button>
+                <button class="toolbar-btn" title="다시실행">↷</button>
+            </div>
+        </div>
+        
+        <div class="header-center">
+            <div class="nav-controls">
+                <button class="toolbar-btn">🔍</button>
+                <button class="toolbar-btn">🔍</button>
+                <button class="toolbar-btn">✏️</button>
+                <button class="toolbar-btn">🔗</button>
+                <button class="toolbar-btn">📝</button>
+                <button class="toolbar-btn">📊</button>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <input type="text" class="search-box" placeholder="텍스트 검색">
+            <button class="toolbar-btn">🔍</button>
+            <button class="toolbar-btn">✕</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="sidebar-header">페이지</div>
+            <div class="thumbnail-container">
+                <div class="thumbnail active">
+                    <div class="thumbnail-image">
+                        <div class="strawberry-icon">🍓</div>
+                        <div class="page-number">1</div>
+                    </div>
+                    <div class="page-title">Suisse Typeface</div>
+                </div>
+                <div class="thumbnail">
+                    <div class="thumbnail-image">
+                        <div class="strawberry-icon">🍓</div>
+                        <div class="page-number">2</div>
+                    </div>
+                    <div class="page-title">Suisse Typeface</div>
+                </div>
+                <div class="thumbnail">
+                    <div class="thumbnail-image">
+                        <div class="strawberry-icon">🍓</div>
+                        <div class="page-number">3</div>
+                    </div>
+                    <div class="page-title">Suisse Typeface</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="viewer-container">
+            <div class="pdf-page">
+                <div class="page-content">
+                    <div class="content-header">
+                        <h1 class="content-title">Most legible and<br>Harmonious means for<br>Structuring information—</h1>
+                        <p class="content-description">
+                            Suisse Int'l is the best Swiss Grotesk available in digital form. Inspired by the Swiss Style design movement that emerged around in the 1950s, it aims to preserve your design objectively. Suisse Int'l is the present-day equivalent of the type used by the pioneers in Switzerland and beyond.Whether you want to perpetuate their modernist approach, whether your design references this aesthetic in more playful, even ironic ways, or whether you're just looking for a plain, hard-working sans serif – Suisse Int'l won't let you down.
+                        </p>
+                    </div>
+                    
+                    <div class="strawberry-image">
+                        <div class="strawberry-texture">
+                            <div class="strawberry-seeds">
+                                <div class="seed" style="top: 20%; left: 25%;"></div>
+                                <div class="seed" style="top: 35%; left: 15%;"></div>
+                                <div class="seed" style="top: 45%; left: 30%;"></div>
+                                <div class="seed" style="top: 25%; left: 45%;"></div>
+                                <div class="seed" style="top: 40%; left: 55%;"></div>
+                                <div class="seed" style="top: 55%; left: 40%;"></div>
+                                <div class="seed" style="top: 30%; left: 65%;"></div>
+                                <div class="seed" style="top: 50%; left: 70%;"></div>
+                                <div class="seed" style="top: 65%; left: 25%;"></div>
+                                <div class="seed" style="top: 75%; left: 45%;"></div>
+                                <div class="seed" style="top: 60%; left: 60%;"></div>
+                                <div class="seed" style="top: 70%; left: 80%;"></div>
+                            </div>
+                            <div class="strawberry-leaves">
+                                <div class="leaf"></div>
+                                <div class="leaf"></div>
+                                <div class="leaf"></div>
+                                <div class="leaf"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="properties-panel">
+            <div class="panel-section">
+                <div class="panel-title">속성</div>
+                <div class="property-group">
+                    <div class="property-label">글꼴</div>
+                    <select class="property-input">
+                        <option>Suisse</option>
+                        <option>Arial</option>
+                        <option>Helvetica</option>
+                    </select>
+                </div>
+                <div class="property-group">
+                    <div class="property-label">크기</div>
+                    <input type="number" class="property-input" value="30">
+                </div>
+            </div>
+
+            <div class="panel-section">
+                <div class="panel-title">편집</div>
+                <div class="property-group">
+                    <div class="property-buttons">
+                        <button class="property-btn active">B</button>
+                        <button class="property-btn">I</button>
+                        <button class="property-btn">U</button>
+                        <button class="property-btn">S</button>
+                    </div>
+                </div>
+                <div class="property-group">
+                    <div class="property-buttons">
+                        <button class="property-btn">⊣</button>
+                        <button class="property-btn">⊣⊢</button>
+                        <button class="property-btn">⊢</button>
+                        <button class="property-btn">≡</button>
+                    </div>
+                </div>
+                <div class="property-group">
+                    <div class="property-label">간격</div>
+                    <div style="display: flex; gap: 8px;">
+                        <input type="number" class="property-input" value="0" style="width: 50%;">
+                        <input type="number" class="property-input" value="10" style="width: 50%;">
+                    </div>
+                </div>
+                <div class="property-group">
+                    <div style="display: flex; gap: 8px;">
+                        <input type="number" class="property-input" value="0" style="width: 50%;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-section">
+                <div class="panel-title">효과</div>
+                <div class="property-group">
+                    <div class="property-buttons">
+                        <button class="property-btn">↺</button>
+                        <button class="property-btn">↻</button>
+                        <button class="property-btn">⟲</button>
+                        <button class="property-btn">⟳</button>
+                        <button class="property-btn">⊗</button>
+                        <button class="property-btn">📋</button>
+                    </div>
+                </div>
+                <div class="property-group">
+                    <div class="property-label">배경</div>
+                    <div class="color-picker">
+                        <div class="color-swatch" style="background: #fff; border-color: #333;" title="흰색"></div>
+                        <div class="color-swatch" style="background: #000;" title="검은색"></div>
+                        <div class="color-swatch" style="background: #f00;" title="빨간색"></div>
+                        <div class="color-swatch" style="background: #0f0;" title="초록색"></div>
+                        <div class="color-swatch" style="background: #00f;" title="파란색"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 썸네일 클릭 이벤트
+        document.querySelectorAll('.thumbnail').forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', function() {
+                document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                // 페이지 전환 효과
+                const viewer = document.querySelector('.viewer-container');
+                viewer.style.opacity = '0.5';
+                setTimeout(() => {
+                    viewer.style.opacity = '1';
+                }, 200);
+            });
+        });
+
+        // 속성 버튼 토글
+        document.querySelectorAll('.property-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.parentElement.classList.contains('property-buttons')) {
+                    // 같은 그룹의 다른 버튼들의 active 제거 (일부 버튼 그룹의 경우)
+                    if (this.textContent === 'B' || this.textContent === 'I' || this.textContent === 'U' || this.textContent === 'S') {
+                        this.classList.toggle('active');
+                    } else {
+                        this.parentElement.querySelectorAll('.property-btn').forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        // 색상 스와치 클릭
+        document.querySelectorAll('.color-swatch').forEach(swatch => {
+            swatch.addEventListener('click', function() {
+                document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // 툴바 버튼 호버 효과
+        document.querySelectorAll('.toolbar-btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+            });
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // 확대/축소 효과 (마우스 휠)
+        let zoomLevel = 1;
+        document.querySelector('.viewer-container').addEventListener('wheel', function(e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+                const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                zoomLevel *= delta;
+                zoomLevel = Math.max(0.5, Math.min(3, zoomLevel));
+                
+                const pdfPage = document.querySelector('.pdf-page');
+                pdfPage.style.transform = `scale(${zoomLevel})`;
+                pdfPage.style.transformOrigin = 'center center';
+            }
+        });
+
+        // 드래그 앤 드롭 기능
+        let isDragging = false;
+        let startX, startY, scrollLeft, scrollTop;
+
+        document.querySelector('.viewer-container').addEventListener('mousedown', function(e) {
+            if (e.button === 1 || e.ctrlKey) { // 중간 클릭 또는 Ctrl+클릭
+                isDragging = true;
+                startX = e.pageX - this.offsetLeft;
+                startY = e.pageY - this.offsetTop;
+                scrollLeft = this.scrollLeft;
+                scrollTop = this.scrollTop;
+                this.style.cursor = 'grabbing';
+            }
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            const container = document.querySelector('.viewer-container');
+            const x = e.pageX - container.offsetLeft;
+            const y = e.pageY - container.offsetTop;
+            const walkX = (x - startX) * 2;
+            const walkY = (y - startY) * 2;
+            container.scrollLeft = scrollLeft - walkX;
+            container.scrollTop = scrollTop - walkY;
+        });
+
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+            document.querySelector('.viewer-container').style.cursor = 'default';
+        });
+    </script>
+</body>
+</html>
