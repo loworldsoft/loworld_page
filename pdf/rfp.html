@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 기반 차세대 PDF 솔루션 프로젝트 상세 인포그래픽</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+                max-height: 350px;
+            }
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            color: #A3D5FF;
+            line-height: 1;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 9999px;
+            background-color: #0A6EBD;
+            border: 2px solid #F0F8FF;
+        }
+        .timeline-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -15px;
+            width: 2px;
+            background-color: #A3D5FF;
+        }
+        .feature-icon {
+            color: #0A6EBD;
+            margin-right: 0.75rem;
+            width: 1.5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-[#F0F8FF] text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12 md:mb-16">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-[#004AAD]">AI 기반 차세대 PDF 솔루션</h1>
+            <p class="mt-4 text-lg md:text-xl text-[#0A6EBD]">모든 기능을 담아낸 궁극의 PDF 솔루션, AI로 완성되다.</p>
+        </header>
+
+        <main>
+            <section id="goals" class="mb-16">
+                <h2 class="text-3xl font-bold text-center mb-10 text-[#004AAD]">🎯 프로젝트 핵심 목표</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-5xl mb-4">🏅</div>
+                        <h3 class="text-xl font-bold text-[#004AAD] mb-2">고급 기능 제공</h3>
+                        <p class="text-gray-600">전문가 수준의 PDF 뷰어 및 편집 기능으로 시장을 선도합니다.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-5xl mb-4">🧠</div>
+                        <h3 class="text-xl font-bold text-[#004AAD] mb-2">AI 기술 통합</h3>
+                        <p class="text-gray-600">문서 요약, 번역, OCR 등 AI 기능으로 사용자 생산성을 극대화합니다.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-5xl mb-4">⚙️</div>
+                        <h3 class="text-xl font-bold text-[#004AAD] mb-2">고성능 및 확장성</h3>
+                        <p class="text-gray-600">빠른 속도와 안정성, 그리고 미래를 위한 확장 가능한 구조를 설계합니다.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-5xl mb-4">💻</div>
+                        <h3 class="text-xl font-bold text-[#004AAD] mb-2">크로스플랫폼 지원</h3>
+                        <p class="text-gray-600">PC, 모바일, 태블릿 모든 환경에서 끊김 없는 경험을 제공합니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="full-features" class="mb-16">
+                <h2 class="text-3xl font-bold text-center mb-10 text-[#004AAD]">✨ 모든 기능을 한눈에: 상세 기능 명세</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-[#0A6EBD] mb-4">🔮 AI 기반 스마트 기능</h3>
+                        <p class="mb-4 text-gray-600">문서 작업의 패러다임을 바꾸는 지능형 기능들입니다. 유료/무료 사용자에 따라 최적화된 AI 모델을 제공합니다.</p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex"><span class="feature-icon">📑</span><strong>문서 요약:</strong> AI가 PDF 전체 내용을 핵심 문장으로 자동 요약</li>
+                            <li class="flex"><span class="feature-icon">🌐</span><strong>전체 번역:</strong> 문서를 영어/일본어/대만어 등으로 통번역하여 새 창으로 제공</li>
+                            <li class="flex"><span class="feature-icon">🖱️</span><strong>스마트 드래그:</strong> 드래그 시 번역, 단어 설명, 요약, OCR 기능 툴팁 표시</li>
+                            <li class="flex"><span class="feature-icon">👁️</span><strong>OCR 텍스트 인식:</strong> 이미지 기반 PDF에서도 텍스트를 인식하여 복사/검색</li>
+                            <li class="flex"><span class="feature-icon">🤖</span><strong>AI 모델:</strong> OpenAI(유료), 로컬 탑재 AI(무료) 이원화 운영</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-[#0A6EBD] mb-4">📖 기본 문서 보기</h3>
+                        <p class="mb-4 text-gray-600">빠르고 직관적인 문서 열람 환경을 제공하여 사용자의 가독성을 높입니다.</p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex"><span class="feature-icon">📂</span><strong>문서 열람:</strong> 멀티 탭(PC)으로 여러 파일 동시 열람</li>
+                            <li class="flex"><span class="feature-icon">🔍</span><strong>탐색 및 검색:</strong> 썸네일/목차 보기 및 실시간 텍스트 하이라이팅 검색</li>
+                            <li class="flex"><span class="feature-icon">🔄</span><strong>화면 제어:</strong> 확대/축소(15% 단위), 페이지 맞춤, 90도 회전</li>
+                             <li class="flex"><span class="feature-icon">🌙</span><strong>다크 모드:</strong> 눈의 피로를 줄여주는 어두운 테마 지원</li>
+                             <li class="flex"><span class="feature-icon">🕒</span><strong>최근 문서:</strong> 최근 열람/수정한 문서 목록 바로가기</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
+                    <h3 class="text-2xl font-bold text-center text-[#0A6EBD] mb-2">🎨 고급 문서 편집 및 페이지 조작</h3>
+                    <p class="text-center mb-6 text-gray-600">문서의 모든 요소를 자유롭게 제어하고 재구성할 수 있는 강력한 편집 도구를 제공합니다.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="font-bold text-lg text-[#004AAD] mb-2">텍스트 편집</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li>✓ 글꼴, 크기, 색상, 스타일</li>
+                                <li>✓ 정렬(좌/우/중간/양쪽)</li>
+                                <li>✓ 간격(행간, 자간, 단락)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-[#004AAD] mb-2">도형 및 이미지</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li>✓ 사각형, 화살표, 선, 원 등</li>
+                                <li>✓ 테두리, 채우기, 선 종류</li>
+                                <li>✓ 이미지 크기, 투명도, 교체</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-[#004AAD] mb-2">펜 & 강조</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li>✓ 펜/형광펜 굵기, 색상, 투명도</li>
+                                <li>✓ 지우개 기능</li>
+                                <li>✓ 실행취소/되돌리기</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-[#004AAD] mb-2">페이지 관리</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li>✓ 추가/삭제/분할/병합/추출</li>
+                                <li>✓ 순서 변경 (드래그앤드롭)</li>
+                                <li>✓ 페이지 회전 (짝/홀/모두)</li>
+                            </ul>
+                        </div>
+                         <div>
+                            <h4 class="font-bold text-lg text-[#004AAD] mb-2">페이지 번호</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li>✓ 내용, 글꼴, 크기, 색상, 위치</li>
+                                <li>✓ 적용 페이지 지정 가능</li>
+                                <li>✓ 실시간 뷰어 제공</li>
+                            </ul>
+                        </div>
+                         <div>
+                            <h4 class="font-bold text-lg text-[#004AAD] mb-2">워터마크</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li>✓ 텍스트/이미지 워터마크</li>
+                                <li>✓ 각도, 투명도, 패턴 형태</li>
+                                <li>✓ 실시간 뷰어 제공</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-[#0A6EBD] mb-4">🖋️ 전자 서명 및 보안</h3>
+                        <p class="mb-4 text-gray-600">강력한 보안 기능으로 문서를 안전하게 보호하고, 간편한 전자 서명으로 계약 프로세스를 단축합니다.</p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex"><span class="feature-icon">✍️</span><strong>다양한 서명 방식:</strong> 이미지 삽입, 텍스트 입력, 직접 그리기</li>
+                            <li class="flex"><span class="feature-icon">🕰️</span><strong>타임스탬프:</strong> 서명 시점의 시간 정보를 기록하여 법적 효력 강화</li>
+                            <li class="flex"><span class="feature-icon">🔒</span><strong>문서 잠금:</strong> 암호 설정으로 열람 제한</li>
+                            <li class="flex"><span class="feature-icon">🚫</span><strong>권한 제어:</strong> 복사, 인쇄, 편집 등 특정 기능 제한</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-[#0A6EBD] mb-4">🔄 파일 변환 및 내보내기</h3>
+                        <p class="mb-4 text-gray-600">PDF를 중심으로 다양한 포맷과 자유롭게 상호 작용합니다.</p>
+                         <ul class="space-y-3 text-gray-700">
+                            <li class="flex"><span class="feature-icon">⇆</span><strong>상호 변환:</strong> PDF ↔ PPT, Word, Excel, JPG 등</li>
+                             <li class="flex"><span class="feature-icon">📦</span><strong>PDF 압축:</strong> 용량이 큰 PDF 파일을 최적화하여 저장</li>
+                            <li class="flex"><span class="feature-icon">🖨️</span><strong>인쇄:</strong> PC 환경에서 표준 프린터로 출력</li>
+                            <li class="flex"><span class="feature-icon">📲</span><strong>공유:</strong> 모바일에서 SNS, 메일, 메시지로 간편하게 공유</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-[#0A6EBD] mb-4">📋 폼(Form) 지원</h3>
+                        <p class="mb-4 text-gray-600">문서 내 입력 양식을 자동으로 인식하여 데이터 입력을 편리하게 합니다.</p>
+                         <ul class="space-y-3 text-gray-700">
+                            <li class="flex"><span class="feature-icon">📝</span><strong>필드 자동 인식:</strong> 입력 가능한 필드를 자동으로 감지하여 활성화</li>
+                            <li class="flex"><span class="feature-icon">✔️</span><strong>다양한 입력 요소:</strong> 텍스트, 체크박스, 라디오, 드롭다운, 날짜 지원</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-[#0A6EBD] mb-4">👥 사용자 시스템</h3>
+                        <p class="mb-4 text-gray-600">간편한 로그인부터 개인화된 마이페이지까지, 사용자 중심의 시스템을 구축합니다.</p>
+                         <ul class="space-y-3 text-gray-700">
+                            <li class="flex"><span class="feature-icon">🔗</span><strong>SNS 간편 로그인:</strong> 카카오, 네이버, 구글 등으로 빠른 시작</li>
+                            <li class="flex"><span class="feature-icon">👤</span><strong>마이페이지:</strong> 프로필 관리 및 최근 열람 문서 확인</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="comparison-chart" class="mb-16">
+                 <h2 class="text-3xl font-bold text-center mb-10 text-[#004AAD]">📊 기능 경쟁력 분석</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-center text-[#0A6EBD] mb-4">종합 역량 비교 (Radar Chart)</h3>
+                         <p class="text-center mb-6 text-gray-600">텍스트, 도형/이미지 편집, 페이지 관리, AI 기능 등 모든 핵심 역량에서 경쟁사를 압도하는 것을 목표로 합니다.</p>
+                        <div class="chart-container h-[320px] md:h-[350px]">
+                            <canvas id="capabilitiesRadarChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-center text-[#0A6EBD] mb-4">플랫폼별 개발 리소스 분배</h3>
+                         <p class="text-center mb-6 text-gray-600">안정적이고 강력한 기능 제공을 위해 PC 플랫폼에 초기 리소스를 집중하고, 순차적으로 모바일과 태블릿으로 지원을 확장합니다.</p>
+                        <div class="chart-container h-[320px] md:h-[350px]">
+                            <canvas id="platformFocusChart"></canvas>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+            
+            <section id="timeline" class="mb-16">
+                <h2 class="text-3xl font-bold text-center mb-10 text-[#004AAD]">🛠️ 개발 환경 및 로드맵</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                     <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-[#0A6EBD] mb-4">기술 스택 구성</h3>
+                        <p class="mb-6 text-gray-600">확정된 Windows 클라이언트 기술을 기반으로, 모바일 및 서버 환경에 대한 최적의 기술 스택을 제안받아 유연하고 확장 가능한 시스템을 구축합니다.</p>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-lg">클라이언트 (PC) - 확정</h4>
+                                <div class="flex gap-2 mt-1">
+                                    <span class="bg-[#004AAD] text-white py-1 px-3 rounded-full text-sm font-semibold">C#</span>
+                                    <span class="bg-[#004AAD] text-white py-1 px-3 rounded-full text-sm font-semibold">WPF</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">기타 영역 (제안 필요)</h4>
+                                <div class="flex flex-wrap gap-2 mt-1">
+                                    <span class="bg-[#A3D5FF] text-[#004AAD] py-1 px-3 rounded-full text-sm font-semibold">모바일 앱 (Android/iOS)</span>
+                                    <span class="bg-[#A3D5FF] text-[#004AAD] py-1 px-3 rounded-full text-sm font-semibold">서버/DB</span>
+                                    <span class="bg-[#A3D5FF] text-[#004AAD] py-1 px-3 rounded-full text-sm font-semibold">AI 연동 기술</span>
+                                    <span class="bg-[#A3D5FF] text-[#004AAD] py-1 px-3 rounded-full text-sm font-semibold">PDF 렌더링/편집 엔진</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-[#0A6EBD] mb-4">2025년 출시 로드맵</h3>
+                        <p class="mb-6 text-gray-600">체계적인 단계를 거쳐 2025년 내 성공적인 출시를 목표로 합니다.</p>
+                        <div class="relative pl-5">
+                            <div class="timeline-line"></div>
+                            <div class="space-y-6">
+                                <div class="relative timeline-item">
+                                    <h4 class="font-bold">기획 및 설계 (Q3'24)</h4>
+                                    <p class="text-sm text-gray-500">기술 검토 및 시스템 아키텍처 설계</p>
+                                </div>
+                                <div class="relative timeline-item">
+                                    <h4 class="font-bold">핵심 기능 개발 (Q4'24 - Q2'25)</h4>
+                                    <p class="text-sm text-gray-500">PC 클라이언트 및 서버/AI 기능 개발</p>
+                                </div>
+                                <div class="relative timeline-item">
+                                    <h4 class="font-bold">QA 및 안정화 (Q3'25)</h4>
+                                    <p class="text-sm text-gray-500">통합 테스트, 버그 수정, 모바일 개발 착수</p>
+                                </div>
+                                <div class="relative timeline-item">
+                                    <h4 class="font-bold">정식 출시 (Q4'25)</h4>
+                                    <p class="text-sm text-gray-500">PC 버전 출시 및 마케팅 시작</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+             <section id="collaboration">
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                    <h2 class="text-3xl font-bold text-[#004AAD] mb-4">🤝 협업 및 다음 단계</h2>
+                    <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                        본 프로젝트의 성공적인 수행을 위해 긴밀한 협력을 기대합니다. 로그인 관련 API는 귀사에서 제공해주실 예정이며, 저희는 해당 명세에 맞춰 완벽한 UI/UX와 처리 로직을 구현하겠습니다. 함께 시장을 선도할 혁신적인 제품을 만들어가길 바랍니다.
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const brilliantBlues = {
+            darkBlue: '#004AAD',
+            midBlue: '#0A6EBD',
+            lightBlue: '#A3D5FF',
+            paleBlue: '#CBE7FF',
+            background: '#F0F8FF'
+        };
+
+        const wrapLabel = (label, maxLength) => {
+            if (typeof label !== 'string' || label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxLength && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine.length > 0) {
+                lines.push(currentLine);
+            }
+            return lines;
+        };
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+              return label.join(' ');
+            }
+            return label;
+        };
+        
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: brilliantBlues.darkBlue,
+                        font: {
+                            family: "'Noto Sans KR', sans-serif",
+                            weight: '500'
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    titleFont: {
+                        family: "'Noto Sans KR', sans-serif",
+                    },
+                    bodyFont: {
+                         family: "'Noto Sans KR', sans-serif",
+                    }
+                }
+            }
+        };
+
+        const capabilitiesRadarCtx = document.getElementById('capabilitiesRadarChart').getContext('2d');
+        new Chart(capabilitiesRadarCtx, {
+            type: 'radar',
+            data: {
+                labels: ['텍스트 편집', '도형/이미지', '페이지 관리', '보안/서명', 'AI 스마트 기능', '파일 호환성'],
+                datasets: [{
+                    label: '경쟁사 평균',
+                    data: [80, 75, 70, 65, 20, 85],
+                    backgroundColor: 'rgba(163, 213, 255, 0.4)',
+                    borderColor: brilliantBlues.lightBlue,
+                    pointBackgroundColor: brilliantBlues.lightBlue,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: brilliantBlues.lightBlue
+                }, {
+                    label: '본 프로젝트 목표',
+                    data: [95, 90, 95, 90, 100, 100],
+                    backgroundColor: 'rgba(0, 74, 173, 0.4)',
+                    borderColor: brilliantBlues.darkBlue,
+                    pointBackgroundColor: brilliantBlues.darkBlue,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: brilliantBlues.darkBlue
+                }]
+            },
+            options: {
+                ...commonChartOptions,
+                scales: {
+                    r: {
+                        angleLines: { color: brilliantBlues.paleBlue },
+                        grid: { color: brilliantBlues.paleBlue },
+                        pointLabels: { 
+                            color: brilliantBlues.midBlue,
+                            font: { 
+                                size: 13,
+                                family: "'Noto Sans KR', sans-serif"
+                            }
+                        },
+                        ticks: {
+                            color: brilliantBlues.midBlue,
+                            backdropColor: 'rgba(255, 255, 255, 0.75)'
+                        },
+                        min: 0,
+                        max: 100,
+                    }
+                }
+            }
+        });
+
+        const platformFocusCtx = document.getElementById('platformFocusChart').getContext('2d');
+        new Chart(platformFocusCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['PC (Windows)', '모바일 (iOS/Android)', '태블릿'],
+                datasets: [{
+                    label: '개발 리소스 분배 (%)',
+                    data: [50, 30, 20],
+                    backgroundColor: [
+                        brilliantBlues.darkBlue,
+                        brilliantBlues.midBlue,
+                        brilliantBlues.lightBlue
+                    ],
+                    borderColor: brilliantBlues.background,
+                    hoverOffset: 4
+                }]
+            },
+            options: { ...commonChartOptions }
+        });
+    </script>
+</body>
+</html>
