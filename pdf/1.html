@@ -67,9 +67,9 @@
             cursor: pointer;
             transition: color 0.2s;
             color: rgb(57, 57, 57);
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 500;
-            padding: 0 4px;
+            padding: 0 6px;
             height: 40px;
             display: flex;
             align-items: center;
@@ -669,7 +669,8 @@
     <!-- 탭 기능 추가 -->
     <div class="tab-bar">
         <!-- ezreader 로고/텍스트 -->
-        <span class="tab-ezreader" style="display:flex; align-items:center; font-weight:bold; color:#007acc; font-size:16px; margin-right:12px;">
+        <span class="tab-ezreader"
+            style="display:flex; align-items:center; font-weight:bold; color:#007acc; font-size:16px; margin-right:12px;">
             ezreader
         </span>
         <!-- 홈 아이콘만 단독으로 배치 -->
@@ -753,10 +754,43 @@
                             stroke-linecap="round" />
                     </svg>
                 </button>
-                <button class="toolbar-btn">✏️</button>
-                <button class="toolbar-btn">🔗</button>
-                <button class="toolbar-btn">📝</button>
-                <button class="toolbar-btn">📊</button>
+                <button class="toolbar-btn"> <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <!-- 펜 몸통 -->
+                        <rect x="7" y="3" width="6" height="10" rx="2" fill="#fff" stroke="#007acc" stroke-width="2" />
+                        <!-- 펜촉 -->
+                        <polygon points="9,13 11,13 10,17" fill="#007acc" />
+                        <!-- 하이라이트 효과 -->
+                        <rect x="5" y="17" width="10" height="2" rx="1" fill="#ffe066" />
+                    </svg></button>
+                <button class="toolbar-btn" title="도형 그리기">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <!-- 사각형 -->
+                        <rect x="4" y="4" width="10" height="10" stroke="#007acc" stroke-width="2" fill="none" />
+                        <!-- 연필(펜촉) -->
+                        <path d="M14 14L18 18" stroke="#007acc" stroke-width="2" stroke-linecap="round" />
+                        <path d="M16.5 16.5L14 14" stroke="#007acc" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </button>
+                <button class="toolbar-btn"><svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <!-- 사각형 종이 -->
+                        <rect x="3" y="4" width="14" height="12" rx="2" fill="#fff" stroke="#007acc"
+                            stroke-width="1.5" />
+                        <!-- 펜 몸통 -->
+                        <rect x="12" y="10" width="2" height="6" rx="0.7" fill="#fff" stroke="#007acc"
+                            stroke-width="1.2" transform="rotate(-25 12 10)" />
+                        <!-- 펜촉 -->
+                        <polygon points="13,16 14,16 13.5,18" fill="#007acc" />
+                        <!-- 글씨 줄 -->
+                        <rect x="6" y="8" width="8" height="1" rx="0.5" fill="#b3d8f6" />
+                        <rect x="6" y="11" width="5" height="1" rx="0.5" fill="#b3d8f6" />
+                    </svg></button>
+                <button class="toolbar-btn"><svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <!-- 큰 T -->
+                        <text x="3" y="16" font-size="15" font-family="Segoe UI, Arial, sans-serif" fill="#007acc"
+                            font-weight="bold">T</text>
+                        <!-- 아래 줄 -->
+                        <rect x="7" y="17" width="8" height="1.5" rx="0.75" fill="#007acc" />
+                    </svg></button>
             </div>
         </div>
 
