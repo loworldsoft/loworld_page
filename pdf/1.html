@@ -963,85 +963,128 @@
             </div>
         </div>
 
-        <div class="properties-panel" id="properties-panel">
-            <div class="sidebar-header" style="display:flex;justify-content:flex-end;align-items:center;padding:8px 8px 8px 0;">
-                <button class="close-panel-btn" data-target="properties-panel" title="닫기"
-                    style="background:none;border:none;font-size:14px;cursor:pointer;width:24px;height:24px;line-height:1;display:flex;align-items:center;justify-content:center;color:#888;border-radius:4px;transition:background 0.15s;">
-                    ×
-                </button>
-            </div>
-            <div class="panel-section">
-                <div class="panel-title">종류</div>
-                <div class="property-group">
-                    <div class="property-label">글꼴</div>
-                    <select class="property-input">
-                        <option>Suisse</option>
-                        <option>Arial</option>
-                        <option>Helvetica</option>
-                    </select>
-                </div>
-                <div class="property-group">
-                    <div class="property-label">크기</div>
-                    <input type="number" class="property-input" value="30">
-                </div>
-            </div>
-
-            <div class="panel-section">
-                <div class="panel-title">편집</div>
-                <div class="property-group">
-                    <div class="property-buttons">
-                        <button class="property-btn active">B</button>
-                        <button class="property-btn">I</button>
-                        <button class="property-btn">U</button>
-                        <button class="property-btn">S</button>
-                    </div>
-                </div>
-                <div class="property-group">
-                    <div class="property-buttons">
-                        <button class="property-btn">⊣</button>
-                        <button class="property-btn">⊣⊢</button>
-                        <button class="property-btn">⊢</button>
-                        <button class="property-btn">≡</button>
-                    </div>
-                </div>
-                <div class="property-group">
-                    <div class="property-label">간격</div>
-                    <div style="display: flex; gap: 8px;">
-                        <input type="number" class="property-input" value="0" style="width: 50%;">
-                        <input type="number" class="property-input" value="10" style="width: 50%;">
-                    </div>
-                </div>
-                <div class="property-group">
-                    <div style="display: flex; gap: 8px;">
-                        <input type="number" class="property-input" value="0" style="width: 50%;">
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel-section">
-                <div class="panel-title">효과</div>
-                <div class="property-group">
-                    <div class="property-buttons">
-                        <button class="property-btn">↺</button>
-                        <button class="property-btn">↻</button>
-                        <button class="property-btn">⟲</button>
-                        <button class="property-btn">⟳</button>
-                        <button class="property-btn">⊗</button>
-                        <button class="property-btn">📋</button>
-                    </div>
-                </div>
-                <div class="property-group">
-                    <div class="property-label">배경</div>
-                    <div class="color-picker">
-                        <div class="color-swatch" style="background: #fff; border-color: #333;" title="흰색"></div>
-                        <div class="color-swatch" style="background: #000;" title="검은색"></div>
-                        <div class="color-swatch" style="background: #f00;" title="빨간색"></div>
-                        <div class="color-swatch" style="background: #0f0;" title="초록색"></div>
-                        <div class="color-swatch" style="background: #00f;" title="파란색"></div>
-                    </div>
-                </div>
-            </div>
+<div class="properties-panel" id="properties-panel">
+    <div class="sidebar-header" style="display:flex;justify-content:flex-end;align-items:center;padding:8px 8px 8px 0;">
+        <button class="close-panel-btn" data-target="properties-panel" title="닫기"
+            style="background:none;border:none;font-size:14px;cursor:pointer;width:24px;height:24px;line-height:1;display:flex;align-items:center;justify-content:center;color:#888;border-radius:4px;transition:background 0.15s;">
+            ×
+        </button>
+    </div>
+    <div class="panel-section" style="margin-bottom:16px;">
+        <div class="panel-title" style="font-size:15px;font-weight:600;margin-bottom:8px;">속성</div>
+        <div style="font-size:13px;color:#444;margin-bottom:8px;">종류</div>
+        <div style="font-size:13px;color:#888;margin-bottom:12px;">텍스트</div>
+        <hr style="border:none;border-top:1px solid #eee;margin:8px 0;">
+    </div>
+    <div class="panel-section" style="margin-bottom:16px;">
+        <div style="font-size:13px;color:#444;font-weight:600;margin-bottom:8px;cursor:pointer;">▼ 폰트</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <select class="property-input" style="width:100px;">
+                <option>텍스트</option>
+                <option>제목</option>
+                <option>캡션</option>
+            </select>
+            <input type="number" class="property-input" value="30" style="width:50px;">
+            <input type="color" value="#000000" style="width:28px;height:28px;border:none;">
         </div>
+        <div style="display:flex;gap:8px;margin-bottom:8px;">
+            <button class="property-btn active" title="굵게" style="font-weight:bold;">T</button>
+            <button class="property-btn" title="기울임" style="font-style:italic;">T</button>
+            <button class="property-btn" title="밑줄" style="text-decoration:underline;">T</button>
+            <button class="property-btn" title="취소선" style="text-decoration:line-through;">T</button>
+        </div>
+        <div style="display:flex;gap:8px;">
+            <button class="property-btn active" title="왼쪽 정렬">
+                <svg width="22" height="22" viewBox="0 0 22 22"><rect x="4" y="6" width="14" height="2" fill="#444"/><rect x="4" y="10" width="10" height="2" fill="#444"/><rect x="4" y="14" width="8" height="2" fill="#444"/></svg>
+            </button>
+            <button class="property-btn" title="가운데 정렬">
+                <svg width="22" height="22" viewBox="0 0 22 22"><rect x="6" y="6" width="10" height="2" fill="#444"/><rect x="4" y="10" width="14" height="2" fill="#444"/><rect x="6" y="14" width="10" height="2" fill="#444"/></svg>
+            </button>
+            <button class="property-btn" title="오른쪽 정렬">
+                <svg width="22" height="22" viewBox="0 0 22 22"><rect x="4" y="6" width="14" height="2" fill="#444"/><rect x="8" y="10" width="10" height="2" fill="#444"/><rect x="10" y="14" width="8" height="2" fill="#444"/></svg>
+            </button>
+            <button class="property-btn" title="양쪽 정렬">
+                <svg width="22" height="22" viewBox="0 0 22 22"><rect x="4" y="6" width="14" height="2" fill="#444"/><rect x="4" y="10" width="14" height="2" fill="#444"/><rect x="4" y="14" width="14" height="2" fill="#444"/></svg>
+            </button>
+        </div>
+    </div>
+    <div class="panel-section" style="margin-bottom:16px;">
+        <div style="font-size:13px;color:#444;font-weight:600;margin-bottom:8px;cursor:pointer;">▼ 간격</div>
+        <div style="display:flex;gap:8px;margin-bottom:8px;">
+            <input type="number" class="property-input" value="0" style="width:50px;">
+            <input type="number" class="property-input" value="10" style="width:50px;">
+        </div>
+        <div style="display:flex;gap:8px;">
+            <input type="number" class="property-input" value="0" style="width:50px;">
+        </div>
+    </div>
+    <div class="panel-section">
+        <div style="font-size:13px;color:#444;font-weight:600;margin-bottom:8px;cursor:pointer;">▼ 동작</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <!-- 되돌리기 (반시계 회전) -->
+            <button class="property-btn" title="되돌리기">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M7 11V7H3" stroke="#444" stroke-width="1.5" fill="none"/>
+                    <path d="M5 9a7 7 0 1 1 2 7" stroke="#444" stroke-width="1.5" fill="none"/>
+                </svg>
+            </button>
+            <!-- 다시하기 (시계 회전) -->
+            <button class="property-btn" title="다시하기">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M15 11V7h4" stroke="#444" stroke-width="1.5" fill="none"/>
+                    <path d="M17 9a7 7 0 1 0-2 7" stroke="#444" stroke-width="1.5" fill="none"/>
+                </svg>
+            </button>
+            <!-- 좌우반전 -->
+            <button class="property-btn" title="좌우반전">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M7 6v10M7 6l-2 2M7 6l2 2" stroke="#444" stroke-width="1.5" fill="none"/>
+                    <path d="M15 6v10M15 16l2-2M15 16l-2-2" stroke="#444" stroke-width="1.5" fill="none"/>
+                    <line x1="11" y1="5" x2="11" y2="17" stroke="#444" stroke-width="1"/>
+                </svg>
+            </button>
+            <!-- 상하반전 -->
+            <button class="property-btn" title="상하반전">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M6 15h10M6 15l2 2M6 15l2-2" stroke="#444" stroke-width="1.5" fill="none"/>
+                    <path d="M16 7H6M16 7l-2-2M16 7l-2 2" stroke="#444" stroke-width="1.5" fill="none"/>
+                    <line x1="5" y1="11" x2="17" y2="11" stroke="#444" stroke-width="1"/>
+                </svg>
+            </button>
+            <!-- 자르기 -->
+            <button class="property-btn" title="자르기">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <rect x="5" y="5" width="12" height="12" stroke="#444" stroke-width="1.5" fill="none"/>
+                    <path d="M5 5l12 12" stroke="#444" stroke-width="1"/>
+                </svg>
+            </button>
+            <!-- 이미지 변환 -->
+            <button class="property-btn" title="이미지 변환">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <rect x="5" y="5" width="12" height="12" stroke="#444" stroke-width="1.5" fill="none"/>
+                    <circle cx="9" cy="9" r="2" stroke="#444" stroke-width="1"/>
+                    <path d="M17 17l-4-6-4 5" stroke="#444" stroke-width="1"/>
+                </svg>
+            </button>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:8px;">
+            <!-- 가로정렬 드롭다운 -->
+            <button class="property-btn" title="가로정렬" style="width:40px;">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <rect x="4" y="10" width="14" height="2" fill="#444"/>
+                    <polygon points="8,14 11,17 14,14" fill="#444"/>
+                </svg>
+            </button>
+            <!-- 세로정렬 드롭다운 -->
+            <button class="property-btn" title="세로정렬" style="width:40px;">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <rect x="10" y="4" width="2" height="14" fill="#444"/>
+                    <polygon points="14,8 17,11 14,14" fill="#444"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
         <div class="vertical-menu right">
             <!-- 1. AI 기능 (ai 텍스트) -->
             <button title="AI 기능">
