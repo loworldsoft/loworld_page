@@ -827,7 +827,8 @@
 
     <div class="main-container">
         <div class="vertical-menu left">
-            <button title="페이지">
+            <!-- 페이지 패널 토글 버튼 (두 장 종이 아이콘) -->
+            <button id="page-panel-toggle" title="페이지 패널 열기/닫기" style="margin-bottom:8px;">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <!-- 뒷 종이 -->
                     <rect x="5" y="7" width="12" height="14" rx="2" fill="#fff" stroke="#007acc" stroke-width="1.5"/>
@@ -835,7 +836,6 @@
                     <rect x="7" y="3" width="12" height="14" rx="2" fill="#fff" stroke="#007acc" stroke-width="1.5"/>
                 </svg>
             </button>
-            <button class="panel-toggle-btn" data-target="properties-panel" title="속성 패널 열기" style="display:none;">▶️</button>
             <div style="flex:1"></div>
             <div class="zoom-vertical-group">
                 <button title="확대" class="zoom-btn">
@@ -856,10 +856,11 @@
             </div>
         </div>
         <div class="sidebar" id="sidebar-panel">
-            <div class="sidebar-header">
-                페이지
+            <div class="sidebar-header" style="display:flex;justify-content:flex-end;align-items:center;padding:8px 8px 8px 0;">
                 <button class="close-panel-btn" data-target="sidebar-panel" title="닫기"
-                    style="float:right;background:none;border:none;font-size:16px;cursor:pointer;">✖️</button>
+                    style="background:none;border:none;font-size:14px;cursor:pointer;width:24px;height:24px;line-height:1;display:flex;align-items:center;justify-content:center;color:#888;border-radius:4px;transition:background 0.15s;">
+                    ×
+                </button>
             </div>
             <div class="thumbnail-container">
                 <div class="thumbnail active">
@@ -1152,6 +1153,23 @@
                     }
                 }
             });
+        });
+
+        // 페이지 패널 토글 기능
+        document.getElementById('page-panel-toggle').addEventListener('click', function () {
+            const panel = document.getElementById('sidebar-panel');
+            if (panel.classList.contains('closed') || panel.style.display === 'none') {
+                // 열기
+                panel.style.display = '';
+                void panel.offsetWidth; // 트랜지션 정상 동작
+                panel.classList.remove('closed');
+            } else {
+                // 닫기
+                panel.classList.add('closed');
+                setTimeout(() => {
+                    panel.style.display = 'none';
+                }, 250);
+            }
         });
     </script>
 </body>
