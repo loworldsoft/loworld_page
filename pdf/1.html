@@ -689,6 +689,23 @@
         .zoom-vertical-group .zoom-btn:hover {
             background: #f0f0f0;
         }
+
+        .page-toggle-btn.active {
+            background: rgba(211, 47, 47, 0.13) !important;
+            /* 은은한 붉은색 투명 배경 */
+            border-radius: 10px !important;
+            /* 라운드 효과 */
+            transition: background 0.2s;
+            width: 35px;
+            height: 35px;
+
+        }
+
+        .page-toggle-btn.active svg rect {
+            stroke: #fff !important;
+            fill: #d32f2f !important;
+            transition: stroke 0.2s, fill 0.2s;
+        }
     </style>
 </head>
 
@@ -828,8 +845,8 @@
     <div class="main-container">
         <div class="vertical-menu left">
             <!-- 페이지 패널 토글 버튼 (두 장 종이 아이콘) -->
-            <button id="page-panel-toggle" title="페이지 패널 열기/닫기" style="margin-bottom:8px;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <button id="page-panel-toggle" class="page-toggle-btn" title="페이지 패널 열기/닫기" style="margin-bottom:8px;">
+                <svg id="page-panel-toggle-svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <!-- 뒷 종이 -->
                     <rect x="5" y="7" width="12" height="14" rx="2" fill="#fff" stroke="#007acc" stroke-width="1.5"/>
                     <!-- 앞 종이 (약간 위로, 오른쪽으로 이동) -->
@@ -1124,8 +1141,8 @@
                         panel.style.display = 'none';
                         // 닫힌 패널의 toggle-btn을 같은 쪽 vertical-menu에만 보이게
                         if (target === 'sidebar-panel') {
-                            // 페이지 패널(오른쪽) → 오른쪽 vertical-menu
-                            document.querySelector('.vertical-menu.right .panel-toggle-btn').style.display = '';
+                            // 페이지 패널 닫을 때 우측 패널에 아이콘 안생기게 수정
+                            // 아무 동작 없음
                         } else if (target === 'properties-panel') {
                             // 속성 패널(왼쪽) → 왼쪽 vertical-menu
                             document.querySelector('.vertical-menu.left .panel-toggle-btn').style.display = '';
@@ -1155,22 +1172,37 @@
             });
         });
 
-        // 페이지 패널 토글 기능
-        document.getElementById('page-panel-toggle').addEventListener('click', function () {
-            const panel = document.getElementById('sidebar-panel');
-            if (panel.classList.contains('closed') || panel.style.display === 'none') {
-                // 열기
-                panel.style.display = '';
-                void panel.offsetWidth; // 트랜지션 정상 동작
-                panel.classList.remove('closed');
-            } else {
-                // 닫기
-                panel.classList.add('closed');
-                setTimeout(() => {
-                    panel.style.display = 'none';
-                }, 250);
-            }
-        });
+        const pagePanelToggleBtn = document.getElementById('page-panel-toggle');
+const sidebarPanel = document.getElementById('sidebar-panel');
+
+function updatePagePanelToggleBtn() {
+    if (sidebarPanel.classList.contains('closed') || sidebarPanel.style.display === 'none') {
+        pagePanelToggleBtn.classList.remove('active');
+    } else {
+        pagePanelToggleBtn.classList.add('active');
+    }
+}
+
+// 페이지 패널 토글 기능
+pagePanelToggleBtn.addEventListener('click', function () {
+    const panel = sidebarPanel;
+    if (panel.classList.contains('closed') || panel.style.display === 'none') {
+        // 열기
+        panel.style.display = '';
+        void panel.offsetWidth; // 트랜지션 정상 동작
+        panel.classList.remove('closed');
+    } else {
+        // 닫기
+        panel.classList.add('closed');
+        setTimeout(() => {
+            panel.style.display = 'none';
+        }, 250);
+    }
+    setTimeout(updatePagePanelToggleBtn, 260);
+});
+
+// 패널 상태에 따라 버튼 스타일 초기화
+document.addEventListener('DOMContentLoaded', updatePagePanelToggleBtn);
     </script>
 </body>
 
