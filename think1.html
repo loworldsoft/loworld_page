@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>운명의 수레바퀴는 돌기 시작했다</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #a5b4fc, #f9a8d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.2);
+        }
+        .section-title {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex flex-col justify-center items-center text-center p-8 bg-cover bg-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 1)), url('https://placehold.co/1920x1080/000000/FFFFFF?text=+)');">
+        <h1 class="text-5xl md:text-7xl font-black mb-4 tracking-tight section-title">
+            <span class="gradient-text">운명의 수레바퀴</span>는<br>돌기 시작했다.
+        </h1>
+        <p class="text-lg md:text-2xl text-gray-300 max-w-3xl">
+            모든 일이 본격적으로 시작되고 있다. 치열한 생각 끝에, 이제 행동으로 증명할 시간이다.
+        </p>
+    </header>
+
+    <main class="container mx-auto px-6 py-20">
+
+        <!-- Core Philosophy -->
+        <section class="text-center mb-24">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">핵심 철학</h2>
+            <p class="text-xl md:text-2xl text-indigo-300 max-w-4xl mx-auto">
+                "모든 문제는 해결 가능하며, 치열한 생각은 반드시 좋은 결과로 이어진다."
+            </p>
+        </section>
+
+        <!-- Revenue Strategy -->
+        <section class="mb-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title">지속 가능한 수익 모델 구축</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1: Content -->
+                <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 card-hover">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-500 mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">콘텐츠 수익화</h3>
+                    <p class="text-gray-400">가장 중요한 영상 발행을 통해 채널을 키우고, 직접적인 수익을 창출한다.</p>
+                </div>
+                <!-- Card 2: Outsourcing -->
+                <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 card-hover">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-pink-500 mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">외주 프로젝트</h3>
+                    <p class="text-gray-400">안정적인 현금 흐름을 확보하고, 실전 경험을 통해 역량을 증명한다.</p>
+                </div>
+                <!-- Card 3: AGENT -->
+                <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 card-hover">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-purple-500 mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3M10 12a2 2 0 11-4 0 2 2 0 014 0zM18 12a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">AGENT 수익 증대</h3>
+                    <p class="text-gray-400">핵심 서비스 AGENT의 수익 모델을 고도화하고, 기술적 우위를 확보한다.</p>
+                </div>
+                <!-- Card 4: Marketing -->
+                <div class="bg-gray-800 p-8 rounded-xl border border-gray-700 card-hover">
+                     <div class="flex items-center justify-center h-16 w-16 rounded-full bg-teal-500 mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.875 9.168-3.918"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">적극적인 마케팅</h3>
+                    <p class="text-gray-400">우리의 가치를 시장에 알리고, 협업과 커뮤니티 성장의 기반을 마련한다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Growth Strategy -->
+        <section class="mb-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title">성장을 위한 핵심 전략</h2>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="bg-gray-800/50 border border-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-indigo-300 mb-2">1. 플랫폼 & 커뮤니티 구축</h3>
+                    <p class="text-gray-300">사용자들이 모이고 소통하는 '광장'을 만든다. 채널 성장을 위한 꾸준한 영상 발행이 최우선 과제.</p>
+                </div>
+                <div class="bg-gray-800/50 border border-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-pink-300 mb-2">2. 개발 및 운영</h3>
+                    <p class="text-gray-300">부분적으로 개발하여 조합하는 모듈형 접근 방식을 채택한다. AGENT 중앙화는 컨파일 필요</p>
+                </div>
+                <div class="bg-gray-800/50 border border-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-purple-300 mb-2">3. 투자 및 협업 전략</h3>
+                    <p class="text-gray-300">수익성을 기반으로 투자를 유치하고, '마스터' 등급에게만 공유하여 기술적 가치를 증명하고 신뢰를 구축한다.</p>
+                </div>
+                 <div class="bg-gray-800/50 border border-gray-700 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-teal-300 mb-2">4. 개인 브랜딩</h3>
+                    <p class="text-gray-300">'나'의 비전과 전문성을 적극적으로 알려 참여자와 협력자를 이끌어낸다. 수익 창출에 집중하여 복잡성을 줄인다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Today's Focus -->
+        <section class="text-center bg-gray-800 rounded-xl p-10 md:p-16 border-2 border-indigo-500 shadow-2xl shadow-indigo-500/20">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 section-title">오늘의 집중 과제</h2>
+            <p class="text-4xl md:text-5xl font-black gradient-text tracking-wider">
+                AI PDF 개발
+            </p>
+            <p class="text-gray-400 mt-4">그리고, 작업 피드백 정리 및 전달.</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-10 border-t border-gray-800">
+        <p class="text-gray-500">수익만 내면 굳이 투자는 받지 않아도 된다. 협업하고, 마케팅하고, 수익을 내자.</p>
+        <p class="text-gray-400 mt-2 font-bold">이제, 행동으로 증명할 시간이다.</p>
+    </footer>
+
+</body>
+
+</html>
