@@ -1177,9 +1177,15 @@ const sidebarPanel = document.getElementById('sidebar-panel');
 
 function updatePagePanelToggleBtn() {
     if (sidebarPanel.classList.contains('closed') || sidebarPanel.style.display === 'none') {
-        pagePanelToggleBtn.classList.remove('active');
+        pagePanelToggleBtn.classList.remove('active'); // 닫힘 상태(비활성화 아님)
+        pagePanelToggleBtn.disabled = false;
+        pagePanelToggleBtn.style.opacity = '1';
+        pagePanelToggleBtn.style.pointerEvents = '';
     } else {
-        pagePanelToggleBtn.classList.add('active');
+        pagePanelToggleBtn.classList.add('active'); // 열림 상태
+        pagePanelToggleBtn.disabled = false;
+        pagePanelToggleBtn.style.opacity = '1';
+        pagePanelToggleBtn.style.pointerEvents = '';
     }
 }
 
