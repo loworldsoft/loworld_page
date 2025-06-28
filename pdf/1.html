@@ -19,7 +19,7 @@
         }
 
         .top-menu-bar {
-            background: 1px solid #e0e0e0;
+            background: #fff;
             color: rgb(56, 56, 56);
             padding: 0px 16px;
             display: flex;
@@ -55,20 +55,38 @@
             margin: 0;
             padding: 0;
         }
-        .top-menu-bar li {
+        .top-menu-bar .menu-center li {
+            position: relative;
             cursor: pointer;
             transition: color 0.2s;
-            color: rgb(46, 46, 46);
-            font-size: 15px;
+            color: rgb(57, 57, 57);
+            font-size: 12px;
             font-weight: 500;
-            padding: 0 4px; /* 기존 8px에서 4px로 축소 */
+            padding: 0 4px;
             height: 40px;
             display: flex;
             align-items: center;
             border-radius: 4px 4px 0 0;
         }
+        .top-menu-bar .menu-center li::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 2px;
+            height: 2px;
+            background: #e0e0e0;
+            border-radius: 1px;
+        }
         .top-menu-bar li:hover {
-            color: #ffcc00;
+            /* color: #ffcc00; */
+        }
+        .top-menu-bar .menu-center li:hover {
+            /* color:  rgb(255, 98, 0); */
+        }
+        .top-menu-bar .menu-center li:hover::after {
+            background: rgb(255, 98, 0);
         }
 
         .header {
@@ -544,6 +562,15 @@
     <nav class="top-menu-bar">
         <div class="brand">
             <span class="brand-name">ezreader</span>
+            <div class="toolbar" style="margin-left:16px;">
+                <button class="toolbar-btn" title="홈">🏠</button>
+                <button class="toolbar-btn" title="인쇄">🖨️</button>
+                <button class="toolbar-btn" title="저장">💾</button>
+                <button class="toolbar-btn" title="이메일">📧</button>
+                <button class="toolbar-btn" title="더보기">⋯</button>
+                <button class="toolbar-btn" title="실행취소">↶</button>
+                <button class="toolbar-btn" title="다시실행">↷</button>
+            </div>
         </div>
         <div class="menu-center">
             <ul>
@@ -570,8 +597,8 @@
                 <span>📄</span>
                 파일이름.pdf
                 <button class="close-btn">×</button>
-            </div>
-            <div class="toolbar">
+            </div> -->
+            <!-- <div class="toolbar">
                 <button class="toolbar-btn" title="홈">🏠</button>
                 <button class="toolbar-btn" title="인쇄">🖨️</button>
                 <button class="toolbar-btn" title="저장">💾</button>
