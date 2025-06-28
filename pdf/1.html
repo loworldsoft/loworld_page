@@ -662,6 +662,33 @@
         .tab-bar .tab-add-btn:hover {
             background: #e0e0e0;
         }
+
+        .zoom-vertical-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            align-items: center;
+            margin-bottom: 90px;
+        }
+
+        .zoom-vertical-group .zoom-btn {
+            width: 40px;
+            height: 40px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #555;
+            border-radius: 0;
+            transition: background 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .zoom-vertical-group .zoom-btn:hover {
+            background: #f0f0f0;
+        }
     </style>
 </head>
 
@@ -800,11 +827,33 @@
 
     <div class="main-container">
         <div class="vertical-menu left">
-            <button title="홈">🏠</button>
-            <button title="검색">🔍</button>
-            <button title="설정">⚙️</button>
-            <button class="panel-toggle-btn" data-target="properties-panel" title="속성 패널 열기"
-                style="display:none;">▶️</button>
+            <button title="페이지">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <!-- 뒷 종이 -->
+                    <rect x="5" y="7" width="12" height="14" rx="2" fill="#fff" stroke="#007acc" stroke-width="1.5"/>
+                    <!-- 앞 종이 (약간 위로, 오른쪽으로 이동) -->
+                    <rect x="7" y="3" width="12" height="14" rx="2" fill="#fff" stroke="#007acc" stroke-width="1.5"/>
+                </svg>
+            </button>
+            <button class="panel-toggle-btn" data-target="properties-panel" title="속성 패널 열기" style="display:none;">▶️</button>
+            <div style="flex:1"></div>
+            <div class="zoom-vertical-group">
+                <button title="확대" class="zoom-btn">
+                    <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
+                        <circle cx="9" cy="9" r="7" stroke="#007acc" stroke-width="2"/>
+                        <line x1="9" y1="5" x2="9" y2="13" stroke="#007acc" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="5" y1="9" x2="13" y2="9" stroke="#007acc" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="14.5" y1="14.5" x2="19" y2="19" stroke="#007acc" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <button title="축소" class="zoom-btn">
+                    <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
+                        <circle cx="9" cy="9" r="7" stroke="#007acc" stroke-width="2"/>
+                        <line x1="5" y1="9" x2="13" y2="9" stroke="#007acc" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="14.5" y1="14.5" x2="19" y2="19" stroke="#007acc" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
         </div>
         <div class="sidebar" id="sidebar-panel">
             <div class="sidebar-header">
