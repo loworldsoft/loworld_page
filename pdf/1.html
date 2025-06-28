@@ -118,6 +118,7 @@
         .main-container {
             display: flex;
             height: calc(100vh - 60px);
+            position: relative; /* 추가: 패널 위치 기준 */
         }
 
         .sidebar {
@@ -126,6 +127,7 @@
             border-right: 1px solid #e0e0e0;
             display: flex;
             flex-direction: column;
+            margin-left: 40px; /* 패널만큼 여백 */
         }
 
         .sidebar-header {
@@ -304,6 +306,7 @@
             border-left: 1px solid #e0e0e0;
             padding: 16px;
             overflow-y: auto;
+            margin-right: 40px; /* 패널만큼 여백 */
         }
 
         .panel-section {
@@ -374,6 +377,46 @@
         .color-swatch.active {
             border-color: #333;
         }
+
+        .vertical-menu {
+            width: 40px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 4px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: 10;
+        }
+
+        .vertical-menu.left {
+            left: 0;
+        }
+
+        .vertical-menu.right {
+            right: 0;
+        }
+
+        .vertical-menu button {
+            width: 40px;
+            height: 40px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #555;
+            border-radius: 8px;
+            transition: background 0.15s;
+        }
+
+        .vertical-menu button:hover {
+            background: #f0f0f0;
+        }
     </style>
 </head>
 <body>
@@ -414,6 +457,11 @@
     </div>
 
     <div class="main-container">
+        <div class="vertical-menu left">
+            <button title="홈">🏠</button>
+            <button title="검색">🔍</button>
+            <button title="설정">⚙️</button>
+        </div>
         <div class="sidebar">
             <div class="sidebar-header">페이지</div>
             <div class="thumbnail-container">
@@ -465,7 +513,7 @@
                                 <div class="seed" style="top: 65%; left: 25%;"></div>
                                 <div class="seed" style="top: 75%; left: 45%;"></div>
                                 <div class="seed" style="top: 60%; left: 60%;"></div>
-                                <div class="seed" style="top: 70%; left: 80%;"></div>
+                                    <div class="seed" style="top: 70%; left: 80%;"></div>
                             </div>
                             <div class="strawberry-leaves">
                                 <div class="leaf"></div>
@@ -551,6 +599,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="vertical-menu right">
+            <button title="정보">ℹ️</button>
+            <button title="공유">🔗</button>
+            <button title="닫기">✖️</button>
         </div>
     </div>
 
