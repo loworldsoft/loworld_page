@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loworld AI 커머스 - 판매자 모집</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 0;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .header .launch-date {
+            background: rgba(255,255,255,0.2);
+            border-radius: 50px;
+            padding: 15px 30px;
+            display: inline-block;
+            font-size: 1.2rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            margin: -50px auto 50px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .benefit-card h3 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .benefit-card p {
+            color: #5a6c7d;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .features-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 50px;
+            color: white;
+            margin: 60px 0;
+        }
+
+        .competitive-advantage {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-radius: 20px;
+            padding: 60px;
+            margin: 60px 0;
+            color: white;
+        }
+
+        .competitive-advantage h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .competitive-advantage h2::after {
+            background: white;
+        }
+
+        .advantage-intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .main-message {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: white;
+            opacity: 0.95;
+        }
+
+        .highlight-text {
+            background: linear-gradient(90deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            font-size: 1.4rem;
+        }
+
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .advantage-card {
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .advantage-card.primary {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .advantage-card.secondary {
+            background: rgba(255,215,0,0.1);
+            border-color: rgba(255,215,0,0.3);
+        }
+
+        .advantage-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .advantage-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .advantage-card p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .advantage-benefit {
+            background: rgba(255,215,0,0.2);
+            color: #ffd700;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-block;
+        }
+
+        .market-problem {
+            margin: 50px 0;
+        }
+
+        .problem-box {
+            background: rgba(220,20,60,0.1);
+            border: 2px solid rgba(220,20,60,0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .problem-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #ff6b6b;
+        }
+
+        .problem-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .problem-text, .solution-text {
+            max-width: 800px;
+        }
+
+        .problem-text p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: white;
+            opacity: 0.95;
+        }
+
+        .highlight-problem {
+            background: linear-gradient(90deg, #ff6b6b, #ff8e8e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .arrow {
+            font-size: 2rem;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .solution-text {
+            background: rgba(255,215,0,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid rgba(255,215,0,0.3);
+        }
+
+        .solution-text p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: white;
+            opacity: 0.95;
+        }
+
+        .highlight-solution {
+            background: linear-gradient(90deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .comparison-section {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .comparison-section h3 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .comparison-item {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .comparison-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        .competitor {
+            background: rgba(220,20,60,0.2);
+            color: #ff9999;
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .us {
+            background: rgba(34,139,34,0.3);
+            color: #90ee90;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .features-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .features-section h2::after {
+            background: white;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .feature-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature-item p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .timeline {
+            background: #f8f9ff;
+            border-radius: 20px;
+            padding: 50px;
+            margin: 50px 0;
+        }
+
+        .timeline h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+
+        .timeline-items {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .timeline-item {
+            text-align: center;
+            flex: 1;
+            position: relative;
+        }
+
+        .timeline-date {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .timeline-content {
+            color: #2c3e50;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            z-index: -1;
+        }
+
+        .contact-section {
+            background: #2c3e50;
+            color: white;
+            padding: 60px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .market-analysis {
+            background: #f8f9ff;
+            border-radius: 20px;
+            padding: 50px;
+            margin: 50px 0;
+        }
+
+        .market-analysis h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+
+        .market-intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .market-intro p {
+            font-size: 1.1rem;
+            color: #5a6c7d;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .market-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .stat-growth {
+            font-size: 0.9rem;
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .trend-chart {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .trend-chart h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            font-size: 1.5rem;
+        }
+
+        .chart-container {
+            height: 300px;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+        }
+
+        .chart-bars {
+            display: flex;
+            align-items: end;
+            gap: 30px;
+            height: 250px;
+        }
+
+        .chart-year {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+
+        .bar {
+            width: 60px;
+            background: linear-gradient(180deg, #667eea, #764ba2);
+            border-radius: 5px 5px 0 0;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .bar:hover {
+            transform: scaleY(1.05);
+        }
+
+        .bar.active {
+            background: linear-gradient(180deg, #ff6b6b, #d32f2f);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .year-label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .value {
+            font-size: 0.9rem;
+            color: #5a6c7d;
+            font-weight: 500;
+        }
+
+        .seasonal-trends {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .seasonal-trends h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            font-size: 1.5rem;
+        }
+
+        .season-explanation {
+            background: linear-gradient(135deg, #e8f5e8, #f0f8ff);
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .season-explanation p {
+            margin-bottom: 10px;
+            color: #2c3e50;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .season-explanation p:first-child {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .season-explanation p:last-child {
+            margin-bottom: 0;
+            font-style: italic;
+            color: #5a6c7d;
+        }
+
+        .season-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .season-item {
+            text-align: center;
+            padding: 25px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .season-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .season-item.peak {
+            background: linear-gradient(135deg, #ff6b6b, #d32f2f);
+            color: white;
+        }
+
+        .season-item.high {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .season-item.medium {
+            background: linear-gradient(135deg, #f8f9ff, #e8f2ff);
+            color: #2c3e50;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .season-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .season-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .season-percentage {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .season-item p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .season-item small {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            font-weight: normal;
+        }
+
+        .opportunity-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .opportunity-section h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            font-size: 1.5rem;
+        }
+
+        .opportunity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .opportunity-card {
+            background: linear-gradient(135deg, #f8f9ff, #e8f2ff);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .opportunity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .opportunity-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .opportunity-card h4 {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .opportunity-card p {
+            color: #5a6c7d;
+            line-height: 1.6;
+        }
+
+        .contact-section h2 {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .contact-section h2::after {
+            background: white;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255,255,255,0.1);
+            padding: 20px 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+        }
+
+        .contact-details {
+            text-align: left;
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .contact-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .main-content {
+                padding: 40px 30px;
+                margin: -30px 20px 30px;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-items {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .timeline-line {
+                display: none;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .market-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart-bars {
+                gap: 15px;
+            }
+            
+            .bar {
+                width: 40px;
+            }
+            
+            .season-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .opportunity-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .competitive-advantage {
+                padding: 40px 30px;
+            }
+            
+            .competitive-advantage h2 {
+                font-size: 2rem;
+            }
+            
+            .main-message {
+                font-size: 1.1rem;
+            }
+            
+            .highlight-text {
+                font-size: 1.2rem;
+            }
+            
+            .advantage-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .problem-content {
+                padding: 20px;
+            }
+            
+            .problem-text p, .solution-text p {
+                font-size: 1rem;
+            }
+        }
+
+        /* 회사 홍보 섹션 스타일 */
+        .company-promotion {
+            background: linear-gradient(135deg, #667eea, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            margin: 60px 0;
+        }
+        
+        .promotion-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .promotion-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .promotion-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .promotion-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .promotion-content {
+            display: grid;
+            gap: 40px;
+        }
+        
+        .vision-card {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .vision-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .vision-card h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .vision-card p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .products-section {
+            text-align: center;
+        }
+        
+        .products-section h3 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-item {
+            background: rgba(255,255,255,0.1);
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .product-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .product-item h4 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .product-item p {
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+        
+        .global-ambition {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .ambition-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .ambition-icon {
+            font-size: 4rem;
+            flex-shrink: 0;
+        }
+        
+        .ambition-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .ambition-text p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .company-promotion {
+                padding: 60px 20px;
+            }
+            
+            .promotion-header h2 {
+                font-size: 2rem;
+            }
+            
+            .promotion-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .vision-card {
+                padding: 30px 20px;
+            }
+            
+            .vision-card h3 {
+                font-size: 1.6rem;
+            }
+            
+            .vision-icon {
+                font-size: 3rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .ambition-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .ambition-icon {
+                font-size: 3rem;
+            }
+        }
+
+        /* 기존 contact-section 스타일 */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Loworld AI 커머스</h1>
+            <p class="subtitle">혁신적인 AI 기반 판매 플랫폼</p>
+            <div class="launch-date">🚀 2024년 8월 1일 정식 오픈</div>
+        </header>
+
+        <main class="main-content">
+            <section class="section">
+                <h2>왜 Loworld AI와 함께해야 할까요?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <span class="benefit-icon">💰</span>
+                        <h3>업계 최저 수수료</h3>
+                        <p><span class="highlight">5% 이하</span>의 판매 수수료로 모든 플랫폼 중 최저가를 보장합니다. 더 많은 수익을 가져가세요!</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🎯</span>
+                        <h3>엄선된 제품 연합</h3>
+                        <p>좋은 제품만을 선별하여 소비자에게 <span class="highlight">신뢰할 수 있는 제품</span>을 연결합니다.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🎁</span>
+                        <h3>선물 시장 특화</h3>
+                        <p>추석 선물을 시작으로 <span class="highlight">"선물하면 Loworld AI"</span>가 생각나는 브랜딩을 구축합니다.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🎉</span>
+                        <h3>다양한 혜택과 이벤트</h3>
+                        <p>지속적인 이벤트와 혜택을 통해 <span class="highlight">소비자 유입</span>을 극대화합니다.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🤖</span>
+                        <h3>AI 자동 콘텐츠 생성</h3>
+                        <p>AI가 자동으로 생성하는 <span class="highlight">매력적인 콘텐츠</span>로 더 많은 고객을 유치합니다.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">💬</span>
+                        <h3>AI 자동 고객상담</h3>
+                        <p>AI 챗봇과 자동 상담 시스템으로 <span class="highlight">CS 문제를 완벽 해결</span>합니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="competitive-advantage">
+                <h2>타 경쟁사 대비 압도적 경쟁력</h2>
+                <div class="advantage-intro">
+                    <p class="main-message">
+                        <strong>모든 시스템이 AI로 구축된 혁신적 플랫폼</strong><br>
+                        가장 낮은 운영비용으로 가장 뛰어난 시스템을 만들어<br>
+                        <span class="highlight-text">오직 판매자의 이윤만 생각합니다</span>
+                    </p>
+                </div>
+
+                <div class="advantage-grid">
+                    <div class="advantage-card primary">
+                        <div class="advantage-icon">🤖</div>
+                        <h3>완전 AI 자동화 시스템</h3>
+                        <p>모든 운영 과정이 AI로 자동화되어 <strong>운영비용 최소화</strong></p>
+                        <div class="advantage-benefit">→ 수수료 거의 없음</div>
+                    </div>
+                    
+                    <div class="advantage-card secondary">
+                        <div class="advantage-icon">💰</div>
+                        <h3>판매자 우선 수익 구조</h3>
+                        <p>수수료를 거의 가져가지 않고 <strong>판매자 이윤 극대화</strong></p>
+                        <div class="advantage-benefit">→ 더 높은 수익률 보장</div>
+                    </div>
+                    
+                    <div class="advantage-card primary">
+                        <div class="advantage-icon">📈</div>
+                        <h3>SNS 자동 마케팅</h3>
+                        <p>AI 기반 SNS 자동 마케팅으로 <strong>마케팅 효율 극대화</strong></p>
+                        <div class="advantage-benefit">→ 마케팅 비용 절감</div>
+                    </div>
+                    
+                    <div class="advantage-card secondary">
+                        <div class="advantage-icon">✨</div>
+                        <h3>자동 콘텐츠 생산</h3>
+                        <p>AI가 24시간 <strong>고품질 콘텐츠를 자동 생성</strong></p>
+                        <div class="advantage-benefit">→ 콘텐츠 제작비 제로</div>
+                    </div>
+                </div>
+
+                <div class="market-problem">
+                    <div class="problem-box">
+                        <h3>🔥 현재 커머스 시장의 문제점</h3>
+                        <div class="problem-content">
+                            <div class="problem-text">
+                                <p><strong>어려운 불경기 속에서</strong> 커머스 시장을 선점한 대기업들의 거대한 마케팅 때문에 
+                                <span class="highlight-problem">우수한 중소기업들의 제품이 소비자에게 제대로 전달되지 않고 있습니다.</span></p>
+                            </div>
+                            <div class="arrow">↓</div>
+                            <div class="solution-text">
+                                <p><strong>Loworld AI의 해결책:</strong> 
+                                우수한 기업들을 직접 발굴하고 AI 마케팅을 통해 
+                                <span class="highlight-solution">고객이 쉽게 발견할 수 있도록 하겠습니다!</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-section">
+                    <h3>기존 플랫폼 vs Loworld AI</h3>
+                    <div class="comparison-grid">
+                        <div class="comparison-item">
+                            <div class="comparison-title">수수료</div>
+                            <div class="competitor">기존 플랫폼: 10-20%</div>
+                            <div class="us">Loworld AI: 5% 이하</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-title">마케팅 지원</div>
+                            <div class="competitor">기존: 별도 비용 지불</div>
+                            <div class="us">Loworld AI: 무료 AI 마케팅</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-title">콘텐츠 제작</div>
+                            <div class="competitor">기존: 직접 제작 필요</div>
+                            <div class="us">Loworld AI: AI 자동 생성</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-title">고객 상담</div>
+                            <div class="competitor">기존: 인력 필요</div>
+                            <div class="us">Loworld AI: AI 챗봇 24시간</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features-section">
+                <h2>Loworld AI의 핵심 경쟁력</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <h3>🎯 마케팅 자동화</h3>
+                        <p>AI 기반 자동 마케팅 시스템으로 효율적인 고객 유치와 매출 증대를 실현합니다.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>⚙️ 개발 자동화</h3>
+                        <p>최신 기술을 활용한 개발 자동화로 빠르고 안정적인 서비스를 제공합니다.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>📈 판매 자동화</h3>
+                        <p>스마트한 판매 자동화 시스템으로 24시간 끊임없는 판매 기회를 제공합니다.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>🏆 카테고리별 우수 기업 연계</h3>
+                        <p>각 분야 최고의 기업들과 파트너십을 통해 최상의 서비스를 최저가로 제공합니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="timeline">
+                <h2>런칭 일정</h2>
+                <div class="timeline-items">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">7월</div>
+                        <div class="timeline-content">SNS 자동 마케팅 시작<br>판매자 모집</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">8월 1일</div>
+                        <div class="timeline-content">정식 오픈<br>서비스 런칭</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">추석 시즌</div>
+                        <div class="timeline-content">선물 시장 집중<br>브랜딩 강화</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="market-analysis">
+                <h2>선물시장 전체 추이 분석</h2>
+                <div class="market-intro">
+                    <p>국내 선물시장은 지속적인 성장세를 보이며, 특히 온라인 선물 구매가 급증하고 있습니다. 
+                    코로나19 이후 비대면 선물 문화가 정착되면서 온라인 선물시장이 새로운 성장동력으로 부상했습니다.</p>
+                </div>
+                
+                <div class="market-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">15조원</div>
+                        <div class="stat-label">2024년 국내 선물시장 규모</div>
+                        <div class="stat-growth">+12.3% 전년대비</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">68%</div>
+                        <div class="stat-label">온라인 선물 구매 비율</div>
+                        <div class="stat-growth">+25% 증가</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">4.2조원</div>
+                        <div class="stat-label">추석 선물시장 규모</div>
+                        <div class="stat-growth">연간 28% 차지</div>
+                    </div>
+                </div>
+
+                <div class="trend-chart">
+                    <h3>선물시장 성장 트렌드</h3>
+                    <div class="chart-container">
+                        <div class="chart-bars">
+                            <div class="chart-year">
+                                <div class="bar" style="height: 40%"></div>
+                                <div class="year-label">2020</div>
+                                <div class="value">8.5조</div>
+                            </div>
+                            <div class="chart-year">
+                                <div class="bar" style="height: 55%"></div>
+                                <div class="year-label">2021</div>
+                                <div class="value">10.2조</div>
+                            </div>
+                            <div class="chart-year">
+                                <div class="bar" style="height: 70%"></div>
+                                <div class="year-label">2022</div>
+                                <div class="value">12.1조</div>
+                            </div>
+                            <div class="chart-year">
+                                <div class="bar" style="height: 85%"></div>
+                                <div class="year-label">2023</div>
+                                <div class="value">13.4조</div>
+                            </div>
+                            <div class="chart-year">
+                                <div class="bar active" style="height: 100%"></div>
+                                <div class="year-label">2024</div>
+                                <div class="value">15.0조</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="seasonal-trends">
+                    <h3>계절별 선물시장 피크 시즌</h3>
+                    <div class="season-explanation">
+                        <p><strong>연간 선물시장 매출 집중도</strong> - 각 시즌별로 전체 선물시장 매출에서 차지하는 비중입니다.</p>
+                        <p>예시: 추석 시즌 28% = 연간 총 선물시장 매출의 28%가 추석 기간에 집중 발생</p>
+                    </div>
+                    <div class="season-grid">
+                        <div class="season-item peak">
+                            <div class="season-icon">🌕</div>
+                            <h4>추석 (9월)</h4>
+                            <div class="season-percentage">28%</div>
+                            <p>전통 선물의 최대 성수기<br><small>연간 매출의 28%가 추석 기간 집중</small></p>
+                        </div>
+                        <div class="season-item high">
+                            <div class="season-icon">🎁</div>
+                            <h4>크리스마스 (12월)</h4>
+                            <div class="season-percentage">22%</div>
+                            <p>연말 선물 구매 집중<br><small>크리스마스 시즌 매출 비중</small></p>
+                        </div>
+                        <div class="season-item medium">
+                            <div class="season-icon">🧧</div>
+                            <h4>설날 (1-2월)</h4>
+                            <div class="season-percentage">18%</div>
+                            <p>신년 선물 및 세뱃돈<br><small>설 연휴 선물시장 점유율</small></p>
+                        </div>
+                        <div class="season-item medium">
+                            <div class="season-icon">💐</div>
+                            <h4>어버이날 (5월)</h4>
+                            <div class="season-percentage">15%</div>
+                            <p>효도 선물 수요 증가<br><small>5월 어버이날 중심 매출</small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="opportunity-section">
+                    <h3>Loworld AI가 공략할 선물시장 기회</h3>
+                    <div class="opportunity-grid">
+                        <div class="opportunity-card">
+                            <div class="opportunity-icon">🎯</div>
+                            <h4>개인화된 추천</h4>
+                            <p>AI 기반 맞춤형 선물 추천으로 선택의 어려움 해결</p>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="opportunity-icon">🛡️</div>
+                            <h4>안전한 배송</h4>
+                            <p>소중한 선물을 안전하고 확실하게 전달하는 신뢰할 수 있는 배송 서비스</p>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="opportunity-icon">💎</div>
+                            <h4>프리미엄 큐레이션</h4>
+                            <p>엄선된 고품질 상품으로 신뢰할 수 있는 선물 브랜드 구축</p>
+                        </div>
+                        <div class="opportunity-card">
+                            <div class="opportunity-icon">📱</div>
+                            <h4>모바일 최적화</h4>
+                            <p>간편한 모바일 선물하기 경험으로 젊은 층 공략</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="company-promotion">
+                <div class="promotion-container">
+                    <div class="promotion-header">
+                        <h2>🌟 Loworld AI의 비전 🌟</h2>
+                        <p class="promotion-subtitle">한국 최고의 AI 기업을 향한 야심찬 도전</p>
+                    </div>
+                    
+                    <div class="promotion-content">
+                        <div class="vision-card">
+                            <div class="vision-icon">🚀</div>
+                            <h3>5년 내 한국 최고 AI 기업</h3>
+                            <p>Loworld AI는 향후 5년 내 한국에서 가장 유명한 AI 기업이 되겠다는 비전을 가지고 있습니다.</p>
+                        </div>
+                        
+                        <div class="products-section">
+                            <h3>우리의 제품군</h3>
+                            <div class="products-grid">
+                                <div class="product-item">
+                                    <div class="product-icon">🤖</div>
+                                    <h4>AI 챗봇</h4>
+                                    <p>고도화된 대화형 AI 솔루션</p>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-icon">💬</div>
+                                    <h4>채팅 상담</h4>
+                                    <p>실시간 AI 고객 상담 시스템</p>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-icon">🤝</div>
+                                    <h4>협업 도구</h4>
+                                    <p>AI 기반 업무 효율성 도구</p>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-icon">🛒</div>
+                                    <h4>AI 에이전트 커머스</h4>
+                                    <p>세계 최고 수준의 AI 커머스 기술</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="global-ambition">
+                            <div class="ambition-content">
+                                <div class="ambition-icon">🌍</div>
+                                <div class="ambition-text">
+                                    <h3>글로벌 진출 야망</h3>
+                                    <p>한국을 넘어 세계 무대에서 인정받는 AI 기술 선도 기업으로 성장하겠습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-section">
+                <h2>우수 기업만 선정합니다</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">
+                    🎉 <strong>축하합니다!</strong> 🎉<br>
+                    귀하의 기업이 Loworld AI 커머스의 우수 파트너로 선정되어 연락을 드리고 있습니다.<br>
+                    지금 바로 연락주시면 미팅을 통해 특별한 혜택과 조건을 안내해드리겠습니다.
+                </p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div class="contact-details">
+                            <div class="contact-label">이메일</div>
+                            <div class="contact-value">loworldsoft@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <div class="contact-details">
+                            <div class="contact-label">연락처</div>
+                            <div class="contact-value">010-5811-6672</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // 스크롤 애니메이션 효과
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.benefit-card, .feature-item, .timeline-item');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // 초기 스타일 설정
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.benefit-card, .feature-item, .timeline-item');
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(50px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            animateOnScroll();
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+
+        // 부드러운 스크롤 효과
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 연락처 클릭 시 클립보드 복사
+        document.querySelectorAll('.contact-value').forEach(element => {
+            element.style.cursor = 'pointer';
+            element.addEventListener('click', function() {
+                navigator.clipboard.writeText(this.textContent).then(function() {
+                    // 복사 완료 알림
+                    const originalText = element.textContent;
+                    element.textContent = '복사완료!';
+                    element.style.color = '#4CAF50';
+                    
+                    setTimeout(() => {
+                        element.textContent = originalText;
+                        element.style.color = '';
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
