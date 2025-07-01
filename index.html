@@ -412,9 +412,9 @@
             <h2 class="text-2xl md:text-3xl font-bold text-center text-[#004AAD] mb-8">더 살펴보기</h2>
             <!-- 링크 버튼 그룹 -->
             <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-4">
-                <button
-                    type="button"
-                    onclick="toggleIframe('agent')"
+                <a
+                    href="https://loworldsoft.com/loworld_agent.html"
+                    target="_blank"
                     class="relative px-8 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-bold shadow-lg hover:from-blue-600 hover:to-cyan-500 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300"
                 >
                     <span class="inline-flex items-center gap-2">
@@ -423,10 +423,10 @@
                         </svg>
                         Loworld Agent 소개
                     </span>
-                </button>
-                <button
-                    type="button"
-                    onclick="toggleIframe('mile')"
+                </a>
+                <a
+                    href="https://loworldsoft.com/mile.html"
+                    target="_blank"
                     class="relative px-8 py-3 rounded-lg bg-gradient-to-r from-teal-500 to-blue-400 text-white font-bold shadow-lg hover:from-teal-600 hover:to-blue-500 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-300"
                 >
                     <span class="inline-flex items-center gap-2">
@@ -435,10 +435,10 @@
                         </svg>
                         마일스톤
                     </span>
-                </button>
-                <button
-                    type="button"
-                    onclick="toggleIframe('bm')"
+                </a>
+                <a
+                    href="https://loworldsoft.com/bm.html"
+                    target="_blank"
                     class="relative px-8 py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-blue-700 text-white font-bold shadow-lg hover:from-indigo-600 hover:to-blue-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-300"
                 >
                     <span class="inline-flex items-center gap-2">
@@ -447,7 +447,7 @@
                         </svg>
                         비즈니스 모델
                     </span>
-                </button>
+                </a>
                 <a
                     href="https://loworldsoft.com/commerce"
                     target="_blank"
@@ -472,30 +472,6 @@
                         외주 개발 서비스
                     </span>
                 </a>
-            </div>
-            <!-- iframe 영역 -->
-            <div id="iframe-container" class="mt-6 hidden">
-                <iframe
-                    id="dynamic-iframe"
-                    src=""
-                    width="100%"
-                    height="600"
-                    class="rounded-xl border shadow-lg mx-auto"
-                    style="min-height:400px;background:white;display:block;"
-                    allowfullscreen
-                ></iframe>
-                <div class="flex justify-center mt-4">
-        <button
-            type="button"
-            onclick="closeIframe()"
-            class="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-gray-400 via-gray-600 to-gray-800 text-white font-semibold shadow-md hover:from-gray-500 hover:to-gray-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300"
-        >
-            <svg class="w-5 h-5 text-white opacity-80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-            닫기
-        </button>
-    </div>
             </div>
         </section>
     </main>
@@ -737,24 +713,6 @@
             }
         });
 
-        function toggleIframe(type) {
-            const container = document.getElementById('iframe-container');
-            const iframe = document.getElementById('dynamic-iframe');
-            let url = '';
-            if (type === 'agent') url = 'https://loworldsoft.com/loworld_agent.html';
-            if (type === 'mile') url = 'https://loworldsoft.com/mile.html';
-            if (type === 'bm') url = 'https://loworldsoft.com/bm.html';
-            iframe.src = url;
-            container.classList.remove('hidden');
-            // 스크롤 이동(선택)
-            container.scrollIntoView({ behavior: 'smooth' });
-        }
-        function closeIframe() {
-            const container = document.getElementById('iframe-container');
-            const iframe = document.getElementById('dynamic-iframe');
-            iframe.src = '';
-            container.classList.add('hidden');
-        }
     </script>
 
 </body>
