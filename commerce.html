@@ -816,232 +816,706 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                background: white;
+            }
+            
             .container {
-                padding: 10px;
+                padding: 0;
+                max-width: 100%;
+            }
+            
+            .header {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                margin: 0;
+                padding: 40px 20px;
             }
             
             .header h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .header .subtitle {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             
             .header .launch-date {
-                font-size: 1rem;
-                padding: 12px 20px;
+                font-size: 0.95rem;
+                padding: 10px 20px;
             }
             
             .main-content {
-                padding: 30px 20px;
-                margin: -30px 10px 30px;
-                border-radius: 15px;
+                background: white;
+                padding: 20px;
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            
+            .section {
+                margin-bottom: 40px;
+                padding: 0 10px;
             }
             
             .section h2 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
+                margin-bottom: 20px;
             }
             
             .benefits-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
+                display: block;
+                gap: 0;
             }
             
             .benefit-card {
-                padding: 30px 20px;
-                margin-bottom: 10px;
+                background: white;
+                padding: 20px 0;
+                border-radius: 0;
+                box-shadow: none;
+                border: none;
+                border-bottom: 1px solid #eee;
+                margin-bottom: 0;
+            }
+            
+            .benefit-card:last-child {
+                border-bottom: none;
             }
             
             .benefit-card h3 {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
+                color: #2c3e50;
+                margin-bottom: 10px;
             }
             
             .benefit-card p {
                 font-size: 1rem;
                 line-height: 1.6;
+                color: #2c3e50;
+                margin: 0;
+            }
+            
+            .benefit-icon {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+            
+            .competitive-advantage {
+                background: white;
+                border-radius: 0;
+                padding: 20px;
+                margin: 20px 0;
+                box-shadow: none;
+                border-top: 3px solid #667eea;
+            }
+            
+            .competitive-advantage h2 {
+                color: #2c3e50;
+                font-size: 1.6rem;
+                margin-bottom: 20px;
+            }
+            
+            .competitive-advantage h2::after {
+                background: #667eea;
+            }
+            
+            .advantage-intro {
+                margin-bottom: 30px;
+            }
+            
+            .main-message {
+                font-size: 1rem;
+                color: #2c3e50;
+                line-height: 1.6;
+            }
+            
+            .highlight-text {
+                color: #667eea;
+                font-size: 1.1rem;
+                background: none;
+                -webkit-text-fill-color: #667eea;
+            }
+            
+            .advantage-grid {
+                display: block;
+                gap: 0;
+            }
+            
+            .advantage-card {
+                background: white;
+                padding: 15px 0;
+                border-radius: 0;
+                box-shadow: none;
+                border: none;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .advantage-card:last-child {
+                border-bottom: none;
+            }
+            
+            .advantage-card h3 {
+                font-size: 1.1rem;
+                color: #2c3e50;
+                margin-bottom: 8px;
+            }
+            
+            .advantage-card p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+                color: #2c3e50;
+                margin-bottom: 8px;
+            }
+            
+            .advantage-benefit {
+                background: #f0f4ff;
+                color: #667eea;
+                font-size: 0.85rem;
+                padding: 5px 10px;
+            }
+            
+            .features-section {
+                background: white;
+                border-radius: 0;
+                padding: 20px;
+                margin: 20px 0;
+                box-shadow: none;
+                border-top: 3px solid #667eea;
+            }
+            
+            .features-section h2 {
+                color: #2c3e50;
+            }
+            
+            .features-section h2::after {
+                background: #667eea;
+            }
+            
+            .features-list {
+                display: block;
+                gap: 0;
+            }
+            
+            .feature-item {
+                background: white;
+                padding: 15px 0;
+                border-radius: 0;
+                box-shadow: none;
+                border: none;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .feature-item:last-child {
+                border-bottom: none;
+            }
+            
+            .feature-item h3 {
+                font-size: 1.1rem;
+                color: #2c3e50;
+                margin-bottom: 8px;
+            }
+            
+            .feature-item p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+                color: #2c3e50;
+                margin: 0;
+            }
+            
+            .timeline {
+                background: white;
+                border-radius: 0;
+                padding: 20px;
+                margin: 20px 0;
+                box-shadow: none;
+                border-top: 3px solid #667eea;
+            }
+            
+            .timeline h2 {
+                color: #2c3e50;
+                margin-bottom: 20px;
+                font-size: 1.6rem;
             }
             
             .timeline-items {
                 flex-direction: column;
-                gap: 30px;
+                gap: 20px;
+            }
+            
+            .timeline-item {
+                text-align: left;
+                padding: 15px 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .timeline-item:last-child {
+                border-bottom: none;
+            }
+            
+            .timeline-date {
+                font-size: 1rem;
+                padding: 8px 15px;
+                margin-bottom: 8px;
+                display: inline-block;
+            }
+            
+            .timeline-content {
+                font-size: 0.95rem;
+                color: #2c3e50;
+                line-height: 1.4;
             }
             
             .timeline-line {
                 display: none;
             }
             
-            .timeline {
+            .market-analysis {
+                background: white;
+                border-radius: 0;
+                padding: 20px;
+                margin: 20px 0;
+                box-shadow: none;
+                border-top: 3px solid #667eea;
+            }
+            
+            .market-analysis h2 {
+                color: #2c3e50;
+                font-size: 1.6rem;
+                margin-bottom: 20px;
+            }
+            
+            .market-intro {
+                margin-bottom: 30px;
+            }
+            
+            .market-intro p {
+                font-size: 1rem;
+                line-height: 1.6;
+                color: #2c3e50;
+            }
+            
+            .market-stats {
+                display: block;
+                gap: 0;
+            }
+            
+            .stat-card {
+                background: white;
+                padding: 15px 0;
+                border-radius: 0;
+                box-shadow: none;
+                border-bottom: 1px solid #eee;
+                margin-bottom: 0;
+            }
+            
+            .stat-card:last-child {
+                border-bottom: none;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+                color: #667eea;
+                background: none;
+                -webkit-text-fill-color: #667eea;
+            }
+            
+            .stat-label {
+                font-size: 1rem;
+                color: #2c3e50;
+                margin-bottom: 5px;
+            }
+            
+            .stat-growth {
+                font-size: 0.9rem;
+                color: #27ae60;
+            }
+            
+            .trend-chart {
+                background: white;
+                border-radius: 0;
+                padding: 20px 10px;
+                margin-bottom: 20px;
+                box-shadow: none;
+                border: 1px solid #eee;
+            }
+            
+            .chart-bars {
+                gap: 10px;
+            }
+            
+            .bar {
+                width: 35px;
+            }
+            
+            .seasonal-trends {
+                background: white;
+                border-radius: 0;
+                padding: 20px 10px;
+                margin-bottom: 20px;
+                box-shadow: none;
+                border: 1px solid #eee;
+            }
+            
+            .season-explanation {
+                background: #f8f9ff;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .season-grid {
+                display: block;
+                gap: 0;
+            }
+            
+            .season-item {
+                background: white;
+                padding: 15px 0;
+                border-radius: 0;
+                border-bottom: 1px solid #eee;
+                text-align: left;
+            }
+            
+            .season-item:last-child {
+                border-bottom: none;
+            }
+            
+            .season-item.peak,
+            .season-item.high,
+            .season-item.medium {
+                background: white;
+                color: #2c3e50;
+                border: none;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .season-item h4 {
+                font-size: 1.1rem;
+                color: #2c3e50;
+                margin-bottom: 5px;
+            }
+            
+            .season-percentage {
+                color: #667eea;
+                font-size: 1.5rem;
+                margin-bottom: 5px;
+            }
+            
+            .season-item p {
+                font-size: 0.9rem;
+                line-height: 1.4;
+                color: #2c3e50;
+                margin: 0;
+            }
+            
+            .season-icon {
+                font-size: 2rem;
+                margin-bottom: 8px;
+                margin-right: 10px;
+                display: inline-block;
+                vertical-align: top;
+            }
+            
+            .opportunity-section {
+                background: white;
+                border-radius: 0;
+                padding: 20px 10px;
+                box-shadow: none;
+                border: 1px solid #eee;
+            }
+            
+            .opportunity-section h3 {
+                color: #2c3e50;
+                font-size: 1.4rem;
+                margin-bottom: 20px;
+            }
+            
+            .opportunity-grid {
+                display: block;
+                gap: 0;
+            }
+            
+            .opportunity-card {
+                background: white;
+                padding: 15px 0;
+                border-radius: 0;
+                box-shadow: none;
+                border: none;
+                border-bottom: 1px solid #eee;
+                text-align: left;
+            }
+            
+            .opportunity-card:last-child {
+                border-bottom: none;
+            }
+            
+            .opportunity-card h4 {
+                color: #2c3e50;
+                font-size: 1.1rem;
+                margin-bottom: 5px;
+            }
+            
+            .opportunity-card p {
+                color: #2c3e50;
+                font-size: 0.95rem;
+                line-height: 1.4;
+                margin: 0;
+            }
+            
+            .opportunity-icon {
+                font-size: 2rem;
+                margin-bottom: 8px;
+                margin-right: 10px;
+                display: inline-block;
+                vertical-align: top;
+            }
+            
+            .company-promotion {
+                background: white;
+                padding: 20px;
+                margin: 20px 0;
+                border-top: 3px solid #667eea;
+            }
+            
+            .promotion-header h2 {
+                color: #2c3e50;
+                font-size: 1.6rem;
+                text-shadow: none;
+            }
+            
+            .promotion-subtitle {
+                color: #2c3e50;
+                font-size: 1rem;
+            }
+            
+            .vision-card {
+                background: white;
+                padding: 20px 0;
+                border-radius: 0;
+                box-shadow: none;
+                border: none;
+                border-bottom: 1px solid #eee;
+                text-align: left;
+            }
+            
+            .vision-card h3 {
+                color: #2c3e50;
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+            }
+            
+            .vision-card p {
+                color: #2c3e50;
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+            
+            .vision-icon {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+                margin-right: 10px;
+                display: inline-block;
+                vertical-align: top;
+            }
+            
+            .products-section h3 {
+                color: #2c3e50;
+                font-size: 1.4rem;
+                margin-bottom: 20px;
+            }
+            
+            .products-grid {
+                display: block;
+                gap: 0;
+            }
+            
+            .product-item {
+                background: white;
+                padding: 15px 0;
+                border-radius: 0;
+                box-shadow: none;
+                border: none;
+                border-bottom: 1px solid #eee;
+                text-align: left;
+            }
+            
+            .product-item:last-child {
+                border-bottom: none;
+            }
+            
+            .product-item h4 {
+                color: #2c3e50;
+                font-size: 1.1rem;
+                margin-bottom: 5px;
+            }
+            
+            .product-item p {
+                color: #2c3e50;
+                font-size: 0.95rem;
+                line-height: 1.4;
+            }
+            
+            .product-icon {
+                font-size: 2rem;
+                margin-bottom: 8px;
+                margin-right: 10px;
+                display: inline-block;
+                vertical-align: top;
+            }
+            
+            .global-ambition {
+                background: white;
+                padding: 20px 0;
+                border-radius: 0;
+                box-shadow: none;
+                border: none;
+                border-top: 1px solid #eee;
+            }
+            
+            .ambition-content {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 15px;
+                text-align: left;
+            }
+            
+            .ambition-icon {
+                font-size: 2.5rem;
+                margin-top: 5px;
+            }
+            
+            .ambition-text h3 {
+                color: #2c3e50;
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+            }
+            
+            .ambition-text p {
+                color: #2c3e50;
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+            
+            .contact-section {
+                background: #2c3e50;
                 padding: 30px 20px;
+                margin: 20px 0 0 0;
+                border-radius: 0;
             }
             
             .contact-info {
                 flex-direction: column;
                 align-items: center;
-                gap: 20px;
-            }
-            
-            .contact-section {
-                padding: 40px 20px;
-            }
-            
-            .market-analysis {
-                padding: 30px 20px;
-            }
-            
-            .market-stats {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .stat-card {
-                padding: 25px 20px;
-            }
-            
-            .trend-chart {
-                padding: 30px 20px;
-            }
-            
-            .chart-bars {
                 gap: 15px;
             }
             
-            .bar {
-                width: 40px;
-            }
-            
-            .seasonal-trends {
-                padding: 30px 20px;
-            }
-            
-            .season-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .season-item {
-                padding: 20px;
-            }
-            
-            .season-item h4 {
-                font-size: 1.1rem;
-            }
-            
-            .season-item p {
-                font-size: 0.9rem;
-                line-height: 1.5;
-            }
-            
-            .opportunity-section {
-                padding: 30px 20px;
-            }
-            
-            .opportunity-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .opportunity-card {
-                padding: 25px 20px;
-            }
-            
-            .opportunity-card h4 {
-                font-size: 1.1rem;
-            }
-            
-            .opportunity-card p {
-                font-size: 0.95rem;
-                line-height: 1.5;
-            }
-            
-            .stat-number {
-                font-size: 2.5rem;
-            }
-            
-            .competitive-advantage {
-                padding: 30px 20px;
-            }
-            
-            .competitive-advantage h2 {
-                font-size: 2rem;
-            }
-            
-            .main-message {
-                font-size: 1.1rem;
-            }
-            
-            .highlight-text {
-                font-size: 1.2rem;
-            }
-            
-            .advantage-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .advantage-card {
-                padding: 25px 20px;
-            }
-            
-            .advantage-card h3 {
-                font-size: 1.2rem;
-            }
-            
-            .advantage-card p {
-                font-size: 1rem;
-                line-height: 1.5;
-            }
-            
-            .comparison-section {
-                padding: 30px 20px;
-            }
-            
-            .comparison-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .comparison-item {
-                padding: 20px;
+            .contact-item {
+                background: rgba(255,255,255,0.1);
+                padding: 15px 20px;
+                border-radius: 8px;
+                width: 100%;
+                max-width: 300px;
             }
             
             .problem-box {
-                padding: 25px 20px;
+                background: white;
+                border: 2px solid #ff6b6b;
+                border-radius: 5px;
+                padding: 20px;
+            }
+            
+            .problem-box h3 {
+                color: #ff6b6b;
+                font-size: 1.3rem;
+                margin-bottom: 15px;
             }
             
             .problem-content {
-                padding: 15px;
+                padding: 0;
             }
             
-            .problem-text p, .solution-text p {
+            .problem-text p {
+                color: #2c3e50;
                 font-size: 1rem;
                 line-height: 1.6;
             }
             
+            .highlight-problem {
+                color: #ff6b6b;
+                background: none;
+                -webkit-text-fill-color: #ff6b6b;
+            }
+            
             .solution-text {
-                padding: 20px;
+                background: #f0f8ff;
+                border: 1px solid #667eea;
+                padding: 15px;
+                border-radius: 5px;
             }
             
-            .features-section {
-                padding: 30px 20px;
-            }
-            
-            .features-list {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .feature-item {
-                padding: 25px 20px;
-            }
-            
-            .feature-item h3 {
-                font-size: 1.2rem;
-            }
-            
-            .feature-item p {
+            .solution-text p {
+                color: #2c3e50;
                 font-size: 1rem;
-                line-height: 1.5;
+                line-height: 1.6;
+            }
+            
+            .highlight-solution {
+                color: #667eea;
+                background: none;
+                -webkit-text-fill-color: #667eea;
+            }
+            
+            .comparison-section {
+                background: #f8f9ff;
+                border-radius: 5px;
+                padding: 20px;
+                margin-top: 20px;
+            }
+            
+            .comparison-section h3 {
+                color: #2c3e50;
+                font-size: 1.3rem;
+                margin-bottom: 20px;
+            }
+            
+            .comparison-grid {
+                display: block;
+                gap: 0;
+            }
+            
+            .comparison-item {
+                background: white;
+                padding: 15px;
+                border-radius: 5px;
+                margin-bottom: 15px;
+                border: 1px solid #eee;
+            }
+            
+            .comparison-item:last-child {
+                margin-bottom: 0;
+            }
+            
+            .comparison-title {
+                color: #2c3e50;
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+            
+            .competitor {
+                background: #ffe6e6;
+                color: #d32f2f;
+                padding: 8px 12px;
+                border-radius: 5px;
+                margin-bottom: 8px;
+                font-size: 0.9rem;
+            }
+            
+            .us {
+                background: #e8f5e8;
+                color: #2e7d32;
+                padding: 8px 12px;
+                border-radius: 5px;
+                font-size: 0.9rem;
             }
         }
 
@@ -1230,6 +1704,10 @@
 <body>
     <div class="container">
         <header class="header">
+            <div style="background: rgba(255,255,255,0.95); color: #2c3e50; padding: 20px; margin-bottom: 30px; border-radius: 10px; text-align: center; font-weight: bold; font-size: 1.3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                🎉 <strong>축하합니다!</strong> 🎉<br>
+                <span style="font-size: 1.1rem; margin-top: 10px; display: block;">귀하의 기업이 Loworld AI 커머스의 우수 파트너로 선정되었습니다!</span>
+            </div>
             <h1>Loworld AI 커머스</h1>
             <p class="subtitle">혁신적인 AI 기반 판매 플랫폼</p>
             <div class="launch-date">🚀 2024년 8월 1일 정식 오픈</div>
@@ -1571,10 +2049,8 @@
             </section>
 
             <section class="contact-section">
-                <h2>우수 기업만 선정합니다</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 20px;">
-                    🎉 <strong>축하합니다!</strong> 🎉<br>
-                    귀하의 기업이 Loworld AI 커머스의 우수 파트너로 선정되어 연락을 드리고 있습니다.<br>
+                <h2>연락처 정보</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 20px;">
                     지금 바로 연락주시면 미팅을 통해 특별한 혜택과 조건을 안내해드리겠습니다.
                 </p>
                 
