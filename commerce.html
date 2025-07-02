@@ -815,6 +815,27 @@
             box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
         }
 
+        /* 추가 버튼 모바일 최적화 */
+        .cta-button {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border-radius: 25px;
+            text-align: center;
+            min-width: 200px;
+        }
+        
+        @media (max-width: 480px) {
+            .cta-button {
+                display: block;
+                width: 90%;
+                margin: 10px auto;
+                padding: 15px 20px;
+                font-size: 0.95rem;
+            }
+        }
+
         @media (max-width: 768px) {
             body {
                 background: white;
@@ -2071,6 +2092,16 @@
                             <div class="contact-value">010-5811-6672</div>
                         </div>
                     </div>
+                </div>
+
+                <!-- 추가 정보 버튼 -->
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="commerce_contact.html" class="cta-button" style="background: linear-gradient(135deg, #4caf50, #2e7d32); margin-right: 15px;">
+                        📋 판매 제품 확보 계획
+                    </a>
+                    <a href="commerce_contact.html" class="cta-button" style="background: linear-gradient(135deg, #ff9800, #f57c00);">
+                        📞 판매자 연락처 관리
+                    </a>
                 </div>
             </section>
         </main>
