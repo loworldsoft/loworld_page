@@ -37,7 +37,44 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 pt-20">
+    <!-- 공통 네비게이션 헤더 -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-200 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-[#004AAD] hover:text-blue-700 transition-colors flex items-center gap-2">
+                    🚀 Loworld AI
+                </a>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="ai_content.html" class="text-gray-600 hover:text-[#004AAD] transition-colors">AI 콘텐츠</a>
+                    <a href="consulting.html" class="text-gray-600 hover:text-[#004AAD] transition-colors">컨설팅</a>
+                    <a href="loworld_agent.html" class="text-gray-600 hover:text-[#004AAD] transition-colors">AI Agent</a>
+                    <a href="map.html" class="text-gray-600 hover:text-[#004AAD] transition-colors">로드맵</a>
+                    <a href="index.html" class="bg-[#004AAD] hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+                        🏠 메인으로
+                    </a>
+                </div>
+                <!-- 모바일 메뉴 버튼 -->
+                <button class="md:hidden text-[#004AAD]" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- 모바일 메뉴 -->
+            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-4">
+                <div class="flex flex-col gap-3">
+                    <a href="ai_content.html" class="text-gray-600 hover:text-[#004AAD] transition-colors">AI 콘텐츠</a>
+                    <a href="consulting.html" class="text-gray-600 hover:text-[#004AAD] transition-colors">컨설팅</a>
+                    <a href="loworld_agent.html" class="text-gray-600 hover:text-[#004AAD] transition-colors">AI Agent</a>
+                    <a href="map.html" class="text-gray-600 hover:text-[#004AAD] transition-colors">로드맵</a>
+                    <a href="index.html" class="bg-[#004AAD] hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors text-center">
+                        🏠 메인으로
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <div class="container mx-auto p-4 md:p-8">
 
@@ -261,6 +298,12 @@
                 }
             }
         });
+
+        // 모바일 메뉴 토글 함수
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
     </script>
 </body>
 </html>

@@ -29,7 +29,42 @@
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white">
+<body class="bg-gray-900 text-white pt-20">
+    <!-- 공통 네비게이션 헤더 -->
+    <nav class="fixed top-0 left-0 right-0 bg-gray-900/95 backdrop-blur-md border-b border-gray-700 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-white hover:text-purple-400 transition-colors flex items-center gap-2">
+                    🚀 Loworld AI
+                </a>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="ai_content.html" class="text-gray-300 hover:text-white transition-colors">AI 콘텐츠</a>
+                    <a href="consulting.html" class="text-gray-300 hover:text-white transition-colors">컨설팅</a>
+                    <a href="loworld_agent.html" class="text-gray-300 hover:text-white transition-colors">AI Agent</a>
+                    <a href="index.html" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors">
+                        🏠 메인으로
+                    </a>
+                </div>
+                <!-- 모바일 메뉴 버튼 -->
+                <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- 모바일 메뉴 -->
+            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-4">
+                <div class="flex flex-col gap-3">
+                    <a href="ai_content.html" class="text-gray-300 hover:text-white transition-colors">AI 콘텐츠</a>
+                    <a href="consulting.html" class="text-gray-300 hover:text-white transition-colors">컨설팅</a>
+                    <a href="loworld_agent.html" class="text-gray-300 hover:text-white transition-colors">AI Agent</a>
+                    <a href="index.html" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors text-center">
+                        🏠 메인으로
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <header class="min-h-screen flex flex-col justify-center items-center text-center p-8 bg-cover bg-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 1)), url('https://placehold.co/1920x1080/000000/FFFFFF?text=+)');">
@@ -129,6 +164,14 @@
         <p class="text-gray-500">수익만 내면 굳이 투자는 받지 않아도 된다. 협업하고, 마케팅하고, 수익을 내자.</p>
         <p class="text-gray-400 mt-2 font-bold">이제, 행동으로 증명할 시간이다.</p>
     </footer>
+
+    <script>
+        // 모바일 메뉴 토글 함수
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+    </script>
 
 </body>
 
