@@ -399,44 +399,21 @@
                 margin-bottom: 25px;
             }
 
-            /* 섹션 스타일 모바일 최적화 */
-            .section[style*="background: linear-gradient"] {
+            /* 모든 섹션들 모바일에서 간소화 */
+            .section > div {
                 padding: 20px 15px !important;
                 margin-bottom: 20px !important;
                 border-radius: 10px !important;
             }
 
-            /* 그리드 레이아웃을 단일 컬럼으로 변경 */
+            /* 그리드를 단일 컬럼으로 변경 */
             div[style*="display: grid"] {
                 display: block !important;
-                grid-template-columns: none !important;
-                gap: 15px !important;
             }
 
             div[style*="display: grid"] > div {
-                margin-bottom: 15px;
+                margin-bottom: 15px !important;
                 width: 100% !important;
-                max-width: none !important;
-                min-width: auto !important;
-            }
-
-            /* 판매 물품 확보 프로세스 모바일 최적화 */
-            div[style*="border-left: 6px solid"] {
-                padding: 20px 15px !important;
-                margin-bottom: 20px !important;
-            }
-
-            /* 개별 박스들 모바일 최적화 */
-            div[style*="border: 2px solid"] {
-                padding: 15px !important;
-                margin-bottom: 15px !important;
-                border-radius: 8px !important;
-            }
-
-            /* 명품 카테고리 박스들 */
-            div[style*="border-left: 5px solid"] {
-                padding: 15px !important;
-                margin-bottom: 15px !important;
             }
 
             /* 텍스트 크기 조정 */
@@ -450,56 +427,6 @@
 
             h4 {
                 font-size: 1.1rem !important;
-            }
-
-            /* 리스트 아이템 간격 조정 */
-            ol, ul {
-                padding-left: 15px !important;
-            }
-
-            li {
-                margin-bottom: 8px !important;
-                font-size: 0.9rem !important;
-                line-height: 1.5 !important;
-            }
-
-            /* 통계 박스들 모바일 최적화 */
-            div[style*="text-align: center"] div[style*="background: white"] {
-                padding: 15px !important;
-                margin-bottom: 10px !important;
-            }
-
-            /* 법적 컴플라이언스 섹션 */
-            div[style*="border: 3px solid #f44336"] {
-                padding: 20px 15px !important;
-            }
-
-            div[style*="border: 3px solid #f44336"] div[style*="padding: 25px"] {
-                padding: 15px !important;
-            }
-
-            /* 쇼핑몰 랭킹 카드 */
-            .ranking-grid {
-                grid-template-columns: 1fr !important;
-                gap: 15px !important;
-            }
-
-            .ranking-card {
-                padding: 15px !important;
-            }
-
-            .ranking-card h3 {
-                font-size: 1.2rem !important;
-            }
-
-            .ranking-card li {
-                font-size: 0.85rem !important;
-                padding: 8px 0 !important;
-            }
-
-            .rank-number {
-                font-size: 1rem !important;
-                width: 20px !important;
             }
 
             /* 연락처 관련 */
@@ -526,6 +453,30 @@
                 font-size: 0.9rem;
             }
 
+            /* 쇼핑몰 랭킹 카드 */
+            .ranking-grid {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+            }
+
+            .ranking-card {
+                padding: 15px !important;
+            }
+
+            .ranking-card h3 {
+                font-size: 1.2rem !important;
+            }
+
+            .ranking-card li {
+                font-size: 0.85rem !important;
+                padding: 8px 0 !important;
+            }
+
+            .rank-number {
+                font-size: 1rem !important;
+                width: 20px !important;
+            }
+
             /* 참고사항 섹션 */
             .note-section {
                 padding: 15px !important;
@@ -538,23 +489,6 @@
 
             .note-section li {
                 font-size: 0.85rem !important;
-            }
-
-            /* 마진과 패딩 전체적으로 축소 */
-            div[style*="margin-bottom: 30px"] {
-                margin-bottom: 15px !important;
-            }
-
-            div[style*="margin-bottom: 25px"] {
-                margin-bottom: 15px !important;
-            }
-
-            div[style*="margin-top: 25px"] {
-                margin-top: 15px !important;
-            }
-
-            div[style*="margin-top: 30px"] {
-                margin-top: 15px !important;
             }
         }
     </style>
@@ -571,638 +505,361 @@
 
         <main class="main-content">
             <!-- 필수 커머스 기능 안내 -->
-            <section class="section" style="background: linear-gradient(135deg, #e3f2fd 0%, #fff 100%); border-radius: 20px; padding: 35px 25px; margin-bottom: 40px; border: 2px solid #2196f3;">
-                <h2 style="color: #1565c0; text-align: center; font-size: 2rem; margin-bottom: 18px;">🎁 선물 커머스 사업 필수 기능 안내</h2>
-                <div style="text-align: center; color: #1976d2; font-size: 1.1rem; margin-bottom: 18px;">
-                    선물 커머스 플랫폼 성공을 위해 반드시 갖추어야 할 핵심 기능 리스트입니다.
-                </div>
-                <ul style="max-width: 600px; margin: 0 auto; font-size: 1.05rem; color: #333; line-height: 2;">
-                    <li><strong>회원가입/로그인</strong> (카카오, 네이버 등 소셜 연동 포함)</li>
-                    <li><strong>선물용 상품 카탈로그</strong> 및 상세페이지</li>
-                    <li><strong>모바일 최적화 주문/결제</strong> (신용카드, 간편결제 등)</li>
-                    <li><strong>선물 포장/메시지 카드 옵션</strong> 제공</li>
-                    <li><strong>배송지 관리</strong> 및 <strong>실시간 배송 추적</strong></li>
-                    <li><strong>주문/배송 알림</strong> (문자, 카카오톡 등)</li>
-                    <li><strong>단체/대량 주문 기능</strong> (기업/단체 고객용)</li>
-                    <li><strong>쿠폰/프로모션 관리</strong></li>
-                    <li><strong>리뷰 및 평점 시스템</strong></li>
-                    <li><strong>고객센터/1:1 문의</strong> (챗봇, 상담 등)</li>
-                    <li><strong>판매자 입점 및 상품관리</strong> (셀러센터)</li>
-                    <li><strong>정산/매출 관리 대시보드</strong></li>
-                </ul>
-                <div style="margin-top: 18px; color: #1976d2; font-size: 0.98rem; text-align: center;">
-                    ※ 위 기능들은 선물 커머스 플랫폼의 기본 경쟁력 확보를 위해 필수적으로 구현되어야 합니다.
+            <section class="section">
+                <h2>🎁 선물 커머스 사업 필수 기능 안내</h2>
+                <div style="background: linear-gradient(135deg, #e3f2fd 0%, #fff 100%); border-radius: 15px; padding: 30px; border-left: 5px solid #2196f3;">
+                    <div style="text-align: center; color: #1976d2; font-size: 1.1rem; margin-bottom: 20px;">
+                        선물 커머스 플랫폼 성공을 위해 반드시 갖추어야 할 핵심 기능 리스트입니다.
+                    </div>
+                    <ul style="color: #333; font-size: 1rem; line-height: 1.8;">
+                        <li><strong>회원가입/로그인</strong> (카카오, 네이버 등 소셜 연동 포함)</li>
+                        <li><strong>선물용 상품 카탈로그</strong> 및 상세페이지</li>
+                        <li><strong>모바일 최적화 주문/결제</strong> (신용카드, 간편결제 등)</li>
+                        <li><strong>선물 포장/메시지 카드 옵션</strong> 제공</li>
+                        <li><strong>배송지 관리</strong> 및 <strong>실시간 배송 추적</strong></li>
+                        <li><strong>주문/배송 알림</strong> (문자, 카카오톡 등)</li>
+                        <li><strong>단체/대량 주문 기능</strong> (기업/단체 고객용)</li>
+                        <li><strong>쿠폰/프로모션 관리</strong></li>
+                        <li><strong>리뷰 및 평점 시스템</strong></li>
+                        <li><strong>고객센터/1:1 문의</strong> (챗봇, 상담 등)</li>
+                        <li><strong>판매자 입점 및 상품관리</strong> (셀러센터)</li>
+                        <li><strong>정산/매출 관리 대시보드</strong></li>
+                    </ul>
+                    <div style="margin-top: 20px; color: #1976d2; font-size: 0.9rem; text-align: center; font-style: italic;">
+                        ※ 위 기능들은 선물 커머스 플랫폼의 기본 경쟁력 확보를 위해 필수적으로 구현되어야 합니다.
+                    </div>
                 </div>
             </section>
 
             <!-- 송장 입력 및 배송추적 기능 안내 -->
-            <section class="section" style="background: linear-gradient(135deg, #fffde7 0%, #e1f5fe 100%); border-radius: 20px; padding: 32px 22px; margin-bottom: 35px; border: 2px solid #00bcd4;">
-                <h2 style="color: #00838f; text-align: center; font-size: 1.7rem; margin-bottom: 15px;">🚚 송장 입력 및 실시간 배송추적 기능</h2>
-                <div style="text-align: center; color: #0097a7; font-size: 1.05rem; margin-bottom: 15px;">
-                    판매자가 택배를 발송하면 송장번호를 입력받아, 고객이 실시간으로 배송상태를 확인할 수 있도록 하는 핵심 프로세스입니다.
-                </div>
-                <ol style="max-width: 650px; margin: 0 auto; color: #333; font-size: 1.01rem; line-height: 2;">
-                    <li><strong>판매자 송장 입력</strong>: 셀러센터에서 주문별로 <b>택배사</b>와 <b>송장번호</b>를 입력</li>
-                    <li><strong>송장 데이터 저장</strong>: 입력된 정보는 주문 데이터와 함께 안전하게 저장</li>
-                    <li><strong>배송추적 API 연동</strong>: SweetTracker, AfterShip 등 <b>택배사 통합 API</b>와 연동하여 실시간 배송상태 조회</li>
-                    <li><strong>고객/관리자 배송조회</strong>: 마이페이지, 주문상세 등에서 <b>배송조회 버튼</b> 제공, 실시간 상태(집하/배송중/완료 등) 표시</li>
-                    <li><strong>자동 알림(선택)</strong>: 배송상태 변경 시 고객에게 문자/카카오톡/이메일 등으로 자동 알림</li>
-                </ol>
-                <div style="margin-top: 15px; color: #0097a7; font-size: 0.97rem; text-align: center;">
-                    ※ <b>주요 기술요소:</b> 주문/배송 DB 설계, 택배사 API 연동, 송장 입력/조회 UI, 실시간 상태 표시, 자동 알림 시스템 등
+            <section class="section">
+                <h2>🚚 송장 입력 및 실시간 배송추적 기능</h2>
+                <div style="background: linear-gradient(135deg, #fffde7 0%, #e1f5fe 100%); border-radius: 15px; padding: 30px; border-left: 5px solid #00bcd4;">
+                    <div style="text-align: center; color: #0097a7; font-size: 1.05rem; margin-bottom: 20px;">
+                        판매자가 택배를 발송하면 송장번호를 입력받아, 고객이 실시간으로 배송상태를 확인할 수 있도록 하는 핵심 프로세스입니다.
+                    </div>
+                    <ol style="color: #333; font-size: 1rem; line-height: 1.8;">
+                        <li><strong>판매자 송장 입력</strong>: 셀러센터에서 주문별로 <b>택배사</b>와 <b>송장번호</b>를 입력</li>
+                        <li><strong>송장 데이터 저장</strong>: 입력된 정보는 주문 데이터와 함께 안전하게 저장</li>
+                        <li><strong>배송추적 API 연동</strong>: SweetTracker, AfterShip 등 <b>택배사 통합 API</b>와 연동하여 실시간 배송상태 조회</li>
+                        <li><strong>고객/관리자 배송조회</strong>: 마이페이지, 주문상세 등에서 <b>배송조회 버튼</b> 제공, 실시간 상태(집하/배송중/완료 등) 표시</li>
+                        <li><strong>자동 알림(선택)</strong>: 배송상태 변경 시 고객에게 문자/카카오톡/이메일 등으로 자동 알림</li>
+                    </ol>
+                    <div style="margin-top: 20px; color: #0097a7; font-size: 0.9rem; text-align: center; font-style: italic;">
+                        ※ <b>주요 기술요소:</b> 주문/배송 DB 설계, 택배사 API 연동, 송장 입력/조회 UI, 실시간 상태 표시, 자동 알림 시스템 등
+                    </div>
                 </div>
             </section>
 
             <!-- 판매 물품 확보 프로세스 -->
-            <section class="section" style="background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%); border-radius: 20px; padding: 40px; margin-bottom: 40px; border: 3px solid #4caf50;">
-                <h2 style="color: #2e7d32; text-align: center; font-size: 2.1rem; margin-bottom: 25px;">📋 판매 물품 확보 프로세스</h2>
-                <div style="text-align: center; color: #388e3c; font-size: 1.1rem; margin-bottom: 30px;">
-                    <strong>🎯 3가지 핵심 상품 확보 전략으로 경쟁력 있는 상품 라인업 구축</strong>
-                </div>
+            <section class="section">
+                <h2>📋 판매 물품 확보 프로세스</h2>
+                <div style="background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%); border-radius: 15px; padding: 30px; border-left: 5px solid #4caf50;">
+                    <div style="text-align: center; color: #388e3c; font-size: 1.1rem; margin-bottom: 30px;">
+                        <strong>🎯 3가지 핵심 상품 확보 전략으로 경쟁력 있는 상품 라인업 구축</strong>
+                    </div>
 
-                <!-- 프로세스 1: 해외직구 -->
-                <div style="background: white; border-radius: 15px; padding: 30px; margin-bottom: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); border-left: 6px solid #ff9800;">
-                    <h3 style="color: #f57c00; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; font-size: 1.6rem;">
-                        <span style="background: #fff3e0; padding: 8px; border-radius: 50%; font-size: 1.8rem;">🌍</span>
-                        1. 해외직구 상품 확보
-                    </h3>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 20px;">
-                        <!-- 해외직구 플로우 -->
-                        <div style="background: #fff8e1; border-radius: 12px; padding: 20px; border: 2px solid #ffcc02;">
-                            <h4 style="color: #e65100; margin-bottom: 15px;">📈 확보 프로세스</h4>
-                            <ol style="list-style: none; padding-left: 0; font-size: 0.95rem; color: #333; line-height: 1.8;">
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0; color: #f57c00; font-weight: bold;">1.</span> 
-                                    <strong>해외 트렌드 분석</strong> (Amazon, eBay 베스트셀러)
-                                </li>
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0; color: #f57c00; font-weight: bold;">2.</span> 
-                                    <strong>국내 미출시 상품</strong> 발굴
-                                </li>
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0; color: #f57c00; font-weight: bold;">3.</span> 
-                                    <strong>직접 구매</strong> 및 품질 검증
-                                </li>
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0; color: #f57c00; font-weight: bold;">4.</span> 
-                                    <strong>통관/운송</strong> 프로세스 진행
-                                </li>
-                                <li style="margin-bottom: 0; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0; color: #f57c00; font-weight: bold;">5.</span> 
-                                    <strong>국내 판매</strong> 시작
-                                </li>
-                            </ol>
-                        </div>
+                    <!-- 프로세스 1: 해외직구 -->
+                    <div style="margin-bottom: 30px; padding: 25px; background: rgba(255,255,255,0.9); border-radius: 12px; border-left: 5px solid #ff9800;">
+                        <h3 style="color: #f57c00; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                            <span style="font-size: 1.5rem;">🌍</span>
+                            1. 해외직구 상품 확보
+                        </h3>
+                        
+                        <h4 style="color: #e65100; margin-bottom: 12px;">📈 확보 프로세스</h4>
+                        <ol style="color: #333; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                            <li><strong>해외 트렌드 분석</strong> (Amazon, eBay 베스트셀러)</li>
+                            <li><strong>국내 미출시 상품</strong> 발굴</li>
+                            <li><strong>직접 구매</strong> 및 품질 검증</li>
+                            <li><strong>통관/운송</strong> 프로세스 진행</li>
+                            <li><strong>국내 판매</strong> 시작</li>
+                        </ol>
 
-                        <!-- 주요 타겟 상품 -->
-                        <div style="background: #fff8e1; border-radius: 12px; padding: 20px; border: 2px solid #ffcc02;">
-                            <h4 style="color: #e65100; margin-bottom: 15px;">🎯 주요 타겟 상품</h4>
-                            <ul style="list-style: none; padding-left: 0; font-size: 0.95rem; color: #333; line-height: 1.8;">
-                                <li style="margin-bottom: 8px;">🏠 <strong>홈 인테리어</strong> (디자인 소품, 조명)</li>
-                                <li style="margin-bottom: 8px;">📱 <strong>IT 액세서리</strong> (케이스, 충전기)</li>
-                                <li style="margin-bottom: 8px;">🏃 <strong>피트니스 용품</strong> (요가매트, 덤벨)</li>
-                                <li style="margin-bottom: 8px;">🎨 <strong>DIY/취미용품</strong> (공예재료, 도구)</li>
-                                <li style="margin-bottom: 0;">💄 <strong>뷰티 신제품</strong> (해외 브랜드)</li>
-                            </ul>
+                        <h4 style="color: #e65100; margin-bottom: 12px;">🎯 주요 타겟 상품</h4>
+                        <ul style="color: #333; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                            <li>🏠 <strong>홈 인테리어</strong> (디자인 소품, 조명)</li>
+                            <li>📱 <strong>IT 액세서리</strong> (케이스, 충전기)</li>
+                            <li>🏃 <strong>피트니스 용품</strong> (요가매트, 덤벨)</li>
+                            <li>🎨 <strong>DIY/취미용품</strong> (공예재료, 도구)</li>
+                            <li>💄 <strong>뷰티 신제품</strong> (해외 브랜드)</li>
+                        </ul>
+
+                        <div style="text-align: center; background: #fff3e0; padding: 15px; border-radius: 8px;">
+                            <strong style="color: #e65100;">💰 예상 마진률: 150-300%</strong>
+                            <span style="color: #666; margin-left: 15px;">| 리드타임: 2-4주</span>
                         </div>
                     </div>
 
-                    <div style="background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-radius: 10px; padding: 15px; text-align: center;">
-                        <strong style="color: #e65100;">💰 예상 마진률:</strong> 
-                        <span style="color: #f57c00; font-size: 1.1rem; font-weight: bold;">150-300%</span>
-                        <span style="color: #666; margin-left: 10px;">| 리드타임: 2-4주</span>
-                    </div>
-                </div>
+                    <!-- 프로세스 2: 인바운드 영업 -->
+                    <div style="margin-bottom: 30px; padding: 25px; background: rgba(255,255,255,0.9); border-radius: 12px; border-left: 5px solid #2196f3;">
+                        <h3 style="color: #1976d2; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                            <span style="font-size: 1.5rem;">🤝</span>
+                            2. 커머스 선물 제품 인바운드 영업
+                        </h3>
+                        
+                        <h4 style="color: #1565c0; margin-bottom: 12px;">📞 영업 전략</h4>
+                        <ol style="color: #333; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                            <li><strong>선물 전문몰</strong> 업체 리스트 작성</li>
+                            <li><strong>제휴 제안서</strong> 작성 (수수료 조건)</li>
+                            <li><strong>콜드콜/이메일</strong> 영업 진행</li>
+                            <li><strong>샘플 제공</strong> 및 품질 검증</li>
+                            <li><strong>계약 체결</strong> 및 입점 진행</li>
+                        </ol>
 
-                <!-- 프로세스 2: 인바운드 영업 -->
-                <div style="background: white; border-radius: 15px; padding: 30px; margin-bottom: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); border-left: 6px solid #2196f3;">
-                    <h3 style="color: #1976d2; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; font-size: 1.6rem;">
-                        <span style="background: #e3f2fd; padding: 8px; border-radius: 50%; font-size: 1.8rem;">🤝</span>
-                        2. 커머스 선물 제품 인바운드 영업
-                    </h3>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 20px;">
-                        <!-- 영업 전략 -->
-                        <div style="background: #e3f2fd; border-radius: 12px; padding: 20px; border: 2px solid #64b5f6;">
-                            <h4 style="color: #1565c0; margin-bottom: 15px;">📞 영업 전략</h4>
-                            <ol style="list-style: none; padding-left: 0; font-size: 0.95rem; color: #333; line-height: 1.8;">
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0; color: #1976d2; font-weight: bold;">1.</span> 
-                                    <strong>선물 전문몰</strong> 업체 리스트 작성
-                                </li>
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0; color: #1976d2; font-weight: bold;">2.</span> 
-                                    <strong>제휴 제안서</strong> 작성 (수수료 조건)
-                                </li>
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0; color: #1976d2; font-weight: bold;">3.</span> 
-                                    <strong>콜드콜/이메일</strong> 영업 진행
-                                </li>
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0; color: #1976d2; font-weight: bold;">4.</span> 
-                                    <strong>샘플 제공</strong> 및 품질 검증
-                                </li>
-                                <li style="margin-bottom: 0; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0; color: #1976d2; font-weight: bold;">5.</span> 
-                                    <strong>계약 체결</strong> 및 입점 진행
-                                </li>
-                            </ol>
-                        </div>
+                        <h4 style="color: #1565c0; margin-bottom: 12px;">🏢 주요 타겟 업체</h4>
+                        <ul style="color: #333; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                            <li>🎁 <strong>기업 선물</strong> 전문업체</li>
+                            <li>🏬 <strong>백화점 선물센터</strong></li>
+                            <li>🛒 <strong>온라인 선물몰</strong> (선물하기 등)</li>
+                            <li>🏢 <strong>대기업 복리후생</strong> 담당부서</li>
+                            <li>🎉 <strong>이벤트 업체</strong> (돌잔치, 결혼식)</li>
+                        </ul>
 
-                        <!-- 타겟 업체 -->
-                        <div style="background: #e3f2fd; border-radius: 12px; padding: 20px; border: 2px solid #64b5f6;">
-                            <h4 style="color: #1565c0; margin-bottom: 15px;">🏢 주요 타겟 업체</h4>
-                            <ul style="list-style: none; padding-left: 0; font-size: 0.95rem; color: #333; line-height: 1.8;">
-                                <li style="margin-bottom: 8px;">🎁 <strong>기업 선물</strong> 전문업체</li>
-                                <li style="margin-bottom: 8px;">🏬 <strong>백화점 선물센터</strong></li>
-                                <li style="margin-bottom: 8px;">🛒 <strong>온라인 선물몰</strong> (선물하기 등)</li>
-                                <li style="margin-bottom: 8px;">🏢 <strong>대기업 복리후생</strong> 담당부서</li>
-                                <li style="margin-bottom: 0;">🎉 <strong>이벤트 업체</strong> (돌잔치, 결혼식)</li>
-                            </ul>
+                        <div style="text-align: center; background: #e3f2fd; padding: 15px; border-radius: 8px;">
+                            <strong style="color: #1565c0;">💰 예상 마진률: 30-80%</strong>
+                            <span style="color: #666; margin-left: 15px;">| 리드타임: 1-2주</span>
                         </div>
                     </div>
 
-                    <div style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 10px; padding: 15px; text-align: center;">
-                        <strong style="color: #1565c0;">💰 예상 마진률:</strong> 
-                        <span style="color: #1976d2; font-size: 1.1rem; font-weight: bold;">30-80%</span>
-                        <span style="color: #666; margin-left: 10px;">| 리드타임: 1-2주</span>
-                    </div>
-                </div>
+                    <!-- 프로세스 3: 중국 제품 확보 -->
+                    <div style="margin-bottom: 20px; padding: 25px; background: rgba(255,255,255,0.9); border-radius: 12px; border-left: 5px solid #e91e63;">
+                        <h3 style="color: #c2185b; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+                            <span style="font-size: 1.5rem;">🏭</span>
+                            3. 중국 제조 인기 제품 확보
+                        </h3>
+                        
+                        <h4 style="color: #ad1457; margin-bottom: 12px;">🔍 확보 방법</h4>
+                        <ol style="color: #333; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                            <li><strong>알리바바/1688</strong> 플랫폼 리서치</li>
+                            <li><strong>국내 트렌드</strong> 분석 (SNS, 커뮤니티)</li>
+                            <li><strong>제조업체 직접</strong> 컨택</li>
+                            <li><strong>샘플 주문</strong> 및 품질 테스트</li>
+                            <li><strong>대량 주문</strong> 및 브랜딩</li>
+                        </ol>
 
-                <!-- 프로세스 3: 중국 제품 확보 -->
-                <div style="background: white; border-radius: 15px; padding: 30px; margin-bottom: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); border-left: 6px solid #e91e63;">
-                    <h3 style="color: #c2185b; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; font-size: 1.6rem;">
-                        <span style="background: #fce4ec; padding: 8px; border-radius: 50%; font-size: 1.8rem;">🏭</span>
-                        3. 중국 제조 인기 제품 확보
-                    </h3>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 20px;">
-                        <!-- 확보 방법 -->
-                        <div style="background: #fce4ec; border-radius: 12px; padding: 20px; border: 2px solid #f06292;">
-                            <h4 style="color: #ad1457; margin-bottom: 15px;">🔍 확보 방법</h4>
-                            <ol style="list-style: none; padding-left: 0; font-size: 0.95rem; color: #333; line-height: 1.8;">
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0; color: #c2185b; font-weight: bold;">1.</span> 
-                                    <strong>알리바바/1688</strong> 플랫폼 리서치
-                                </li>
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0; color: #c2185b; font-weight: bold;">2.</span> 
-                                    <strong>국내 트렌드</strong> 분석 (SNS, 커뮤니티)
-                                </li>
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0; color: #c2185b; font-weight: bold;">3.</span> 
-                                    <strong>제조업체 직접</strong> 컨택
-                                </li>
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0; color: #c2185b; font-weight: bold;">4.</span> 
-                                    <strong>샘플 주문</strong> 및 품질 테스트
-                                </li>
-                                <li style="margin-bottom: 0; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0; color: #c2185b; font-weight: bold;">5.</span> 
-                                    <strong>대량 주문</strong> 및 브랜딩
-                                </li>
-                            </ol>
-                        </div>
+                        <h4 style="color: #ad1457; margin-bottom: 12px;">🔥 인기 카테고리</h4>
+                        <ul style="color: #333; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                            <li>📱 <strong>스마트 기기</strong> (무선이어폰, 스마트워치)</li>
+                            <li>🏠 <strong>생활용품</strong> (청소도구, 수납용품)</li>
+                            <li>🎮 <strong>게임/완구</strong> (피젯토이, 보드게임)</li>
+                            <li>🚗 <strong>자동차 용품</strong> (차량용 액세서리)</li>
+                            <li>🌱 <strong>친환경 제품</strong> (대나무 제품, 재사용품)</li>
+                        </ul>
 
-                        <!-- 인기 카테고리 -->
-                        <div style="background: #fce4ec; border-radius: 12px; padding: 20px; border: 2px solid #f06292;">
-                            <h4 style="color: #ad1457; margin-bottom: 15px;">🔥 인기 카테고리</h4>
-                            <ul style="list-style: none; padding-left: 0; font-size: 0.95rem; color: #333; line-height: 1.8;">
-                                <li style="margin-bottom: 8px;">📱 <strong>스마트 기기</strong> (무선이어폰, 스마트워치)</li>
-                                <li style="margin-bottom: 8px;">🏠 <strong>생활용품</strong> (청소도구, 수납용품)</li>
-                                <li style="margin-bottom: 8px;">🎮 <strong>게임/완구</strong> (피젯토이, 보드게임)</li>
-                                <li style="margin-bottom: 8px;">🚗 <strong>자동차 용품</strong> (차량용 액세서리)</li>
-                                <li style="margin-bottom: 0;">🌱 <strong>친환경 제품</strong> (대나무 제품, 재사용품)</li>
-                            </ul>
+                        <div style="text-align: center; background: #fce4ec; padding: 15px; border-radius: 8px;">
+                            <strong style="color: #ad1457;">💰 예상 마진률: 200-500%</strong>
+                            <span style="color: #666; margin-left: 15px;">| 리드타임: 3-6주</span>
                         </div>
                     </div>
 
-                    <div style="background: linear-gradient(135deg, #fce4ec, #f8bbd9); border-radius: 10px; padding: 15px; text-align: center;">
-                        <strong style="color: #ad1457;">💰 예상 마진률:</strong> 
-                        <span style="color: #c2185b; font-size: 1.1rem; font-weight: bold;">200-500%</span>
-                        <span style="color: #666; margin-left: 10px;">| 리드타임: 3-6주</span>
-                    </div>
-                </div>
-
-                <!-- 종합 전략 요약 -->
-                <div style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); border: 2px solid #6c757d; border-radius: 15px; padding: 25px; margin-top: 25px;">
-                    <h4 style="color: #495057; text-align: center; margin-bottom: 20px; font-size: 1.4rem;">📊 3단계 통합 확보 전략</h4>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; text-align: center;">
-                        <div style="background: white; padding: 20px; border-radius: 10px; border-top: 4px solid #ff9800;">
-                            <div style="font-size: 1.8rem; margin-bottom: 10px;">🌍</div>
-                            <strong style="color: #f57c00;">해외직구</strong><br>
-                            <small style="color: #666;">고급/신제품<br>마진률: 높음</small>
+                    <!-- 종합 전략 요약 -->
+                    <div style="background: rgba(255,255,255,0.95); border-radius: 12px; padding: 25px; text-align: center; border: 1px solid #ddd;">
+                        <h4 style="color: #495057; margin-bottom: 15px;">📊 3단계 통합 확보 전략</h4>
+                        <div style="color: #6c757d; font-size: 0.95rem; line-height: 1.6;">
+                            <p style="margin-bottom: 8px;"><strong>🌍 해외직구:</strong> 고급/신제품 (마진률 높음)</p>
+                            <p style="margin-bottom: 8px;"><strong>🤝 인바운드 영업:</strong> 안정적 매출 (마진률 중간)</p>
+                            <p style="margin-bottom: 15px;"><strong>🏭 중국 제조:</strong> 대량 생산 (마진률 최고)</p>
+                            <p style="color: #28a745; font-weight: bold;">💡 포트폴리오 다각화로 안정적이고 지속가능한 상품 공급망 구축</p>
                         </div>
-                        <div style="background: white; padding: 20px; border-radius: 10px; border-top: 4px solid #2196f3;">
-                            <div style="font-size: 1.8rem; margin-bottom: 10px;">🤝</div>
-                            <strong style="color: #1976d2;">인바운드 영업</strong><br>
-                            <small style="color: #666;">안정적 매출<br>마진률: 중간</small>
-                        </div>
-                        <div style="background: white; padding: 20px; border-radius: 10px; border-top: 4px solid #e91e63;">
-                            <div style="font-size: 1.8rem; margin-bottom: 10px;">🏭</div>
-                            <strong style="color: #c2185b;">중국 제조</strong><br>
-                            <small style="color: #666;">대량 생산<br>마진률: 최고</small>
-                        </div>
-                    </div>
-                    <div style="text-align: center; margin-top: 20px; color: #6c757d; font-size: 0.95rem;">
-                        💡 <strong>포트폴리오 다각화</strong>로 안정적이고 지속가능한 상품 공급망 구축
                     </div>
                 </div>
             </section>
 
             <!-- 해외직구 비즈니스 모델 안내 -->
-            <section class="section" style="background: linear-gradient(135deg, #f3e5f5 0%, #e8f5e8 100%); border-radius: 20px; padding: 40px; margin-bottom: 40px; border: 3px solid #9c27b0;">
-                <h2 style="color: #7b1fa2; text-align: center; font-size: 2.1rem; margin-bottom: 25px;">🌍 해외직구 비즈니스 모델</h2>
-                <div style="text-align: center; color: #8e24aa; font-size: 1.1rem; margin-bottom: 30px;">
-                    <strong>🛒 동대문 → 해외직구 판매로 글로벌 시장 진출하기</strong>
-                </div>
-
-                <!-- 비즈니스 플로우 -->
-                <div style="background: white; border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <h3 style="color: #7b1fa2; margin-bottom: 20px; text-align: center;">📈 비즈니스 플로우</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-                        <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #9c27b0;">
-                            <div style="font-size: 2rem; margin-bottom: 10px;">🏪</div>
-                            <strong style="color: #7b1fa2;">1. 직접구매</strong><br>
-                            <small style="color: #666;">동대문, 남대문<br>도매시장에서 구매</small>
-                        </div>
-                        <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #4caf50;">
-                            <div style="font-size: 2rem; margin-bottom: 10px;">📦</div>
-                            <strong style="color: #388e3c;">2. 포장/준비</strong><br>
-                            <small style="color: #666;">상품 검수 및<br>해외배송 포장</small>
-                        </div>
-                        <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #ff9800;">
-                            <div style="font-size: 2rem; margin-bottom: 10px;">🌐</div>
-                            <strong style="color: #f57c00;">3. 해외판매</strong><br>
-                            <small style="color: #666;">아마존, 이베이 등<br>글로벌 플랫폼</small>
-                        </div>
-                        <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #2196f3;">
-                            <div style="font-size: 2rem; margin-bottom: 10px;">💰</div>
-                            <strong style="color: #1976d2;">4. 수익창출</strong><br>
-                            <small style="color: #666;">원가 대비 2-3배<br>마진 확보</small>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 추천 상품 카테고리 -->
-                <div style="background: white; border-radius: 15px; padding: 25px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <h3 style="color: #7b1fa2; margin-bottom: 20px; text-align: center;">🎯 해외 인기 한국 상품</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                        <div style="padding: 20px; background: linear-gradient(135deg, #fce4ec, #f8bbd9); border-radius: 12px; text-align: center;">
-                            <div style="font-size: 2.5rem; margin-bottom: 10px;">💄</div>
-                            <strong style="color: #c2185b;">K-뷰티</strong>
-                            <div style="font-size: 0.9rem; color: #666; margin-top: 8px;">
-                                스킨케어, 메이크업<br>
-                                <span style="color: #e91e63; font-weight: bold;">마진률: 300%</span>
-                            </div>
-                        </div>
-                        <div style="padding: 20px; background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 12px; text-align: center;">
-                            <div style="font-size: 2.5rem; margin-bottom: 10px;">👕</div>
-                            <strong style="color: #1976d2;">K-패션</strong>
-                            <div style="font-size: 0.9rem; color: #666; margin-top: 8px;">
-                                동대문 트렌드 의류<br>
-                                <span style="color: #2196f3; font-weight: bold;">마진률: 250%</span>
-                            </div>
-                        </div>
-                        <div style="padding: 20px; background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-radius: 12px; text-align: center;">
-                            <div style="font-size: 2.5rem; margin-bottom: 10px;">🍜</div>
-                            <strong style="color: #f57c00;">K-푸드</strong>
-                            <div style="font-size: 0.9rem; color: #666; margin-top: 8px;">
-                                라면, 과자, 조미료<br>
-                                <span style="color: #ff9800; font-weight: bold;">마진률: 200%</span>
-                            </div>
-                        </div>
-                        <div style="padding: 20px; background: linear-gradient(135deg, #f3e5f5, #e1bee7); border-radius: 12px; text-align: center;">
-                            <div style="font-size: 2.5rem; margin-bottom: 10px;">🎎</div>
-                            <strong style="color: #7b1fa2;">K-문화</strong>
-                            <div style="font-size: 0.9rem; color: #666; margin-top: 8px;">
-                                전통 소품, 굿즈<br>
-                                <span style="color: #9c27b0; font-weight: bold;">마진률: 400%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 명품 해외직구 인기 상품 -->
-                <div style="background: linear-gradient(135deg, #fff, #f8f9fa); border: 3px solid #6f42c1; border-radius: 20px; padding: 30px; margin-bottom: 30px; box-shadow: 0 10px 25px rgba(111, 66, 193, 0.15);">
-                    <h3 style="color: #6f42c1; text-align: center; font-size: 1.9rem; margin-bottom: 25px;">💎 명품 해외직구 인기 순위</h3>
-                    <div style="text-align: center; color: #8e24aa; font-size: 1.05rem; margin-bottom: 25px;">
-                        <strong>🌟 해외에서 가장 인기 있는 명품 아이템 TOP 20</strong>
+            <section class="section">
+                <h2>🌍 해외직구 비즈니스 모델</h2>
+                <div style="background: linear-gradient(135deg, #f3e5f5 0%, #e8f5e8 100%); border-radius: 15px; padding: 30px; border-left: 5px solid #9c27b0;">
+                    <div style="text-align: center; color: #8e24aa; font-size: 1.1rem; margin-bottom: 25px;">
+                        <strong>🛒 동대문 → 해외직구 판매로 글로벌 시장 진출하기</strong>
                     </div>
 
-                    <!-- 명품 카테고리별 인기 상품 -->
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px;">
-                        
-                        <!-- 핸드백/지갑 -->
-                        <div style="background: linear-gradient(135deg, #fff8e1, #f3e5ab); border-radius: 15px; padding: 25px; border-left: 5px solid #ffc107;">
-                            <h4 style="color: #f57c00; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; font-size: 1.3rem;">
-                                <span style="font-size: 2rem;">👜</span> 핸드백 & 지갑
-                            </h4>
-                            <div style="background: white; border-radius: 10px; padding: 15px;">
-                                <ol style="list-style: none; padding-left: 0; margin: 0; font-size: 0.95rem; color: #333;">
-                                    <li style="margin-bottom: 10px; padding: 8px; background: #fff8e1; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #f57c00; margin-right: 10px; width: 20px;">1</span>
-                                        <strong>루이비통 네버풀</strong> (LV Neverfull)
-                                    </li>
-                                    <li style="margin-bottom: 10px; padding: 8px; background: #fff8e1; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #f57c00; margin-right: 10px; width: 20px;">2</span>
-                                        <strong>샤넬 클래식 플랩백</strong> (Chanel Classic)
-                                    </li>
-                                    <li style="margin-bottom: 10px; padding: 8px; background: #fff8e1; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #f57c00; margin-right: 10px; width: 20px;">3</span>
-                                        <strong>구찌 마몽트</strong> (Gucci Marmont)
-                                    </li>
-                                    <li style="margin-bottom: 10px; padding: 8px; background: #fff8e1; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #f57c00; margin-right: 10px; width: 20px;">4</span>
-                                        <strong>에르메스 버킨백</strong> (Hermès Birkin)
-                                    </li>
-                                    <li style="margin-bottom: 0; padding: 8px; background: #fff8e1; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #f57c00; margin-right: 10px; width: 20px;">5</span>
-                                        <strong>프라다 사피아노</strong> (Prada Saffiano)
-                                    </li>
-                                </ol>
+                    <!-- 비즈니스 플로우 -->
+                    <div style="background: white; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+                        <h3 style="color: #7b1fa2; margin-bottom: 20px; text-align: center;">📈 비즈니스 플로우</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px;">
+                            <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #9c27b0;">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">🏪</div>
+                                <strong style="color: #7b1fa2;">1. 직접구매</strong><br>
+                                <small style="color: #666;">동대문, 남대문<br>도매시장에서 구매</small>
                             </div>
-                        </div>
-
-                        <!-- 시계 -->
-                        <div style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; padding: 25px; border-left: 5px solid #2196f3;">
-                            <h4 style="color: #1976d2; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; font-size: 1.3rem;">
-                                <span style="font-size: 2rem;">⌚</span> 럭셔리 시계
-                            </h4>
-                            <div style="background: white; border-radius: 10px; padding: 15px;">
-                                <ol style="list-style: none; padding-left: 0; margin: 0; font-size: 0.95rem; color: #333;">
-                                    <li style="margin-bottom: 10px; padding: 8px; background: #e3f2fd; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #1976d2; margin-right: 10px; width: 20px;">1</span>
-                                        <strong>롤렉스 서브마리너</strong> (Rolex Submariner)
-                                    </li>
-                                    <li style="margin-bottom: 10px; padding: 8px; background: #e3f2fd; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #1976d2; margin-right: 10px; width: 20px;">2</span>
-                                        <strong>오메가 스피드마스터</strong> (Omega Speedmaster)
-                                    </li>
-                                    <li style="margin-bottom: 10px; padding: 8px; background: #e3f2fd; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #1976d2; margin-right: 10px; width: 20px;">3</span>
-                                        <strong>까르띠에 탱크</strong> (Cartier Tank)
-                                    </li>
-                                    <li style="margin-bottom: 10px; padding: 8px; background: #e3f2fd; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #1976d2; margin-right: 10px; width: 20px;">4</span>
-                                        <strong>파텍필립 아쿠아노트</strong> (Patek Philippe)
-                                    </li>
-                                    <li style="margin-bottom: 0; padding: 8px; background: #e3f2fd; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #1976d2; margin-right: 10px; width: 20px;">5</span>
-                                        <strong>오데마피게 로열오크</strong> (AP Royal Oak)
-                                    </li>
-                                </ol>
+                            <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #4caf50;">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">📦</div>
+                                <strong style="color: #388e3c;">2. 포장/준비</strong><br>
+                                <small style="color: #666;">상품 검수 및<br>해외배송 포장</small>
                             </div>
-                        </div>
-
-                        <!-- 신발 -->
-                        <div style="background: linear-gradient(135deg, #fce4ec, #f8bbd9); border-radius: 15px; padding: 25px; border-left: 5px solid #e91e63;">
-                            <h4 style="color: #c2185b; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; font-size: 1.3rem;">
-                                <span style="font-size: 2rem;">👠</span> 럭셔리 신발
-                            </h4>
-                            <div style="background: white; border-radius: 10px; padding: 15px;">
-                                <ol style="list-style: none; padding-left: 0; margin: 0; font-size: 0.95rem; color: #333;">
-                                    <li style="margin-bottom: 10px; padding: 8px; background: #fce4ec; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #c2185b; margin-right: 10px; width: 20px;">1</span>
-                                        <strong>크리스찬 루부탱</strong> (Christian Louboutin)
-                                    </li>
-                                    <li style="margin-bottom: 10px; padding: 8px; background: #fce4ec; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #c2185b; margin-right: 10px; width: 20px;">2</span>
-                                        <strong>지미 추</strong> (Jimmy Choo)
-                                    </li>
-                                    <li style="margin-bottom: 10px; padding: 8px; background: #fce4ec; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #c2185b; margin-right: 10px; width: 20px;">3</span>
-                                        <strong>발렌티노 록스터드</strong> (Valentino Rockstud)
-                                    </li>
-                                    <li style="margin-bottom: 10px; padding: 8px; background: #fce4ec; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #c2185b; margin-right: 10px; width: 20px;">4</span>
-                                        <strong>샤넬 투톤 플랫</strong> (Chanel Two-tone)
-                                    </li>
-                                    <li style="margin-bottom: 0; padding: 8px; background: #fce4ec; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #c2185b; margin-right: 10px; width: 20px;">5</span>
-                                        <strong>구찌 프린스타운</strong> (Gucci Princetown)
-                                    </li>
-                                </ol>
+                            <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #ff9800;">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">🌐</div>
+                                <strong style="color: #f57c00;">3. 해외판매</strong><br>
+                                <small style="color: #666;">아마존, 이베이 등<br>글로벌 플랫폼</small>
                             </div>
-                        </div>
-
-                        <!-- 쥬얼리 -->
-                        <div style="background: linear-gradient(135deg, #f3e5f5, #e1bee7); border-radius: 15px; padding: 25px; border-left: 5px solid #9c27b0;">
-                            <h4 style="color: #7b1fa2; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; font-size: 1.3rem;">
-                                <span style="font-size: 2rem;">💍</span> 하이엔드 쥬얼리
-                            </h4>
-                            <div style="background: white; border-radius: 10px; padding: 15px;">
-                                <ol style="list-style: none; padding-left: 0; margin: 0; font-size: 0.95rem; color: #333;">
-                                    <li style="margin-bottom: 10px; padding: 8px; background: #f3e5f5; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #7b1fa2; margin-right: 10px; width: 20px;">1</span>
-                                        <strong>티파니 T 컬렉션</strong> (Tiffany & Co.)
-                                    </li>
-                                    <li style="margin-bottom: 10px; padding: 8px; background: #f3e5f5; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #7b1fa2; margin-right: 10px; width: 20px;">2</span>
-                                        <strong>까르띠에 러브</strong> (Cartier LOVE)
-                                    </li>
-                                    <li style="margin-bottom: 10px; padding: 8px; background: #f3e5f5; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #7b1fa2; margin-right: 10px; width: 20px;">3</span>
-                                        <strong>불가리 세르펜티</strong> (Bulgari Serpenti)
-                                    </li>
-                                    <li style="margin-bottom: 10px; padding: 8px; background: #f3e5f5; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #7b1fa2; margin-right: 10px; width: 20px;">4</span>
-                                        <strong>반클리프&아펠 알함브라</strong> (VCA Alhambra)
-                                    </li>
-                                    <li style="margin-bottom: 0; padding: 8px; background: #f3e5f5; border-radius: 6px; display: flex; align-items: center;">
-                                        <span style="font-weight: bold; color: #7b1fa2; margin-right: 10px; width: 20px;">5</span>
-                                        <strong>에르메스 에마이유</strong> (Hermès Enamel)
-                                    </li>
-                                </ol>
+                            <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #2196f3;">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">💰</div>
+                                <strong style="color: #1976d2;">4. 수익창출</strong><br>
+                                <small style="color: #666;">원가 대비 2-3배<br>마진 확보</small>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 명품 직구 주의사항 -->
-                    <div style="background: linear-gradient(135deg, #ffebee, #ffcdd2); border: 2px solid #f44336; border-radius: 15px; padding: 25px; margin-top: 25px;">
-                        <h4 style="color: #c62828; text-align: center; margin-bottom: 20px; font-size: 1.4rem;">⚠️ 명품 직구 특별 주의사항</h4>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-                            <div style="background: white; border-radius: 10px; padding: 20px;">
-                                <h5 style="color: #e65100; margin-bottom: 12px;">🔍 정품 인증</h5>
-                                <ul style="list-style: none; padding-left: 0; font-size: 0.9rem; color: #333; line-height: 1.6;">
-                                    <li>• 정품 인증서 필수 확인</li>
-                                    <li>• 시리얼 넘버 확인</li>
-                                    <li>• 정품 판별 전문업체 이용</li>
-                                    <li>• 구매처 평판 철저히 조사</li>
-                                </ul>
-                            </div>
-                            <div style="background: white; border-radius: 10px; padding: 20px;">
-                                <h5 style="color: #d32f2f; margin-bottom: 12px;">💰 고관세 주의</h5>
-                                <ul style="list-style: none; padding-left: 0; font-size: 0.9rem; color: #333; line-height: 1.6;">
-                                    <li>• 100만원 초과 시 관세 20%</li>
-                                    <li>• 부가세 10% 별도</li>
-                                    <li>• 세관 신고 정확히</li>
-                                    <li>• 관세 계산기 미리 확인</li>
-                                </ul>
-                            </div>
-                            <div style="background: white; border-radius: 10px; padding: 20px;">
-                                <h5 style="color: #7b1fa2; margin-bottom: 12px;">📦 안전한 배송</h5>
-                                <ul style="list-style: none; padding-left: 0; font-size: 0.9rem; color: #333; line-height: 1.6;">
-                                    <li>• 고가품 보험 필수 가입</li>
-                                    <li>• 추적 가능한 배송 선택</li>
-                                    <li>• 완충재 충분한 포장</li>
-                                    <li>• 분실 시 대응 방안 마련</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div style="text-align: center; margin-top: 20px; padding: 15px; background: #fff3e0; border-radius: 10px;">
-                            <strong style="color: #f57c00; font-size: 1.1rem;">
-                                💡 명품 직구는 고액 거래이므로 반드시 신뢰할 수 있는 판매처에서만 구매하세요!
-                            </strong>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 필요 준비사항 -->
-                <div style="background: linear-gradient(135deg, #fff9c4, #f4f4f4); border-radius: 15px; padding: 25px; border: 2px solid #fbc02d;">
-                    <h3 style="color: #f57c00; margin-bottom: 20px; text-align: center;">📋 필요 준비사항</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-                        <div>
-                            <h4 style="color: #e65100; margin-bottom: 12px;">🏢 법적 준비</h4>
-                            <ul style="list-style: none; padding-left: 0; font-size: 0.95rem; color: #333;">
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0;">✓</span> 사업자등록증
-                                </li>
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0;">✓</span> 통관고유부호 발급
-                                </li>
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0;">✓</span> 해외송금 신고
-                                </li>
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0;">✓</span> 원산지 표시 준수
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 style="color: #e65100; margin-bottom: 12px;">📦 물류 준비</h4>
-                            <ul style="list-style: none; padding-left: 0; font-size: 0.95rem; color: #333;">
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0;">✓</span> 국제택배 계약
-                                </li>
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0;">✓</span> 포장재료 준비
-                                </li>
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0;">✓</span> 라벨링 시스템
-                                </li>
-                                <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-                                    <span style="position: absolute; left: 0;">✓</span> 반송 프로세스
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 추천 플랫폼 -->
-                <div style="background: white; border-radius: 15px; padding: 25px; margin-top: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <h3 style="color: #7b1fa2; margin-bottom: 20px; text-align: center;">🌐 추천 해외 판매 플랫폼</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-                        <div style="text-align: center; padding: 15px; border: 2px solid #ff9800; border-radius: 10px; background: #fff8e1;">
-                            <div style="font-size: 1.8rem; margin-bottom: 8px;">📦</div>
-                            <strong style="color: #f57c00;">Amazon</strong><br>
-                            <small style="color: #666;">글로벌 최대 마켓<br>수수료: 8-15%</small>
-                        </div>
-                        <div style="text-align: center; padding: 15px; border: 2px solid #2196f3; border-radius: 10px; background: #e3f2fd;">
-                            <div style="font-size: 1.8rem; margin-bottom: 8px;">🛒</div>
-                            <strong style="color: #1976d2;">eBay</strong><br>
-                            <small style="color: #666;">경매/고정가<br>수수료: 10-12%</small>
-                        </div>
-                        <div style="text-align: center; padding: 15px; border: 2px solid #4caf50; border-radius: 10px; background: #e8f5e8;">
-                            <div style="font-size: 1.8rem; margin-bottom: 8px;">🛍️</div>
-                            <strong style="color: #388e3c;">Shopee</strong><br>
-                            <small style="color: #666;">동남아 1위<br>수수료: 5-8%</small>
-                        </div>
-                        <div style="text-align: center; padding: 15px; border: 2px solid #e91e63; border-radius: 10px; background: #fce4ec;">
-                            <div style="font-size: 1.8rem; margin-bottom: 8px;">🏪</div>
-                            <strong style="color: #c2185b;">Lazada</strong><br>
-                            <small style="color: #666;">동남아 전용<br>수수료: 6-10%</small>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 수익성 분석 -->
-                <div style="background: linear-gradient(135deg, #e8f5e8, #c8e6c8); border-radius: 15px; padding: 25px; margin-top: 25px; border: 2px solid #4caf50;">
-                    <h3 style="color: #2e7d32; margin-bottom: 20px; text-align: center;">💰 예상 수익성 분석</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; text-align: center;">
-                        <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
-                            <div style="font-size: 2rem; color: #4caf50; font-weight: bold;">2-3배</div>
-                            <div style="color: #666; font-size: 0.9rem;">일반 마진률</div>
-                        </div>
-                        <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
-                            <div style="font-size: 2rem; color: #ff9800; font-weight: bold;">20-30%</div>
-                            <div style="color: #666; font-size: 0.9rem;">배송비 비율</div>
-                        </div>
-                        <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
-                            <div style="font-size: 2rem; color: #e91e63; font-weight: bold;">10-15%</div>
-                            <div style="color: #666; font-size: 0.9rem;">플랫폼 수수료</div>
-                        </div>
-                        <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
-                            <div style="font-size: 2rem; color: #2196f3; font-weight: bold;">40-60%</div>
-                            <div style="color: #666; font-size: 0.9rem;">순이익률</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 법적 컴플라이언스 및 리스크 경고 -->
-                <div style="background: linear-gradient(135deg, #ffebee, #ffcdd2); border: 3px solid #f44336; border-radius: 20px; padding: 30px; margin-top: 30px;">
-                    <h3 style="color: #c62828; text-align: center; font-size: 1.8rem; margin-bottom: 25px;">⚠️ 법적 컴플라이언스 및 리스크 경고</h3>
-                    <div style="background: #fff; border-radius: 15px; padding: 25px; border-left: 6px solid #f44336;">
-                        <div style="color: #d32f2f; font-size: 1.1rem; font-weight: bold; margin-bottom: 20px; text-align: center;">
-                            ⚡ 해외직구 사업 시 반드시 준수해야 할 법적 요구사항 ⚡
-                        </div>
-                        
-                        <!-- 핵심 법적 요구사항 리스트 -->
-                        <div style="background: #fff8e1; border-radius: 12px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #ff9800;">
-                            <h4 style="color: #e65100; margin-bottom: 20px; text-align: center; font-size: 1.3rem;">📋 핵심 준수사항</h4>
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                                <div>
-                                    <h5 style="color: #f57c00; margin-bottom: 12px;">🏢 법적 신고</h5>
-                                    <ul style="list-style: none; padding-left: 0; font-size: 0.9rem; color: #333; line-height: 1.6;">
-                                        <li>• 통관고유부호 발급 필수</li>
-                                        <li>• 수출신고서 정확한 작성</li>
-                                        <li>• 원산지 표시 의무</li>
-                                        <li>• 부가가치세 영세율 신고</li>
-                                    </ul>
+                    <!-- 추천 상품 카테고리 -->
+                    <div style="background: white; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+                        <h3 style="color: #7b1fa2; margin-bottom: 20px; text-align: center;">🎯 해외 인기 한국 상품</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                            <div style="padding: 20px; background: linear-gradient(135deg, #fce4ec, #f8bbd9); border-radius: 10px; text-align: center;">
+                                <div style="font-size: 2.5rem; margin-bottom: 10px;">💄</div>
+                                <strong style="color: #c2185b;">K-뷰티</strong>
+                                <div style="font-size: 0.9rem; color: #666; margin-top: 8px;">
+                                    스킨케어, 메이크업<br>
+                                    <span style="color: #e91e63; font-weight: bold;">마진률: 300%</span>
                                 </div>
-                                <div>
-                                    <h5 style="color: #f57c00; margin-bottom: 12px;">🚫 금지/제한 사항</h5>
-                                    <ul style="list-style: none; padding-left: 0; font-size: 0.9rem; color: #333; line-height: 1.6;">
-                                        <li>• 의약품, 화장품 성분 제한</li>
-                                        <li>• 식품 국가별 허가 필요</li>
-                                        <li>• 상표권/저작권 침해 금지</li>
-                                        <li>• 위험물 배송 금지</li>
-                                    </ul>
+                            </div>
+                            <div style="padding: 20px; background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 10px; text-align: center;">
+                                <div style="font-size: 2.5rem; margin-bottom: 10px;">👕</div>
+                                <strong style="color: #1976d2;">K-패션</strong>
+                                <div style="font-size: 0.9rem; color: #666; margin-top: 8px;">
+                                    동대문 트렌드 의류<br>
+                                    <span style="color: #2196f3; font-weight: bold;">마진률: 250%</span>
+                                </div>
+                            </div>
+                            <div style="padding: 20px; background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-radius: 10px; text-align: center;">
+                                <div style="font-size: 2.5rem; margin-bottom: 10px;">🍜</div>
+                                <strong style="color: #f57c00;">K-푸드</strong>
+                                <div style="font-size: 0.9rem; color: #666; margin-top: 8px;">
+                                    라면, 과자, 조미료<br>
+                                    <span style="color: #ff9800; font-weight: bold;">마진률: 200%</span>
+                                </div>
+                            </div>
+                            <div style="padding: 20px; background: linear-gradient(135deg, #f3e5f5, #e1bee7); border-radius: 10px; text-align: center;">
+                                <div style="font-size: 2.5rem; margin-bottom: 10px;">🎎</div>
+                                <strong style="color: #7b1fa2;">K-문화</strong>
+                                <div style="font-size: 0.9rem; color: #666; margin-top: 8px;">
+                                    전통 소품, 굿즈<br>
+                                    <span style="color: #9c27b0; font-weight: bold;">마진률: 400%</span>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- 중요 경고 메시지 -->
-                        <div style="background: linear-gradient(135deg, #ffcdd2, #f8bbd9); border: 2px solid #f44336; border-radius: 15px; padding: 25px; text-align: center;">
-                            <div style="font-size: 1.3rem; color: #c62828; font-weight: bold; margin-bottom: 15px;">
-                                🚨 중요: 법적 책임 및 처벌 위험 🚨
+                    <!-- 추천 플랫폼 -->
+                    <div style="background: white; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
+                        <h3 style="color: #7b1fa2; margin-bottom: 20px; text-align: center;">🌐 추천 해외 판매 플랫폼</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minMax(160px, 1fr)); gap: 15px;">
+                            <div style="text-align: center; padding: 15px; border: 2px solid #ff9800; border-radius: 8px; background: #fff8e1;">
+                                <div style="font-size: 1.8rem; margin-bottom: 8px;">📦</div>
+                                <strong style="color: #f57c00;">Amazon</strong><br>
+                                <small style="color: #666;">글로벌 최대 마켓<br>수수료: 8-15%</small>
                             </div>
-                            <div style="color: #d32f2f; font-size: 1rem; line-height: 1.8;">
-                                <p style="margin-bottom: 10px;">• <strong>허위 신고</strong> 시 <span style="background: #ffeb3b; padding: 2px 6px; border-radius: 4px; color: #333;">형사처벌</span> 및 <span style="background: #ffeb3b; padding: 2px 6px; border-radius: 4px; color: #333;">과태료</span> 부과</p>
-                                <p style="margin-bottom: 10px;">• <strong>세금 탈루</strong> 시 <span style="background: #ffeb3b; padding: 2px 6px; border-radius: 4px; color: #333;">가산세</span> 및 <span style="background: #ffeb3b; padding: 2px 6px; border-radius: 4px; color: #333;">형사고발</span></p>
-                                <p style="margin-bottom: 0;">• <strong>지재권 침해</strong> 시 <span style="background: #ffeb3b; padding: 2px 6px; border-radius: 4px; color: #333;">민사/형사 소송</span> 위험</p>
+                            <div style="text-align: center; padding: 15px; border: 2px solid #2196f3; border-radius: 8px; background: #e3f2fd;">
+                                <div style="font-size: 1.8rem; margin-bottom: 8px;">🛒</div>
+                                <strong style="color: #1976d2;">eBay</strong><br>
+                                <small style="color: #666;">경매/고정가<br>수수료: 10-12%</small>
+                            </div>
+                            <div style="text-align: center; padding: 15px; border: 2px solid #4caf50; border-radius: 8px; background: #e8f5e8;">
+                                <div style="font-size: 1.8rem; margin-bottom: 8px;">🛍️</div>
+                                <strong style="color: #388e3c;">Shopee</strong><br>
+                                <small style="color: #666;">동남아 1위<br>수수료: 5-8%</small>
+                            </div>
+                            <div style="text-align: center; padding: 15px; border: 2px solid #e91e63; border-radius: 8px; background: #fce4ec;">
+                                <div style="font-size: 1.8rem; margin-bottom: 8px;">🏪</div>
+                                <strong style="color: #c2185b;">Lazada</strong><br>
+                                <small style="color: #666;">동남아 전용<br>수수료: 6-10%</small>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- 전문가 상담 권유 -->
-                        <div style="background: #e8f5e8; border: 2px solid #4caf50; border-radius: 15px; padding: 20px; margin-top: 20px; text-align: center;">
-                            <div style="color: #2e7d32; font-size: 1.1rem; font-weight: bold; margin-bottom: 10px;">
-                                💡 전문가 상담 필수
+                    <!-- 수익성 분석 -->
+                    <div style="background: linear-gradient(135deg, #e8f5e8, #c8e6c8); border-radius: 12px; padding: 25px; margin-bottom: 25px; border: 2px solid #4caf50;">
+                        <h3 style="color: #2e7d32; margin-bottom: 20px; text-align: center;">💰 예상 수익성 분석</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minWidth(150px, 1fr)); gap: 15px; text-align: center;">
+                            <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                <div style="font-size: 2rem; color: #4caf50; font-weight: bold;">2-3배</div>
+                                <div style="color: #666; font-size: 0.9rem;">일반 마진률</div>
                             </div>
-                            <div style="color: #388e3c; font-size: 0.95rem; line-height: 1.6;">
-                                해외직구 사업 시작 전 <strong>관세사</strong>, <strong>세무사</strong>, <strong>변호사</strong> 등 전문가와 상담하여<br>
-                                법적 리스크를 최소화하고 안전한 사업 운영을 권장합니다.
+                            <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                <div style="font-size: 2rem; color: #ff9800; font-weight: bold;">20-30%</div>
+                                <div style="color: #666; font-size: 0.9rem;">배송비 비율</div>
+                            </div>
+                            <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                <div style="font-size: 2rem; color: #e91e63; font-weight: bold;">10-15%</div>
+                                <div style="color: #666; font-size: 0.9rem;">플랫폼 수수료</div>
+                            </div>
+                            <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                <div style="font-size: 2rem; color: #2196f3; font-weight: bold;">40-60%</div>
+                                <div style="color: #666; font-size: 0.9rem;">순이익률</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 필요 준비사항 -->
+                    <div style="background: linear-gradient(135deg, #fff9c4, #f4f4f4); border-radius: 12px; padding: 25px; border: 2px solid #fbc02d;">
+                        <h3 style="color: #f57c00; margin-bottom: 20px; text-align: center;">📋 필요 준비사항</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minWidth(250px, 1fr)); gap: 20px;">
+                            <div>
+                                <h4 style="color: #e65100; margin-bottom: 12px;">🏢 법적 준비</h4>
+                                <ul style="list-style: none; padding-left: 0; font-size: 0.95rem; color: #333;">
+                                    <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+                                        <span style="position: absolute; left: 0;">✓</span> 사업자등록증
+                                    </li>
+                                    <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+                                        <span style="position: absolute; left: 0;">✓</span> 통관고유부호 발급
+                                    </li>
+                                    <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+                                        <span style="position: absolute; left: 0;">✓</span> 해외송금 신고
+                                    </li>
+                                    <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+                                        <span style="position: absolute; left: 0;">✓</span> 원산지 표시 준수
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 style="color: #e65100; margin-bottom: 12px;">📦 물류 준비</h4>
+                                <ul style="list-style: none; padding-left: 0; font-size: 0.95rem; color: #333;">
+                                    <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+                                        <span style="position: absolute; left: 0;">✓</span> 국제택배 계약
+                                    </li>
+                                    <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+                                        <span style="position: absolute; left: 0;">✓</span> 포장재료 준비
+                                    </li>
+                                    <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+                                        <span style="position: absolute; left: 0;">✓</span> 라벨링 시스템
+                                    </li>
+                                    <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+                                        <span style="position: absolute; left: 0;">✓</span> 반송 프로세스
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 법적 컴플라이언스 간소화 -->
+                    <div style="background: linear-gradient(135deg, #ffebee, #ffcdd2); border: 3px solid #f44336; border-radius: 12px; padding: 25px; margin-top: 25px;">
+                        <h3 style="color: #c62828; text-align: center; margin-bottom: 20px;">⚠️ 법적 컴플라이언스 주의사항</h3>
+                        
+                        <div style="background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 15px;">
+                            <h4 style="color: #f57c00; margin-bottom: 15px;">🏢 필수 신고사항</h4>
+                            <ul style="list-style: none; padding-left: 0; font-size: 0.95rem; color: #333; line-height: 1.6;">
+                                <li>• 통관고유부호 발급 필수</li>
+                                <li>• 수출신고서 정확한 작성</li>
+                                <li>• 원산지 표시 의무</li>
+                                <li>• 부가가치세 영세율 신고</li>
+                            </ul>
+                        </div>
+
+                        <div style="background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 15px;">
+                            <h4 style="color: #d32f2f; margin-bottom: 15px;">🚫 금지/제한 사항</h4>
+                            <ul style="list-style: none; padding-left: 0; font-size: 0.95rem; color: #333; line-height: 1.6;">
+                                <li>• 의약품, 화장품 성분 제한</li>
+                                <li>• 식품 국가별 허가 필요</li>
+                                <li>• 상표권/저작권 침해 금지</li>
+                                <li>• 위험물 배송 금지</li>
+                            </ul>
+                        </div>
+
+                        <div style="background: linear-gradient(135deg, #ffcdd2, #f8bbd9); border: 2px solid #f44336; border-radius: 10px; padding: 20px; text-align: center;">
+                            <div style="color: #c62828; font-weight: bold; margin-bottom: 10px;">
+                                🚨 중요: 허위 신고 시 형사처벌 및 과태료 부과 위험
+                            </div>
+                            <div style="color: #2e7d32; font-size: 0.9rem;">
+                                해외직구 사업 시작 전 관세사, 세무사 등 전문가 상담 필수
                             </div>
                         </div>
                     </div>
