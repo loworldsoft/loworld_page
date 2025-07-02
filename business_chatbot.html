@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업무용 AI 챗봇 | Loworld AI - 모든 업무를 하나의 챗봇으로</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+        
+        .chat-bubble {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 20px 20px 20px 5px;
+        }
+        
+        .flow-step {
+            position: relative;
+        }
+        
+        .flow-step::after {
+            content: '↓';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        
+        .flow-step:last-child::after {
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .flow-step::after {
+                content: '→';
+                bottom: auto;
+                left: auto;
+                right: -30px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header & Navigation -->
+    <header class="bg-white/90 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
+                Loworld AI
+            </a>
+            <!-- 모바일 메뉴 버튼 -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-700 focus:outline-none" aria-label="메뉴 열기">
+                ☰
+            </button>
+            <!-- 데스크탑 메뉴 -->
+            <div class="hidden md:flex flex-wrap gap-x-6 gap-y-2 items-center">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 whitespace-nowrap">홈</a>
+                <a href="consulting.html" class="text-gray-600 hover:text-blue-600 whitespace-nowrap">컨설팅</a>
+                <a href="ai_content.html" class="text-gray-600 hover:text-blue-600 whitespace-nowrap">AI 콘텐츠</a>
+                <a href="loworld_agent.html" class="text-gray-600 hover:text-blue-600 whitespace-nowrap">Loworld AI Agent</a>
+                <a href="commerce.html" class="text-gray-600 hover:text-blue-600 whitespace-nowrap">AI 커머스</a>
+            </div>
+            <!-- 데스크탑 전용 버튼 -->
+            <a href="https://api.loworldsoft.com"
+                class="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors whitespace-nowrap">AI Agent</a>
+        </nav>
+        
+        <!-- 모바일 메뉴 드롭다운 -->
+        <div id="mobile-menu" class="md:hidden fixed inset-0 z-50 hidden">
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="absolute top-0 right-0 w-64 h-full bg-white shadow-lg flex flex-col p-6 space-y-4 z-10">
+                <button id="mobile-menu-close" class="self-end text-2xl text-gray-700 mb-4" aria-label="메뉴 닫기">×</button>
+                <a href="index.html" class="block text-gray-700 hover:text-blue-600 py-2">홈</a>
+                <a href="consulting.html" class="block text-gray-700 hover:text-blue-600 py-2">컨설팅</a>
+                <a href="ai_content.html" class="block text-gray-700 hover:text-blue-600 py-2">AI 콘텐츠</a>
+                <a href="loworld_agent.html" class="block text-gray-700 hover:text-blue-600 py-2">Loworld AI Agent</a>
+                <a href="commerce.html" class="block text-gray-700 hover:text-blue-600 py-2">AI 커머스</a>
+                <a href="https://api.loworldsoft.com"
+                    class="block bg-blue-600 text-white text-center px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors mt-4">AI Agent</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="gradient-bg text-white py-20 md:py-32 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute top-10 left-10 w-20 h-20 bg-white rounded-full opacity-10 pulse-animation"></div>
+                <div class="absolute top-32 right-20 w-16 h-16 bg-white rounded-full opacity-15 pulse-animation" style="animation-delay: 0.5s;"></div>
+                <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-white rounded-full opacity-10 pulse-animation" style="animation-delay: 1s;"></div>
+            </div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center max-w-4xl mx-auto">
+                    <div class="text-6xl mb-6">🤖</div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        업무용 <span class="text-yellow-300">AI 챗봇</span>
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8 leading-relaxed opacity-90">
+                        모든 업무를 하나의 챗봇으로 통합하는 혁신적인 솔루션
+                    </p>
+                    <div class="chat-bubble text-white p-6 max-w-2xl mx-auto mb-10">
+                        <p class="text-lg font-medium">
+                            "앞으로의 모든 UX는 챗봇 형태가 될 것입니다"
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#features" class="bg-white text-blue-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
+                            🚀 기능 살펴보기
+                        </a>
+                        <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white hover:text-blue-600 transition-all">
+                            📞 상담 문의
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 시작 섹션 -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                        🎯 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">제약영업 CSO</span>부터 시작
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                        제약영업 CSO 자동화 솔루션을 시작으로 모든 도메인 업무 버전을 만들려고 합니다
+                    </p>
+                    <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="text-center p-8 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl card-hover border border-blue-200">
+                        <div class="text-5xl mb-6">💊</div>
+                        <h3 class="text-xl font-bold text-blue-800 mb-4">제약영업 특화</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            의료진 관리, 제품 소개, 처방 데이터 분석까지 제약영업의 모든 과정을 자동화합니다
+                        </p>
+                    </div>
+                    
+                    <div class="text-center p-8 bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl card-hover border border-green-200">
+                        <div class="text-5xl mb-6">📈</div>
+                        <h3 class="text-xl font-bold text-green-800 mb-4">CSO 자동화</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Chief Sales Officer의 업무를 AI가 대신 수행하여 영업 효율성을 극대화합니다
+                        </p>
+                    </div>
+                    
+                    <div class="text-center p-8 bg-gradient-to-br from-purple-50 to-pink-100 rounded-2xl card-hover border border-purple-200">
+                        <div class="text-5xl mb-6">🌐</div>
+                        <h3 class="text-xl font-bold text-purple-800 mb-4">도메인 확장</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            검증된 솔루션을 바탕으로 다양한 산업 분야로 빠르게 확장해나갑니다
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 통합 솔루션 섹션 -->
+        <section class="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                        🔄 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">하나의 챗봇</span>으로 모든 업무
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        다양한 영업 환경에서 하나의 챗봇으로 모든 업무를 자동화하는 시스템을 구축합니다
+                    </p>
+                </div>
+                
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
+                                    <span class="text-white text-xl">💰</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">자동 정산 & 결제</h3>
+                                    <p class="text-gray-600">AI가 자동으로 정산을 처리하고 결제 시스템과 연동하여 원클릭 결제를 지원합니다</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center">
+                                    <span class="text-white text-xl">✍️</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">전자 사인 & 문서화</h3>
+                                    <p class="text-gray-600">계약서 작성부터 전자 서명까지 모든 문서 업무를 챗봇 환경에서 완료합니다</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
+                                    <span class="text-white text-xl">📊</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">보고서 자동 생성</h3>
+                                    <p class="text-gray-600">실시간 데이터를 분석하여 맞춤형 보고서를 자동으로 생성하고 공유합니다</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
+                            <div class="space-y-4">
+                                <div class="chat-bubble text-white p-4">
+                                    <p class="font-medium">💬 "오늘 영업 실적 보고서 작성해줘"</p>
+                                </div>
+                                <div class="bg-gray-100 rounded-2xl rounded-bl-none p-4">
+                                    <p class="text-gray-800">📊 보고서를 작성했습니다. 오늘 매출은 전일 대비 15% 증가했고, 계약 2건이 성사되었습니다. 결제는 자동으로 처리되었고, 고객 서명도 완료되었습니다.</p>
+                                </div>
+                                <div class="chat-bubble text-white p-4">
+                                    <p class="font-medium">💬 "이메일로 팀장님께 전송해줘"</p>
+                                </div>
+                                <div class="bg-gray-100 rounded-2xl rounded-bl-none p-4">
+                                    <p class="text-gray-800">✅ 보고서를 팀장님께 이메일로 전송했습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 통합 UX 비전 -->
+        <section id="features" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                        🎨 미래의 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">통합 UX</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        모든 것이 통합된 챗봇 UX로 비즈니스의 편의성을 높일 예정입니다.<br>
+                        앞으로의 모든 UX는 챗봇 형태가 될 것입니다.
+                    </p>
+                </div>
+                
+                <div class="max-w-6xl mx-auto">
+                    <div class="bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 backdrop-blur-sm"></div>
+                        <div class="relative z-10">
+                            <div class="text-center mb-12">
+                                <div class="text-6xl mb-4">🚀</div>
+                                <h3 class="text-2xl md:text-3xl font-bold mb-4">차세대 비즈니스 플랫폼</h3>
+                                <p class="text-lg opacity-90 max-w-2xl mx-auto">
+                                    기존의 복잡한 인터페이스를 버리고, 자연어로 모든 업무를 처리하는 혁신적인 경험
+                                </p>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-3 gap-8">
+                                <div class="text-center">
+                                    <div class="text-4xl mb-4">💬</div>
+                                    <h4 class="text-xl font-bold mb-2">자연어 인터페이스</h4>
+                                    <p class="text-blue-100 text-sm">복잡한 메뉴 대신 대화로 모든 작업을 수행</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-4xl mb-4">🔗</div>
+                                    <h4 class="text-xl font-bold mb-2">완전 통합 시스템</h4>
+                                    <p class="text-blue-100 text-sm">결제, 사인, 보고서가 하나의 플로우로 연결</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-4xl mb-4">🧠</div>
+                                    <h4 class="text-xl font-bold mb-2">학습하는 AI</h4>
+                                    <p class="text-blue-100 text-sm">사용할수록 더 똑똑해지는 개인 맞춤형 어시스턴트</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 산업별 적용 -->
+        <section class="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                        🏭 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">모든 산업</span>에 적용
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        ERP, MES 등 모든 산업 분야에서 사용할 수 있도록 확장합니다.<br>
+                        예약/예매부터 다양한 요소에서 편리하게 사용될 예정입니다.
+                    </p>
+                </div>
+                
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover border border-gray-200">
+                        <div class="text-4xl mb-4 text-center">🏭</div>
+                        <h3 class="text-lg font-bold text-center text-gray-800 mb-3">제조업 (MES)</h3>
+                        <p class="text-sm text-gray-600 text-center">생산 계획, 품질 관리, 재고 관리를 챗봇으로 통합</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover border border-gray-200">
+                        <div class="text-4xl mb-4 text-center">🏢</div>
+                        <h3 class="text-lg font-bold text-center text-gray-800 mb-3">기업 (ERP)</h3>
+                        <p class="text-sm text-gray-600 text-center">인사, 회계, 영업 관리를 하나의 챗봇으로</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover border border-gray-200">
+                        <div class="text-4xl mb-4 text-center">🎫</div>
+                        <h3 class="text-lg font-bold text-center text-gray-800 mb-3">예약/예매</h3>
+                        <p class="text-sm text-gray-600 text-center">티켓팅, 숙박, 식당 예약을 대화형으로</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover border border-gray-200">
+                        <div class="text-4xl mb-4 text-center">🏥</div>
+                        <h3 class="text-lg font-bold text-center text-gray-800 mb-3">의료/헬스케어</h3>
+                        <p class="text-sm text-gray-600 text-center">진료 예약, 처방 관리, 환자 상담</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover border border-gray-200">
+                        <div class="text-4xl mb-4 text-center">🏦</div>
+                        <h3 class="text-lg font-bold text-center text-gray-800 mb-3">금융</h3>
+                        <p class="text-sm text-gray-600 text-center">대출 상담, 투자 관리, 보험 가입</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover border border-gray-200">
+                        <div class="text-4xl mb-4 text-center">🎓</div>
+                        <h3 class="text-lg font-bold text-center text-gray-800 mb-3">교육</h3>
+                        <p class="text-sm text-gray-600 text-center">수강 신청, 성적 관리, 진로 상담</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover border border-gray-200">
+                        <div class="text-4xl mb-4 text-center">🛒</div>
+                        <h3 class="text-lg font-bold text-center text-gray-800 mb-3">리테일/커머스</h3>
+                        <p class="text-sm text-gray-600 text-center">주문, 배송, 고객 서비스를 통합</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover border border-gray-200">
+                        <div class="text-4xl mb-4 text-center">🏠</div>
+                        <h3 class="text-lg font-bold text-center text-gray-800 mb-3">부동산</h3>
+                        <p class="text-sm text-gray-600 text-center">매물 검색, 계약 관리, 임대 업무</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 업무 프로세스 플로우 -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                        ⚡ <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">간단한 업무 플로우</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                        복잡했던 업무 프로세스가 챗봇과의 대화만으로 완성됩니다
+                    </p>
+                </div>
+                
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid md:grid-cols-4 gap-8 md:gap-4">
+                        <div class="flow-step text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl border border-blue-200">
+                            <div class="text-5xl mb-4">💬</div>
+                            <h3 class="text-lg font-bold text-blue-800 mb-3">1. 대화 시작</h3>
+                            <p class="text-sm text-gray-700">"고객과의 계약 진행해줘"</p>
+                        </div>
+                        
+                        <div class="flow-step text-center p-6 bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl border border-green-200">
+                            <div class="text-5xl mb-4">🤖</div>
+                            <h3 class="text-lg font-bold text-green-800 mb-3">2. AI 처리</h3>
+                            <p class="text-sm text-gray-700">필요한 정보 수집 및 문서 준비</p>
+                        </div>
+                        
+                        <div class="flow-step text-center p-6 bg-gradient-to-br from-purple-50 to-pink-100 rounded-2xl border border-purple-200">
+                            <div class="text-5xl mb-4">✍️</div>
+                            <h3 class="text-lg font-bold text-purple-800 mb-3">3. 자동 실행</h3>
+                            <p class="text-sm text-gray-700">계약서 작성, 서명, 결제 처리</p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-gradient-to-br from-orange-50 to-red-100 rounded-2xl border border-orange-200">
+                            <div class="text-5xl mb-4">📊</div>
+                            <h3 class="text-lg font-bold text-orange-800 mb-3">4. 완료 보고</h3>
+                            <p class="text-sm text-gray-700">실시간 보고서 생성 및 공유</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact" class="py-16 md:py-24 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-6xl mb-6">🚀</div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                        업무의 미래를 <span class="text-yellow-300">지금</span> 경험해보세요
+                    </h2>
+                    <p class="text-lg md:text-xl mb-10 opacity-90 leading-relaxed">
+                        복잡한 업무 프로세스를 하나의 챗봇으로 통합하는<br>
+                        혁신적인 솔루션을 가장 먼저 만나보세요
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://api.loworldsoft.com" target="_blank"
+                            class="bg-white text-blue-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
+                            🤖 AI Agent 체험하기
+                        </a>
+                        <a href="mailto:contact@loworldsoft.com"
+                            class="border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white hover:text-blue-600 transition-all">
+                            📧 상담 문의하기
+                        </a>
+                    </div>
+                    
+                    <div class="mt-12 grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                        <div class="text-center">
+                            <div class="text-2xl mb-2">💊</div>
+                            <p class="font-semibold">제약영업 CSO</p>
+                            <p class="text-sm opacity-80">자동화 솔루션</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl mb-2">🏭</div>
+                            <p class="font-semibold">산업별 확장</p>
+                            <p class="text-sm opacity-80">ERP, MES 통합</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl mb-2">🔮</div>
+                            <p class="font-semibold">미래 UX</p>
+                            <p class="text-sm opacity-80">챗봇 통합 인터페이스</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <h3 class="text-xl font-bold mb-4">Loworld AI</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        업무용 AI 챗봇으로 모든 비즈니스 프로세스를 혁신합니다.<br>
+                        미래의 업무 환경을 지금 만나보세요.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">서비스</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="loworld_agent.html" class="hover:text-white transition-colors">Loworld AI Agent</a></li>
+                        <li><a href="consulting.html" class="hover:text-white transition-colors">컨설팅</a></li>
+                        <li><a href="ai_content.html" class="hover:text-white transition-colors">AI 콘텐츠</a></li>
+                        <li><a href="commerce.html" class="hover:text-white transition-colors">AI 커머스</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">연락처</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📧 contact@loworldsoft.com</li>
+                        <li>🌐 <a href="https://loworldsoft.com" class="hover:text-white transition-colors">loworldsoft.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Loworld AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 모바일 메뉴 토글
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // 모바일 메뉴 배경 클릭 시 닫기
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // 부드러운 스크롤
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
