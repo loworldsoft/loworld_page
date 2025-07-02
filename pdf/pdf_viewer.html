@@ -208,6 +208,57 @@
             font-size: 12px;
         }
 
+        .mode-buttons {
+            display: flex;
+            gap: 4px;
+            margin-top: 8px;
+        }
+
+        .mode-btn {
+            flex: 1;
+            padding: 6px 8px;
+            border: 1px solid #ddd;
+            background: #f8f9fa;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 11px;
+            transition: all 0.3s;
+        }
+
+        .mode-btn:hover {
+            background: #e9ecef;
+        }
+
+        .mode-btn.active {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+
+        .page-html {
+            background: white;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Times New Roman', serif;
+            line-height: 1.2;
+        }
+
+        .html-text {
+            position: absolute;
+            white-space: nowrap;
+            user-select: text;
+            cursor: text;
+            transition: background-color 0.3s;
+        }
+
+        .html-text:hover {
+            background-color: rgba(255, 255, 0, 0.2);
+        }
+
+        .html-text.selected {
+            background-color: rgba(0, 123, 255, 0.3);
+        }
+
         .page-navigation {
             display: flex;
             align-items: center;
@@ -287,8 +338,7 @@
         <div class="controls">
             <button class="btn" onclick="loadFile()">📂 PDF 열기</button>
             <button class="btn secondary" onclick="toggleTextLayer()">📝 텍스트 레이어</button>
-            <button class="btn secondary" onclick="exportSVG()">💾 SVG 저장</button>
-            <button class="btn secondary" onclick="exportAllSVG()">📁 전체 SVG 저장</button>
+            <button class="btn secondary" id="renderModeBtn" onclick="toggleRenderMode()">� 렌더링 모드</button>
             <button class="btn secondary" onclick="copySelectedText()">📋 텍스트 복사</button>
             <input type="file" id="fileInput" class="file-input" accept=".pdf" onchange="handleFileSelect(event)">
         </div>
@@ -317,9 +367,21 @@
                 <p>텍스트를 선택하면 정보가 표시됩니다</p>
             </div>
             
-            <h3>렌더링 옵션</h3>
+            <h3>렌더링 모드</h3>
             <div class="text-info">
-                <label>스케일:</label>
+                <label>렌더링 방식:</label>
+                <select id="renderMode" onchange="updateRenderMode()">
+                    <option value="svg">📄 SVG 벡터 (편집 가능, 고품질)</option>
+                    <option value="canvas">🖼️ Canvas (빠른 렌더링)</option>
+                    <option value="html">🌐 HTML (웹 네이티브, 반응형)</option>
+                </select>
+                <div style="margin-top: 8px; font-size: 10px; color: #666;">
+                    <div id="renderModeInfo">
+                        SVG: 벡터 그래픽으로 확대해도 선명하며 텍스트 선택과 검색이 가능합니다.
+                    </div>
+                </div>
+                
+                <label style="margin-top: 12px;">스케일:</label>
                 <input type="range" id="scaleSlider" min="0.5" max="3" step="0.1" value="1.5" onchange="updateScale()">
                 <span id="scaleValue">1.5x</span>
                 
@@ -329,12 +391,15 @@
                     <option value="hidden">숨김</option>
                     <option value="selectable">선택 가능</option>
                 </select>
-                
-                <label style="margin-top: 12px;">벡터 렌더링:</label>
-                <select id="renderMode" onchange="updateRenderMode()">
-                    <option value="svg">SVG 벡터</option>
-                    <option value="canvas">Canvas 기반</option>
-                </select>
+            </div>
+            
+            <h3>SVG 내보내기</h3>
+            <div class="text-info">
+                <button class="btn" onclick="exportSVG()" style="width: 100%; margin-bottom: 8px;">💾 현재 페이지 SVG</button>
+                <button class="btn secondary" onclick="exportAllSVG()" style="width: 100%;">📁 모든 페이지 SVG</button>
+                <div style="margin-top: 8px; font-size: 10px; color: #666;">
+                    SVG 모드에서만 벡터 그래픽이 포함됩니다.
+                </div>
             </div>
             
             <h3>텍스트 검색</h3>
@@ -646,14 +711,29 @@
                             const textLayer = await createTextLayer(textContent, viewport, pageNum);
                             pageContainer.appendChild(textLayer);
                         }
-                    } else {
-                        // Canvas 기반 렌더링
+                    } else if (renderMode === 'canvas') {
+                        // Canvas 기반 렌더링 (향상된 품질)
                         const canvas = document.createElement('canvas');
                         const context = canvas.getContext('2d');
-                        canvas.width = viewport.width;
-                        canvas.height = viewport.height;
+                        
+                        // 고품질 렌더링을 위한 설정
+                        const pixelRatio = window.devicePixelRatio || 1;
+                        const canvasWidth = viewport.width * pixelRatio;
+                        const canvasHeight = viewport.height * pixelRatio;
+                        
+                        canvas.width = canvasWidth;
+                        canvas.height = canvasHeight;
+                        canvas.style.width = viewport.width + 'px';
+                        canvas.style.height = viewport.height + 'px';
                         canvas.style.maxWidth = '100%';
                         canvas.style.height = 'auto';
+                        
+                        // 고해상도 지원
+                        context.scale(pixelRatio, pixelRatio);
+                        
+                        // 렌더링 품질 향상
+                        context.imageSmoothingEnabled = true;
+                        context.imageSmoothingQuality = 'high';
 
                         const renderContext = {
                             canvasContext: context,
@@ -669,6 +749,15 @@
                             const textLayer = await createTextLayer(textContent, viewport, pageNum);
                             pageContainer.appendChild(textLayer);
                         }
+                    } else if (renderMode === 'html') {
+                        // HTML 네이티브 렌더링 (텍스트와 이미지를 HTML 요소로 변환)
+                        pageContainer.className += ' page-html';
+                        
+                        // 텍스트 콘텐츠 가져오기
+                        const textContent = await page.getTextContent();
+                        
+                        // HTML 텍스트 렌더링
+                        await renderPageAsHTML(pageContainer, textContent, viewport, page);
                     }
 
                     container.appendChild(pageContainer);
@@ -966,9 +1055,39 @@
         // 렌더링 모드 업데이트
         function updateRenderMode() {
             renderMode = document.getElementById('renderMode').value;
+            const button = document.getElementById('renderModeBtn');
+            
+            // 렌더링 모드 정보 업데이트
+            const infoDiv = document.getElementById('renderModeInfo');
+            if (renderMode === 'svg') {
+                infoDiv.textContent = 'SVG: 벡터 그래픽으로 확대해도 선명하며 텍스트 선택과 검색이 가능합니다.';
+                if (button) button.textContent = '🔄 SVG 모드';
+            } else {
+                infoDiv.textContent = 'Canvas: 빠른 렌더링이지만 비트맵 이미지로 확대 시 품질이 저하될 수 있습니다.';
+                if (button) button.textContent = '🔄 Canvas 모드';
+            }
+            
             if (pdfDoc) {
+                showStatus(`${renderMode === 'svg' ? 'SVG 벡터' : 'Canvas'} 모드로 다시 렌더링 중...`, 'success');
                 renderAllPagesAsSVG();
             }
+        }
+        
+        // 헤더 버튼으로 렌더링 모드 토글
+        function toggleRenderMode() {
+            const select = document.getElementById('renderMode');
+            const button = document.getElementById('renderModeBtn');
+            
+            if (renderMode === 'svg') {
+                select.value = 'canvas';
+                renderMode = 'canvas';
+                if (button) button.textContent = '🔄 Canvas 모드';
+            } else {
+                select.value = 'svg';
+                renderMode = 'svg';
+                if (button) button.textContent = '🔄 SVG 모드';
+            }
+            updateRenderMode();
         }
 
         // 텍스트 검색
@@ -1043,6 +1162,43 @@
             });
         }
 
+        // SVG 내보내기
+        function exportSVG() {
+            if (!pdfDoc) {
+                showStatus('먼저 PDF를 로드해주세요.', 'error');
+                return;
+            }
+
+            if (renderMode !== 'svg') {
+                showStatus('SVG 내보내기는 SVG 렌더링 모드에서만 가능합니다.', 'error');
+                return;
+            }
+
+            const svgElements = document.querySelectorAll('.page-svg');
+            if (svgElements.length === 0) {
+                showStatus('SVG 요소를 찾을 수 없습니다. SVG 모드로 전환해주세요.', 'error');
+                return;
+            }
+
+            // 현재 보고 있는 페이지의 SVG 다운로드
+            const svgElement = svgElements[currentPage - 1] || svgElements[0];
+            const serializer = new XMLSerializer();
+            const svgString = serializer.serializeToString(svgElement);
+            
+            const blob = new Blob([svgString], { type: 'image/svg+xml' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `page_${currentPage}.svg`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            
+            URL.revokeObjectURL(url);
+            showStatus('SVG 파일이 다운로드되었습니다.', 'success');
+        }
+
         // 전체 SVG 내보내기
         function exportAllSVG() {
             if (!pdfDoc) {
@@ -1050,10 +1206,18 @@
                 return;
             }
 
-            const svgElements = document.querySelectorAll('.page-svg');
-            if (svgElements.length === 0) return;
+            if (renderMode !== 'svg') {
+                showStatus('SVG 내보내기는 SVG 렌더링 모드에서만 가능합니다.', 'error');
+                return;
+            }
 
-            // ZIP 파일로 모든 SVG 저장 (간단한 방법으로 각각 다운로드)
+            const svgElements = document.querySelectorAll('.page-svg');
+            if (svgElements.length === 0) {
+                showStatus('SVG 요소를 찾을 수 없습니다. SVG 모드로 전환해주세요.', 'error');
+                return;
+            }
+
+            // 모든 SVG 파일 순차 다운로드
             svgElements.forEach((svgElement, index) => {
                 setTimeout(() => {
                     const serializer = new XMLSerializer();
@@ -1073,38 +1237,168 @@
                 }, index * 500); // 각 파일을 0.5초 간격으로 다운로드
             });
             
-            showStatus('모든 SVG 파일 다운로드를 시작합니다.', 'success');
+            showStatus(`${svgElements.length}개 SVG 파일 다운로드를 시작합니다.`, 'success');
         }
 
-        // SVG 내보내기
-        function exportSVG() {
-            if (!pdfDoc) {
-                showStatus('먼저 PDF를 로드해주세요.', 'error');
-                return;
+        // HTML 네이티브 렌더링 함수
+        async function renderPageAsHTML(container, textContent, viewport, page) {
+            try {
+                // 배경 설정
+                container.style.backgroundColor = 'white';
+                container.style.position = 'relative';
+                
+                // 이미지 렌더링 (배경으로 Canvas 사용)
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+                canvas.style.position = 'absolute';
+                canvas.style.top = '0';
+                canvas.style.left = '0';
+                canvas.style.width = '100%';
+                canvas.style.height = '100%';
+                canvas.style.zIndex = '1';
+                canvas.style.opacity = '0.1'; // 배경으로만 사용
+                
+                // 배경 이미지 렌더링
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+                
+                try {
+                    await page.render(renderContext).promise;
+                    container.appendChild(canvas);
+                } catch (e) {
+                    console.warn('배경 이미지 렌더링 실패:', e);
+                }
+                
+                // 텍스트 요소들을 HTML로 렌더링
+                const textItems = textContent.items;
+                
+                textItems.forEach((item, index) => {
+                    if (item.str.trim() === '') return;
+                    
+                    // HTML 텍스트 요소 생성
+                    const textElement = document.createElement('div');
+                    textElement.className = 'html-text';
+                    textElement.textContent = item.str;
+                    
+                    // 위치 및 스타일 설정
+                    const transform = item.transform;
+                    const x = transform[4];
+                    const y = viewport.height - transform[5];
+                    const fontSize = Math.abs(transform[0]);
+                    const width = item.width;
+                    
+                    textElement.style.position = 'absolute';
+                    textElement.style.left = x + 'px';
+                    textElement.style.top = (y - fontSize) + 'px';
+                    textElement.style.fontSize = fontSize + 'px';
+                    textElement.style.fontFamily = getFontFamily(item.fontName);
+                    textElement.style.color = '#000';
+                    textElement.style.whiteSpace = 'nowrap';
+                    textElement.style.zIndex = '2';
+                    textElement.style.lineHeight = '1';
+                    textElement.style.minWidth = width + 'px';
+                    
+                    // 폰트 스타일 적용
+                    if (item.fontName) {
+                        if (item.fontName.includes('Bold')) {
+                            textElement.style.fontWeight = 'bold';
+                        }
+                        if (item.fontName.includes('Italic')) {
+                            textElement.style.fontStyle = 'italic';
+                        }
+                    }
+                    
+                    // 회전 적용
+                    if (transform[1] !== 0 || transform[2] !== 0) {
+                        const angle = Math.atan2(transform[1], transform[0]) * 180 / Math.PI;
+                        textElement.style.transform = `rotate(${angle}deg)`;
+                        textElement.style.transformOrigin = 'left bottom';
+                    }
+                    
+                    // 클릭 이벤트
+                    textElement.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        selectHTMLTextItem(textElement, item, index);
+                    });
+                    
+                    container.appendChild(textElement);
+                });
+                
+            } catch (error) {
+                console.error('HTML 렌더링 오류:', error);
+                // 오류 발생 시 Canvas로 폴백
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+                canvas.style.maxWidth = '100%';
+                canvas.style.height = 'auto';
+
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+
+                await page.render(renderContext).promise;
+                container.appendChild(canvas);
             }
-
-            const svgElements = document.querySelectorAll('.page-svg');
-            if (svgElements.length === 0) return;
-
-            // 첫 번째 페이지 SVG 다운로드
-            const svgElement = svgElements[0];
-            const serializer = new XMLSerializer();
-            const svgString = serializer.serializeToString(svgElement);
-            
-            const blob = new Blob([svgString], { type: 'image/svg+xml' });
-            const url = URL.createObjectURL(blob);
-            
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `page_${currentPage}.svg`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            
-            URL.revokeObjectURL(url);
-            showStatus('SVG 파일이 다운로드되었습니다.', 'success');
         }
-
+        
+        // 폰트 패밀리 매핑 함수
+        function getFontFamily(pdfFontName) {
+            if (!pdfFontName) return 'serif';
+            
+            const fontName = pdfFontName.toLowerCase();
+            
+            if (fontName.includes('arial') || fontName.includes('helvetica')) {
+                return 'Arial, Helvetica, sans-serif';
+            } else if (fontName.includes('times')) {
+                return 'Times, "Times New Roman", serif';
+            } else if (fontName.includes('courier')) {
+                return 'Courier, "Courier New", monospace';
+            } else if (fontName.includes('sans')) {
+                return 'sans-serif';
+            } else if (fontName.includes('serif')) {
+                return 'serif';
+            } else if (fontName.includes('mono')) {
+                return 'monospace';
+            }
+            
+            return 'serif'; // 기본값
+        }
+        
+        // HTML 텍스트 선택 함수
+        function selectHTMLTextItem(element, item, index) {
+            // 이전 선택 해제
+            document.querySelectorAll('.html-text.selected').forEach(el => {
+                el.classList.remove('selected');
+            });
+            
+            // 새 선택 적용
+            element.classList.add('selected');
+            selectedTextItem = element;
+            
+            // 텍스트 정보 업데이트
+            updateTextInfo(item, getCurrentPageFromElement(element), index);
+        }
+        
+        // 요소에서 페이지 번호 가져오기
+        function getCurrentPageFromElement(element) {
+            const pageContainer = element.closest('.page-container');
+            const container = document.getElementById('pagesContainer');
+            const pageContainers = container.querySelectorAll('.page-container');
+            
+            for (let i = 0; i < pageContainers.length; i++) {
+                if (pageContainers[i] === pageContainer) {
+                    return i + 1;
+                }
+            }
+            return 1;
+        }
         // 유틸리티 함수들
         function showLoading(show) {
             document.getElementById('loading').style.display = show ? 'flex' : 'none';
@@ -1127,6 +1421,14 @@
 
         // 초기화
         document.getElementById('scaleValue').textContent = scale + 'x';
+        
+        // 렌더링 모드 버튼 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('renderModeBtn');
+            if (button) {
+                button.textContent = '🔄 SVG 모드';
+            }
+        });
         
         // 드래그 앤 드롭 설정
         function setupDragAndDrop() {
