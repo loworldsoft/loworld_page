@@ -81,8 +81,43 @@
     </style>
 </head>
 <body class="bg-main text-white">
+    <!-- 공통 네비게이션 헤더 -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/10 backdrop-blur-md border-b border-white/20 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-white hover:text-blue-300 transition-colors flex items-center gap-2">
+                    🚀 Loworld AI
+                </a>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="ai_content.html" class="text-white/80 hover:text-white transition-colors">AI 콘텐츠</a>
+                    <a href="consulting.html" class="text-white/80 hover:text-white transition-colors">컨설팅</a>
+                    <a href="loworld_agent.html" class="text-white/80 hover:text-white transition-colors">AI Agent</a>
+                    <a href="index.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+                        🏠 메인으로
+                    </a>
+                </div>
+                <!-- 모바일 메뉴 버튼 -->
+                <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- 모바일 메뉴 -->
+            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-4">
+                <div class="flex flex-col gap-3">
+                    <a href="ai_content.html" class="text-white/80 hover:text-white transition-colors">AI 콘텐츠</a>
+                    <a href="consulting.html" class="text-white/80 hover:text-white transition-colors">컨설팅</a>
+                    <a href="loworld_agent.html" class="text-white/80 hover:text-white transition-colors">AI Agent</a>
+                    <a href="index.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors text-center">
+                        🏠 메인으로
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <div class="container mx-auto p-4 md:p-8">
+    <div class="container mx-auto p-4 md:p-8 pt-20">
 
         <header class="text-center my-12 md:my-20">
             <h1 class="text-4xl md:text-6xl font-black text-accent-light mb-4">Loworld AI Agent</h1>
@@ -493,6 +528,12 @@
                 }
             }
         });
+
+        // 모바일 메뉴 토글 함수
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
     </script>
 </body>
 </html>
