@@ -8,7 +8,6 @@
     <style>
         * {
             margin: 0;
-            box-sizing: border-box;
         }
 
         body {
@@ -608,6 +607,17 @@
         // 다운로드 (저장과 동일)
         function downloadPDF() {
             savePDF();
+        }
+
+        // PDF 새로고침
+        function refreshPDF() {
+            if (!currentPdfUrl) {
+                alert('로드된 PDF가 없습니다.');
+                return;
+            }
+            
+            const container = document.getElementById('canvasContainer');
+            container.innerHTML = `<iframe class="pdf-iframe" src="${currentPdfUrl}" type="application/pdf"></iframe>`;
         }
 
         // 로딩 표시
