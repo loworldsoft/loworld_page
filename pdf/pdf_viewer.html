@@ -4,7 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF SVG 뷰어</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfjs-dist/3.11.174/pdf.min.js"></script>
+    <!-- PDF.js 라이브러리 (여러 CDN 백업) -->
+    <script>
+        // 첫 번째 시도: cdnjs
+        function loadPDFjs() {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdfjs-dist/3.11.174/pdf.min.js';
+                script.onload = () => {
+                    console.log('PDF.js 로드 성공 (cdnjs)');
+                    resolve();
+                };
+                script.onerror = () => {
+                    console.warn('cdnjs에서 PDF.js 로드 실패, unpkg 시도 중...');
+                    // 두 번째 시도: unpkg
+                    const script2 = document.createElement('script');
+                    script2.src = 'https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.min.js';
+                    script2.onload = () => {
+                        console.log('PDF.js 로드 성공 (unpkg)');
+                        resolve();
+                    };
+                    script2.onerror = () => {
+                        console.warn('unpkg에서 PDF.js 로드 실패, jsdelivr 시도 중...');
+                        // 세 번째 시도: jsdelivr
+                        const script3 = document.createElement('script');
+                        script3.src = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js';
+                        script3.onload = () => {
+                            console.log('PDF.js 로드 성공 (jsdelivr)');
+                            resolve();
+                        };
+                        script3.onerror = () => {
+                            console.error('모든 CDN에서 PDF.js 로드 실패');
+                            reject(new Error('PDF.js 라이브러리를 로드할 수 없습니다'));
+                        };
+                        document.head.appendChild(script3);
+                    };
+                    document.head.appendChild(script2);
+                };
+                document.head.appendChild(script);
+            });
+        }
+    </script>
     <style>
         * {
             margin: 0;
@@ -263,9 +303,11 @@
                 <button class="btn secondary" onclick="nextPage()">다음 ▶</button>
             </div>
             <div id="pagesContainer">
-                <p style="text-align: center; color: #999; margin-top: 40px;">
-                    PDF 파일을 선택하면 SVG로 렌더링됩니다
-                </p>
+                <div id="dropZone" style="text-align: center; color: #999; margin-top: 40px; padding: 40px; border: 2px dashed #ddd; border-radius: 8px; background: #fafafa;">
+                    <p style="font-size: 18px; margin-bottom: 16px;">📄 PDF 파일을 여기에 드롭하거나</p>
+                    <button class="btn" onclick="loadFile()" style="font-size: 16px; padding: 12px 24px;">파일 선택</button>
+                    <p style="font-size: 12px; margin-top: 12px; color: #666;">지원 형식: PDF</p>
+                </div>
             </div>
         </div>
 
@@ -317,8 +359,98 @@
     </div>
 
     <script>
-        // PDF.js 워커 설정
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdfjs-dist/3.11.174/pdf.worker.min.js';
+        // PDF.js 라이브러리 로드 대기 및 워커 설정
+        function initializePDFjs() {
+            return new Promise(async (resolve, reject) => {
+                try {
+                    // PDF.js 라이브러리 로드
+                    await loadPDFjs();
+                    
+                    // PDF.js가 로드되었는지 확인
+                    if (typeof pdfjsLib === 'undefined') {
+                        // 로드 대기 (최대 5초)
+                        let attempts = 0;
+                        const maxAttempts = 50;
+                        
+                        await new Promise((waitResolve, waitReject) => {
+                            const checkInterval = setInterval(() => {
+                                attempts++;
+                                
+                                if (typeof pdfjsLib !== 'undefined') {
+                                    clearInterval(checkInterval);
+                                    waitResolve();
+                                } else if (attempts >= maxAttempts) {
+                                    clearInterval(checkInterval);
+                                    waitReject(new Error('PDF.js 로드 시간 초과'));
+                                }
+                            }, 100);
+                        });
+                    }
+                    
+                    console.log('PDF.js 로드 완료, 버전:', pdfjsLib.version);
+                    setupWorker();
+                    resolve();
+                    
+                } catch (error) {
+                    console.error('PDF.js 초기화 실패:', error);
+                    reject(error);
+                }
+            });
+        }
+        
+        function setupWorker() {
+            try {
+                // 방법 1: 워커 비활성화 (가장 안전한 방법)
+                if (pdfjsLib.GlobalWorkerOptions) {
+                    pdfjsLib.GlobalWorkerOptions.workerSrc = '';
+                    if (pdfjsLib.disableWorker !== undefined) {
+                        pdfjsLib.disableWorker = true;
+                    }
+                    console.log('PDF.js 워커 비활성화 완료 (메인 스레드 사용)');
+                    return;
+                }
+            } catch (error) {
+                console.warn('워커 비활성화 실패, 다른 방법 시도:', error);
+            }
+            
+            try {
+                // 방법 2: 인라인 워커 생성
+                if (pdfjsLib.GlobalWorkerOptions && typeof Blob !== 'undefined' && typeof URL !== 'undefined') {
+                    const workerCode = `
+                        // 간단한 PDF.js 워커 대체
+                        self.onmessage = function(e) {
+                            // 기본 응답만 제공
+                            self.postMessage({
+                                type: 'ready'
+                            });
+                        };
+                    `;
+                    
+                    const blob = new Blob([workerCode], { type: 'application/javascript' });
+                    const workerUrl = URL.createObjectURL(blob);
+                    pdfjsLib.GlobalWorkerOptions.workerSrc = workerUrl;
+                    console.log('인라인 워커 생성 완료');
+                    return;
+                }
+            } catch (error) {
+                console.warn('인라인 워커 생성 실패:', error);
+            }
+            
+            try {
+                // 방법 3: 외부 워커 (마지막 시도)
+                if (pdfjsLib.GlobalWorkerOptions) {
+                    const workerSources = [
+                        'https://cdnjs.cloudflare.com/ajax/libs/pdfjs-dist/3.11.174/pdf.worker.min.js',
+                        'https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js'
+                    ];
+                    
+                    pdfjsLib.GlobalWorkerOptions.workerSrc = workerSources[0];
+                    console.log('외부 워커 설정 완료 (최후 수단)');
+                }
+            } catch (error) {
+                console.warn('모든 워커 설정 실패, 기본 동작으로 계속:', error);
+            }
+        }
 
         let pdfDoc = null;
         let currentPage = 1;
@@ -337,10 +469,17 @@
 
         function handleFileSelect(event) {
             const file = event.target.files[0];
-            if (file && file.type === 'application/pdf') {
+            if (!file) {
+                showStatus('파일이 선택되지 않았습니다.', 'error');
+                return;
+            }
+            
+            console.log('선택된 파일:', file.name, '타입:', file.type, '크기:', file.size);
+            
+            if (file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf')) {
                 loadPDF(file);
             } else {
-                showStatus('PDF 파일만 지원됩니다.', 'error');
+                showStatus('PDF 파일만 지원됩니다. 선택된 파일 타입: ' + (file.type || 'unknown'), 'error');
             }
         }
 
@@ -350,9 +489,42 @@
             showStatus('PDF 로딩 중...', 'success');
 
             try {
+                console.log('PDF 로딩 시작:', file.name);
+                
+                // PDF.js 초기화 대기
+                await initializePDFjs();
+                
+                console.log('PDF.js 초기화 완료');
+                
                 const arrayBuffer = await file.arrayBuffer();
-                pdfDoc = await pdfjsLib.getDocument(arrayBuffer).promise;
+                console.log('파일 읽기 완료, 크기:', arrayBuffer.byteLength);
+                
+                if (arrayBuffer.byteLength === 0) {
+                    throw new Error('파일이 비어있습니다.');
+                }
+                
+                // PDF 문서 로드 옵션 (워커 오류 방지)
+                const loadingTask = pdfjsLib.getDocument({
+                    data: arrayBuffer,
+                    verbosity: 0, // 로그 레벨 설정
+                    useWorkerFetch: false, // 워커에서 fetch 사용 안함
+                    isEvalSupported: false, // eval 사용 안함 (보안)
+                    disableFontFace: false, // 폰트 페이스 사용
+                    useSystemFonts: true // 시스템 폰트 사용
+                });
+                
+                // 진행률 표시
+                loadingTask.onProgress = (progress) => {
+                    if (progress.total > 0) {
+                        const percent = (progress.loaded / progress.total) * 50; // 로딩은 50%까지
+                        updateProgress(percent);
+                    }
+                };
+                
+                pdfDoc = await loadingTask.promise;
                 totalPages = pdfDoc.numPages;
+                
+                console.log('PDF 로드 성공, 총 페이지:', totalPages);
                 
                 currentPage = 1;
                 await renderAllPagesAsSVG();
@@ -362,7 +534,57 @@
                 
             } catch (error) {
                 console.error('PDF 로드 오류:', error);
-                showStatus('PDF를 로드할 수 없습니다.', 'error');
+                
+                let errorMessage = 'PDF를 로드할 수 없습니다.';
+                
+                if (error.message.includes('PDF.js 라이브러리')) {
+                    errorMessage = 'PDF.js 라이브러리 로드에 실패했습니다. 인터넷 연결을 확인하고 페이지를 새로고침해보세요.';
+                } else if (error.message.includes('워커') || error.message.includes('worker') || error.message.includes('Worker')) {
+                    errorMessage = 'PDF 처리 중 오류가 발생했습니다. 워커 없이 다시 시도 중입니다...';
+                    
+                    // 워커 없이 다시 시도
+                    try {
+                        console.log('워커 없이 PDF 로드 재시도...');
+                        if (pdfjsLib.GlobalWorkerOptions) {
+                            pdfjsLib.GlobalWorkerOptions.workerSrc = '';
+                        }
+                        
+                        const retryTask = pdfjsLib.getDocument({
+                            data: arrayBuffer,
+                            verbosity: 0,
+                            useWorkerFetch: false,
+                            disableWorker: true
+                        });
+                        
+                        const retryDoc = await retryTask.promise;
+                        pdfDoc = retryDoc;
+                        totalPages = pdfDoc.numPages;
+                        
+                        currentPage = 1;
+                        await renderAllPagesAsSVG();
+                        
+                        showStatus(`PDF 로드 완료! ${totalPages}페이지 (워커 없음)`, 'success');
+                        updatePageInfo();
+                        showLoading(false);
+                        return; // 성공하면 여기서 종료
+                        
+                    } catch (retryError) {
+                        console.error('워커 없이 재시도도 실패:', retryError);
+                        errorMessage = 'PDF 로드에 실패했습니다. 파일이 손상되었거나 지원되지 않는 형식일 수 있습니다.';
+                    }
+                } else if (error.name === 'InvalidPDFException') {
+                    errorMessage = '유효하지 않은 PDF 파일입니다.';
+                } else if (error.name === 'MissingPDFException') {
+                    errorMessage = 'PDF 파일을 찾을 수 없습니다.';
+                } else if (error.name === 'UnexpectedResponseException') {
+                    errorMessage = 'PDF 파일을 읽는 중 오류가 발생했습니다.';
+                } else if (error.message.includes('CORS')) {
+                    errorMessage = 'CORS 정책으로 인해 파일을 로드할 수 없습니다.';
+                } else {
+                    errorMessage += ' 오류: ' + error.message;
+                }
+                
+                showStatus(errorMessage, 'error');
             }
             
             showLoading(false);
@@ -373,131 +595,168 @@
             const container = document.getElementById('pagesContainer');
             container.innerHTML = '';
 
-            for (let pageNum = 1; pageNum <= totalPages; pageNum++) {
-                updateProgress((pageNum - 1) / totalPages * 100);
-                
-                const page = await pdfDoc.getPage(pageNum);
-                const viewport = page.getViewport({ scale: scale });
-
-                // 페이지 컨테이너 생성
-                const pageContainer = document.createElement('div');
-                pageContainer.className = 'page-container';
-                pageContainer.style.width = viewport.width + 'px';
-                pageContainer.style.height = viewport.height + 'px';
-
-                if (renderMode === 'svg') {
-                    // SVG 요소 생성
-                    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-                    svg.setAttribute('width', viewport.width);
-                    svg.setAttribute('height', viewport.height);
-                    svg.setAttribute('viewBox', `0 0 ${viewport.width} ${viewport.height}`);
-                    svg.className = 'page-svg';
-
-                    // 배경 추가
-                    const background = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-                    background.setAttribute('width', '100%');
-                    background.setAttribute('height', '100%');
-                    background.setAttribute('fill', 'white');
-                    svg.appendChild(background);
-
-                    // 벡터 그래픽 렌더링
-                    await renderPageAsSVG(svg, page, viewport);
-
-                    // 텍스트 콘텐츠 가져오기
-                    const textContent = await page.getTextContent();
+            try {
+                for (let pageNum = 1; pageNum <= totalPages; pageNum++) {
+                    const progress = 50 + (pageNum - 1) / totalPages * 50; // 50%부터 100%까지
+                    updateProgress(progress);
                     
-                    // 텍스트를 SVG로 렌더링
-                    await renderTextAsSVG(svg, textContent, viewport);
+                    console.log(`페이지 ${pageNum} 렌더링 중...`);
+                    
+                    const page = await pdfDoc.getPage(pageNum);
+                    const viewport = page.getViewport({ scale: scale });
 
-                    pageContainer.appendChild(svg);
+                    // 페이지 컨테이너 생성
+                    const pageContainer = document.createElement('div');
+                    pageContainer.className = 'page-container';
+                    pageContainer.style.width = viewport.width + 'px';
+                    pageContainer.style.height = viewport.height + 'px';
 
-                    // 텍스트 레이어 추가 (선택 가능한 텍스트)
-                    if (showTextLayer) {
-                        const textLayer = await createTextLayer(textContent, viewport, pageNum);
-                        pageContainer.appendChild(textLayer);
+                    if (renderMode === 'svg') {
+                        // SVG 요소 생성
+                        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                        svg.setAttribute('width', viewport.width);
+                        svg.setAttribute('height', viewport.height);
+                        svg.setAttribute('viewBox', `0 0 ${viewport.width} ${viewport.height}`);
+                        svg.className = 'page-svg';
+
+                        // 배경 추가
+                        const background = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                        background.setAttribute('width', '100%');
+                        background.setAttribute('height', '100%');
+                        background.setAttribute('fill', 'white');
+                        svg.appendChild(background);
+
+                        try {
+                            // 벡터 그래픽 렌더링 (실패해도 계속 진행)
+                            await renderPageAsSVG(svg, page, viewport);
+                        } catch (e) {
+                            console.warn(`페이지 ${pageNum} 벡터 렌더링 실패:`, e);
+                        }
+
+                        // 텍스트 콘텐츠 가져오기
+                        const textContent = await page.getTextContent();
+                        
+                        // 텍스트를 SVG로 렌더링
+                        await renderTextAsSVG(svg, textContent, viewport);
+
+                        pageContainer.appendChild(svg);
+
+                        // 텍스트 레이어 추가 (선택 가능한 텍스트)
+                        if (showTextLayer) {
+                            const textLayer = await createTextLayer(textContent, viewport, pageNum);
+                            pageContainer.appendChild(textLayer);
+                        }
+                    } else {
+                        // Canvas 기반 렌더링
+                        const canvas = document.createElement('canvas');
+                        const context = canvas.getContext('2d');
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
+                        canvas.style.maxWidth = '100%';
+                        canvas.style.height = 'auto';
+
+                        const renderContext = {
+                            canvasContext: context,
+                            viewport: viewport
+                        };
+
+                        await page.render(renderContext).promise;
+                        pageContainer.appendChild(canvas);
+                        
+                        // Canvas 모드에서도 텍스트 레이어 추가
+                        if (showTextLayer) {
+                            const textContent = await page.getTextContent();
+                            const textLayer = await createTextLayer(textContent, viewport, pageNum);
+                            pageContainer.appendChild(textLayer);
+                        }
                     }
-                } else {
-                    // Canvas 기반 렌더링
-                    const canvas = document.createElement('canvas');
-                    const context = canvas.getContext('2d');
-                    canvas.width = viewport.width;
-                    canvas.height = viewport.height;
-                    canvas.style.maxWidth = '100%';
-                    canvas.style.height = 'auto';
 
-                    const renderContext = {
-                        canvasContext: context,
-                        viewport: viewport
-                    };
-
-                    await page.render(renderContext).promise;
-                    pageContainer.appendChild(canvas);
+                    container.appendChild(pageContainer);
                 }
 
-                container.appendChild(pageContainer);
+                updateProgress(100);
+                console.log('모든 페이지 렌더링 완료');
+                
+            } catch (error) {
+                console.error('페이지 렌더링 오류:', error);
+                showStatus('페이지 렌더링 중 오류가 발생했습니다: ' + error.message, 'error');
             }
-
-            updateProgress(100);
         }
 
         // 페이지를 완전한 SVG로 렌더링 (벡터 그래픽 포함)
         async function renderPageAsSVG(svg, page, viewport) {
-            // 연산자 리스트 가져오기
-            const operatorList = await page.getOperatorList();
-            
-            // SVG 경로 데이터 생성
-            let currentPath = '';
-            let currentX = 0, currentY = 0;
-            
-            for (let i = 0; i < operatorList.fnArray.length; i++) {
-                const fn = operatorList.fnArray[i];
-                const args = operatorList.argsArray[i];
+            try {
+                // 연산자 리스트 가져오기
+                const operatorList = await page.getOperatorList();
                 
-                switch (fn) {
-                    case pdfjsLib.OPS.moveTo:
-                        currentX = args[0];
-                        currentY = viewport.height - args[1];
-                        currentPath += `M ${currentX} ${currentY} `;
-                        break;
-                        
-                    case pdfjsLib.OPS.lineTo:
-                        currentX = args[0];
-                        currentY = viewport.height - args[1];
-                        currentPath += `L ${currentX} ${currentY} `;
-                        break;
-                        
-                    case pdfjsLib.OPS.curveTo:
-                        const x1 = args[0], y1 = viewport.height - args[1];
-                        const x2 = args[2], y2 = viewport.height - args[3];
-                        currentX = args[4];
-                        currentY = viewport.height - args[5];
-                        currentPath += `C ${x1} ${y1} ${x2} ${y2} ${currentX} ${currentY} `;
-                        break;
-                        
-                    case pdfjsLib.OPS.closePath:
-                        currentPath += 'Z ';
-                        break;
-                        
-                    case pdfjsLib.OPS.fill:
-                    case pdfjsLib.OPS.stroke:
-                        if (currentPath.trim()) {
-                            const pathElement = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                            pathElement.setAttribute('d', currentPath.trim());
-                            
-                            if (fn === pdfjsLib.OPS.fill) {
-                                pathElement.setAttribute('fill', '#000');
-                                pathElement.setAttribute('stroke', 'none');
-                            } else {
-                                pathElement.setAttribute('fill', 'none');
-                                pathElement.setAttribute('stroke', '#000');
-                                pathElement.setAttribute('stroke-width', '1');
-                            }
-                            
-                            svg.appendChild(pathElement);
+                // SVG 경로 데이터 생성
+                let currentPath = '';
+                let currentX = 0, currentY = 0;
+                
+                for (let i = 0; i < operatorList.fnArray.length; i++) {
+                    const fn = operatorList.fnArray[i];
+                    const args = operatorList.argsArray[i];
+                    
+                    try {
+                        switch (fn) {
+                            case pdfjsLib.OPS.moveTo:
+                                if (args && args.length >= 2) {
+                                    currentX = args[0];
+                                    currentY = viewport.height - args[1];
+                                    currentPath += `M ${currentX} ${currentY} `;
+                                }
+                                break;
+                                
+                            case pdfjsLib.OPS.lineTo:
+                                if (args && args.length >= 2) {
+                                    currentX = args[0];
+                                    currentY = viewport.height - args[1];
+                                    currentPath += `L ${currentX} ${currentY} `;
+                                }
+                                break;
+                                
+                            case pdfjsLib.OPS.curveTo:
+                                if (args && args.length >= 6) {
+                                    const x1 = args[0], y1 = viewport.height - args[1];
+                                    const x2 = args[2], y2 = viewport.height - args[3];
+                                    currentX = args[4];
+                                    currentY = viewport.height - args[5];
+                                    currentPath += `C ${x1} ${y1} ${x2} ${y2} ${currentX} ${currentY} `;
+                                }
+                                break;
+                                
+                            case pdfjsLib.OPS.closePath:
+                                currentPath += 'Z ';
+                                break;
+                                
+                            case pdfjsLib.OPS.fill:
+                            case pdfjsLib.OPS.stroke:
+                                if (currentPath.trim()) {
+                                    const pathElement = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                                    pathElement.setAttribute('d', currentPath.trim());
+                                    
+                                    if (fn === pdfjsLib.OPS.fill) {
+                                        pathElement.setAttribute('fill', '#000');
+                                        pathElement.setAttribute('stroke', 'none');
+                                    } else {
+                                        pathElement.setAttribute('fill', 'none');
+                                        pathElement.setAttribute('stroke', '#000');
+                                        pathElement.setAttribute('stroke-width', '1');
+                                    }
+                                    
+                                    svg.appendChild(pathElement);
+                                }
+                                currentPath = '';
+                                break;
                         }
-                        currentPath = '';
-                        break;
+                    } catch (opError) {
+                        console.warn(`연산자 ${fn} 처리 중 오류:`, opError);
+                        continue;
+                    }
                 }
+            } catch (error) {
+                console.warn('SVG 벡터 렌더링 실패:', error);
+                // 벡터 렌더링에 실패해도 텍스트는 계속 렌더링
             }
         }
 
@@ -868,6 +1127,89 @@
 
         // 초기화
         document.getElementById('scaleValue').textContent = scale + 'x';
+        
+        // 드래그 앤 드롭 설정
+        function setupDragAndDrop() {
+            const dropZone = document.getElementById('pagesContainer');
+            
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropZone.addEventListener(eventName, preventDefaults, false);
+                document.body.addEventListener(eventName, preventDefaults, false);
+            });
+            
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropZone.addEventListener(eventName, highlight, false);
+            });
+            
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropZone.addEventListener(eventName, unhighlight, false);
+            });
+            
+            dropZone.addEventListener('drop', handleDrop, false);
+            
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            
+            function highlight(e) {
+                dropZone.style.background = '#e3f2fd';
+                dropZone.style.borderColor = '#2196f3';
+            }
+            
+            function unhighlight(e) {
+                dropZone.style.background = '';
+                dropZone.style.borderColor = '';
+            }
+            
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                
+                if (files.length > 0) {
+                    const file = files[0];
+                    console.log('드롭된 파일:', file.name);
+                    
+                    if (file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf')) {
+                        loadPDF(file);
+                    } else {
+                        showStatus('PDF 파일만 지원됩니다.', 'error');
+                    }
+                }
+            }
+        }
+        
+        // 페이지 로드 시 드래그 앤 드롭 설정
+        document.addEventListener('DOMContentLoaded', function() {
+            setupDragAndDrop();
+            
+            // PDF.js 로드 상태 확인
+            initializePDFjs().then(() => {
+                console.log('PDF.js 초기화 성공');
+                showStatus('PDF 뷰어가 준비되었습니다.', 'success');
+            }).catch((error) => {
+                console.error('PDF.js 초기화 실패:', error);
+                
+                // 네트워크 오류인지 확인
+                if (error.message.includes('load') || error.message.includes('network')) {
+                    showStatus('네트워크 연결을 확인하고 페이지를 새로고침해주세요.', 'error');
+                } else {
+                    showStatus('PDF 뷰어 초기화에 실패했습니다. 브라우저를 업데이트하거나 다른 브라우저를 사용해보세요.', 'error');
+                }
+                
+                // 초기화 실패해도 드롭존은 표시
+                const dropZone = document.getElementById('dropZone');
+                if (dropZone) {
+                    dropZone.innerHTML = `
+                        <p style="font-size: 18px; margin-bottom: 16px; color: #e74c3c;">⚠️ PDF 뷰어 초기화 실패</p>
+                        <p style="font-size: 14px; margin-bottom: 16px;">네트워크 연결을 확인하고 페이지를 새로고침해주세요.</p>
+                        <button class="btn" onclick="location.reload()" style="font-size: 16px; padding: 12px 24px;">페이지 새로고침</button>
+                    `;
+                }
+            });
+        });
+        
+        // 기존 PDF.js 로드 확인 함수들 제거 (대체됨)
     </script>
 </body>
 </html>
