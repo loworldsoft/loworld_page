@@ -103,7 +103,45 @@
         }
     </style>
 </head>
-<body class="p-6 md:p-10">
+<body class="p-6 md:p-10 pt-20">
+    <!-- 공통 네비게이션 헤더 -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-200 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-indigo-600 hover:text-indigo-700 transition-colors flex items-center gap-2">
+                    🚀 Loworld AI
+                </a>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="ai_content.html" class="text-gray-600 hover:text-indigo-600 transition-colors">AI 콘텐츠</a>
+                    <a href="consulting.html" class="text-gray-600 hover:text-indigo-600 transition-colors">컨설팅</a>
+                    <a href="loworld_agent.html" class="text-gray-600 hover:text-indigo-600 transition-colors">AI Agent</a>
+                    <a href="founder.html" class="text-gray-600 hover:text-indigo-600 transition-colors">창업자</a>
+                    <a href="index.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors">
+                        🏠 메인으로
+                    </a>
+                </div>
+                <!-- 모바일 메뉴 버튼 -->
+                <button class="md:hidden text-indigo-600" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- 모바일 메뉴 -->
+            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-4">
+                <div class="flex flex-col gap-3">
+                    <a href="ai_content.html" class="text-gray-600 hover:text-indigo-600 transition-colors">AI 콘텐츠</a>
+                    <a href="consulting.html" class="text-gray-600 hover:text-indigo-600 transition-colors">컨설팅</a>
+                    <a href="loworld_agent.html" class="text-gray-600 hover:text-indigo-600 transition-colors">AI Agent</a>
+                    <a href="founder.html" class="text-gray-600 hover:text-indigo-600 transition-colors">창업자</a>
+                    <a href="index.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors text-center">
+                        🏠 메인으로
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <!-- 메인 컨테이너에 w-full과 반응형 max-width 적용 -->
     <div class="container mx-auto w-full md:max-w-3xl lg:max-w-4xl">
         <!-- 헤더 섹션 -->
@@ -445,6 +483,12 @@
                 });
             });
         });
+
+        // 모바일 메뉴 토글 함수
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
     </script>
 </body>
 </html>

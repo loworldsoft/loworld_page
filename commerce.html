@@ -16,12 +16,87 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             line-height: 1.6;
+            padding-top: 80px;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+        }
+
+        /* 공통 네비게이션 헤더 스타일 */
+        .nav-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2563eb;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-logo:hover {
+            color: #1d4ed8;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(37, 99, 235, 0.1);
+            color: #2563eb;
+        }
+
+        .nav-home-btn {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .nav-home-btn:hover {
+            background: linear-gradient(135deg, #1d4ed8, #2563eb);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
         }
 
         .header {
@@ -1724,6 +1799,23 @@
     </style>
 </head>
 <body>
+    <div class="nav-header">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                Loworld AI 커머스
+            </a>
+            <div class="nav-menu">
+                <a href="#why-us" class="nav-link">왜 Loworld AI와 함께해야 할까요?</a>
+                <a href="#competitive-advantage" class="nav-link">타 경쟁사 대비 압도적 경쟁력</a>
+                <a href="#features" class="nav-link">Loworld AI의 핵심 경쟁력</a>
+                <a href="#launch-timeline" class="nav-link">런칭 일정</a>
+                <a href="#market-analysis" class="nav-link">선물시장 전체 추이 분석</a>
+                <a href="#contact" class="nav-link">입점 문의</a>
+            </div>
+            <a href="#" class="nav-home-btn">홈으로 돌아가기</a>
+        </div>
+    </div>
+
     <div class="container">
         <header class="header">
             <div style="background: rgba(255,255,255,0.95); color: #2c3e50; padding: 20px; margin-bottom: 30px; border-radius: 10px; text-align: center; font-weight: bold; font-size: 1.3rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
