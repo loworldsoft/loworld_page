@@ -21,7 +21,7 @@
 
         /* 상태바 */
         .status-bar {
-            background-color: #e5e5e5;
+            background-color: transparent;
             padding: 8px 20px;
             display: flex;
             justify-content: flex-end;
@@ -45,7 +45,6 @@
 
         /* 상단 헤더 */
         .header {
-            background-color: #e5e5e5;
             padding: 15px 20px;
             display: flex;
             justify-content: center;
@@ -87,27 +86,25 @@
         /* 메인 콘텐츠 영역 */
         .main-content {
             flex: 1;
-            padding: 30px 20px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            background-color: #f5f5f5;
         }
 
-        .section-title {
-            align-self: flex-start;
-            font-size: 16px;
-            font-weight: 600;
-            color: #333;
+        /* PDF 기능 카드 */
+        .pdf-functions-card {
+            background-color: white;
+            border-radius: 16px;
+            padding: 30px 20px;
             margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
         /* PDF 기능 버튼들 */
         .pdf-functions {
             display: flex;
             gap: 20px;
-            margin-bottom: 40px;
-            width: 100%;
             justify-content: center;
         }
 
@@ -121,6 +118,7 @@
             padding: 15px;
             border-radius: 12px;
             transition: background-color 0.2s;
+            flex: 1;
         }
 
         .function-btn:hover {
@@ -148,6 +146,32 @@
             font-size: 12px;
             color: #333;
             font-weight: 500;
+        }
+
+        /* 최근 파일 영역 */
+        .recent-files-section {
+            background-color: white;
+            border-radius: 16px;
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .recent-files-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         /* 파일 드롭 영역 */
@@ -195,6 +219,7 @@
             justify-content: space-around;
             align-items: center;
             box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+            border-radius: 16px 16px 0 0;
         }
 
         .nav-item {
@@ -367,6 +392,82 @@
             color: #333;
             font-weight: 500;
         }
+
+        /* PDF 변환 바텀시트 */
+        .convert-option-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .convert-option-item {
+            display: flex;
+            align-items: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 12px;
+            transition: background-color 0.2s;
+            text-align: left;
+        }
+
+        .convert-option-item:hover {
+            background-color: #f8f8f8;
+        }
+
+        .convert-option-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .convert-option-icon.image {
+            background-color: #e0e0e0;
+        }
+
+        .convert-option-icon.excel {
+            background-color: #1d7a3a;
+        }
+
+        .convert-option-icon.powerpoint {
+            background-color: #d04423;
+        }
+
+        .convert-option-icon.word {
+            background-color: #185abd;
+        }
+
+        .convert-option-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .convert-option-icon.image svg {
+            fill: #666;
+        }
+
+        .convert-option-info {
+            flex: 1;
+        }
+
+        .convert-option-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 2px;
+        }
+
+        .convert-option-desc {
+            font-size: 12px;
+            color: #666;
+        }
     </style>    </head>
 <body>
     <!-- 상태바 -->
@@ -397,47 +498,54 @@
 
     <!-- 메인 콘텐츠 -->
     <div class="main-content">
-        <div class="section-title">최근 본 파일</div>
-        
-        <!-- PDF 기능 버튼들 -->
-        <div class="pdf-functions">
-            <button class="function-btn">
-                <div class="function-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
-                    </svg>
-                </div>
-                <span class="function-label">PDF 열기</span>
-            </button>
-            
-            <button class="function-btn">
-                <div class="function-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M7.5,8.5L10,11L7.5,13.5L8.92,14.92L12.84,11L8.92,7.08L7.5,8.5M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/>
-                    </svg>
-                </div>
-                <span class="function-label">PDF 방향</span>
-            </button>
-            
-            <button class="function-btn">
-                <div class="function-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M14,12L10,8V11H2V13H10V16M20,5V19A2,2 0 0,1 18,21H6A2,2 0 0,1 4,19V17H6V19H18V5H6V7H4V5A2,2 0 0,1 6,3H18A2,2 0 0,1 20,5Z"/>
-                    </svg>
-                </div>
-                <span class="function-label">PDF 변환</span>
-            </button>
+        <!-- PDF 기능 카드 -->
+        <div class="pdf-functions-card">
+            <div class="pdf-functions">
+                <button class="function-btn">
+                    <div class="function-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                        </svg>
+                    </div>
+                    <span class="function-label">PDF 열기</span>
+                </button>
+                
+                <button class="function-btn">
+                    <div class="function-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7.5,8.5L10,11L7.5,13.5L8.92,14.92L12.84,11L8.92,7.08L7.5,8.5M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/>
+                        </svg>
+                    </div>
+                    <span class="function-label">PDF 방향</span>
+                </button>
+                
+                <button class="function-btn">
+                    <div class="function-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M14,12L10,8V11H2V13H10V16M20,5V19A2,2 0 0,1 18,21H6A2,2 0 0,1 4,19V17H6V19H18V5H6V7H4V5A2,2 0 0,1 6,3H18A2,2 0 0,1 20,5Z"/>
+                        </svg>
+                    </div>
+                    <span class="function-label">PDF 변환</span>
+                </button>
+            </div>
         </div>
 
-        <!-- 파일 드롭 영역 -->
-        <div class="file-drop-area">
-            <div class="file-drop-icon">
-                <svg viewBox="0 0 24 24">
-                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
-                </svg>
-            </div>
-            <div class="file-drop-text">
-                파일 끌어와<br>여기에 놓기입니다.
+        <!-- 최근 본 파일 영역 -->
+        <div class="recent-files-section">
+            <div class="section-title">최근 본 파일</div>
+            
+            <div class="recent-files-content">
+                <!-- 파일 드롭 영역 -->
+                <div class="file-drop-area">
+                    <div class="file-drop-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                        </svg>
+                    </div>
+                    <div class="file-drop-text">
+                        파일 끌어와<br>여기에 놓기입니다.
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -514,11 +622,78 @@
         </div>
     </div>
 
+    <!-- PDF 변환 바텀시트 오버레이 -->
+    <div class="bottom-sheet-overlay" id="convertBottomSheetOverlay">
+        <div class="bottom-sheet" id="convertBottomSheet">
+            <div class="bottom-sheet-header">
+                <button class="bottom-sheet-close" id="convertBottomSheetClose">×</button>
+                <div class="bottom-sheet-handle"></div>
+                <h3 class="bottom-sheet-title">PDF 변환</h3>
+            </div>
+            <div class="bottom-sheet-content">
+                <div class="convert-option-list">
+                    <button class="convert-option-item" data-convert="image">
+                        <div class="convert-option-icon image">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M8.5,13.5L11,16.5L14.5,12L19,18H5M21,19V5C21,3.89 20.1,3 19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19Z"/>
+                            </svg>
+                        </div>
+                        <div class="convert-option-info">
+                            <div class="convert-option-title">이미지로 PDF로</div>
+                            <div class="convert-option-desc">JPG, PNG 등 이미지 파일을 PDF로 변환</div>
+                        </div>
+                    </button>
+                    
+                    <button class="convert-option-item" data-convert="excel">
+                        <div class="convert-option-icon excel">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                            </svg>
+                        </div>
+                        <div class="convert-option-info">
+                            <div class="convert-option-title">Excel을 PDF로</div>
+                            <div class="convert-option-desc">Excel 파일을 PDF로 변환</div>
+                        </div>
+                    </button>
+                    
+                    <button class="convert-option-item" data-convert="powerpoint">
+                        <div class="convert-option-icon powerpoint">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                            </svg>
+                        </div>
+                        <div class="convert-option-info">
+                            <div class="convert-option-title">PowerPoint를 PDF로</div>
+                            <div class="convert-option-desc">PowerPoint 파일을 PDF로 변환</div>
+                        </div>
+                    </button>
+                    
+                    <button class="convert-option-item" data-convert="word">
+                        <div class="convert-option-icon word">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                            </svg>
+                        </div>
+                        <div class="convert-option-info">
+                            <div class="convert-option-title">Word를 PDF로</div>
+                            <div class="convert-option-desc">Word 파일을 PDF로 변환</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // 바텀시트 관련 요소들
         const bottomSheetOverlay = document.getElementById('bottomSheetOverlay');
         const bottomSheet = document.getElementById('bottomSheet');
         const bottomSheetClose = document.getElementById('bottomSheetClose');
+
+        // PDF 변환 바텀시트 관련 요소들
+        const convertBottomSheetOverlay = document.getElementById('convertBottomSheetOverlay');
+        const convertBottomSheet = document.getElementById('convertBottomSheet');
+        const convertBottomSheetClose = document.getElementById('convertBottomSheetClose');
 
         // 바텀시트 열기 함수
         function openBottomSheet() {
@@ -534,12 +709,28 @@
             document.body.style.overflow = 'auto';
         }
 
+        // PDF 변환 바텀시트 열기 함수
+        function openConvertBottomSheet() {
+            convertBottomSheetOverlay.classList.add('show');
+            convertBottomSheet.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // PDF 변환 바텀시트 닫기 함수
+        function closeConvertBottomSheet() {
+            convertBottomSheetOverlay.classList.remove('show');
+            convertBottomSheet.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
         // 기능 버튼 클릭 이벤트
         document.querySelectorAll('.function-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const label = this.querySelector('.function-label').textContent;
                 if (label === 'PDF 열기') {
                     openBottomSheet();
+                } else if (label === 'PDF 변환') {
+                    openConvertBottomSheet();
                 } else {
                     alert(`${label} 기능이 선택되었습니다.`);
                 }
@@ -554,10 +745,23 @@
             }
         });
 
+        // PDF 변환 바텀시트 닫기 이벤트들
+        convertBottomSheetClose.addEventListener('click', closeConvertBottomSheet);
+        convertBottomSheetOverlay.addEventListener('click', function(e) {
+            if (e.target === convertBottomSheetOverlay) {
+                closeConvertBottomSheet();
+            }
+        });
+
         // ESC 키로 바텀시트 닫기
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && bottomSheetOverlay.classList.contains('show')) {
-                closeBottomSheet();
+            if (e.key === 'Escape') {
+                if (bottomSheetOverlay.classList.contains('show')) {
+                    closeBottomSheet();
+                }
+                if (convertBottomSheetOverlay.classList.contains('show')) {
+                    closeConvertBottomSheet();
+                }
             }
         });
 
@@ -584,6 +788,38 @@
                     if (e.target.files.length > 0) {
                         alert(`${label}에서 ${e.target.files.length}개의 파일이 선택되었습니다.`);
                         closeBottomSheet();
+                    }
+                };
+                
+                input.click();
+            });
+        });
+
+        // PDF 변환 옵션 클릭 이벤트
+        document.querySelectorAll('.convert-option-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const convertType = this.dataset.convert;
+                const title = this.querySelector('.convert-option-title').textContent;
+                
+                // 파일 선택 다이얼로그 열기
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.multiple = true;
+                
+                if (convertType === 'image') {
+                    input.accept = 'image/*';
+                } else if (convertType === 'excel') {
+                    input.accept = '.xlsx,.xls';
+                } else if (convertType === 'powerpoint') {
+                    input.accept = '.pptx,.ppt';
+                } else if (convertType === 'word') {
+                    input.accept = '.docx,.doc';
+                }
+                
+                input.onchange = (e) => {
+                    if (e.target.files.length > 0) {
+                        alert(`${title}: ${e.target.files.length}개의 파일이 선택되었습니다. 변환을 시작합니다.`);
+                        closeConvertBottomSheet();
                     }
                 };
                 
