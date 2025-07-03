@@ -1040,6 +1040,15 @@
             </div>
             <div class="file-action-bottom-sheet-content">
                 <div class="file-action-list">
+                    <button class="file-action-item" data-action="open">
+                        <div class="file-action-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                            </svg>
+                        </div>
+                        <span class="file-action-label">열기</span>
+                    </button>
+                    
                     <button class="file-action-item" data-action="share">
                         <div class="file-action-icon">
                             <svg viewBox="0 0 24 24">
@@ -1330,7 +1339,8 @@
 
         // 파일 열기
         function openFile(fileName) {
-            alert(`${fileName} 파일을 열었습니다.`);
+            // PDF 뷰어 페이지로 이동 (파일명을 파라미터로 전달)
+            window.location.href = `pdf_viewer_mobile.html?file=${encodeURIComponent(fileName)}`;
         }
 
         // 파일 추가 (플로팅 액션 버튼)
@@ -1355,7 +1365,8 @@
         function createFolder() {
             const folderName = folderNameInput.value.trim();
             if (folderName) {
-                alert(`"${folderName}" 폴더가 생성되었습니다.`);
+                // 폴더 생성 로직 (실제 구현 시 서버 API 호출)
+                console.log(`"${folderName}" 폴더가 생성되었습니다.`);
                 closeFolderBottomSheet();
             }
         }
@@ -1390,7 +1401,6 @@
         deleteConfirmDelete.addEventListener('click', function() {
             // 선택된 파일들 삭제
             const selectedCount = selectedFiles.size;
-            alert(`${selectedCount}개의 파일이 삭제되었습니다.`);
             
             // 선택된 파일들을 DOM에서 제거
             selectedFiles.forEach(fileId => {
@@ -1454,7 +1464,7 @@
                 input.onchange = (e) => {
                     const files = e.target.files;
                     if (files.length > 0) {
-                        alert(`${files.length}개의 ${label} 파일이 선택되었습니다.`);
+                        console.log(`${files.length}개의 ${label} 파일이 선택되었습니다.`);
                         closeBottomSheet();
                     }
                 };
@@ -1472,7 +1482,7 @@
                 if (createType === 'folder') {
                     openFolderBottomSheet();
                 } else {
-                    alert(`${label} 기능이 선택되었습니다.`);
+                    console.log(`${label} 기능이 선택되었습니다.`);
                     closeBottomSheet();
                 }
             });
@@ -1483,16 +1493,26 @@
             item.addEventListener('click', function() {
                 const action = this.dataset.action;
                 
-                if (action === 'delete') {
+                if (action === 'open') {
+                    // 선택된 파일 정보 가져오기
+                    const selectedFile = document.querySelector('.file-item.selected');
+                    if (selectedFile) {
+                        const fileName = selectedFile.querySelector('.file-title').textContent;
+                        
+                        // PDF 뷰어 페이지로 이동 (파일명을 파라미터로 전달)
+                        window.location.href = `pdf_viewer_mobile.html?file=${encodeURIComponent(fileName)}`;
+                    }
+                    closeFileActionBottomSheet();
+                } else if (action === 'delete') {
                     openDeleteConfirmPopup();
                 } else if (action === 'share') {
-                    alert('공유 기능이 선택되었습니다.');
+                    console.log('공유 기능이 선택되었습니다.');
                     closeFileActionBottomSheet();
                 } else if (action === 'rename') {
-                    alert('이름변경 기능이 선택되었습니다.');
+                    console.log('이름변경 기능이 선택되었습니다.');
                     closeFileActionBottomSheet();
                 } else if (action === 'copy') {
-                    alert('복제 기능이 선택되었습니다.');
+                    console.log('복제 기능이 선택되었습니다.');
                     closeFileActionBottomSheet();
                 }
             });

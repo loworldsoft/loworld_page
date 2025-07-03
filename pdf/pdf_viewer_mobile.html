@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF 뷰어 - 모바일</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #000;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* 상단 헤더 */
+        .header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            color: white;
+            padding: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .file-title {
+            font-size: 16px;
+            font-weight: 500;
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-btn {
+            background: none;
+            border: none;
+            color: white;
+            padding: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        /* PDF 뷰어 컨테이너 */
+        .pdf-viewer-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background-color: #2a2a2a;
+        }
+
+        /* 툴바 */
+        .toolbar {
+            background-color: #1a1a1a;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #333;
+        }
+
+        .toolbar-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .toolbar-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .toolbar-btn {
+            background: none;
+            border: none;
+            color: white;
+            padding: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.8;
+        }
+
+        .toolbar-btn:hover {
+            opacity: 1;
+        }
+
+        .toolbar-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        .zoom-level {
+            color: #ccc;
+            font-size: 12px;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        /* PDF 페이지 컨테이너 */
+        .pdf-pages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .pdf-page {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            max-width: 100%;
+            width: 100%;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pdf-page-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .pdf-page-number {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        /* 샘플 PDF 콘텐츠 */
+        .sample-pdf-content {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .sample-pdf-content h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .sample-pdf-content p {
+            font-size: 14px;
+            margin-bottom: 16px;
+            text-align: left;
+        }
+
+        .sample-pdf-content .highlight {
+            background-color: #ffeb3b;
+            padding: 2px 4px;
+        }
+
+        /* 페이지 네비게이션 */
+        .page-navigation {
+            background-color: #1a1a1a;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            border-top: 1px solid #333;
+        }
+
+        .page-nav-btn {
+            background: none;
+            border: none;
+            color: white;
+            padding: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.8;
+        }
+
+        .page-nav-btn:hover {
+            opacity: 1;
+        }
+
+        .page-nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .page-nav-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .page-info {
+            color: #ccc;
+            font-size: 14px;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        /* 하단 네비게이션 */
+        .bottom-navigation {
+            background-color: #1a1a1a;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-top: 1px solid #333;
+        }
+
+        .bottom-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+
+        .bottom-nav-item:hover,
+        .bottom-nav-item.active {
+            opacity: 1;
+        }
+
+        .bottom-nav-item svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        .bottom-nav-item .label {
+            font-size: 10px;
+            color: white;
+        }
+
+        /* 로딩 스피너 */
+        .loading-spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ccc;
+            display: none;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #333;
+            border-top: 4px solid #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 반응형 */
+        @media (max-width: 480px) {
+            .header {
+                padding: 10px 12px;
+            }
+            
+            .file-title {
+                max-width: 150px;
+            }
+            
+            .pdf-pages {
+                padding: 15px;
+            }
+            
+            .sample-pdf-content h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 상단 헤더 -->
+    <div class="header">
+        <div class="header-left">
+            <button class="back-btn" onclick="goBack()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                </svg>
+            </button>
+            <div class="file-title" id="fileTitle">파일 제목</div>
+        </div>
+        <div class="header-right">
+            <button class="header-btn" onclick="shareFile()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L15.96,7.19C16.5,7.69 17.21,8 18,8A3,3 0 0,0 21,5A3,3 0 0,0 18,2A3,3 0 0,0 15,5C15,5.24 15.04,5.47 15.09,5.7L8.04,9.81C7.5,9.31 6.79,9 6,9A3,3 0 0,0 3,12A3,3 0 0,0 6,15C6.79,15 7.5,14.69 8.04,14.19L15.16,18.34C15.11,18.55 15.08,18.77 15.08,19C15.08,20.61 16.39,21.91 18,21.91C19.61,21.91 20.92,20.61 20.92,19A2.92,2.92 0 0,0 18,16.08Z"/>
+                </svg>
+            </button>
+            <button class="header-btn" onclick="showMoreOptions()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- PDF 뷰어 컨테이너 -->
+    <div class="pdf-viewer-container">
+        <!-- 툴바 -->
+        <div class="toolbar">
+            <div class="toolbar-left">
+                <button class="toolbar-btn" onclick="zoomOut()">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.5,14H14.71L14.43,13.73C15.41,12.59 16,11.11 16,9.5A6.5,6.5 0 0,0 9.5,3A6.5,6.5 0 0,0 3,9.5A6.5,6.5 0 0,0 9.5,16C11.11,16 12.59,15.41 13.73,14.43L14,14.71V15.5L19,20.49L20.49,19L15.5,14M9.5,14C7.01,14 5,11.99 5,9.5C5,7.01 7.01,5 9.5,5C11.99,5 14,7.01 14,9.5C14,11.99 11.99,14 9.5,14M7,9H12V10H7V9Z"/>
+                    </svg>
+                </button>
+                <span class="zoom-level" id="zoomLevel">100%</span>
+                <button class="toolbar-btn" onclick="zoomIn()">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.5,14H14.71L14.43,13.73C15.41,12.59 16,11.11 16,9.5A6.5,6.5 0 0,0 9.5,3A6.5,6.5 0 0,0 3,9.5A6.5,6.5 0 0,0 9.5,16C11.11,16 12.59,15.41 13.73,14.43L14,14.71V15.5L19,20.49L20.49,19L15.5,14M9.5,14C7.01,14 5,11.99 5,9.5C5,7.01 7.01,5 9.5,5C11.99,5 14,7.01 14,9.5C14,11.99 11.99,14 9.5,14M10,7H9V9H7V10H9V12H10V10H12V9H10V7Z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="toolbar-right">
+                <button class="toolbar-btn" onclick="fitToWidth()">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9,9V15H15V9H9M11,11H13V13H11V11M2,3H6V5H4V7H2V3M2,17V21H6V19H4V17H2M22,3V7H20V5H18V3H22M22,17H20V19H18V21H22V17M8,5H16V3H8V5M8,19V21H16V19H8Z"/>
+                    </svg>
+                </button>
+                <button class="toolbar-btn" onclick="rotateDocument()">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4M12,18A6,6 0 0,1 6,12H4A8,8 0 0,0 12,20V18M20,12A8,8 0 0,1 12,20V22A10,10 0 0,0 22,12H20M18,12A6,6 0 0,0 12,6V8A4,4 0 0,1 16,12H18Z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- PDF 페이지들 -->
+        <div class="pdf-pages" id="pdfPages">
+            <!-- 로딩 스피너 -->
+            <div class="loading-spinner" id="loadingSpinner">
+                <div class="spinner"></div>
+            </div>
+
+            <!-- 샘플 PDF 페이지 1 -->
+            <div class="pdf-page">
+                <div class="pdf-page-content">
+                    <div class="sample-pdf-content">
+                        <h1>문서 제목</h1>
+                        <p>이것은 PDF 문서의 <span class="highlight">첫 번째 페이지</span>입니다.</p>
+                        <p>실제 PDF 파일을 열면 이 위치에 PDF 내용이 표시됩니다.</p>
+                        <p>PDF.js 라이브러리를 통해 실제 PDF 파일을 렌더링할 수 있습니다.</p>
+                        <p>현재는 데모 화면으로 구성되어 있습니다.</p>
+                    </div>
+                </div>
+                <div class="pdf-page-number">1</div>
+            </div>
+
+            <!-- 샘플 PDF 페이지 2 -->
+            <div class="pdf-page">
+                <div class="pdf-page-content">
+                    <div class="sample-pdf-content">
+                        <h1>두 번째 페이지</h1>
+                        <p>이것은 PDF 문서의 두 번째 페이지입니다.</p>
+                        <p>실제 구현에서는 PDF.js를 사용하여 PDF 파일을 로드하고 렌더링합니다.</p>
+                        <p>각 페이지는 Canvas 요소로 렌더링되며, 확대/축소 기능을 제공합니다.</p>
+                        <p>현재 화면은 <span class="highlight">모바일 PDF 뷰어</span>의 UI 데모입니다.</p>
+                    </div>
+                </div>
+                <div class="pdf-page-number">2</div>
+            </div>
+
+            <!-- 샘플 PDF 페이지 3 -->
+            <div class="pdf-page">
+                <div class="pdf-page-content">
+                    <div class="sample-pdf-content">
+                        <h1>세 번째 페이지</h1>
+                        <p>마지막 페이지입니다.</p>
+                        <p>PDF 뷰어는 다음과 같은 기능을 제공합니다:</p>
+                        <p>• 페이지 네비게이션</p>
+                        <p>• 확대/축소</p>
+                        <p>• 문서 회전</p>
+                        <p>• 페이지 너비에 맞추기</p>
+                        <p>• 공유 기능</p>
+                    </div>
+                </div>
+                <div class="pdf-page-number">3</div>
+            </div>
+        </div>
+
+        <!-- 페이지 네비게이션 -->
+        <div class="page-navigation">
+            <button class="page-nav-btn" onclick="previousPage()" id="prevBtn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                </svg>
+            </button>
+            <div class="page-info">
+                <span id="currentPage">1</span> / <span id="totalPages">3</span>
+            </div>
+            <button class="page-nav-btn" onclick="nextPage()" id="nextBtn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 11v2h12.17l-5.59 5.59L12 20l8-8-8-8-1.41 1.41L16.17 11H4z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- 하단 네비게이션 -->
+    <div class="bottom-navigation">
+        <div class="bottom-nav-item active">
+            <svg viewBox="0 0 24 24">
+                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+            </svg>
+            <span class="label">문서</span>
+        </div>
+        <div class="bottom-nav-item" onclick="showThumbnails()">
+            <svg viewBox="0 0 24 24">
+                <path d="M5,3A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3H5M5,5H19V19H5V5M6,6V10H10V6H6M11,6V10H15V6H11M16,6V10H20V6H16M6,11V15H10V11H6M11,11V15H15V11H11M16,11V15H20V11H16M6,16V20H10V16H6M11,16V20H15V16H11M16,16V20H20V16H16Z"/>
+            </svg>
+            <span class="label">썸네일</span>
+        </div>
+        <div class="bottom-nav-item" onclick="showBookmarks()">
+            <svg viewBox="0 0 24 24">
+                <path d="M17,3H7A2,2 0 0,0 5,5V21L12,18L19,21V5C19,3.89 18.1,3 17,3Z"/>
+            </svg>
+            <span class="label">북마크</span>
+        </div>
+        <div class="bottom-nav-item" onclick="showAnnotations()">
+            <svg viewBox="0 0 24 24">
+                <path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z"/>
+            </svg>
+            <span class="label">주석</span>
+        </div>
+    </div>
+
+    <script>
+        // 전역 변수
+        let currentZoom = 100;
+        let currentPageIndex = 0;
+        const totalPagesCount = 3;
+
+        // URL 파라미터에서 파일명 가져오기
+        function getFileName() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('file') || '문서';
+        }
+
+        // 페이지 로드 시 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            const fileName = getFileName();
+            document.getElementById('fileTitle').textContent = fileName;
+            
+            // 초기 페이지 설정
+            updatePageNavigation();
+            
+            // 첫 번째 페이지로 스크롤
+            scrollToPage(0);
+        });
+
+        // 뒤로 가기
+        function goBack() {
+            window.history.back();
+        }
+
+        // 파일 공유
+        function shareFile() {
+            const fileName = getFileName();
+            if (navigator.share) {
+                navigator.share({
+                    title: fileName,
+                    text: `${fileName} 파일을 공유합니다.`,
+                    url: window.location.href
+                });
+            } else {
+                // 웹 공유 API를 지원하지 않는 경우
+                alert('공유 기능을 사용할 수 없습니다.');
+            }
+        }
+
+        // 더 보기 옵션
+        function showMoreOptions() {
+            alert('더 보기 옵션');
+        }
+
+        // 확대
+        function zoomIn() {
+            if (currentZoom < 300) {
+                currentZoom += 25;
+                updateZoom();
+            }
+        }
+
+        // 축소
+        function zoomOut() {
+            if (currentZoom > 50) {
+                currentZoom -= 25;
+                updateZoom();
+            }
+        }
+
+        // 페이지 너비에 맞추기
+        function fitToWidth() {
+            currentZoom = 100;
+            updateZoom();
+        }
+
+        // 문서 회전
+        function rotateDocument() {
+            const pages = document.querySelectorAll('.pdf-page');
+            pages.forEach(page => {
+                const currentTransform = page.style.transform || '';
+                const match = currentTransform.match(/rotate\((-?\d+)deg\)/);
+                const currentRotation = match ? parseInt(match[1]) : 0;
+                const newRotation = (currentRotation + 90) % 360;
+                page.style.transform = `rotate(${newRotation}deg)`;
+            });
+        }
+
+        // 줌 레벨 업데이트
+        function updateZoom() {
+            document.getElementById('zoomLevel').textContent = currentZoom + '%';
+            const pages = document.querySelectorAll('.pdf-page');
+            pages.forEach(page => {
+                page.style.transform = `scale(${currentZoom / 100})`;
+            });
+        }
+
+        // 이전 페이지
+        function previousPage() {
+            if (currentPageIndex > 0) {
+                currentPageIndex--;
+                scrollToPage(currentPageIndex);
+                updatePageNavigation();
+            }
+        }
+
+        // 다음 페이지
+        function nextPage() {
+            if (currentPageIndex < totalPagesCount - 1) {
+                currentPageIndex++;
+                scrollToPage(currentPageIndex);
+                updatePageNavigation();
+            }
+        }
+
+        // 특정 페이지로 스크롤
+        function scrollToPage(pageIndex) {
+            const pages = document.querySelectorAll('.pdf-page');
+            if (pages[pageIndex]) {
+                pages[pageIndex].scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // 페이지 네비게이션 업데이트
+        function updatePageNavigation() {
+            document.getElementById('currentPage').textContent = currentPageIndex + 1;
+            document.getElementById('totalPages').textContent = totalPagesCount;
+            
+            // 이전/다음 버튼 활성화/비활성화
+            document.getElementById('prevBtn').disabled = currentPageIndex === 0;
+            document.getElementById('nextBtn').disabled = currentPageIndex === totalPagesCount - 1;
+        }
+
+        // 썸네일 보기
+        function showThumbnails() {
+            alert('썸네일 보기 기능');
+        }
+
+        // 북마크 보기
+        function showBookmarks() {
+            alert('북마크 보기 기능');
+        }
+
+        // 주석 보기
+        function showAnnotations() {
+            alert('주석 보기 기능');
+        }
+
+        // 스크롤 이벤트로 현재 페이지 추적
+        document.querySelector('.pdf-pages').addEventListener('scroll', function() {
+            const pages = document.querySelectorAll('.pdf-page');
+            const containerRect = this.getBoundingClientRect();
+            const centerY = containerRect.top + containerRect.height / 2;
+            
+            pages.forEach((page, index) => {
+                const pageRect = page.getBoundingClientRect();
+                if (pageRect.top <= centerY && pageRect.bottom >= centerY) {
+                    if (currentPageIndex !== index) {
+                        currentPageIndex = index;
+                        updatePageNavigation();
+                    }
+                }
+            });
+        });
+
+        // 키보드 단축키
+        document.addEventListener('keydown', function(e) {
+            switch(e.key) {
+                case 'ArrowLeft':
+                    previousPage();
+                    break;
+                case 'ArrowRight':
+                    nextPage();
+                    break;
+                case 'Escape':
+                    goBack();
+                    break;
+                case '+':
+                case '=':
+                    zoomIn();
+                    break;
+                case '-':
+                    zoomOut();
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f5f5;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 상태바 */
+        .status-bar {
+            background-color: transparent;
+            padding: 8px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 12px;
+            color: #666;
+            gap: 10px;
+        }
+
+        .status-bar-dots {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #999;
+        }
+
+        .status-dot.square {
+            border-radius: 0;
+        }
+
+        .status-dot.circle {
+            border-radius: 50%;
+        }
+
+        .status-dot.triangle {
+            width: 0;
+            height: 0;
+            background-color: transparent;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            border-top: 6px solid #999;
+        }
+
+        /* 헤더 */
+        .header {
+            background-color: transparent;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: none;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .back-btn {
+            width: 24px;
+            height: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: #666;
+        }
+
+        .header-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .icon-btn {
+            width: 24px;
+            height: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: #666;
+        }
+
+        /* PDF 뷰어 영역 */
+        .pdf-viewer {
+            flex: 1;
+            background-color: white;
+            margin: 0 10px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .pdf-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            position: relative;
+            padding: 20px;
+        }
+
+        .pdf-page {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* 툴바 */
+        .toolbar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 8px;
+        }
+
+        .toolbar-btn {
+            width: 36px;
+            height: 36px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.2s;
+        }
+
+        .toolbar-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .toolbar-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        /* 페이지 네비게이션 */
+        .page-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .page-nav-btn {
+            width: 28px;
+            height: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.2s;
+        }
+
+        .page-nav-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .page-nav-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+
+        .page-info {
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        /* 하단 네비게이션 */
+        .bottom-nav {
+            background-color: white;
+            padding: 8px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+            border-radius: 16px 16px 0 0;
+            margin-top: 10px;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 3px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .nav-item.active {
+            color: #ff5757;
+        }
+
+        .nav-item svg {
+            width: 18px;
+            height: 18px;
+            fill: #999;
+            margin-bottom: 2px;
+        }
+
+        .nav-item.active svg {
+            fill: #ff5757;
+        }
+
+        .nav-item span {
+            font-size: 10px;
+            color: #999;
+        }
+
+        .nav-item.active span {
+            color: #ff5757;
+        }
+    </style>
+</head>
+<body>
+    <!-- 상태바 -->
+    <div class="status-bar">
+        <div class="status-bar-dots">
+            <div class="status-dot square"></div>
+            <div class="status-dot circle"></div>
+            <div class="status-dot triangle"></div>
+        </div>
+    </div>
+
+    <!-- 헤더 -->
+    <div class="header">
+        <div class="header-left">
+            <button class="back-btn" onclick="goBack()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"/>
+                </svg>
+            </button>
+            <div class="header-title" id="pdfTitle">열린파일</div>
+        </div>
+        <div class="header-right">
+            <button class="icon-btn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- PDF 뷰어 -->
+    <div class="pdf-viewer">
+        <div class="pdf-content">
+            <!-- PDF 페이지 예시 이미지 -->
+            <img src="https://via.placeholder.com/300x400/ffffff/666666?text=PDF+페이지" 
+                 alt="PDF 페이지" class="pdf-page" />
+            
+            <!-- 툴바 -->
+            <div class="toolbar">
+                <button class="toolbar-btn" title="편집">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z"/>
+                    </svg>
+                </button>
+                <button class="toolbar-btn" title="복사">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"/>
+                    </svg>
+                </button>
+                <button class="toolbar-btn" title="폴더">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z"/>
+                    </svg>
+                </button>
+                <button class="toolbar-btn" title="붓">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20.71,4.63L19.37,3.29C19,2.9 18.35,2.9 17.96,3.29L9,12.25L11.75,15L20.71,6.04C21.1,5.65 21.1,5 20.71,4.63M7,14A3,3 0 0,0 4,17C4,18.31 2.84,19 2,19C2.92,20.22 4.5,21 6,21A4,4 0 0,0 10,17A3,3 0 0,0 7,14Z"/>
+                    </svg>
+                </button>
+                <button class="toolbar-btn" title="찾기">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+                    </svg>
+                </button>
+                <button class="toolbar-btn" title="기타">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M16,12A2,2 0 0,1 18,10A2,2 0 0,1 20,12A2,2 0 0,1 18,14A2,2 0 0,1 16,12M10,12A2,2 0 0,1 12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12M4,12A2,2 0 0,1 6,10A2,2 0 0,1 8,12A2,2 0 0,1 6,14A2,2 0 0,1 4,12Z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- 페이지 네비게이션 -->
+            <div class="page-nav">
+                <button class="page-nav-btn" onclick="prevPage()">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"/>
+                    </svg>
+                </button>
+                <div class="page-info">
+                    <span id="currentPage">1</span> / <span id="totalPages">14</span>
+                </div>
+                <button class="page-nav-btn" onclick="nextPage()">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 하단 네비게이션 -->
+    <div class="bottom-nav">
+        <a href="mobile_design.html" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/>
+            </svg>
+            <span>홈</span>
+        </a>
+        
+        <a href="myfiles.html" class="nav-item active">
+            <svg viewBox="0 0 24 24">
+                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+            </svg>
+            <span>파일</span>
+        </a>
+        
+        <button class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M20.71,4.63L19.37,3.29C19,2.9 18.35,2.9 17.96,3.29L9,12.25L11.75,15L20.71,6.04C21.1,5.65 21.1,5 20.71,4.63M7,14A3,3 0 0,0 4,17C4,18.31 2.84,19 2,19C2.92,20.22 4.5,21 6,21A4,4 0 0,0 10,17A3,3 0 0,0 7,14Z"/>
+            </svg>
+            <span>도구</span>
+        </button>
+        
+        <button class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/>
+            </svg>
+            <span>설정</span>
+        </button>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 14;
+
+        // URL에서 파일명 가져오기
+        function getFileNameFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('file') || '열린파일';
+        }
+
+        // 페이지 초기화
+        function initPage() {
+            const fileName = getFileNameFromUrl();
+            document.getElementById('pdfTitle').textContent = fileName;
+            updatePageInfo();
+        }
+
+        // 페이지 정보 업데이트
+        function updatePageInfo() {
+            document.getElementById('currentPage').textContent = currentPage;
+            document.getElementById('totalPages').textContent = totalPages;
+        }
+
+        // 이전 페이지
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                updatePageInfo();
+            }
+        }
+
+        // 다음 페이지
+        function nextPage() {
+            if (currentPage < totalPages) {
+                currentPage++;
+                updatePageInfo();
+            }
+        }
+
+        // 뒤로가기
+        function goBack() {
+            window.history.back();
+        }
+
+        // 페이지 로드 시 초기화
+        document.addEventListener('DOMContentLoaded', initPage);
+    </script>
+</body>
+</html>
