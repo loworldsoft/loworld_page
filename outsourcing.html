@@ -18,6 +18,18 @@
             line-height: 1.6;
         }
 
+        /* Scroll Progress Indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            z-index: 1000;
+            transition: width 0.25s ease-out;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -763,5 +775,18 @@
             </div>
         </section>
     </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator"></div>
+
+    <script>
+        // Scroll Progress Indicator
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset;
+            const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercentage = (scrollTop / documentHeight) * 100;
+            document.querySelector('.scroll-indicator').style.width = scrollPercentage + '%';
+        });
+    </script>
 </body>
 </html>
