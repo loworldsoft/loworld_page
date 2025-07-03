@@ -1118,6 +1118,7 @@
         // 선택 모드 관련 변수
         let isSelectionMode = false;
         let selectedFiles = new Set();
+        let pressTimer = null;
 
         // 바텀시트 열기 함수
         function openBottomSheet() {
@@ -1229,6 +1230,11 @@
             }
 
             // 선택 모드에서는 파일 선택/해제
+            toggleFileSelection(fileElement);
+        }
+
+        // 파일 선택/해제 토글
+        function toggleFileSelection(fileElement) {
             const fileId = fileElement.getAttribute('data-file');
             const checkbox = fileElement.querySelector('.file-checkbox');
             const checkIcon = checkbox.querySelector('svg');
@@ -1255,6 +1261,66 @@
             } else {
                 closeFileActionBottomSheet();
             }
+        }
+
+        // 파일 아이템에 터치 이벤트 추가
+        function addFileEventListeners() {
+            document.querySelectorAll('.file-item').forEach(fileItem => {
+                // 터치 시작
+                fileItem.addEventListener('touchstart', function(e) {
+                    if (!isSelectionMode) {
+                        pressTimer = setTimeout(() => {
+                            // 길게 누르면 선택 모드 활성화
+                            if (!isSelectionMode) {
+                                toggleSelectionMode();
+                                toggleFileSelection(this);
+                            }
+                        }, 500); // 500ms 후 선택 모드 활성화
+                    }
+                });
+
+                // 터치 종료
+                fileItem.addEventListener('touchend', function(e) {
+                    if (pressTimer) {
+                        clearTimeout(pressTimer);
+                        pressTimer = null;
+                    }
+                });
+
+                // 터치 취소
+                fileItem.addEventListener('touchcancel', function(e) {
+                    if (pressTimer) {
+                        clearTimeout(pressTimer);
+                        pressTimer = null;
+                    }
+                });
+
+                // 마우스 이벤트 (데스크톱)
+                fileItem.addEventListener('mousedown', function(e) {
+                    if (!isSelectionMode) {
+                        pressTimer = setTimeout(() => {
+                            if (!isSelectionMode) {
+                                toggleSelectionMode();
+                                toggleFileSelection(this);
+                            }
+                        }, 500);
+                    }
+                });
+
+                fileItem.addEventListener('mouseup', function(e) {
+                    if (pressTimer) {
+                        clearTimeout(pressTimer);
+                        pressTimer = null;
+                    }
+                });
+
+                fileItem.addEventListener('mouseleave', function(e) {
+                    if (pressTimer) {
+                        clearTimeout(pressTimer);
+                        pressTimer = null;
+                    }
+                });
+            });
         }
 
         // 뒤로가기
@@ -1431,6 +1497,18 @@
                 }
             });
         });
+
+        // 페이지 로드 시 파일 이벤트 리스너 추가
+        document.addEventListener('DOMContentLoaded', function() {
+            addFileEventListeners();
+        });
+
+        // 페이지가 이미 로드된 경우를 위해 즉시 실행
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', addFileEventListeners);
+        } else {
+            addFileEventListeners();
+        }
     </script>
 </body>
 </html>
