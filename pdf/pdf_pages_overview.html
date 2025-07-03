@@ -21,18 +21,16 @@
 
         /* 상단 헤더 */
         .header {
-            background-color: #f8f9fa;
-            padding: 12px 16px;
+            background-color: #f5f5f5;
+            padding: 16px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid #e9ecef;
         }
 
         .header-left {
             display: flex;
             align-items: center;
-            gap: 12px;
         }
 
         .back-btn {
@@ -44,6 +42,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.2s;
+        }
+
+        .back-btn:hover {
+            background-color: rgba(0, 0, 0, 0.1);
         }
 
         .back-btn svg {
@@ -52,16 +56,9 @@
             fill: #333;
         }
 
-        .header-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: #333;
-        }
-
         .header-right {
             display: flex;
             align-items: center;
-            gap: 8px;
         }
 
         .header-btn {
@@ -73,17 +70,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 4px;
+            border-radius: 50%;
             transition: background-color 0.2s;
         }
 
         .header-btn:hover {
-            background-color: #e9ecef;
+            background-color: rgba(0, 0, 0, 0.1);
         }
 
         .header-btn svg {
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             fill: #333;
         }
 
@@ -158,108 +155,6 @@
             color: #666;
         }
 
-        /* 선택 체크박스 */
-        .selection-checkbox {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            width: 20px;
-            height: 20px;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.2s;
-        }
-
-        .page-item:hover .selection-checkbox,
-        .page-item.selected .selection-checkbox {
-            opacity: 1;
-        }
-
-        .page-item.selected .selection-checkbox {
-            background: #007AFF;
-        }
-
-        .selection-checkbox svg {
-            width: 12px;
-            height: 12px;
-            fill: white;
-        }
-
-        /* 하단 액션바 */
-        .action-bar {
-            background: white;
-            padding: 12px 16px;
-            border-top: 1px solid #e9ecef;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .action-left {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .select-all-btn {
-            background: none;
-            border: none;
-            color: #007AFF;
-            font-size: 14px;
-            cursor: pointer;
-            padding: 4px 8px;
-            border-radius: 4px;
-            transition: background-color 0.2s;
-        }
-
-        .select-all-btn:hover {
-            background-color: #f0f8ff;
-        }
-
-        .selected-count {
-            font-size: 14px;
-            color: #666;
-        }
-
-        .action-right {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .action-btn {
-            background: #007AFF;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .action-btn:hover {
-            background: #0056b3;
-        }
-
-        .action-btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-        }
-
-        .action-btn.secondary {
-            background: #6c757d;
-        }
-
-        .action-btn.secondary:hover {
-            background: #5a6268;
-        }
-
         /* 반응형 */
         @media (max-width: 768px) {
             .pages-grid {
@@ -289,17 +184,6 @@
             .main-content {
                 padding: 8px;
             }
-
-            .action-bar {
-                flex-direction: column;
-                gap: 8px;
-                align-items: stretch;
-            }
-
-            .action-left,
-            .action-right {
-                justify-content: center;
-            }
         }
     </style>
 </head>
@@ -312,17 +196,11 @@
                     <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
                 </svg>
             </button>
-            <div class="header-title" id="headerTitle">PDF 페이지 전체보기</div>
         </div>
         <div class="header-right">
-            <button class="header-btn" onclick="showViewOptions()">
+            <button class="header-btn" onclick="editPages()">
                 <svg viewBox="0 0 24 24">
-                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                </svg>
-            </button>
-            <button class="header-btn" onclick="showMoreOptions()">
-                <svg viewBox="0 0 24 24">
-                    <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                    <path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z"/>
                 </svg>
             </button>
         </div>
@@ -335,29 +213,8 @@
         </div>
     </div>
 
-    <!-- 하단 액션바 -->
-    <div class="action-bar">
-        <div class="action-left">
-            <button class="select-all-btn" id="selectAllBtn" onclick="toggleSelectAll()">
-                전체선택
-            </button>
-            <div class="selected-count" id="selectedCount">
-                0개 선택됨
-            </div>
-        </div>
-        <div class="action-right">
-            <button class="action-btn secondary" onclick="deleteSelected()" id="deleteBtn" disabled>
-                삭제
-            </button>
-            <button class="action-btn" onclick="openSelected()" id="openBtn" disabled>
-                열기
-            </button>
-        </div>
-    </div>
-
     <script>
         // 전역 변수
-        let selectedPages = new Set();
         let totalPages = 13; // 예시 페이지 수
         let fileName = '';
 
@@ -370,10 +227,7 @@
         // 페이지 로드 시 초기화
         function initializePage() {
             fileName = getFileNameFromURL();
-            document.getElementById('headerTitle').textContent = `${fileName} - 페이지 전체보기`;
-            
             generatePageGrid();
-            updateActionBar();
         }
 
         // 페이지 그리드 생성
@@ -385,15 +239,10 @@
                 const pageItem = document.createElement('div');
                 pageItem.className = 'page-item';
                 pageItem.setAttribute('data-page', i);
-                pageItem.onclick = () => togglePageSelection(i);
+                pageItem.onclick = () => openPage(i);
 
                 pageItem.innerHTML = `
                     <div class="page-preview">
-                        <div class="selection-checkbox">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-                            </svg>
-                        </div>
                         <!-- 실제 구현에서는 PDF 썸네일 이미지가 들어갑니다 -->
                         <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold;">
                             ${i}
@@ -409,114 +258,22 @@
             }
         }
 
-        // 페이지 선택 토글
-        function togglePageSelection(pageNumber) {
-            const pageItem = document.querySelector(`[data-page="${pageNumber}"]`);
-            
-            if (selectedPages.has(pageNumber)) {
-                selectedPages.delete(pageNumber);
-                pageItem.classList.remove('selected');
-            } else {
-                selectedPages.add(pageNumber);
-                pageItem.classList.add('selected');
-            }
-
-            updateActionBar();
-        }
-
-        // 전체 선택 토글
-        function toggleSelectAll() {
-            const selectAllBtn = document.getElementById('selectAllBtn');
-            const allPages = document.querySelectorAll('.page-item');
-
-            if (selectedPages.size === totalPages) {
-                // 전체 선택 해제
-                selectedPages.clear();
-                allPages.forEach(page => page.classList.remove('selected'));
-                selectAllBtn.textContent = '전체선택';
-            } else {
-                // 전체 선택
-                selectedPages.clear();
-                for (let i = 1; i <= totalPages; i++) {
-                    selectedPages.add(i);
-                }
-                allPages.forEach(page => page.classList.add('selected'));
-                selectAllBtn.textContent = '선택해제';
-            }
-
-            updateActionBar();
-        }
-
-        // 액션바 업데이트
-        function updateActionBar() {
-            const selectedCount = document.getElementById('selectedCount');
-            const deleteBtn = document.getElementById('deleteBtn');
-            const openBtn = document.getElementById('openBtn');
-            const selectAllBtn = document.getElementById('selectAllBtn');
-
-            selectedCount.textContent = `${selectedPages.size}개 선택됨`;
-            
-            const hasSelection = selectedPages.size > 0;
-            deleteBtn.disabled = !hasSelection;
-            openBtn.disabled = !hasSelection;
-
-            selectAllBtn.textContent = selectedPages.size === totalPages ? '선택해제' : '전체선택';
-        }
-
-        // 선택된 페이지 열기
-        function openSelected() {
-            if (selectedPages.size === 0) return;
-
-            const firstPage = Math.min(...selectedPages);
-            const pdfViewerUrl = `pdf_viewer_mobile.html?file=${encodeURIComponent(fileName)}&page=${firstPage}`;
+        // 페이지 열기
+        function openPage(pageNumber) {
+            const pdfViewerUrl = `pdf_viewer_mobile.html?file=${encodeURIComponent(fileName)}&page=${pageNumber}`;
             window.location.href = pdfViewerUrl;
-        }
-
-        // 선택된 페이지 삭제
-        function deleteSelected() {
-            if (selectedPages.size === 0) return;
-
-            const confirmDelete = confirm(`선택된 ${selectedPages.size}개 페이지를 삭제하시겠습니까?`);
-            if (confirmDelete) {
-                console.log('선택된 페이지 삭제:', Array.from(selectedPages));
-                // 실제 구현에서는 여기서 페이지 삭제 로직을 처리합니다
-                selectedPages.clear();
-                updateActionBar();
-            }
         }
 
         // 뒤로가기
         function goBack() {
-            window.history.back();
+            const fileName = getFileNameFromURL();
+            window.location.href = `pdf_viewer_mobile.html?file=${encodeURIComponent(fileName)}`;
         }
 
-        // 보기 옵션
-        function showViewOptions() {
-            console.log('보기 옵션 표시');
+        // 페이지 편집
+        function editPages() {
+            console.log('페이지 편집 모드');
         }
-
-        // 더 보기 옵션
-        function showMoreOptions() {
-            console.log('더 보기 옵션 표시');
-        }
-
-        // 키보드 이벤트 처리
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                if (selectedPages.size > 0) {
-                    selectedPages.clear();
-                    document.querySelectorAll('.page-item').forEach(page => {
-                        page.classList.remove('selected');
-                    });
-                    updateActionBar();
-                } else {
-                    goBack();
-                }
-            } else if (e.key === 'a' && (e.ctrlKey || e.metaKey)) {
-                e.preventDefault();
-                toggleSelectAll();
-            }
-        });
 
         // 페이지 로드 시 초기화
         document.addEventListener('DOMContentLoaded', function() {
