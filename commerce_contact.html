@@ -983,15 +983,13 @@
                 const category = card.querySelector('.category-name').textContent;
                 const company = card.querySelector('.company-name').textContent;
                 const status = card.querySelector('.status-tag').textContent;
-                const phone = card.querySelector('.contact-item .contact-value').textContent;
-                const email = card.querySelectorAll('.contact-item .contact-value')[1]?.textContent || '';
-                const address = card.querySelectorAll('.contact-item .contact-value')[2]?.textContent || '';
+                const email = card.querySelector('.contact-item .contact-value')?.textContent || '';
+                const address = card.querySelectorAll('.contact-item .contact-value')[1]?.textContent || '';
                 
                 contacts.push({
                     카테고리: category,
                     회사명: company,
                     상태: status,
-                    전화번호: phone,
                     이메일: email,
                     주소: address
                 });
@@ -999,7 +997,7 @@
             
             // CSV 형태로 다운로드
             const csvContent = "data:text/csv;charset=utf-8," 
-                + "카테고리,회사명,상태,전화번호,이메일,주소\n"
+                + "카테고리,회사명,상태,이메일,주소\n"
                 + contacts.map(row => Object.values(row).join(",")).join("\n");
             
             const encodedUri = encodeURI(csvContent);
