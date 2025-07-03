@@ -34,13 +34,30 @@
         .status-bar-dots {
             display: flex;
             gap: 4px;
+            align-items: center;
         }
 
         .status-dot {
-            width: 4px;
-            height: 4px;
+            width: 6px;
+            height: 6px;
             background-color: #999;
+        }
+
+        .status-dot.square {
+            border-radius: 0;
+        }
+
+        .status-dot.circle {
             border-radius: 50%;
+        }
+
+        .status-dot.triangle {
+            width: 0;
+            height: 0;
+            background-color: transparent;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            border-top: 6px solid #999;
         }
 
         /* 상단 헤더 */
@@ -475,9 +492,9 @@
     <!-- 상태바 -->
     <div class="status-bar">
         <div class="status-bar-dots">
-            <div class="status-dot"></div>
-            <div class="status-dot"></div>
-            <div class="status-dot"></div>
+            <div class="status-dot square"></div>
+            <div class="status-dot circle"></div>
+            <div class="status-dot triangle"></div>
         </div>
     </div>
 
@@ -570,7 +587,7 @@
         
         <button class="nav-item">
             <svg viewBox="0 0 24 24">
-                <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                <path d="M20.71,4.63L19.37,3.29C19,2.9 18.35,2.9 17.96,3.29L9,12.25L11.75,15L20.71,6.04C21.1,5.65 21.1,5 20.71,4.63M7,14A3,3 0 0,0 4,17C4,18.31 2.84,19 2,19C2.92,20.22 4.5,21 6,21A4,4 0 0,0 10,17A3,3 0 0,0 7,14Z"/>
             </svg>
             <span>도구</span>
         </button>
