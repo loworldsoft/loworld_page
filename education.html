@@ -2,7 +2,6 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loworld AI 교육 서비스</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -22,23 +21,42 @@
       }
     </script>
 </head>
-<body class="bg-primary-dark text-gray-100" style="font-family: 'Noto Sans KR', sans-serif;">
+<body class="bg-primary-dark text-gray-100">
+  <div class="container mx-auto">
     <!-- Header & Navigation -->
     <header class="bg-gradient-to-r from-[#23232a]/90 via-[#18181b]/90 to-[#23232a]/90 sticky top-0 z-50 shadow-lg border-b border-zinc-800">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <h1 class="text-xl font-black text-accent-light tracking-widest">Loworld AI</h1>
-            <div class="hidden md:flex flex-wrap gap-x-6 gap-y-2 items-center max-w-3xl">
-                <a href="loworld_agent.html" class="text-gray-300 hover:text-accent-dark transition-colors">에이전트</a>
-                <a href="ai_content.html" class="text-gray-300 hover:text-accent-dark transition-colors">콘텐츠</a>
-                <a href="consulting.html" class="text-gray-300 hover:text-accent-dark transition-colors">컨설팅</a>
-                <a href="commerce.html" class="text-gray-300 hover:text-accent-dark transition-colors">커머스</a>
-                <a href="business_chatbot.html" class="text-gray-300 hover:text-accent-dark transition-colors">챗봇</a>
-                <a href="education.html" class="text-accent-dark font-bold underline underline-offset-4 decoration-blue-500">교육</a>
-            </div>
+            <!-- 교육 서비스별 링크 제거 -->
+            <div></div>
             <a href="index.html"
                 class="hidden md:block bg-gradient-to-r from-blue-700 to-purple-700 text-white px-4 py-2 rounded-lg font-semibold shadow hover:from-blue-800 hover:to-purple-800 transition-all">메인</a>
         </nav>
     </header>
+
+    <!-- 바디 영역에 카드형 링크 추가 (헤더 아래, 메인 소개 위 추천) -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 my-10">
+        <a href="math.html" class="group bg-card-dark rounded-xl shadow-lg border border-blue-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-blue-400 transition-all duration-200">
+            <span class="text-2xl md:text-3xl text-blue-400 mb-2">①</span>
+            <span class="font-bold text-blue-200 mb-1">진짜 수학 공부하기</span>
+            <span class="text-xs text-gray-400 group-hover:text-blue-300">자세히 보기</span>
+        </a>
+        <a href="ai_service.html" class="group bg-card-dark rounded-xl shadow-lg border border-purple-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-purple-400 transition-all duration-200">
+            <span class="text-2xl md:text-3xl text-purple-400 mb-2">②</span>
+            <span class="font-bold text-purple-200 mb-1">AI 시대 서비스 추상화 & 활용</span>
+            <span class="text-xs text-gray-400 group-hover:text-purple-300">자세히 보기</span>
+        </a>
+        <a href="dev.html" class="group bg-card-dark rounded-xl shadow-lg border border-green-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-green-400 transition-all duration-200">
+            <span class="text-2xl md:text-3xl text-green-400 mb-2">③</span>
+            <span class="font-bold text-green-200 mb-1">소프트웨어 개발자 수업</span>
+            <span class="text-xs text-gray-400 group-hover:text-green-300">자세히 보기</span>
+        </a>
+        <a href="life.html" class="group bg-card-dark rounded-xl shadow-lg border border-yellow-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-yellow-400 transition-all duration-200">
+            <span class="text-2xl md:text-3xl text-yellow-400 mb-2">④</span>
+            <span class="font-bold text-yellow-200 mb-1">인생찾기 · 축적하기</span>
+            <span class="text-xs text-gray-400 group-hover:text-yellow-300">자세히 보기</span>
+        </a>
+    </div>
 
     <div class="container mx-auto p-4 md:p-8 pt-20">
         <header class="text-center my-12 md:my-20">
@@ -133,6 +151,94 @@
             </div>
         </section>
 
+        <!-- 6개월 과정 프로세스 추가 -->
+        <section class="my-16 md:my-24 bg-secondary-dark rounded-2xl shadow-xl p-8">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-4 drop-shadow">🗂️ 6개월 50만원(월 10만원) 과정 프로세스</h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+                    6개월 동안 단계별로 실전 역량과 본질적 사고력을 키우는 체계적인 교육 프로세스입니다.
+                </p>
+            </div>
+            <ol class="space-y-6 max-w-3xl mx-auto text-left">
+                <li class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-blue-700 text-white font-bold">1</span>
+                    <div>
+                        <span class="font-bold text-blue-200">오리엔테이션 & 목표설정</span><br>
+                        개인별 목표 수립, 자기 진단, 학습 플랜 설계
+                    </div>
+                </li>
+                <li class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-purple-700 text-white font-bold">2</span>
+                    <div>
+                        <span class="font-bold text-purple-200">기초 역량 강화</span><br>
+                        수학적/논리적 사고, AI·코딩 기초, 문제 추상화 훈련
+                    </div>
+                </li>
+                <li class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-green-700 text-white font-bold">3</span>
+                    <div>
+                        <span class="font-bold text-green-200">실전 프로젝트 & 피드백</span><br>
+                        실제 문제 해결 프로젝트, 코드 리뷰, 멘토링
+                    </div>
+                </li>
+                <li class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-yellow-600 text-white font-bold">4</span>
+                    <div>
+                        <span class="font-bold text-yellow-200">자기주도 성장 & 축적</span><br>
+                        자기주도 학습, 인생 설계, 성장 포트폴리오 작성
+                    </div>
+                </li>
+                <li class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-pink-600 text-white font-bold">5</span>
+                    <div>
+                        <span class="font-bold text-pink-200">최종 발표 & 네트워킹</span><br>
+                        결과물 발표, 동료·멘토와 네트워킹, 다음 단계 제안
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- 추가 섹션: 수업 전후 변화 안내 -->
+        <section class="my-16 md:my-24 bg-gradient-to-r from-blue-950/80 via-purple-950/70 to-zinc-900/80 rounded-2xl shadow-xl p-8">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-4 drop-shadow">수업 전, 이런 모습이라면?</h2>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li>문제의 본질을 파악하지 못하고 표면적인 공부만 반복</li>
+                        <li>AI와 소프트웨어 시대에 필요한 역량이 무엇인지 막연함</li>
+                        <li>목표 없이 진로와 인생 방향에 대한 고민이 많음</li>
+                        <li>실전 경험과 포트폴리오가 부족해 자신감이 없음</li>
+                        <li>자기주도적 성장 습관이 부족함</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-blue-300 mb-4 drop-shadow">수업 후, 이렇게 달라집니다!</h2>
+                    <ul class="list-disc list-inside text-blue-100 space-y-4">
+                        <li>
+                            <span class="font-bold text-blue-200">진짜 수학 공부하기</span><br>
+                            &nbsp;ㆍ문제의 본질을 꿰뚫는 사고력과 논리적 추론 능력 향상<br>
+                            &nbsp;ㆍ수학을 통한 실전 문제 해결력과 자신감 획득
+                        </li>
+                        <li>
+                            <span class="font-bold text-purple-200">AI 시대 서비스 추상화 & 활용</span><br>
+                            &nbsp;ㆍAI와 최신 도구를 활용한 실전 프로젝트 경험<br>
+                            &nbsp;ㆍ서비스 기획과 문제 해결 능력, 실무 감각 강화
+                        </li>
+                        <li>
+                            <span class="font-bold text-green-200">소프트웨어 개발자 수업 - 공학적 장인</span><br>
+                            &nbsp;ㆍ실전 코딩, 협업, 코드 리뷰를 통한 개발 실력 성장<br>
+                            &nbsp;ㆍ멘토링과 프로젝트로 글로벌 경쟁력과 포트폴리오 완성
+                        </li>
+                        <li>
+                            <span class="font-bold text-yellow-200">즐거움 찾기 · 방향 찾기 · 인생찾기 · 축적하기</span><br>
+                            &nbsp;ㆍ목표와 인생 방향을 스스로 설계<br>
+                            &nbsp;ㆍ자기주도 성장 습관과 축적의 힘을 갖춘 인재로 변화
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <footer class="text-center mt-20 mb-10">
             <p class="text-2xl font-bold text-accent-light">지금, Loworld와 함께 미래를 경험하세요.</p>
             <p class="text-primary mt-2">AI 시대의 본질적 실력을 쌓고, 새로운 기회를 잡으세요.</p>
@@ -147,5 +253,6 @@
             </div>
         </footer>
     </div>
+  </div>
 </body>
 </html>
