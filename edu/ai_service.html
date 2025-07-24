@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>AI 시대 서비스 추상화 & 활용 - Loworld AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -21,66 +22,67 @@
       }
     </script>
 </head>
-<body class="bg-primary-dark text-gray-100">
+<body class="bg-gradient-to-br from-primary-dark via-secondary-dark to-zinc-900 text-gray-100 min-h-screen">
     <header class="bg-gradient-to-r from-[#23232a]/90 via-[#18181b]/90 to-[#23232a]/90 sticky top-0 z-50 shadow-lg border-b border-zinc-800">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <h1 class="text-xl font-black text-accent-light tracking-widest">Loworld AI</h1>
+            <h1 class="text-xl font-black text-accent-dark tracking-widest drop-shadow">Loworld AI</h1>
             <div></div>
             <a href="../education.html"
                 class="hidden md:block bg-gradient-to-r from-blue-700 to-purple-700 text-white px-4 py-2 rounded-lg font-semibold shadow hover:from-blue-800 hover:to-purple-800 transition-all">교육 메인</a>
         </nav>
     </header>
-    <main class="container mx-auto p-8">
+    <main class="container mx-auto px-4 md:px-8 py-10">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 my-10">
-            <a href="math.html" class="group bg-card-dark rounded-xl shadow-lg border border-blue-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-blue-400 transition-all duration-200">
-                <span class="text-2xl md:text-3xl text-blue-400 mb-2">①</span>
+            <a href="math.html" class="group bg-gradient-to-br from-blue-900/80 to-blue-700/60 rounded-xl shadow-lg border-2 border-blue-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-blue-400 transition-all duration-200">
+                <span class="text-3xl text-blue-400 mb-2">①</span>
                 <span class="font-bold text-blue-200 mb-1">진짜 수학 공부하기</span>
                 <span class="text-xs text-gray-400 group-hover:text-blue-300">자세히 보기</span>
             </a>
-            <a href="ai_service.html" class="group bg-card-dark rounded-xl shadow-lg border border-purple-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-purple-400 transition-all duration-200">
-                <span class="text-2xl md:text-3xl text-purple-400 mb-2">②</span>
+            <a href="ai_service.html" class="group bg-gradient-to-br from-purple-900/80 to-purple-700/60 rounded-xl shadow-lg border-2 border-purple-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-purple-400 transition-all duration-200">
+                <span class="text-3xl text-purple-400 mb-2">②</span>
                 <span class="font-bold text-purple-200 mb-1">AI 시대 서비스 추상화 & 활용</span>
                 <span class="text-xs text-gray-400 group-hover:text-purple-300">자세히 보기</span>
             </a>
-            <a href="dev.html" class="group bg-card-dark rounded-xl shadow-lg border border-green-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-green-400 transition-all duration-200">
-                <span class="text-2xl md:text-3xl text-green-400 mb-2">③</span>
+            <a href="dev.html" class="group bg-gradient-to-br from-green-900/80 to-green-700/60 rounded-xl shadow-lg border-2 border-green-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-green-400 transition-all duration-200">
+                <span class="text-3xl text-green-400 mb-2">③</span>
                 <span class="font-bold text-green-200 mb-1">소프트웨어 개발자 수업</span>
                 <span class="text-xs text-gray-400 group-hover:text-green-300">자세히 보기</span>
             </a>
-            <a href="life.html" class="group bg-card-dark rounded-xl shadow-lg border border-yellow-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-yellow-400 transition-all duration-200">
-                <span class="text-2xl md:text-3xl text-yellow-400 mb-2">④</span>
+            <a href="life.html" class="group bg-gradient-to-br from-yellow-900/80 to-yellow-700/60 rounded-xl shadow-lg border-2 border-yellow-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-yellow-400 transition-all duration-200">
+                <span class="text-3xl text-yellow-400 mb-2">④</span>
                 <span class="font-bold text-yellow-200 mb-1">인생찾기 · 축적하기</span>
                 <span class="text-xs text-gray-400 group-hover:text-yellow-300">자세히 보기</span>
             </a>
         </div>
-        <h1 class="text-3xl font-bold text-purple-300 mb-6">AI 시대 서비스 추상화 & 활용</h1>
-        <p class="mb-8 text-gray-200">
-            AI를 도구로 활용하는 방법, 서비스의 본질을 추상화하고 AI로 문제를 해결하는 실전 프로젝트 기반 교육을 진행합니다.
-        </p>
-        <section class="mb-10">
-            <h2 class="text-2xl font-bold text-purple-200 mb-4">수업 후, 이렇게 달라집니다!</h2>
-            <ul class="list-disc list-inside text-purple-100 space-y-2">
+        <section class="max-w-2xl mx-auto bg-card-dark/80 rounded-2xl shadow-xl border border-purple-800/30 p-8 mb-12">
+            <h2 class="text-4xl font-extrabold text-purple-300 mb-4 drop-shadow text-center">AI 시대 서비스 추상화 & 활용</h2>
+            <p class="mb-6 text-purple-100 text-lg text-center">
+                AI와 최신 도구를 활용해 서비스의 본질을 추상화하고,<br>
+                실전 프로젝트로 문제를 해결하는 6개월 집중 코스입니다.
+            </p>
+            <div class="flex justify-center mb-2">
+                <span class="inline-block bg-purple-900/70 text-purple-200 font-bold px-6 py-2 rounded-full shadow border border-purple-700 text-lg">
+                    가격: <span class="text-purple-300">월 12만원</span> / <span class="text-purple-300">6개월 60만원</span> (VAT 포함)
+                </span>
+            </div>
+        </section>
+        <section class="max-w-2xl mx-auto bg-gradient-to-br from-purple-950/80 to-purple-800/60 rounded-xl shadow-lg p-8 mb-10 border border-purple-800/40">
+            <h3 class="text-2xl font-bold text-purple-200 mb-4">수업 후, 이렇게 달라집니다!</h3>
+            <ul class="list-disc list-inside text-purple-100 space-y-2 text-base">
                 <li>AI와 최신 도구를 활용한 실전 프로젝트 경험</li>
                 <li>서비스 기획과 문제 해결 능력, 실무 감각 강화</li>
+                <li>AI 시대에 필요한 창의적 문제 해결력과 자신감 획득</li>
+                <li>실제 서비스 개발 경험으로 포트폴리오 완성</li>
             </ul>
         </section>
-        <section class="mb-10">
-            <h2 class="text-xl font-bold text-purple-200 mb-2">커리큘럼</h2>
-            <ul class="list-disc list-inside text-purple-100 space-y-1">
-                <li>AI 도구 활용 실습</li>
-                <li>서비스 기획 및 문제 해결</li>
-                <li>AI 프로젝트 실전</li>
+        <section class="max-w-2xl mx-auto bg-gradient-to-br from-purple-900/80 to-purple-700/60 rounded-xl shadow-lg p-8 border border-purple-800/40">
+            <h3 class="text-xl font-bold text-purple-200 mb-2">커리큘럼</h3>
+            <ul class="list-disc list-inside text-purple-100 space-y-1 text-base">
+                <li>AI 도구와 서비스 추상화의 원리 이해</li>
+                <li>실전 프로젝트 기반 문제 해결 과정 경험</li>
+                <li>서비스 기획 및 실무 역량 강화</li>
+                <li>AI 프로젝트 실전 및 피드백</li>
             </ul>
-        </section>
-        <section>
-            <h2 class="text-xl font-bold text-purple-200 mb-2">6개월 프로세스</h2>
-            <ol class="list-decimal list-inside text-purple-100 space-y-1">
-                <li>오리엔테이션 & 목표설정</li>
-                <li>AI·서비스 기초 역량 강화</li>
-                <li>실전 프로젝트 & 피드백</li>
-                <li>자기주도 성장 & 축적</li>
-                <li>최종 발표 & 네트워킹</li>
-            </ol>
         </section>
     </main>
 </body>

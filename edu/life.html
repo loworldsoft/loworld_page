@@ -2,7 +2,8 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>즐거움 찾기 · 방향 찾기 · 인생찾기 · 축적하기 - Loworld AI</title>
+    <title>인생찾기 · 축적하기 - Loworld AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -21,67 +22,67 @@
       }
     </script>
 </head>
-<body class="bg-primary-dark text-gray-100">
+<body class="bg-gradient-to-br from-primary-dark via-secondary-dark to-zinc-900 text-gray-100 min-h-screen">
     <header class="bg-gradient-to-r from-[#23232a]/90 via-[#18181b]/90 to-[#23232a]/90 sticky top-0 z-50 shadow-lg border-b border-zinc-800">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <h1 class="text-xl font-black text-accent-light tracking-widest">Loworld AI</h1>
+            <h1 class="text-xl font-black text-accent-dark tracking-widest drop-shadow">Loworld AI</h1>
             <div></div>
             <a href="../education.html"
                 class="hidden md:block bg-gradient-to-r from-blue-700 to-purple-700 text-white px-4 py-2 rounded-lg font-semibold shadow hover:from-blue-800 hover:to-purple-800 transition-all">교육 메인</a>
         </nav>
     </header>
-    <main class="container mx-auto p-8">
+    <main class="container mx-auto px-4 md:px-8 py-10">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 my-10">
-            <a href="math.html" class="group bg-card-dark rounded-xl shadow-lg border border-blue-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-blue-400 transition-all duration-200">
-                <span class="text-2xl md:text-3xl text-blue-400 mb-2">①</span>
+            <a href="math.html" class="group bg-gradient-to-br from-blue-900/80 to-blue-700/60 rounded-xl shadow-lg border-2 border-blue-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-blue-400 transition-all duration-200">
+                <span class="text-3xl text-blue-400 mb-2">①</span>
                 <span class="font-bold text-blue-200 mb-1">진짜 수학 공부하기</span>
                 <span class="text-xs text-gray-400 group-hover:text-blue-300">자세히 보기</span>
             </a>
-            <a href="ai_service.html" class="group bg-card-dark rounded-xl shadow-lg border border-purple-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-purple-400 transition-all duration-200">
-                <span class="text-2xl md:text-3xl text-purple-400 mb-2">②</span>
+            <a href="ai_service.html" class="group bg-gradient-to-br from-purple-900/80 to-purple-700/60 rounded-xl shadow-lg border-2 border-purple-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-purple-400 transition-all duration-200">
+                <span class="text-3xl text-purple-400 mb-2">②</span>
                 <span class="font-bold text-purple-200 mb-1">AI 시대 서비스 추상화 & 활용</span>
                 <span class="text-xs text-gray-400 group-hover:text-purple-300">자세히 보기</span>
             </a>
-            <a href="dev.html" class="group bg-card-dark rounded-xl shadow-lg border border-green-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-green-400 transition-all duration-200">
-                <span class="text-2xl md:text-3xl text-green-400 mb-2">③</span>
+            <a href="dev.html" class="group bg-gradient-to-br from-green-900/80 to-green-700/60 rounded-xl shadow-lg border-2 border-green-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-green-400 transition-all duration-200">
+                <span class="text-3xl text-green-400 mb-2">③</span>
                 <span class="font-bold text-green-200 mb-1">소프트웨어 개발자 수업</span>
                 <span class="text-xs text-gray-400 group-hover:text-green-300">자세히 보기</span>
             </a>
-            <a href="life.html" class="group bg-card-dark rounded-xl shadow-lg border border-yellow-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-yellow-400 transition-all duration-200">
-                <span class="text-2xl md:text-3xl text-yellow-400 mb-2">④</span>
+            <a href="life.html" class="group bg-gradient-to-br from-yellow-900/80 to-yellow-700/60 rounded-xl shadow-lg border-2 border-yellow-800/40 p-6 flex flex-col items-center hover:scale-105 hover:border-yellow-400 transition-all duration-200">
+                <span class="text-3xl text-yellow-400 mb-2">④</span>
                 <span class="font-bold text-yellow-200 mb-1">인생찾기 · 축적하기</span>
                 <span class="text-xs text-gray-400 group-hover:text-yellow-300">자세히 보기</span>
             </a>
         </div>
-        <h1 class="text-3xl font-bold text-yellow-300 mb-6">즐거움 찾기 · 방향 찾기 · 인생찾기 · 축적하기</h1>
-        <p class="mb-8 text-gray-200">
-            공부의 본질은 즐거움과 방향성, 그리고 인생의 의미를 찾는 과정입니다.<br>
-            스스로 성장하고 축적하는 힘을 기르는 교육 서비스를 만듭니다.
-        </p>
-        <section class="mb-10">
-            <h2 class="text-2xl font-bold text-yellow-200 mb-4">수업 후, 이렇게 달라집니다!</h2>
-            <ul class="list-disc list-inside text-yellow-100 space-y-2">
-                <li>목표와 인생 방향을 스스로 설계</li>
+        <section class="max-w-2xl mx-auto bg-card-dark/80 rounded-2xl shadow-xl border border-yellow-800/30 p-8 mb-12">
+            <h2 class="text-4xl font-extrabold text-yellow-300 mb-4 drop-shadow text-center">인생찾기 · 축적하기</h2>
+            <p class="mb-6 text-yellow-100 text-lg text-center">
+                즐거움과 방향성을 찾고, 자기주도적으로 성장하며<br>
+                인생의 의미와 축적의 힘을 기르는 6개월 성장 코스입니다.
+            </p>
+            <div class="flex justify-center mb-2">
+                <span class="inline-block bg-yellow-900/70 text-yellow-200 font-bold px-6 py-2 rounded-full shadow border border-yellow-700 text-lg">
+                    가격: <span class="text-yellow-300">월 10만원</span> / <span class="text-yellow-300">6개월 50만원</span> (VAT 포함)
+                </span>
+            </div>
+        </section>
+        <section class="max-w-2xl mx-auto bg-gradient-to-br from-yellow-950/80 to-yellow-800/60 rounded-xl shadow-lg p-8 mb-10 border border-yellow-800/40">
+            <h3 class="text-2xl font-bold text-yellow-200 mb-4">수업 후, 이렇게 달라집니다!</h3>
+            <ul class="list-disc list-inside text-yellow-100 space-y-2 text-base">
+                <li>목표와 인생 방향을 스스로 설계할 수 있게 됩니다</li>
                 <li>자기주도 성장 습관과 축적의 힘을 갖춘 인재로 변화</li>
+                <li>삶의 의미와 즐거움을 찾고, 인생의 방향성을 명확히 함</li>
+                <li>실전 워크샵과 피드백으로 자기주도적 성장 경험</li>
             </ul>
         </section>
-        <section class="mb-10">
-            <h2 class="text-xl font-bold text-yellow-200 mb-2">커리큘럼</h2>
-            <ul class="list-disc list-inside text-yellow-100 space-y-1">
-                <li>자기주도 성장 코칭</li>
-                <li>목표 설정 & 인생 설계</li>
-                <li>축적의 힘 워크샵</li>
+        <section class="max-w-2xl mx-auto bg-gradient-to-br from-yellow-900/80 to-yellow-700/60 rounded-xl shadow-lg p-8 border border-yellow-800/40">
+            <h3 class="text-xl font-bold text-yellow-200 mb-2">커리큘럼</h3>
+            <ul class="list-disc list-inside text-yellow-100 space-y-1 text-base">
+                <li>자기주도 성장 코칭과 목표 설정</li>
+                <li>인생 설계 및 방향성 찾기</li>
+                <li>축적의 힘 워크샵과 실전 피드백</li>
+                <li>자기주도 성장 프로젝트</li>
             </ul>
-        </section>
-        <section>
-            <h2 class="text-xl font-bold text-yellow-200 mb-2">6개월 프로세스</h2>
-            <ol class="list-decimal list-inside text-yellow-100 space-y-1">
-                <li>오리엔테이션 & 목표설정</li>
-                <li>자기주도 성장 습관 훈련</li>
-                <li>실전 워크샵 & 피드백</li>
-                <li>인생 설계 & 축적</li>
-                <li>최종 발표 & 네트워킹</li>
-            </ol>
         </section>
     </main>
 </body>
