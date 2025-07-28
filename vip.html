@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Loworld VIP 광장</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'primary-dark': '#18181b',
+              'secondary-dark': '#23232a',
+              'card-dark': '#23232a',
+              'accent-dark': '#3b82f6',
+              'muted-dark': '#a1a1aa',
+              'vip-gold': '#FFD700'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-primary-dark via-secondary-dark to-zinc-900 text-gray-100 min-h-screen">
+    <header class="bg-gradient-to-r from-[#23232a]/90 via-[#18181b]/90 to-[#23232a]/90 sticky top-0 z-50 shadow-lg border-b border-zinc-800">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-black text-vip-gold tracking-widest">Loworld AI</a>
+            <div></div>
+            <a href="index.html"
+                class="hidden md:block bg-gradient-to-r from-blue-700 to-purple-700 text-white px-4 py-2 rounded-lg font-semibold shadow hover:from-blue-800 hover:to-purple-800 transition-all">메인</a>
+        </nav>
+    </header>
+    <main class="container mx-auto px-4 md:px-8 py-10">
+        <section class="max-w-3xl mx-auto bg-card-dark/80 rounded-2xl shadow-xl border border-yellow-700/40 p-8 mb-12">
+            <h1 class="text-4xl font-extrabold text-vip-gold mb-6 drop-shadow text-center">Loworld VIP 광장</h1>
+            <p class="mb-8 text-yellow-100 text-lg text-center">
+                분야별 사람을 모으고, 비즈니스 성공을 위한 모든 서비스를 한 곳에서 제공합니다.<br>
+                <span class="block mt-4 text-yellow-200 font-bold">모든 서비스는 로월드소프트 지분을 제공합니다.<br>5억 소진시까지!</span>
+            </p>
+            <ul class="list-disc list-inside text-yellow-100 space-y-3 text-base mb-8">
+                <li>광장 만들기 · 분야별 사람 모으기</li>
+                <li>영업 대행 (상품/전문직) · 영업 대행 구독제</li>
+                <li>창업 전략 컨설팅 · 창업 전략 컨설팅 구독제</li>
+                <li>다양한 솔루션 함께 사용하기</li>
+                <li>외주 개발 · 외주 개발 구독제 (100만원~1000만원, 개발팀급)</li>
+                <li>망하고 있는 프로젝트 살려주기 · 소방수</li>
+                <li>마케팅 대행 · 마케팅 구독제</li>
+                <li>상품 셀러 계약 - 커머스</li>
+                <li>영업과 마케팅의 일정한 행위: 메일 발송, 콘텐츠, 발행 채널 관리 등</li>
+                <li>특히 상품이 있는 경우에만 가능</li>
+                <li>비즈니스 PT 공략, 전략수립 및 상품 등록</li>
+                <li>각종 교육 사업 연결</li>
+            </ul>
+            <div class="bg-gradient-to-r from-yellow-600 via-yellow-400 to-yellow-300 rounded-xl p-6 text-gray-900 text-center font-bold mb-8 shadow">
+                마케팅 · 세일즈 · 개발 · 기술을 계속 강의하고,<br>
+                마케팅 광고를 지속적으로 발행합니다.<br>
+                <span class="block mt-2">Loworld VIP로 모든 비즈니스 서비스를 한 번에!</span>
+            </div>
+        </section>
