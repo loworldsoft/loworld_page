@@ -13,7 +13,22 @@
 <body class="bg-gradient-to-br from-indigo-50 via-white to-blue-50 text-gray-800 min-h-screen">
     <main>
         <section class="w-full px-0 py-16">
-            <div class="w-full bg-white/90 shadow-2xl p-10 mx-auto">
+            <div class="w-full bg-white/90 shadow-2xl p-10 mx-auto text-center">
+                <div class="w-full flex justify-center mb-8">
+                    <div class="w-full max-w-2xl aspect-video rounded-xl overflow-hidden shadow-lg">
+                        <iframe 
+                            width="100%" height="100%" 
+                            src="https://www.youtube.com/embed/yQb2kvVlYxg" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/watch?v=yQb2kvVlYxg" target="_blank" class="block text-blue-600 hover:underline text-center mb-8 font-semibold">
+                    👉 유튜브에서 직접 보기
+                </a>
                 <h1 class="text-3xl md:text-4xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                     10만원 인지 컨설팅<br>
                     <span class="text-lg block mt-2 text-gray-700 font-normal">동기부여를 넘어, <span class="font-bold text-blue-600">인지(메타인지)</span>로 성장하는 법</span>
@@ -25,46 +40,56 @@
                         <span class="ml-2">→ 100,000원</span>
                     </span>
                 </div>
-                <p class="text-lg text-gray-700 mb-6 leading-relaxed text-center">
+                <p class="text-lg text-gray-700 mb-10 leading-relaxed text-center">
                     자기계발 콘텐츠의 시대, <span class="font-semibold text-blue-600">진짜 성장</span>은 어디서 오는가?<br>
                     <span class="font-bold text-purple-600">동기부여</span>는 잠깐의 힘을 주지만, <span class="font-bold text-blue-600">인지(메타인지)</span>는 평생을 바꿉니다.
                 </p>
-                <div class="mb-8">
-                    <h2 class="text-xl font-bold mb-2 text-blue-700">이런 분께 추천합니다</h2>
-                    <ul class="list-disc pl-6 text-gray-700 space-y-1">
-                        <li>미래를 찾기 위해 방황하고 계신 분</li>
-                        <li>어려움에 처한 상황에서 실질적인 도움이 필요한 분</li>
-                        <li>퇴직 후 새롭게 시작하기 전에 인생 설계가 필요하신 분</li>
-                        <li>직장생활 등에서 어려움을 느끼시는 분</li>
-                        <li>멋진 인생을 만들어가고 싶은 분</li>
-                        <li>실력 있는 개발자가 되기 위한 기술적 성장과 방향이 궁금한 분</li>
-                        <li>동기부여 영상, 책을 많이 봐도 변화가 없는 분</li>
-                        <li>실패와 좌절 앞에서 쉽게 무기력해지는 분</li>
-                        <li>진짜 성장과 내실을 원하시는 분</li>
-                        <li>사업, 커리어, 인생의 본질적 변화를 원하시는 분</li>
-                    </ul>
+                <!-- 카드형 안내 시작 -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <!-- 추천 카드 -->
+                    <div class="bg-gradient-to-br from-blue-50 via-white to-blue-100 rounded-2xl shadow-lg p-8 flex flex-col items-center">
+                        <span class="text-3xl mb-3">🌱</span>
+                        <h2 class="text-lg font-bold text-blue-700 mb-2">이런 분께 추천합니다</h2>
+                        <ul class="list-none text-gray-700 text-base space-y-1 text-center">
+                            <li>미래를 찾기 위해 방황하는 분</li>
+                            <li>어려움에 처한 상황에서 도움이 필요한 분</li>
+                            <li>퇴직 후 새롭게 시작 전 인생 설계가 필요한 분</li>
+                            <li>직장생활 등에서 어려움을 느끼는 분</li>
+                            <li>멋진 인생을 만들고 싶은 분</li>
+                            <li>실력 있는 개발자가 되고 싶은 분</li>
+                            <li>동기부여 영상, 책을 봐도 변화가 없는 분</li>
+                            <li>실패와 좌절 앞에서 쉽게 무기력해지는 분</li>
+                            <li>진짜 성장과 내실을 원하는 분</li>
+                            <li>사업, 커리어, 인생의 본질적 변화를 원하는 분</li>
+                        </ul>
+                    </div>
+                    <!-- 주요 내용 카드 -->
+                    <div class="bg-gradient-to-br from-purple-50 via-white to-purple-100 rounded-2xl shadow-lg p-8 flex flex-col items-center">
+                        <span class="text-3xl mb-3">📚</span>
+                        <h2 class="text-lg font-bold text-purple-700 mb-2">컨설팅 주요 내용</h2>
+                        <ul class="list-none text-gray-700 text-base space-y-1 text-center">
+                            <li>동기부여 콘텐츠의 한계와 성장의 조건</li>
+                            <li>인지(메타인지)의 중요성</li>
+                            <li>경험을 통한 인지 확장법</li>
+                            <li>실패와 도전, 내실의 가치</li>
+                            <li>돈이 아닌 사랑과 사명, 행복의 본질</li>
+                            <li>지속 가능한 성장과 장수 비결</li>
+                        </ul>
+                    </div>
+                    <!-- 얻을 수 있는 것 카드 -->
+                    <div class="bg-gradient-to-br from-indigo-50 via-white to-indigo-100 rounded-2xl shadow-lg p-8 flex flex-col items-center">
+                        <span class="text-3xl mb-3">✨</span>
+                        <h2 class="text-lg font-bold text-indigo-700 mb-2">컨설팅을 통해 얻게 되는 것</h2>
+                        <ul class="list-none text-gray-700 text-base space-y-1 text-center">
+                            <li><span class="font-bold text-blue-600">지속적 성장의 힘</span></li>
+                            <li><span class="font-bold text-purple-600">실패와 도전을 두려워하지 않는 인지력</span></li>
+                            <li><span class="font-bold text-indigo-600">내 삶의 사명과 의미를 찾는 통찰</span></li>
+                            <li><span class="font-bold text-green-600">행복과 성공의 본질을 깨닫는 마음가짐</span></li>
+                            <li><span class="font-bold text-pink-600">올바른 방향으로 지속적으로 유지할 수 있는 에너지</span></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="mb-8">
-                    <h2 class="text-xl font-bold mb-2 text-purple-700">컨설팅 주요 내용</h2>
-                    <ul class="list-disc pl-6 text-gray-700 space-y-1">
-                        <li>동기부여 콘텐츠의 한계와 진짜 성장의 조건</li>
-                        <li>인지(메타인지)란 무엇이며, 왜 중요한가?</li>
-                        <li>경험을 통한 인지 확장법</li>
-                        <li>실패와 도전, 그리고 내실의 가치</li>
-                        <li>돈이 아닌 사랑과 사명, 그리고 행복의 본질</li>
-                        <li>지속 가능한 성장과 스타트업/인생의 장수 비결</li>
-                    </ul>
-                </div>
-                <div class="mb-8">
-                    <h2 class="text-xl font-bold mb-2 text-indigo-700">컨설팅을 통해 얻게 되는 것</h2>
-                    <ul class="list-disc pl-6 text-gray-700 space-y-1">
-                        <li>일시적 동기부여가 아닌, <span class="font-bold text-blue-600">지속적 성장의 힘</span></li>
-                        <li>실패와 도전을 두려워하지 않는 <span class="font-bold text-purple-600">인지력</span></li>
-                        <li>내 삶의 사명과 의미를 찾는 <span class="font-bold text-indigo-600">통찰</span></li>
-                        <li>행복과 성공의 본질을 깨닫는 <span class="font-bold text-green-600">마음가짐</span></li>
-                        <li>올바른 방향으로 <span class="font-bold text-pink-600">지속적으로 유지할 수 있는 에너지</span></li>
-                    </ul>
-                </div>
+                <!-- 카드형 안내 끝 -->
                 <div class="bg-gradient-to-r from-blue-100 via-purple-100 to-indigo-100 rounded-xl p-6 text-center shadow-inner mb-8">
                     <span class="inline-block text-2xl mb-2">💡</span><br>
                     <span class="font-bold text-blue-700">동기부여는 일시적입니다.<br>지속적인 성장은 <span class="underline">인지(메타인지)</span>에서 시작됩니다.</span>
@@ -75,7 +100,7 @@
                     </span><br>
                     1~2시간 동안 직접 만나거나 온라인으로 깊이 있는 대화를 통해<br>
                     각자의 상황에 맞는 해답과 방향을 함께 찾아가는 맞춤형 컨설팅 서비스입니다.<br>
-                    <span class="mt-2 inline-block font-semibold text-blue-700">오프라인 위치: 광명GIDC</span>
+                    <span class="mt-2 inline-block font-semibold text-blue-700">오프라인 위치: 광명GIDC B동 14층 1409호</span>
                 </p>
                 <div class="flex flex-col items-center gap-4">
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-ZzMRC4iORs0LNUUC8CtYdT-cUu0WiI52N_4SkftEXHzuTw/viewform?usp=dialog"
@@ -84,6 +109,25 @@
                         📧 컨설팅 문의하기
                     </a>
                     <span class="text-gray-500 text-sm">구글폼을 통해 문의해주시면 자세한 안내를 드립니다.</span>
+                </div>
+                <!-- 관련 영상 섹션 추가 -->
+                <div class="mt-16">
+                    <h2 class="text-xl font-bold text-center mb-4 text-purple-700">관련 영상</h2>
+                    <div class="flex flex-col items-center gap-6">
+                        <div class="w-full max-w-xs aspect-[9/16] rounded-xl overflow-hidden shadow-lg">
+                            <iframe
+                                width="100%" height="100%"
+                                src="https://www.youtube.com/embed/hUOi9IGyOO0"
+                                title="YouTube Shorts"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <a href="https://www.youtube.com/shorts/hUOi9IGyOO0" target="_blank" class="block text-blue-600 hover:underline text-center font-semibold">
+                            👉 유튜브 Shorts에서 보기
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
