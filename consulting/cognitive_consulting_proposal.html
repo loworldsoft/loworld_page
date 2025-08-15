@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인지 컨설팅 고객 관리 제안서 | Loworld</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Noto Sans KR', sans-serif; 
+            scroll-behavior: smooth;
+            background-color: #f8fafc;
+            line-height: 1.7;
+        }
+        .report-header {
+            background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+            border-left: 6px solid #8b5cf6;
+        }
+        .section-divider {
+            border-left: 4px solid #a855f7;
+            background: linear-gradient(90deg, #faf5ff 0%, #ffffff 100%);
+        }
+        .highlight-box {
+            border-left: 4px solid #059669;
+            background-color: #f0fdf4;
+        }
+        .timeline-item {
+            border-left: 3px solid #8b5cf6;
+        }
+        .phase-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .phase-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        @media print {
+            body { background-color: white; }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Report Header -->
+    <section class="report-header text-white py-8">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-2xl font-bold mb-2">🧠 인지 컨설팅 고객 관리 제안서</h1>
+                    <p class="text-purple-100">10만원 인지 컨설팅 고객님을 위한 전담 관리 시스템</p>
+                </div>
+                <div class="text-right text-sm text-purple-100">
+                    <p>제안일: 2025년 8월 15일</p>
+                    <p>제안기업: Loworld</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Summary -->
+    <section class="py-8 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="section-divider pl-6 py-4 mb-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">📋 서비스 개요</h2>
+            </div>
+            
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-bold text-gray-800 mb-3">🎯 서비스 목적</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            10만원 <strong>인지 컨설팅</strong>을 구매해주신 고객님의 <strong>문제 해결 과정</strong>을 
+                            체계적으로 관리하고 <strong>지속적인 성과</strong>를 확인하는 전담 관리 시스템
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-800 mb-3">💎 핵심 가치</h3>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• 컨설팅 전후 체계적 관찰 및 분석</li>
+                            <li>• 문제 해결 과정의 단계별 점검</li>
+                            <li>• 개인 맞춤형 지속 관리 프로그램</li>
+                            <li>• 상세한 성과 리포트 제공</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box pl-6 py-4">
+                <h3 class="font-bold text-green-800 mb-2">🔑 차별화 포인트</h3>
+                <p class="text-gray-700 text-sm">
+                    단순한 컨설팅 제공을 넘어, <strong>실제 문제 해결</strong>까지 책임지는 
+                    <strong>결과 중심의 전담 관리 시스템</strong>으로 고객의 성공을 보장합니다.
+                </p>
+            </div>
+
+            <div class="bg-amber-50 border border-amber-200 rounded-lg p-6 mt-6">
+                <div class="flex items-start">
+                    <div class="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                        <span class="text-amber-600 text-lg">🎖️</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-amber-800 mb-2">프리미엄 고객 전담 관리 시스템</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed mb-3">
+                            10만원 인지 컨설팅을 구매해주신 <strong>소중한 고객님</strong>께는 일반적인 서비스를 넘어선 
+                            <strong>프리미엄 관리 시스템</strong>을 제공합니다. 컨설팅이 끝난 후에도 지속적으로 
+                            문제 해결 과정을 관찰하고 필요한 지원을 제공하여 <strong>확실한 성과</strong>를 보장합니다.
+                        </p>
+                        <div class="bg-white border border-amber-300 rounded p-3">
+                            <h4 class="font-semibold text-amber-800 text-sm mb-2">🏆 프리미엄 관리의 핵심:</h4>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• <strong>개인 전담 매니저:</strong> 고객님만을 위한 전문 관리사 배정</li>
+                                <li>• <strong>3단계 체계 관리:</strong> 컨설팅 전 → 컨설팅 중 → 컨설팅 후 단계별 집중 관리</li>
+                                <li>• <strong>실시간 모니터링:</strong> 문제 해결 과정의 실시간 추적 및 분석</li>
+                                <li>• <strong>성과 보장:</strong> 목표 달성까지 지속적인 지원 및 피드백</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Analysis -->
+    <section class="py-8 bg-white border-t border-gray-200">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="section-divider pl-6 py-4 mb-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">👤 고객 현황 분석</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <h3 class="font-bold text-gray-800 mb-3">💳 구매 고객 정보</h3>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li><strong>구매 상품:</strong> 10만원 인지 컨설팅</li>
+                        <li><strong>구매일:</strong> 2025년 8월 15일</li>
+                        <li><strong>상태:</strong> 컨설팅 대기 중</li>
+                        <li><strong>기대 효과:</strong> 인지적 문제 해결 및 개선</li>
+                    </ul>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <h3 class="font-bold text-gray-800 mb-3">🎯 관리 목표</h3>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li>• 컨설팅 만족도 95% 이상 달성</li>
+                        <li>• 실제 문제 해결률 90% 이상</li>
+                        <li>• 지속적 개선 효과 확인</li>
+                        <li>• 추가 서비스 연계 가능성 탐색</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3-Phase Management System -->
+    <section id="management-system" class="py-8 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="section-divider pl-6 py-4 mb-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">🔄 3단계 전담 관리 시스템</h2>
+                <p class="text-sm text-gray-600">컨설팅 전 → 컨설팅 중 → 컨설팅 후 단계별 체계적 관리</p>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Phase 1: 컨설팅 전 -->
+                <div class="phase-card bg-white border border-gray-200 rounded-lg p-6">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4 mt-1">
+                            <span class="text-blue-600 font-bold text-lg">1</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 mb-3">📋 1단계: 컨설팅 전 준비 및 현황 파악</h3>
+                            <p class="text-gray-700 text-sm mb-4">
+                                컨설팅 시작 전 고객의 현재 상황을 정확히 파악하고 맞춤형 컨설팅 계획을 수립합니다.
+                            </p>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-blue-50 rounded-lg p-4">
+                                    <h4 class="font-semibold text-blue-800 text-sm mb-2">📊 현황 진단</h4>
+                                    <ul class="text-xs text-blue-700 space-y-1">
+                                        <li>• 현재 인지적 문제점 상세 분석</li>
+                                        <li>• 과거 시도했던 해결 방법 조사</li>
+                                        <li>• 개인별 특성 및 성향 파악</li>
+                                        <li>• 목표 설정 및 기대 효과 정리</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-blue-50 rounded-lg p-4">
+                                    <h4 class="font-semibold text-blue-800 text-sm mb-2">📝 사전 준비</h4>
+                                    <ul class="text-xs text-blue-700 space-y-1">
+                                        <li>• 전담 매니저 배정 및 소개</li>
+                                        <li>• 맞춤형 컨설팅 계획 수립</li>
+                                        <li>• 필요한 자료 및 도구 준비</li>
+                                        <li>• 일정 조율 및 방식 결정</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 bg-blue-100 rounded-lg p-3">
+                                <h5 class="font-semibold text-blue-800 text-sm mb-1">📅 예상 소요 시간: 1-2일</h5>
+                                <p class="text-blue-700 text-xs">상세한 사전 진단을 통해 최적의 컨설팅 방향을 설정합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2: 컨설팅 중 -->
+                <div class="phase-card bg-white border border-gray-200 rounded-lg p-6">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4 mt-1">
+                            <span class="text-green-600 font-bold text-lg">2</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 mb-3">🎯 2단계: 컨설팅 진행 및 실시간 모니터링</h3>
+                            <p class="text-gray-700 text-sm mb-4">
+                                컨설팅 과정을 실시간으로 모니터링하며 최적의 결과를 위해 지속적으로 조정합니다.
+                            </p>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-green-50 rounded-lg p-4">
+                                    <h4 class="font-semibold text-green-800 text-sm mb-2">🎬 컨설팅 진행</h4>
+                                    <ul class="text-xs text-green-700 space-y-1">
+                                        <li>• 1:1 맞춤형 인지 컨설팅 진행</li>
+                                        <li>• 실시간 반응 및 피드백 수집</li>
+                                        <li>• 중간 점검 및 방향 조정</li>
+                                        <li>• 추가 질문 및 심화 상담</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-green-50 rounded-lg p-4">
+                                    <h4 class="font-semibold text-green-800 text-sm mb-2">📈 성과 추적</h4>
+                                    <ul class="text-xs text-green-700 space-y-1">
+                                        <li>• 이해도 및 만족도 실시간 체크</li>
+                                        <li>• 문제 해결 진행 상황 모니터링</li>
+                                        <li>• 개선 효과 측정 및 기록</li>
+                                        <li>• 필요시 추가 지원 제공</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 bg-green-100 rounded-lg p-3">
+                                <h5 class="font-semibold text-green-800 text-sm mb-1">📅 예상 소요 시간: 2-3시간</h5>
+                                <p class="text-green-700 text-xs">집중적인 컨설팅과 실시간 성과 측정을 통해 최적의 결과를 도출합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3: 컨설팅 후 -->
+                <div class="phase-card bg-white border border-gray-200 rounded-lg p-6">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4 mt-1">
+                            <span class="text-purple-600 font-bold text-lg">3</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 mb-3">🔍 3단계: 컨설팅 후 지속 관찰 및 효과 검증</h3>
+                            <p class="text-gray-700 text-sm mb-4">
+                                컨설팅 완료 후에도 지속적으로 문제 해결 과정을 관찰하고 필요한 지원을 제공합니다.
+                            </p>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-purple-50 rounded-lg p-4">
+                                    <h4 class="font-semibold text-purple-800 text-sm mb-2">👁️ 지속 관찰</h4>
+                                    <ul class="text-xs text-purple-700 space-y-1">
+                                        <li>• 주간 체크인 통화/메시지</li>
+                                        <li>• 문제 해결 진행 상황 추적</li>
+                                        <li>• 새로운 어려움 발생 여부 확인</li>
+                                        <li>• 개선 효과 지속성 모니터링</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-purple-50 rounded-lg p-4">
+                                    <h4 class="font-semibold text-purple-800 text-sm mb-2">📊 성과 검증</h4>
+                                    <ul class="text-xs text-purple-700 space-y-1">
+                                        <li>• 목표 달성도 정량적 측정</li>
+                                        <li>• 만족도 및 효과성 평가</li>
+                                        <li>• 예상치 못한 부작용 확인</li>
+                                        <li>• 추가 개선 사항 도출</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 bg-purple-100 rounded-lg p-3">
+                                <h5 class="font-semibold text-purple-800 text-sm mb-1">📅 관찰 기간: 4주간</h5>
+                                <p class="text-purple-700 text-xs">컨설팅 효과가 실제로 정착되고 지속되는지 체계적으로 확인합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monitoring & Reporting System -->
+    <section class="py-8 bg-white border-t border-gray-200">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="section-divider pl-6 py-4 mb-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">📊 관찰 및 리포팅 시스템</h2>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-gray-50 border-b border-gray-200">
+                            <tr>
+                                <th class="px-4 py-3 text-left font-semibold text-gray-800">관찰 시점</th>
+                                <th class="px-4 py-3 text-left font-semibold text-gray-800">관찰 내용</th>
+                                <th class="px-4 py-3 text-left font-semibold text-gray-800">측정 방법</th>
+                                <th class="px-4 py-3 text-left font-semibold text-gray-800">리포트 형태</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center">
+                                        <span class="text-lg mr-2">📋</span>
+                                        <span class="font-medium">컨설팅 전</span>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-gray-600">현재 문제 상황 및 배경 분석</td>
+                                <td class="px-4 py-3 text-gray-700">상세 인터뷰 + 설문 조사</td>
+                                <td class="px-4 py-3 text-gray-700">사전 진단 보고서</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center">
+                                        <span class="text-lg mr-2">🎯</span>
+                                        <span class="font-medium">컨설팅 중</span>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-gray-600">실시간 반응 및 이해도</td>
+                                <td class="px-4 py-3 text-gray-700">실시간 피드백 + 중간 평가</td>
+                                <td class="px-4 py-3 text-gray-700">진행 과정 리포트</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center">
+                                        <span class="text-lg mr-2">📈</span>
+                                        <span class="font-medium">1주 후</span>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-gray-600">초기 적용 결과 및 어려움</td>
+                                <td class="px-4 py-3 text-gray-700">전화/화상 체크인</td>
+                                <td class="px-4 py-3 text-gray-700">1주차 경과 보고서</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center">
+                                        <span class="text-lg mr-2">🔍</span>
+                                        <span class="font-medium">2-3주 후</span>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-gray-600">문제 해결 진행 상황</td>
+                                <td class="px-4 py-3 text-gray-700">정기 체크인 + 성과 측정</td>
+                                <td class="px-4 py-3 text-gray-700">중간 성과 리포트</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center">
+                                        <span class="text-lg mr-2">🏆</span>
+                                        <span class="font-medium">4주 후</span>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-gray-600">최종 성과 및 지속성 평가</td>
+                                <td class="px-4 py-3 text-gray-700">종합 평가 + 만족도 조사</td>
+                                <td class="px-4 py-3 text-gray-700">최종 성과 리포트</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Metrics & KPIs -->
+    <section class="py-8 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="section-divider pl-6 py-4 mb-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">📈 성공 지표 및 평가 기준</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- 정량적 지표 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <h3 class="font-bold text-gray-800 mb-3">📊 정량적 성과 지표</h3>
+                    <div class="space-y-3">
+                        <div class="bg-blue-50 border border-blue-200 rounded p-3">
+                            <h4 class="font-semibold text-blue-800 text-sm mb-1">문제 해결도</h4>
+                            <p class="text-blue-700 text-xs">초기 문제 대비 개선된 정도를 1-10점으로 측정</p>
+                            <div class="mt-2 text-xs text-blue-600">목표: 8점 이상</div>
+                        </div>
+                        <div class="bg-green-50 border border-green-200 rounded p-3">
+                            <h4 class="font-semibold text-green-800 text-sm mb-1">만족도 점수</h4>
+                            <p class="text-green-700 text-xs">컨설팅 전반에 대한 만족도를 1-10점으로 평가</p>
+                            <div class="mt-2 text-xs text-green-600">목표: 9점 이상</div>
+                        </div>
+                        <div class="bg-purple-50 border border-purple-200 rounded p-3">
+                            <h4 class="font-semibold text-purple-800 text-sm mb-1">지속성 지수</h4>
+                            <p class="text-purple-700 text-xs">4주 후 개선 효과가 유지되는 정도</p>
+                            <div class="mt-2 text-xs text-purple-600">목표: 80% 이상</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 정성적 지표 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <h3 class="font-bold text-gray-800 mb-3">💬 정성적 평가 요소</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-start">
+                            <span class="text-green-500 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-medium text-gray-800">고객 피드백 품질</span>
+                                <p class="text-xs text-gray-600 mt-1">구체적이고 긍정적인 피드백 내용</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-green-500 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-medium text-gray-800">문제 해결 과정</span>
+                                <p class="text-xs text-gray-600 mt-1">순조롭고 체계적인 개선 과정</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-green-500 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-medium text-gray-808">예상치 못한 긍정 효과</span>
+                                <p class="text-xs text-gray-600 mt-1">당초 목표 외 추가 개선 사항</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-green-500 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-medium text-gray-800">재구매 의향</span>
+                                <p class="text-xs text-gray-600 mt-1">추가 서비스 이용 의사 표현</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-green-500 mr-2 mt-1">✓</span>
+                            <div>
+                                <span class="font-medium text-gray-800">추천 의향</span>
+                                <p class="text-xs text-gray-600 mt-1">지인 추천 의사 및 실제 추천 활동</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Solving & Support System -->
+    <section class="py-8 bg-white border-t border-gray-200">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="section-divider pl-6 py-4 mb-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">🛠️ 문제 해결 지원 시스템</h2>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-bold text-gray-800 mb-3">🚨 어려움 발생 시 대응</h3>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2">•</span>
+                                즉시 전담 매니저와 긴급 상담
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2">•</span>
+                                문제 원인 분석 및 해결책 재수립
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2">•</span>
+                                필요시 추가 컨설팅 세션 무료 제공
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2">•</span>
+                                전문가 추가 투입 및 맞춤 솔루션 개발
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-bold text-gray-800 mb-3">💡 지속적 개선 지원</h3>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-blue-500 mr-2">•</span>
+                                주간 진행 상황 체크 및 조언 제공
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-500 mr-2">•</span>
+                                개선 과정에서 발생하는 궁금증 해결
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-500 mr-2">•</span>
+                                성과 향상을 위한 추가 팁과 자료 제공
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-500 mr-2">•</span>
+                                비슷한 사례의 성공 경험 공유
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline & Schedule -->
+    <section class="py-8 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="section-divider pl-6 py-4 mb-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">📅 관리 일정표</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- Day 0-1 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <div class="flex items-start">
+                        <div class="timeline-item pl-4 mr-4">
+                            <div class="w-16 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <span class="font-bold text-blue-700 text-xs">Day 0-1</span>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 mb-2">🎬 컨설팅 준비 및 진행</h3>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 mb-1">준비 작업:</h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• 전담 매니저 배정 및 소개</li>
+                                        <li>• 사전 진단 및 현황 파악</li>
+                                        <li>• 맞춤형 컨설팅 계획 수립</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 mb-1">컨설팅 진행:</h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• 1:1 맞춤형 인지 컨설팅</li>
+                                        <li>• 실시간 성과 모니터링</li>
+                                        <li>• 즉시 피드백 및 조정</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 1 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <div class="flex items-start">
+                        <div class="timeline-item pl-4 mr-4">
+                            <div class="w-16 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                <span class="font-bold text-green-700 text-xs">Week 1</span>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 mb-2">📊 1주차 경과 관찰</h3>
+                            <div class="grid md:grid-cols-3 gap-4 text-sm">
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 mb-1">관찰 포인트:</h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• 초기 적용 결과</li>
+                                        <li>• 발생한 어려움</li>
+                                        <li>• 이해도 확인</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 mb-1">지원 활동:</h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• 전화/화상 체크인</li>
+                                        <li>• 추가 질의응답</li>
+                                        <li>• 보완 자료 제공</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 mb-1">산출물:</h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• 1주차 경과 보고서</li>
+                                        <li>• 개선 권고사항</li>
+                                        <li>• 다음 주 계획</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 2-3 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <div class="flex items-start">
+                        <div class="timeline-item pl-4 mr-4">
+                            <div class="w-16 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                <span class="font-bold text-purple-700 text-xs">Week 2-3</span>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 mb-2">📈 중간 성과 평가</h3>
+                            <div class="grid md:grid-cols-3 gap-4 text-sm">
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 mb-1">성과 측정:</h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• 문제 해결 진행도</li>
+                                        <li>• 목표 달성 수준</li>
+                                        <li>• 만족도 중간 평가</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 mb-1">조정 작업:</h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• 필요시 접근법 수정</li>
+                                        <li>• 추가 지원 방안 검토</li>
+                                        <li>• 목표 재설정</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 mb-1">산출물:</h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• 중간 성과 리포트</li>
+                                        <li>• 조정 계획서</li>
+                                        <li>• 최종 목표 재확인</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 4 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <div class="flex items-start">
+                        <div class="timeline-item pl-4 mr-4">
+                            <div class="w-16 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                                <span class="font-bold text-orange-700 text-xs">Week 4</span>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 mb-2">🏆 최종 성과 평가</h3>
+                            <div class="grid md:grid-cols-3 gap-4 text-sm">
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 mb-1">종합 평가:</h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• 최종 목표 달성도</li>
+                                        <li>• 지속성 평가</li>
+                                        <li>• 전체 만족도 조사</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 mb-1">향후 계획:</h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• 지속 관리 방안</li>
+                                        <li>• 추가 개선 기회</li>
+                                        <li>• 후속 서비스 제안</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 mb-1">최종 산출물:</h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• 최종 성과 리포트</li>
+                                        <li>• 성공 사례 문서</li>
+                                        <li>• 지속 관리 가이드</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expected Outcomes -->
+    <section class="py-8 bg-white border-t border-gray-200">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="section-divider pl-6 py-4 mb-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">🎯 예상 결과 및 보장 사항</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- 예상 결과 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <h3 class="font-bold text-gray-800 mb-3">🌟 예상 성과</h3>
+                    <div class="space-y-3">
+                        <div class="bg-emerald-50 border border-emerald-200 rounded p-3">
+                            <h4 class="font-semibold text-emerald-800 text-sm mb-1">문제 해결 성공률</h4>
+                            <p class="text-emerald-700 text-xs">90% 이상의 고객이 당초 목표를 달성하거나 상당한 개선 효과 체험</p>
+                        </div>
+                        <div class="bg-blue-50 border border-blue-200 rounded p-3">
+                            <h4 class="font-semibold text-blue-800 text-sm mb-1">만족도 수준</h4>
+                            <p class="text-blue-700 text-xs">95% 이상의 고객이 서비스에 대해 높은 만족도 표시</p>
+                        </div>
+                        <div class="bg-purple-50 border border-purple-200 rounded p-3">
+                            <h4 class="font-semibold text-purple-800 text-sm mb-1">지속적 효과</h4>
+                            <p class="text-purple-700 text-xs">80% 이상의 개선 효과가 4주 후에도 지속됨을 확인</p>
+                        </div>
+                        <div class="bg-amber-50 border border-amber-200 rounded p-3">
+                            <h4 class="font-semibold text-amber-800 text-sm mb-1">추가 효과</h4>
+                            <p class="text-amber-700 text-xs">예상치 못한 긍정적 부수 효과 발견 및 활용 방안 제시</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 보장 사항 -->
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <h3 class="font-bold text-gray-800 mb-3">🛡️ 서비스 보장</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="bg-red-50 border border-red-200 rounded p-3">
+                            <h4 class="font-semibold text-red-800 text-sm mb-1">💯 만족 보장</h4>
+                            <p class="text-red-700 text-xs">목표 달성도 70% 미만 시 추가 컨설팅 무료 제공</p>
+                        </div>
+                        <div class="bg-green-50 border border-green-200 rounded p-3">
+                            <h4 class="font-semibold text-green-800 text-sm mb-1">🔄 지속 지원</h4>
+                            <p class="text-green-700 text-xs">4주간 전담 매니저의 지속적인 관찰 및 지원 보장</p>
+                        </div>
+                        <div class="bg-blue-50 border border-blue-200 rounded p-3">
+                            <h4 class="font-semibold text-blue-800 text-sm mb-1">📞 즉시 대응</h4>
+                            <p class="text-blue-700 text-xs">문제 발생 시 24시간 내 전담 매니저 대응 보장</p>
+                        </div>
+                        <div class="bg-purple-50 border border-purple-200 rounded p-3">
+                            <h4 class="font-semibold text-purple-800 text-sm mb-1">📋 상세 리포트</h4>
+                            <p class="text-purple-700 text-xs">단계별 상세 보고서 및 최종 종합 리포트 제공 보장</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Next Steps -->
+    <section class="py-8 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="section-divider pl-6 py-4 mb-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-2">🚀 시작 절차 및 연락처</h2>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-bold text-gray-800 mb-3">📋 시작 절차</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <span class="text-blue-600 font-bold text-xs">1</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 text-sm mb-1">전담 매니저 배정</h4>
+                                    <p class="text-gray-600 text-xs">구매 확인 후 즉시 전담 매니저 배정 및 연락</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <span class="text-green-600 font-bold text-xs">2</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 text-sm mb-1">사전 진단 면담</h4>
+                                    <p class="text-gray-600 text-xs">현재 상황 파악 및 맞춤형 계획 수립</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <span class="text-purple-600 font-bold text-xs">3</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 text-sm mb-1">컨설팅 일정 조율</h4>
+                                    <p class="text-gray-600 text-xs">고객님께 가장 편한 시간으로 컨설팅 예약</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                    <span class="text-orange-600 font-bold text-xs">4</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 text-sm mb-1">컨설팅 및 관찰 시작</h4>
+                                    <p class="text-gray-600 text-xs">전담 관리 시스템 가동 및 체계적 지원 시작</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-bold text-gray-800 mb-3">📞 전담 연락처</h3>
+                        <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                            <div class="space-y-3 text-sm">
+                                <div>
+                                    <h4 class="font-semibold text-purple-800 mb-1">전담 매니저팀</h4>
+                                    <p class="text-purple-700 text-xs">구매 후 배정될 전담 매니저의 직통 연락처 제공</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-purple-800 mb-1">운영 시간</h4>
+                                    <p class="text-purple-700 text-xs">월-금 09:00-18:00 (긴급 시 24시간 대응)</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-purple-800 mb-1">연락 방법</h4>
+                                    <p class="text-purple-700 text-xs">전화, 카카오톡, 이메일, 화상 회의 모두 가능</p>
+                                </div>
+                                <div class="pt-2 border-t border-purple-200">
+                                    <h4 class="font-semibold text-purple-800 mb-1">🎯 즉시 시작 가능</h4>
+                                    <p class="text-purple-700 text-xs font-medium">구매 확인 후 2시간 내 전담 매니저 연락</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 no-print">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="text-sm text-gray-300 mb-2">
+                <strong>Loworld</strong> - 인지 컨설팅 전문 기업
+            </div>
+            <p class="text-gray-400 text-xs">
+                © 2025 Loworld. 10만원 인지 컨설팅 고객 전담 관리 시스템
+            </p>
+            <div class="mt-3 text-purple-300 text-xs">
+                💎 프리미엄 고객님만을 위한 특별 관리 서비스
+            </div>
+        </div>
+    </footer>
+
+    <!-- Print Styles -->
+    <script>
+        // 인쇄용 스타일 추가
+        if (window.matchMedia) {
+            var mediaQueryList = window.matchMedia('print');
+            mediaQueryList.addListener(function(mql) {
+                if (mql.matches) {
+                    document.body.style.fontSize = '12px';
+                    document.body.style.lineHeight = '1.4';
+                }
+            });
+        }
+
+        // 부드러운 스크롤
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 카드 호버 효과 개선
+        document.querySelectorAll('.phase-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
