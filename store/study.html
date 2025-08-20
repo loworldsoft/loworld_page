@@ -762,7 +762,7 @@
                         url: window.location.href
                     }, '*');
 
-                    console.log('부모에게 높이 정보 전송:', height + 'px');
+                    // console.log('부모에게 높이 정보 전송:', height + 'px');
                 }
             }
 
@@ -783,7 +783,7 @@
             function cleanup() {
                 if (isCleanedUp) return;
 
-                console.log('iframe 높이 조정 스크립트 정리 시작');
+                // console.log('iframe 높이 조정 스크립트 정리 시작');
 
                 // 플래그 설정
                 isCleanedUp = true;
@@ -792,7 +792,7 @@
                 if (mutationObserver) {
                     mutationObserver.disconnect();
                     mutationObserver = null;
-                    console.log('MutationObserver 정리 완료');
+                    // console.log('MutationObserver 정리 완료');
                 }
 
                 // 타이머 정리
@@ -807,7 +807,7 @@
                 window.removeEventListener('beforeunload', cleanup);
                 window.removeEventListener('unload', cleanup);
 
-                console.log('iframe 높이 조정 스크립트 정리 완료');
+                // console.log('iframe 높이 조정 스크립트 정리 완료');
             }
 
             // ========== 이벤트 리스너 등록 ==========
@@ -856,7 +856,7 @@
                     attributeFilter: ['style', 'class']
                 });
 
-                console.log('MutationObserver 활성화');
+                // console.log('MutationObserver 활성화');
             }
 
             // 5. 페이지 언로드 시 정리
@@ -866,7 +866,7 @@
             // 6. 일정 시간 후 자동 정리 (30초)
             setTimeout(function () {
                 if (!isCleanedUp) {
-                    console.log('30초 경과로 자동 정리 실행');
+                    // console.log('30초 경과로 자동 정리 실행');
                     cleanup();
                 }
             }, 30000);
@@ -881,7 +881,7 @@
                 });
             }
 
-            console.log('iframe 자동 높이 조정 스크립트 초기화 완료 (정리 로직 포함)');
+            // console.log('iframe 자동 높이 조정 스크립트 초기화 완료 (정리 로직 포함)');
 
         })();
     </script>
