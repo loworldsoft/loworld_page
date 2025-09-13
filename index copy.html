@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PVTZ4M4P2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6PVTZ4M4P2');
+    </script>
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MPGBKQ35');</script>
+    <!-- End Google Tag Manager -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loworld AI Nocode Agent | AI 기반 자동 소프트웨어 개발</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Chosen Palette: Calm Harmony Neutrals -->
+    <!-- Application Structure Plan: 사용자가 Loworld AI의 혁신성을 점진적으로 이해하도록 설계된 단일 페이지 스크롤링 앱. [1. Hero: 핵심 가치 제시] -> [2. 패러다임 전환: 기존 방식과 비교] -> [3. 핵심 기술: 주요 기능 상세 설명] -> [4. 시장 및 경쟁력: 데이터 기반의 시장 잠재력과 독점적 우위 시각화] -> [5. 기존 시스템 혁신: ERP/EMR 등과의 시너지 강조] -> [6. 결론 및 CTA] 순으로 구성. 이 구조는 기술의 '무엇'에서 시작하여 '왜' 중요한지로 자연스럽게 스토리를 전개하여 사용자의 관심과 이해를 극대화하기 위해 선택됨. -->
+    <!-- Visualization & Content Choices: [보고서 정보: 시장 성장률 -> 목표: 변화 강조 -> 시각화: Bar Chart (Chart.js) -> 상호작용: 툴팁, 로딩 애니메이션 -> 정당성: 복잡한 수치를 직관적으로 이해시킴], [보고서 정보: 기존 개발 방식 vs Loworld AI -> 목표: 비교 및 장점 부각 -> 시각화: Side-by-Side 카드 레이아웃 (HTML/Tailwind) -> 상호작용: 호버 효과 -> 정당성: 개념적 차이를 명확히 시각적으로 구분], [보고서 정보: 핵심 기능들 -> 목표: 정보 조직화 -> 시각화: 아이콘 기반 카드 그리드 -> 상호작용: 없음 (간결성 유지) -> 정당성: 각 기능의 핵심을 빠르고 쉽게 파악]. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        /* 기본 글꼴 설정 */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        /* 차트 컨테이너의 반응형 설정 */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            /* 데스크탑에서 차트 최대 너비 제한 */
+            margin-left: auto;
+            margin-right: auto;
+            height: 280px;
+            /* 모바일 기본 높이 */
+            max-height: 40vh;
+            /* 뷰포트 높이 대비 최대 높이 */
+        }
+
+        /* 태블릿 및 데스크탑에서 차트 높이 조정 */
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+
+        /* 부드러운 스크롤 효과 */
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        /* 섹션 페이드 인 애니메이션 */
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .flow-arrow {
+            color: #0079E0;
+            font-size: 2.5rem;
+            line-height: 1;
+            font-weight: bold;
+        }
+
+        /* Swiper 커스텀 스타일 */
+        .services-swiper {
+            padding: 40px 0 60px 0;
+        }
+
+        .services-swiper .swiper-slide {
+            height: auto;
+            display: flex;
+        }
+
+        .services-swiper .swiper-pagination {
+            bottom: 20px;
+        }
+
+        .services-swiper .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .services-swiper .swiper-pagination-bullet-active {
+            opacity: 1;
+            transform: scale(1.2);
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+        }
+
+        .services-swiper .swiper-button-next,
+        .services-swiper .swiper-button-prev {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            color: white;
+            font-size: 18px;
+            margin-top: -25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .services-swiper .swiper-button-next:hover,
+        .services-swiper .swiper-button-prev:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .services-swiper .swiper-button-next::after,
+        .services-swiper .swiper-button-prev::after {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .services-swiper .swiper-button-next,
+            .services-swiper .swiper-button-prev {
+                display: none;
+            }
+            
+            .chart-container {
+                height: 250px;
+            }
+        }
+
+        /* 추가 모바일 최적화 */
+        @media (max-width: 640px) {
+            .text-4xl {
+                font-size: 2rem;
+            }
+            
+            .text-6xl {
+                font-size: 3rem;
+            }
+            
+            .chart-container {
+                height: 220px;
+            }
+            
+            .services-swiper {
+                padding: 20px 0 40px 0;
+            }
+        }
+
+        /* 스크롤 인디케이터 */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+            background-size: 200% 100%;
+            animation: gradient 3s ease infinite;
+            z-index: 9999;
+        }
+
+        @keyframes gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* 호버 효과 개선 */
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 smooth-scroll">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPGBKQ35"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-gray-900">Loworld AI</h1>
+            <!-- 모바일 메뉴 버튼 -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-700 focus:outline-none" aria-label="메뉴 열기">
+                ☰
+            </button>
+            <!-- 데스크탑 메뉴 (모든 서비스 페이지들) -->
+            <div class="hidden md:flex flex-wrap gap-x-6 gap-y-2 items-center max-w-3xl">
+                <a href="loworld_agent.html" class="text-gray-600 hover:text-blue-600 whitespace-nowrap">에이전트</a>
+                <a href="ai_content.html" class="text-gray-600 hover:text-blue-600 whitespace-nowrap">콘텐츠</a>
+                <a href="consulting.html" class="text-gray-600 hover:text-blue-600 whitespace-nowrap">컨설팅</a>
+                <a href="commerce.html" class="text-gray-600 hover:text-blue-600 whitespace-nowrap">커머스</a>
+                <a href="marketing.html" class="text-gray-600 hover:text-blue-600 whitespace-nowrap">마케팅</a> <!-- 추가 -->
+                <a href="business_chatbot.html" class="text-gray-600 hover:text-blue-600 whitespace-nowrap">챗봇</a>
+                <a href="education.html" class="text-gray-600 hover:text-blue-600 whitespace-nowrap font-bold">교육</a>
+                <a href="vip.html" class="text-gray-600 hover:text-blue-600 whitespace-nowrap font-bold">VIP</a> <!-- 추가 -->
+                <a href="consulting/loworld_giver.html" class="text-red-600 hover:text-red-700 whitespace-nowrap font-bold bg-red-50 px-3 py-1 rounded-lg">🎁 지분나눔</a> <!-- 새로 추가 -->
+            </div>
+            <!-- 데스크탑 전용 버튼 -->
+            <a href="vision.html"
+                class="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors whitespace-nowrap">비전</a>
+        </nav>
+        <!-- 모바일 메뉴 드롭다운 (배경 추가) -->
+        <div id="mobile-menu" class="md:hidden fixed inset-0 z-50 hidden">
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="absolute top-0 right-0 w-64 h-full shadow-lg flex flex-col p-6 space-y-4 z-10
+                bg-white/80 border-l border-white/30" style="background-color: white !important;">
+                <button id="mobile-menu-close" class="self-end text-2xl text-gray-700 mb-4" aria-label="메뉴 닫기">×</button>
+                <a href="loworld_agent.html" class="block text-gray-700 hover:text-blue-600 py-2">🚀 에이전트</a>
+                <a href="ai_content.html" class="block text-gray-700 hover:text-blue-600 py-2">🎬 콘텐츠</a>
+                <a href="consulting.html" class="block text-gray-700 hover:text-blue-600 py-2">📚 컨설팅</a>
+                <a href="commerce.html" class="block text-gray-700 hover:text-blue-600 py-2">🛍️ 커머스</a>
+                <a href="marketing.html" class="block text-gray-700 hover:text-blue-600 py-2">📈 마케팅</a> <!-- 추가 -->
+                <a href="business_chatbot.html" class="block text-gray-700 hover:text-blue-600 py-2">🤖 챗봇</a>
+                <a href="education.html" class="block text-gray-700 hover:text-blue-600 py-2 font-bold">🎓 교육</a>
+                <a href="vip.html" class="block text-gray-700 hover:text-blue-600 py-2 font-bold">🌟 VIP</a> <!-- 추가 -->
+                <a href="consulting/loworld_giver.html" class="block text-red-600 hover:text-red-700 py-2 font-bold bg-red-50 px-3 rounded-lg mb-2">🎁 지분나눔</a> <!-- 새로 추가 -->
+                <a href="vision.html"
+                    class="block bg-blue-600 text-white text-center px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors mt-4">비전</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-20 md:py-32">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">소프트웨어를 만드는</span><br>
+                        <span class="text-gray-900">소프트웨어</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+                        Loworld AI Nocode Agent는 아이디어를 코딩 없이 현실로 만듭니다.<br>
+                        <span class="font-semibold text-blue-600">대한민국 최초</span>, AI가 동적 컴포넌트를 직접 생성하여 소프트웨어를 자동으로 구축하는 새로운 시대를 엽니다.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a href="https://api.loworldsoft.com"
+                            class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-10 py-4 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            🚀 AI Agent 체험하기
+                        </a>
+                        <a href="outsourcing.html"
+                            class="border-2 border-blue-600 text-blue-600 px-10 py-4 rounded-xl text-lg font-semibold hover:bg-blue-600 hover:text-white transition-all">
+                            🛠️ 외주 개발 서비스
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loworld AI 모든 서비스 알아보기 (Hero 다음으로 이동) -->
+        <section id="services" class="py-16 md:py-24 px-4 md:px-12 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100">
+            <div class="container mx-auto max-w-7xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 mb-4">
+                        🌟 Loworld AI 모든 서비스 알아보기
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        AI 기술의 모든 영역에서 혁신을 만들어가는 Loworld AI의 다양한 서비스를 경험해보세요
+                    </p>
+                    <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
+                </div>
+                
+                <!-- Swiper 컨테이너 -->
+                <div class="swiper services-swiper mb-12">
+                    <div class="swiper-wrapper">
+                        <!-- Loworld AI Agent -->
+                        <div class="swiper-slide">
+                            <div class="group relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full">
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-400 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                                <div class="relative p-8 h-full flex flex-col">
+                                    <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">Loworld AI Agent</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                                        혁신적인 AI 기반 자동 소프트웨어 개발 플랫폼으로 아이디어를 실제 동작하는 앱으로 변환합니다.
+                                    </p>
+                                    <a href="loworld_agent.html" 
+                                       class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg shadow bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold hover:from-blue-600 hover:to-cyan-500 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all group/link mt-auto">
+                                        자세히 보기
+                                        <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI 콘텐츠 사업 -->
+                        <div class="swiper-slide">
+                            <div class="group relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full">
+                                <div class="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                                <div class="relative p-8 h-full flex flex-col">
+                                    <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-green-600 transition-colors">AI 콘텐츠 사업</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                                        영상, 이미지, 텍스트 등 모든 콘텐츠를 AI로 자동 생성하여 마케팅과 브랜딩을 혁신합니다.
+                                    </p>
+                                    <a href="ai_content.html" 
+                                       class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg shadow bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold hover:from-green-600 hover:to-emerald-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all group/link mt-auto">
+                                        자세히 보기
+                                        <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 기술/교육 컨설팅 -->
+                        <div class="swiper-slide">
+                            <div class="group relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full">
+                                <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                                <div class="relative p-8 h-full flex flex-col">
+                                    <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                            <path d="m12 14 6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-indigo-600 transition-colors">기술/교육 컨설팅</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                                        20년 현장 경험을 바탕으로 진짜 솔루션과 글로벌 경쟁력을 키우는 컨설팅을 제공합니다.
+                                    </p>
+                                    <a href="consulting.html" 
+                                       class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg shadow bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold hover:from-indigo-600 hover:to-purple-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition-all group/link mt-auto">
+                                        자세히 보기
+                                        <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI 커머스 파트너십 -->
+                        <div class="swiper-slide">
+                            <div class="group relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full">
+                                <div class="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                                <div class="relative p-8 h-full flex flex-col">
+                                    <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-purple-600 transition-colors">AI 커머스 파트너십</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                                        AI 기술을 활용한 스마트 커머스 솔루션으로 온라인 비즈니스를 혁신합니다.
+                                    </p>
+                                    <a href="https://loworldsoft.com/commerce" 
+                                       class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg shadow bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold hover:from-purple-600 hover:to-pink-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all group/link mt-auto">
+                                        자세히 보기
+                                        <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 외주 개발 서비스 -->
+                        <div class="swiper-slide">
+                            <div class="group relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full">
+                                <div class="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                                <div class="relative p-8 h-full flex flex-col">
+                                    <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-orange-600 transition-colors">🛠️ 외주 개발 서비스</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                                        전문적이고 신뢰할 수 있는 맞춤형 소프트웨어 개발 서비스를 제공합니다.
+                                    </p>
+                                    <a href="https://loworldsoft.com/outsourcing" 
+                                       class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg shadow bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold hover:from-orange-600 hover:to-red-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-400 transition-all group/link mt-auto">
+                                        자세히 보기
+                                        <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 업무용 AI 챗봇 -->
+                        <div class="swiper-slide">
+                            <div class="group relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full">
+                                <div class="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                                <div class="relative p-8 h-full flex flex-col">
+                                    <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-cyan-600 transition-colors">🤖 업무용 AI 챗봇</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                                        제약영업 CSO부터 모든 도메인까지, 정산•결제•서명•보고서를 하나의 챗봇으로 자동화합니다.
+                                    </p>
+                                    <a href="business_chatbot.html" 
+                                       class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg shadow bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:from-cyan-600 hover:to-blue-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all group/link mt-auto">
+                                        자세히 보기
+                                        <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 글로벌 커뮤니티 -->
+                        <div class="swiper-slide">
+                            <div class="group relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full">
+                                <div class="absolute inset-0 bg-gradient-to-br from-emerald-500 to-teal-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                                <div class="relative p-8 h-full flex flex-col">
+                                    <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-emerald-600 transition-colors">🌍 글로벌 커뮤니티</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                                        전세계 콘텐츠 발행으로 광고수익을 창출하고, 글로벌 진출의 발판을 마련합니다.
+                                    </p>
+                                    <a href="community.html" 
+                                       class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg shadow bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold hover:from-emerald-600 hover:to-teal-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition-all group/link mt-auto">
+                                        자세히 보기
+                                        <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 페이지네이션 -->
+                    <div class="swiper-pagination"></div>
+                    
+                    <!-- 네비게이션 버튼 -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Paradigm Shift -->
+        <section id="introduction" class="py-16 md:py-24 bg-white section-fade-in">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                        ⚡ 소프트웨어 개발의 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">패러다임 전환</span>
+                    </h3>
+                    <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        기존의 방식은 정해진 블록을 조립하는 것에 그쳤습니다.<br>
+                        Loworld AI는 비즈니스 로직을 이해하고, 필요한 소프트웨어 구성 요소 자체를 동적으로 '생성'합니다.
+                    </p>
+                    <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    <!-- 기존 방식 -->
+                    <div class="relative bg-gradient-to-br from-red-50 to-orange-50 p-8 rounded-2xl shadow-lg border-2 border-red-100 transform hover:scale-105 transition-all duration-300">
+                        <div class="absolute top-4 right-4 text-red-500 text-3xl">❌</div>
+                        <h4 class="text-xl md:text-2xl font-bold mb-6 text-red-700">기존 방식 (No-code / Low-code)</h4>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-3 mt-1 text-lg">●</span>
+                                <div>
+                                    <strong class="text-red-600">정해진 템플릿과 블록:</strong><br>
+                                    <span class="text-sm text-gray-600">제공된 기능 내에서만 조합 가능</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-3 mt-1 text-lg">●</span>
+                                <div>
+                                    <strong class="text-red-600">제한된 유연성:</strong><br>
+                                    <span class="text-sm text-gray-600">복잡하고 특화된 로직 구현의 한계</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-3 mt-1 text-lg">●</span>
+                                <div>
+                                    <strong class="text-red-600">수동적 조립:</strong><br>
+                                    <span class="text-sm text-gray-600">사용자가 직접 모든 컴포넌트를 찾아 배열</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Loworld AI 방식 -->
+                    <div class="relative bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 text-white p-8 rounded-2xl shadow-2xl border border-blue-500 transform hover:scale-105 transition-all duration-300">
+                        <div class="absolute top-4 right-4 text-yellow-300 text-3xl">✨</div>
+                        <h4 class="text-xl md:text-2xl font-bold mb-6">Loworld AI</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-yellow-300 mr-3 mt-1 text-lg">✦</span>
+                                <div>
+                                    <strong class="text-yellow-100">AI의 동적 컴포넌트 생성:</strong><br>
+                                    <span class="text-sm text-blue-100">요구사항에 맞춰 필요한 부품을 AI가 직접 생성</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-yellow-300 mr-3 mt-1 text-lg">✦</span>
+                                <div>
+                                    <strong class="text-yellow-100">무한한 확장성 및 유연성:</strong><br>
+                                    <span class="text-sm text-blue-100">비즈니스 로직을 학습하여 맞춤형 기능 구현</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-yellow-300 mr-3 mt-1 text-lg">✦</span>
+                                <div>
+                                    <strong class="text-yellow-100">자동 조립 및 구축:</strong><br>
+                                    <span class="text-sm text-blue-100">AI가 최적의 구조로 소프트웨어를 자동 완성</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Core Technology -->
+        <section id="technology" class="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50 section-fade-in">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                        🚀 세상을 바꾸는 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">핵심 기술</span>
+                    </h3>
+                    <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        단순 자동화를 넘어, 비즈니스의 모든 과정을 지능적으로 생성하고 최적화합니다
+                    </p>
+                    <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                    <div class="group bg-white p-6 md:p-8 rounded-2xl text-center border border-gray-200 hover:shadow-2xl hover:border-blue-300 transition-all duration-500 transform hover:-translate-y-3">
+                        <div class="text-5xl md:text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">⚙️</div>
+                        <h4 class="text-lg md:text-xl font-bold mb-4 text-gray-800 group-hover:text-blue-600 transition-colors">소프트웨어 자동 생성</h4>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">요구사항 분석만으로 웹앱, 모듈, API까지 AI가 동적 컴포넌트를 조립하여 완성합니다.</p>
+                        <div class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-blue-500 to-purple-500 mx-auto transition-all duration-500 rounded-full"></div>
+                    </div>
+                    <div class="group bg-white p-6 md:p-8 rounded-2xl text-center border border-gray-200 hover:shadow-2xl hover:border-green-300 transition-all duration-500 transform hover:-translate-y-3">
+                        <div class="text-5xl md:text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">💬</div>
+                        <h4 class="text-lg md:text-xl font-bold mb-4 text-gray-800 group-hover:text-green-600 transition-colors">자동 온톨로지 UI</h4>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">챗플로우 기반으로 AI의 지식 체계를 시각적으로 구축하고 확장하여 도메인 전문가의 제어를 돕습니다.</p>
+                        <div class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-green-500 to-emerald-500 mx-auto transition-all duration-500 rounded-full"></div>
+                    </div>
+                    <div class="group bg-white p-6 md:p-8 rounded-2xl text-center border border-gray-200 hover:shadow-2xl hover:border-purple-300 transition-all duration-500 transform hover:-translate-y-3">
+                        <div class="text-5xl md:text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">🎬</div>
+                        <h4 class="text-lg md:text-xl font-bold mb-4 text-gray-800 group-hover:text-purple-600 transition-colors">콘텐츠 자동 생성</h4>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">영상, 쇼핑몰, 랜딩페이지 등 마케팅과 비즈니스에 필요한 모든 콘텐츠를 자동으로 만듭니다.</p>
+                        <div class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-purple-500 to-pink-500 mx-auto transition-all duration-500 rounded-full"></div>
+                    </div>
+                    <div class="group bg-white p-6 md:p-8 rounded-2xl text-center border border-gray-200 hover:shadow-2xl hover:border-orange-300 transition-all duration-500 transform hover:-translate-y-3">
+                        <div class="text-5xl md:text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">📈</div>
+                        <h4 class="text-lg md:text-xl font-bold mb-4 text-gray-800 group-hover:text-orange-600 transition-colors">마케팅 자동화</h4>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">고객 행동 분석부터 광고 소재 제작, 캠페인 최적화까지 End-to-End 마케팅을 자동 실행합니다.</p>
+                        <div class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-orange-500 to-red-500 mx-auto transition-all duration-500 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Market & Vision -->
+        <section id="market" class="py-16 md:py-24 bg-white section-fade-in">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                        📊 폭발적으로 성장하는 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">거대한 시장 기회</span>
+                    </h3>
+                    <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        전 세계는 이미 No-code와 AI Agent의 잠재력에 주목하고 있습니다.<br>
+                        Loworld AI는 이 거대한 흐름의 중심에 있습니다.
+                    </p>
+                    <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 shadow-lg border border-blue-200">
+                        <h4 class="text-xl md:text-2xl font-bold text-center mb-6 text-blue-800">
+                            📈 글로벌 No-code/Low-code 시장 전망
+                        </h4>
+                        <div class="chart-container bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                            <canvas id="marketGrowthChart"></canvas>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <p class="text-sm text-blue-700 font-semibold">
+                                📌 연평균 성장률 <span class="text-2xl font-bold text-blue-600">27.8%</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-8 shadow-lg border border-green-200">
+                        <h4 class="text-xl md:text-2xl font-bold text-center mb-6 text-green-800">
+                            🤖 글로벌 기업의 AI Agent 도입 의향
+                        </h4>
+                        <div class="chart-container bg-white p-6 rounded-xl shadow-md border border-gray-100">
+                            <canvas id="aiAdoptionChart"></canvas>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <p class="text-sm text-green-700 font-semibold">
+                                🎯 평균 도입 의향률 <span class="text-2xl font-bold text-green-600">91%</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 핵심 인사이트 -->
+                <div class="mt-16 grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-100 p-6 rounded-xl border border-purple-200 text-center">
+                        <div class="text-3xl mb-2">🌍</div>
+                        <h5 class="font-bold text-purple-800 mb-2">글로벌 메가트렌드</h5>
+                        <p class="text-sm text-purple-700">디지털 전환 가속화로 No-code 솔루션 수요 급증</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-red-100 p-6 rounded-xl border border-orange-200 text-center">
+                        <div class="text-3xl mb-2">⚡</div>
+                        <h5 class="font-bold text-orange-800 mb-2">시장 진입 타이밍</h5>
+                        <p class="text-sm text-orange-700">AI Agent 기술이 성숙기로 접어드는 골든타임</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-50 to-cyan-100 p-6 rounded-xl border border-blue-200 text-center">
+                        <div class="text-3xl mb-2">🎯</div>
+                        <h5 class="font-bold text-blue-800 mb-2">선점 우위</h5>
+                        <p class="text-sm text-blue-700">국내 시장 선도 기술로 해외 진출 기반 확보</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Competitive Advantage -->
+        <section id="advantage" class="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50 section-fade-in">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                        🏆 누구도 따라올 수 없는 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">독보적 강점</span>
+                    </h3>
+                    <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Loworld AI Nocode Agent는 단순한 툴이 아닌, 비즈니스의 미래를 바꾸는 혁신적인 플랫폼입니다
+                    </p>
+                    <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
+                </div>
+                
+                <!-- 핵심 혁신 하이라이트 -->
+                <div class="max-w-5xl mx-auto mb-12">
+                    <div class="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 p-8 md:p-12 rounded-3xl shadow-2xl text-white relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 backdrop-blur-sm"></div>
+                        <div class="relative z-10 text-center">
+                            <div class="text-4xl md:text-5xl mb-4">🚀</div>
+                            <h4 class="text-2xl md:text-3xl font-bold mb-4">기존 시스템의 완벽한 혁신</h4>
+                            <p class="text-lg md:text-xl mb-6 leading-relaxed">
+                                ERP, EMR 등 기존 시스템과 완벽하게 연동되며, 다양한 디바이스에서 사용 가능한 맞춤형 소프트웨어를 즉시 생성합니다.
+                            </p>
+                            <div class="inline-flex items-center bg-yellow-400 text-gray-900 px-6 py-3 rounded-full font-bold text-lg">
+                                ⚡ 기존 서비스 대비 <span class="text-2xl mx-2">3배 이상</span> 압도적 효율성
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 강점 그리드 -->
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
+                    <div class="group bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl hover:border-blue-300 transition-all duration-500 transform hover:-translate-y-2">
+                        <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-2xl text-white">🥇</span>
+                        </div>
+                        <h5 class="font-bold text-lg md:text-xl mb-3 text-gray-800 group-hover:text-green-600 transition-colors">대한민국 최초</h5>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">AI 에이전트 기반 자동 소프트웨어 개발 기술로 시장을 선점합니다.</p>
+                        <div class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-green-500 to-emerald-500 transition-all duration-500 rounded-full"></div>
+                    </div>
+                    
+                    <div class="group bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl hover:border-blue-300 transition-all duration-500 transform hover:-translate-y-2">
+                        <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-2xl text-white">👨‍💼</span>
+                        </div>
+                        <h5 class="font-bold text-lg md:text-xl mb-3 text-gray-800 group-hover:text-blue-600 transition-colors">도메인 전문가가 직접 제어</h5>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">개발자 의존도를 낮추고 비즈니스 민첩성을 극대화합니다.</p>
+                        <div class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-blue-500 to-cyan-500 transition-all duration-500 rounded-full"></div>
+                    </div>
+                    
+                    <div class="group bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl hover:border-purple-300 transition-all duration-500 transform hover:-translate-y-2">
+                        <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-2xl text-white">🔗</span>
+                        </div>
+                        <h5 class="font-bold text-lg md:text-xl mb-3 text-gray-800 group-hover:text-purple-600 transition-colors">통합 자동화 플랫폼</h5>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">기획, 개발, 마케팅까지 모든 과정을 하나로 해결합니다.</p>
+                        <div class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-500 rounded-full"></div>
+                    </div>
+                    
+                    <div class="group bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl hover:border-orange-300 transition-all duration-500 transform hover:-translate-y-2">
+                        <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-2xl text-white">🧠</span>
+                        </div>
+                        <h5 class="font-bold text-lg md:text-xl mb-3 text-gray-800 group-hover:text-orange-600 transition-colors">지속적인 AI 진화</h5>
+                        <p class="text-gray-600 text-sm md:text-base leading-relaxed">AI가 스스로 학습하고 변화에 적응하며 소프트웨어를 최적화합니다.</p>
+                        <div class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-orange-500 to-red-500 transition-all duration-500 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 3단계 소프트웨어 혁명 -->
+        <section id="process" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                        ⚡ <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">3단계</span>의 소프트웨어 혁명
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                        아이디어가 실제 작동하는 소프트웨어가 되는 가장 빠른 길
+                    </p>
+                    <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
+                </div>
+                
+                <div class="max-w-6xl mx-auto">
+                    <div class="flex flex-col lg:flex-row items-center justify-between space-y-12 lg:space-y-0 lg:space-x-8">
+                        <!-- Step 1 -->
+                        <div class="group text-center flex-1 transform hover:scale-105 transition-all duration-300">
+                            <div class="relative">
+                                <div class="bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full w-24 h-24 md:w-28 md:h-28 mx-auto flex items-center justify-center shadow-2xl group-hover:shadow-blue-300 transition-all duration-300">
+                                    <span class="text-3xl md:text-4xl font-bold text-white">1</span>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
+                                    <span class="text-lg">💡</span>
+                                </div>
+                            </div>
+                            <h3 class="font-bold text-xl md:text-2xl mt-6 text-blue-600">목표 및 데이터 정의</h3>
+                            <p class="mt-3 text-sm md:text-base text-gray-600 leading-relaxed max-w-xs mx-auto">
+                                코딩 대신, 원하는 목표와 데이터를 직관적인 '슬롯'에 삽입
+                            </p>
+                        </div>
+
+                        <!-- Arrow 1 -->
+                        <div class="flex-shrink-0 transform lg:rotate-0 rotate-90">
+                            <div class="text-blue-500 text-4xl font-bold animate-pulse">→</div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="group text-center flex-1 transform hover:scale-105 transition-all duration-300">
+                            <div class="relative">
+                                <div class="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full w-24 h-24 md:w-28 md:h-28 mx-auto flex items-center justify-center shadow-2xl group-hover:shadow-purple-300 transition-all duration-300">
+                                    <span class="text-3xl md:text-4xl font-bold text-white">2</span>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
+                                    <span class="text-lg">🤖</span>
+                                </div>
+                            </div>
+                            <h3 class="font-bold text-xl md:text-2xl mt-6 text-purple-600">AI Agent의 자동 설계</h3>
+                            <p class="mt-3 text-sm md:text-base text-gray-600 leading-relaxed max-w-xs mx-auto">
+                                AI가 목표를 분석하여 최적의 기능을 자동으로 조립
+                            </p>
+                        </div>
+
+                        <!-- Arrow 2 -->
+                        <div class="flex-shrink-0 transform lg:rotate-0 rotate-90">
+                            <div class="text-purple-500 text-4xl font-bold animate-pulse">→</div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="group text-center flex-1 transform hover:scale-105 transition-all duration-300">
+                            <div class="relative">
+                                <div class="bg-gradient-to-br from-green-500 to-emerald-600 rounded-full w-24 h-24 md:w-28 md:h-28 mx-auto flex items-center justify-center shadow-2xl group-hover:shadow-green-300 transition-all duration-300">
+                                    <span class="text-3xl md:text-4xl font-bold text-white">3</span>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
+                                    <span class="text-lg">🚀</span>
+                                </div>
+                            </div>
+                            <h3 class="font-bold text-xl md:text-2xl mt-6 text-green-600">원클릭 멀티플랫폼 배포</h3>
+                            <p class="mt-3 text-sm md:text-base text-gray-600 leading-relaxed max-w-xs mx-auto">
+                                웹, 모바일, 데스크톱 앱을 한 번에 생성 및 자율 운영
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 결과 강조 -->
+                    <div class="mt-16 text-center">
+                        <div class="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl shadow-lg">
+                            <span class="text-2xl mr-3">⚡</span>
+                            <span class="font-bold text-lg">개발 시간 <span class="text-yellow-300 text-2xl">90%</span> 단축</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4개년 성장 로드맵 -->
+        <section id="revenue-growth" class="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+                    <div class="lg:col-span-2">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                            📈 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">4개년 성장</span> 로드맵
+                        </h2>
+                        <p class="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">
+                            초기 안정적인 수익 확보 후, SaaS 중심으로 전환하여 기하급수적 성장을 목표로 합니다. 각 단계는 다음 성장을 위한 발판이 됩니다.
+                        </p>
+                        <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-6 rounded-2xl shadow-xl text-white">
+                            <div class="flex items-center justify-center mb-3">
+                                <span class="text-4xl mr-3">🎯</span>
+                                <div>
+                                    <p class="text-4xl md:text-5xl font-black">
+                                        400<span class="text-2xl font-bold">억</span>
+                                    </p>
+                                    <p class="font-bold text-blue-100">4차년도 목표 매출</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 grid grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200">
+                                <div class="text-2xl mb-2">🚀</div>
+                                <p class="text-sm font-semibold text-gray-700">연평균 성장률</p>
+                                <p class="text-xl font-bold text-blue-600">150%+</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl shadow-md border border-gray-200">
+                                <div class="text-2xl mb-2">💰</div>
+                                <p class="text-sm font-semibold text-gray-700">SaaS 비중</p>
+                                <p class="text-xl font-bold text-green-600">62.5%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-3">
+                        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-200">
+                            <h4 class="text-xl md:text-2xl font-bold text-center mb-6 text-gray-800">연도별 예상 매출 성장</h4>
+                            <div class="chart-container">
+                                <canvas id="revenueChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 미래 수익 구조 -->
+        <section id="revenue-mix" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+                    <div class="lg:col-span-2 lg:order-1">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                            💎 미래 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">수익 구조</span> (4차년도)
+                        </h2>
+                        <p class="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">
+                            궁극적으로 플랫폼 구독(SaaS) 수익이 핵심 비즈니스 모델이 됩니다. 자체 서비스와 외주 개발은 플랫폼의 기술력을 증명하고 성장을 가속화하는 역할을 수행합니다.
+                        </p>
+                        
+                        <!-- 수익 구조 요약 -->
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl border border-blue-200">
+                                <div class="flex items-center">
+                                    <div class="w-4 h-4 bg-blue-500 rounded mr-3"></div>
+                                    <span class="font-semibold text-blue-800">SaaS 구독</span>
+                                </div>
+                                <span class="text-xl font-bold text-blue-600">250억 (62.5%)</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-green-100 rounded-xl border border-green-200">
+                                <div class="flex items-center">
+                                    <div class="w-4 h-4 bg-green-500 rounded mr-3"></div>
+                                    <span class="font-semibold text-green-800">자체 서비스</span>
+                                </div>
+                                <span class="text-xl font-bold text-green-600">100억 (25%)</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-cyan-50 to-cyan-100 rounded-xl border border-cyan-200">
+                                <div class="flex items-center">
+                                    <div class="w-4 h-4 bg-cyan-500 rounded mr-3"></div>
+                                    <span class="font-semibold text-cyan-800">외주 개발</span>
+                                </div>
+                                <span class="text-xl font-bold text-cyan-600">50억 (12.5%)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-3 lg:order-2">
+                        <div class="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl shadow-xl p-6 md:p-8 border border-gray-200">
+                            <h4 class="text-xl md:text-2xl font-bold text-center mb-6 text-gray-800">4차년도 목표 매출 구성비</h4>
+                            <div class="chart-container h-80 md:h-96">
+                                <canvas id="revenueMixChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI 경쟁력 비교 -->
+        <section id="dominance" class="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                        🥊 누가 진짜 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">AI를 지배</span>할 것인가?
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                        단순한 '지식'을 넘어, '실행력'을 갖춘 AI가 미래를 만듭니다
+                    </p>
+                    <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
+                    <!-- 문과적 AI (LLM) -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-200 transform hover:scale-105 transition-all duration-300">
+                        <div class="text-center mb-6">
+                            <div class="inline-flex items-center justify-center w-16 h-16 bg-gray-100 rounded-full mb-4">
+                                <span class="text-3xl">📚</span>
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-bold text-gray-600">문과적 AI (LLM)</h3>
+                            <p class="text-lg font-semibold text-gray-500 mt-2">"똑똑한 조언자"</p>
+                        </div>
+                        <ul class="space-y-4 text-gray-600">
+                            <li class="flex items-start">
+                                <span class="mr-3 text-blue-500 text-lg flex-shrink-0">●</span>
+                                <span>아이디어와 코드 조각 제공</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 text-blue-500 text-lg flex-shrink-0">●</span>
+                                <span>언어 이해 및 생성에 탁월</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-3 text-blue-500 text-lg flex-shrink-0">●</span>
+                                <span>범용 기술로 상향 평준화</span>
+                            </li>
+                            <li class="flex items-start p-3 bg-red-50 rounded-lg border border-red-200">
+                                <span class="mr-3 text-red-500 font-bold text-xl flex-shrink-0">❌</span>
+                                <span class="font-semibold text-red-700">완성된 소프트웨어 실행 불가</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 공학적 AI (AI Factory) -->
+                    <div class="bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 rounded-2xl p-8 shadow-2xl border-2 border-blue-500 text-white transform hover:scale-105 transition-all duration-300 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 backdrop-blur-sm"></div>
+                        <div class="relative z-10">
+                            <div class="text-center mb-6">
+                                <div class="inline-flex items-center justify-center w-16 h-16 bg-yellow-400 rounded-full mb-4">
+                                    <span class="text-3xl">⚙️</span>
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-bold">공학적 AI (AI Factory)</h3>
+                                <p class="text-lg font-semibold text-yellow-200 mt-2">"유능한 엔지니어"</p>
+                            </div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <span class="mr-3 text-yellow-300 text-lg flex-shrink-0">◆</span>
+                                    <span>실제 작동하는 시스템 구축</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="mr-3 text-yellow-300 text-lg flex-shrink-0">◆</span>
+                                    <span>비즈니스 로직과 데이터 처리</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="mr-3 text-yellow-300 text-lg flex-shrink-0">◆</span>
+                                    <span>'마지막 1마일'을 연결해 가치 창출</span>
+                                </li>
+                                <li class="flex items-start p-3 bg-green-400/20 rounded-lg border border-green-300">
+                                    <span class="mr-3 text-green-300 font-bold text-xl flex-shrink-0">✔️</span>
+                                    <span class="font-semibold text-green-200">아이디어를 완전한 제품으로 실현</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 결론 강조 -->
+                <div class="mt-16 text-center">
+                    <div class="inline-flex items-center bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 px-8 py-4 rounded-2xl shadow-lg font-bold text-lg">
+                        <span class="text-2xl mr-3">🏆</span>
+                        실행력을 갖춘 AI가 진정한 혁신을 만듭니다
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI 팩토리 활용 -->
+        <section id="opportunity" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                        🏭 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">AI 팩토리</span>로 가능한 것들
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                        소프트웨어 개발의 경계를 허물고, 누구나 혁신가가 될 수 있습니다
+                    </p>
+                    <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
+                    <!-- 맞춤형 ERP/CRM -->
+                    <div class="group bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl shadow-lg p-6 md:p-8 text-center hover:shadow-2xl hover:from-blue-100 hover:to-indigo-200 transition-all duration-500 transform hover:-translate-y-3 border border-blue-200">
+                        <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-3xl text-white">🏢</span>
+                        </div>
+                        <h3 class="font-bold text-lg md:text-xl text-blue-800 mb-4 group-hover:text-blue-600 transition-colors">맞춤형 ERP/CRM</h3>
+                        <p class="text-sm md:text-base text-blue-700 leading-relaxed">내 비즈니스에 꼭 맞는 관리 시스템을 코딩 없이 며칠 만에 구축합니다.</p>
+                        <div class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto transition-all duration-500 rounded-full"></div>
+                    </div>
+                    
+                    <!-- 영업/마케팅 자동화 -->
+                    <div class="group bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl shadow-lg p-6 md:p-8 text-center hover:shadow-2xl hover:from-green-100 hover:to-emerald-200 transition-all duration-500 transform hover:-translate-y-3 border border-green-200">
+                        <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-3xl text-white">🚀</span>
+                        </div>
+                        <h3 class="font-bold text-lg md:text-xl text-green-800 mb-4 group-hover:text-green-600 transition-colors">영업/마케팅 자동화</h3>
+                        <p class="text-sm md:text-base text-green-700 leading-relaxed">캠페인 생성부터 성과 분석까지, 마케팅 전 과정을 완전 자동화합니다.</p>
+                        <div class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-green-500 to-emerald-500 mx-auto transition-all duration-500 rounded-full"></div>
+                    </div>
+                    
+                    <!-- 레거시 시스템 현대화 -->
+                    <div class="group bg-gradient-to-br from-purple-50 to-pink-100 rounded-2xl shadow-lg p-6 md:p-8 text-center hover:shadow-2xl hover:from-purple-100 hover:to-pink-200 transition-all duration-500 transform hover:-translate-y-3 border border-purple-200">
+                        <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-3xl text-white">💻</span>
+                        </div>
+                        <h3 class="font-bold text-lg md:text-xl text-purple-800 mb-4 group-hover:text-purple-600 transition-colors">레거시 시스템 현대화</h3>
+                        <p class="text-sm md:text-base text-purple-700 leading-relaxed">오래된 시스템을 데이터 손실 없이 최신 클라우드 앱으로 전환합니다.</p>
+                        <div class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-purple-500 to-pink-500 mx-auto transition-all duration-500 rounded-full"></div>
+                    </div>
+                    
+                    <!-- 1인 창업가 서비스 -->
+                    <div class="group bg-gradient-to-br from-orange-50 to-red-100 rounded-2xl shadow-lg p-6 md:p-8 text-center hover:shadow-2xl hover:from-orange-100 hover:to-red-200 transition-all duration-500 transform hover:-translate-y-3 border border-orange-200">
+                        <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-3xl text-white">🧑‍💻</span>
+                        </div>
+                        <h3 class="font-bold text-lg md:text-xl text-orange-800 mb-4 group-hover:text-orange-600 transition-colors">1인 창업가 서비스</h3>
+                        <p class="text-sm md:text-base text-orange-700 leading-relaxed">아이디어만 있다면, 비싼 외주 없이 자신만의 서비스를 즉시 출시합니다.</p>
+                        <div class="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-orange-500 to-red-500 mx-auto transition-all duration-500 rounded-full"></div>
+                    </div>
+                </div>
+                
+                <!-- 추가 혜택 강조 -->
+                <div class="mt-16 max-w-4xl mx-auto">
+                    <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white text-center shadow-2xl">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4">🎯 모든 산업, 모든 규모의 비즈니스가 대상</h3>
+                        <p class="text-lg mb-6">스타트업부터 대기업까지, 제조업부터 서비스업까지</p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="bg-white/20 rounded-lg p-3">
+                                <div class="text-2xl mb-2">⚡</div>
+                                <p class="text-sm font-semibold">95% 시간 단축</p>
+                            </div>
+                            <div class="bg-white/20 rounded-lg p-3">
+                                <div class="text-2xl mb-2">💰</div>
+                                <p class="text-sm font-semibold">80% 비용 절감</p>
+                            </div>
+                            <div class="bg-white/20 rounded-lg p-3">
+                                <div class="text-2xl mb-2">🎯</div>
+                                <p class="text-sm font-semibold">100% 맞춤화</p>
+                            </div>
+                            <div class="bg-white/20 rounded-lg p-3">
+                                <div class="text-2xl mb-2">🚀</div>
+                                <p class="text-sm font-semibold">즉시 배포</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20"></div>
+        <div class="container mx-auto px-6 py-16 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <h3 class="text-3xl md:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+                    🚀 미래의 비즈니스를 지금 경험하세요
+                </h3>
+                <p class="text-lg md:text-xl text-gray-300 mb-4 leading-relaxed">
+                    AI 팩토리는 소프트웨어 개발을 '소수 전문가의 영역'에서 '모두의 능력'으로 해방시킵니다.
+                </p>
+                <p class="text-base md:text-lg text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Loworld AI Nocode Agent가 당신의 비즈니스를 어떻게 혁신할 수 있는지 직접 확인해보세요
+                </p>
+                
+                <!-- CTA 버튼들 -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-ZzMRC4iORs0LNUUC8CtYdT-cUu0WiI52N_4SkftEXHzuTw/viewform?usp=dialog" target="_blank"
+                        class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-4 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                        📧 문의하기
+                    </a>
+                    <a href="https://api.loworldsoft.com"
+                        class="border-2 border-blue-400 text-blue-400 px-10 py-4 rounded-xl text-lg font-semibold hover:bg-blue-400 hover:text-white transition-all">
+                        🚀 AI Agent 체험
+                    </a>
+                </div>
+                
+                <div class="mt-12 pt-8 border-t border-gray-700 text-center">
+                    <div class="mb-6 space-y-2 text-gray-400 text-sm">
+                        <p>대표: 안상현 | 사업자 등록번호: 382-38-024336 | 통신판매번호: 2025-경기광명-0923</p>
+                        <p>연락문의: <a href="mailto:loworldsoft@gmail.com" class="text-blue-400 hover:text-blue-300">loworldsoft@gmail.com</a></p>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        &copy; 2025 Loworld AI. All rights reserved. | 미래를 만드는 AI 기술
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        const tooltipCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function (tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+
+        const revenueData = {
+            labels: ['1차년도 (2025)', '2차년도 (2026)', '3차년도 (2027)', '4차년도 (2028)'],
+            datasets: [
+                {
+                    label: '외주 개발',
+                    data: [15, 30, 40, 50],
+                    backgroundColor: '#89D2FF',
+                },
+                {
+                    label: '자체 서비스',
+                    data: [5, 20, 40, 100],
+                    backgroundColor: '#00B5AD',
+                },
+                {
+                    label: 'SaaS 구독',
+                    data: [0, 50, 120, 250],
+                    backgroundColor: '#0079E0',
+                }
+            ]
+        };
+
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'bar',
+            data: revenueData,
+            options: {
+                ...tooltipCallback,
+                maintainAspectRatio: false,
+                responsive: true,
+                scales: {
+                    x: {
+                        stacked: true,
+                    },
+                    y: {
+                        stacked: true,
+                        title: {
+                            display: true,
+                            text: '매출 (억 원)'
+                        }
+                    }
+                },
+                plugins: {
+                    ...tooltipCallback.plugins,
+                    title: {
+                        display: true,
+                        text: '연도별 예상 매출 성장',
+                        font: { size: 16 }
+                    }
+                }
+            }
+        });
+
+        const revenueMixData = {
+            labels: ['SaaS 구독', '자체 서비스', '외주 개발'],
+            datasets: [{
+                data: [250, 100, 50],
+                backgroundColor: ['#0079E0', '#00B5AD', '#89D2FF'],
+                hoverOffset: 4
+            }]
+        };
+
+        const revenueMixCtx = document.getElementById('revenueMixChart').getContext('2d');
+        new Chart(revenueMixCtx, {
+            type: 'doughnut',
+            data: revenueMixData,
+            options: {
+                ...tooltipCallback,
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    ...tooltipCallback.plugins,
+                    title: {
+                        display: true,
+                        text: '4차년도 목표 매출 구성비',
+                        font: { size: 16 }
+                    },
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const marketGrowthData = {
+                labels: ['2025년', '2025년', '2030년'],
+                datasets: [{
+                    label: '시장 규모 (억 달러)',
+                    data: [301, 455, 1017],
+                    backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                    borderColor: 'rgba(59, 130, 246, 1)',
+                    borderWidth: 1,
+                    borderRadius: 5,
+                }]
+            };
+
+            const aiAdoptionData = {
+                labels: ['사용 확대 계획', '투자 확대 의향', '이미 사용 경험'],
+                datasets: [{
+                    label: '응답 비율 (%)',
+                    data: [96, 95, 82],
+                    backgroundColor: 'rgba(16, 185, 129, 0.7)',
+                    borderColor: 'rgba(16, 185, 129, 1)',
+                    borderWidth: 1,
+                    borderRadius: 5,
+                }]
+            };
+
+            const chartOptions = {
+                maintainAspectRatio: false, /* 컨테이너 크기에 맞춰 비율 유연하게 조정 */
+                responsive: true, /* 컨테이너 크기 변화에 반응 */
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(200, 200, 200, 0.2)'
+                        },
+                        ticks: {
+                            font: {
+                                size: 10 /* 모바일에서도 가독성 확보 */
+                            }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            font: {
+                                size: 12 /* 모바일에서도 가독성 확보 */
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: '#1f2937',
+                        titleFont: { size: 14, weight: 'bold' },
+                        bodyFont: { size: 12 },
+                        padding: 10,
+                        cornerRadius: 4,
+                        displayColors: false
+                    }
+                }
+            };
+
+            const marketGrowthCtx = document.getElementById('marketGrowthChart')?.getContext('2d');
+            if (marketGrowthCtx) new Chart(marketGrowthCtx, { type: 'bar', data: marketGrowthData, options: chartOptions });
+
+            const aiAdoptionCtx = document.getElementById('aiAdoptionChart')?.getContext('2d');
+            if (aiAdoptionCtx) new Chart(aiAdoptionCtx, { type: 'bar', data: aiAdoptionData, options: chartOptions });
+
+            /* 섹션별 스크롤 페이드인 효과 */
+            const sections = document.querySelectorAll('.section-fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            /* 스무스 스크롤 네비게이션 */
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+
+        // 모바일 메뉴 토글
+        document.addEventListener('DOMContentLoaded', () => {
+            // 스크롤 인디케이터 추가
+            const scrollIndicator = document.createElement('div');
+            scrollIndicator.className = 'scroll-indicator';
+            document.body.appendChild(scrollIndicator);
+
+            // 스크롤 진행률 업데이트
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                scrollIndicator.style.background = `linear-gradient(90deg, 
+                    #3b82f6 0%, 
+                    #8b5cf6 ${scrollPercent}%, 
+                    #e5e7eb ${scrollPercent}%, 
+                    #e5e7eb 100%)`;
+            });
+
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+            if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('hidden');
+                });
+                mobileMenuClose.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+                // 메뉴 클릭 시 자동 닫힘
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+
+            // Swiper 초기화
+            const servicesSwiper = new Swiper('.services-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                },
+                effect: 'slide',
+                speed: 600,
+                grabCursor: true,
+                watchSlidesProgress: true,
+                observer: true,
+                observeParents: true,
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
