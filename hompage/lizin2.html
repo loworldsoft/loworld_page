@@ -1382,12 +1382,14 @@
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 18px;
+            color: #000000;
         }
 
         .service-card p {
             opacity: 0.9;
             line-height: 1.7;
             font-size: 1.05rem;
+            color: #333333;
         }
 
         /* Testimonials */
@@ -2038,6 +2040,49 @@
             position: relative;
         }
 
+        /* 전문 진료 서비스별 배경 이미지 */
+        .gallery-item:nth-child(1) .item-background {
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.8), rgba(255, 105, 180, 0.8)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23ffb6c1" width="400" height="300"/><circle fill="%23ffffff" opacity="0.2" cx="100" cy="100" r="50"/><circle fill="%23ffffff" opacity="0.1" cx="300" cy="200" r="30"/><path fill="%23ffffff" opacity="0.15" d="M50 150 Q200 100 350 150 Q200 200 50 150"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gallery-item:nth-child(2) .item-background {
+            background: linear-gradient(135deg, rgba(255, 218, 185, 0.8), rgba(255, 160, 122, 0.8)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23ffdab9" width="400" height="300"/><ellipse fill="%23ffffff" opacity="0.2" cx="200" cy="150" rx="100" ry="50"/><circle fill="%23ffffff" opacity="0.1" cx="80" cy="80" r="25"/><circle fill="%23ffffff" opacity="0.1" cx="320" cy="220" r="35"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gallery-item:nth-child(3) .item-background {
+            background: linear-gradient(135deg, rgba(221, 160, 221, 0.8), rgba(218, 112, 214, 0.8)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23dda0dd" width="400" height="300"/><polygon fill="%23ffffff" opacity="0.2" points="200,50 250,150 150,150"/><circle fill="%23ffffff" opacity="0.15" cx="100" cy="200" r="40"/><circle fill="%23ffffff" opacity="0.1" cx="300" cy="100" r="20"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gallery-item:nth-child(4) .item-background {
+            background: linear-gradient(135deg, rgba(173, 216, 230, 0.8), rgba(135, 206, 235, 0.8)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23add8e6" width="400" height="300"/><rect fill="%23ffffff" opacity="0.2" x="50" y="50" width="100" height="80" rx="10"/><rect fill="%23ffffff" opacity="0.15" x="200" y="120" width="150" height="100" rx="15"/><circle fill="%23ffffff" opacity="0.1" cx="350" cy="80" r="30"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gallery-item:nth-child(5) .item-background {
+            background: linear-gradient(135deg, rgba(230, 230, 250, 0.8), rgba(216, 191, 216, 0.8)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23e6e6fa" width="400" height="300"/><path fill="%23ffffff" opacity="0.2" d="M100 100 Q200 50 300 100 Q200 150 100 100"/><circle fill="%23ffffff" opacity="0.15" cx="150" cy="200" r="35"/><circle fill="%23ffffff" opacity="0.1" cx="320" cy="80" r="25"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gallery-item:nth-child(6) .item-background {
+            background: linear-gradient(135deg, rgba(255, 228, 225, 0.8), rgba(255, 182, 193, 0.8)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%23ffe4e1" width="400" height="300"/><ellipse fill="%23ffffff" opacity="0.2" cx="200" cy="100" rx="80" ry="40"/><ellipse fill="%23ffffff" opacity="0.15" cx="150" cy="200" rx="60" ry="30"/><circle fill="%23ffffff" opacity="0.1" cx="300" cy="180" r="20"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
         .item-overlay {
             position: absolute;
             bottom: 0;
@@ -2560,93 +2605,71 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section class="experience-section">
-        <div class="container">
-            <div class="experience-header fade-in">
-                <h2 class="experience-title">특별한 <span class="gradient-text">경험</span></h2>
-                <p class="experience-subtitle">리즈인에서만 누릴 수 있는 프리미엄 케어</p>
-            </div>
-            
-            <div class="experience-grid">
-                <div class="experience-card card-large fade-in">
-                    <div class="card-background">
-                        <div class="card-gradient"></div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-icon large">🌹</div>
-                        <h3>개인 맞춤 프로그램</h3>
-                        <p>당신만을 위한 특별한 치료 계획</p>
-                        <div class="card-stats">
-                            <span class="stat">98% 만족도</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="experience-card fade-in">
-                    <div class="card-background">
-                        <div class="card-gradient"></div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-icon">💎</div>
-                        <h3>프리미엄 케어</h3>
-                        <p>최고급 시설과 서비스</p>
-                    </div>
-                </div>
-                
-                <div class="experience-card fade-in">
-                    <div class="card-background">
-                        <div class="card-gradient"></div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-icon">✨</div>
-                        <h3>혁신적 기술</h3>
-                        <p>최신 의료 기술 적용</p>
-                    </div>
-                </div>
-                
-                <div class="experience-card fade-in">
-                    <div class="card-background">
-                        <div class="card-gradient"></div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-icon">🤍</div>
-                        <h3>따뜻한 배려</h3>
-                        <p>세심하고 정성스러운 관리</p>
-                    </div>
-                </div>
-                
-                <div class="experience-card fade-in">
-                    <div class="card-background">
-                        <div class="card-gradient"></div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-icon">🌸</div>
-                        <h3>전문성</h3>
-                        <p>풍부한 경험의 의료진</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
+    <!-- Services Section -->
     <section class="gallery-section">
         <div class="container">
             <div class="gallery-header fade-in">
-                <h2 class="gallery-title">아름다운 <span class="gradient-text">순간들</span></h2>
-                <p class="gallery-subtitle">리즈인에서의 특별한 경험들</p>
+                <h2 class="gallery-title">전문 진료 <span class="gradient-text">서비스</span></h2>
+                <p class="gallery-subtitle">20년 경력 산부인과 전문의와 함께하는 전문적인 난임 치료</p>
             </div>
             
             <div class="gallery-grid">
                 <div class="gallery-item large fade-in">
                     <div class="item-background">
                         <div class="item-overlay">
-                            <h3>편안한 환경</h3>
-                            <p>안락하고 프라이빗한 진료 공간</p>
+                            <h3>🌸 난임 클리닉</h3>
+                            <p>생리 주기의 면밀한 파악부터 체계적인 난임 치료까지, 자연 임신을 위한 전문적인 접근을 제공합니다.</p>
                         </div>
                     </div>
                 </div>
+                
+                <div class="gallery-item fade-in">
+                    <div class="item-background">
+                        <div class="item-overlay">
+                            <h3>🥚 배란 유도</h3>
+                            <p>적절한 검사를 통해 자연 임신의 제한점을 확인하고 정확한 배란 유도 치료를 진행합니다.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <div class="item-background">
+                        <div class="item-overlay">
+                            <h3>💉 인공 수정</h3>
+                            <p>안전하고 효과적인 인공수정 시술로 임신 성공률을 높이는 전문 치료를 제공합니다.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item wide fade-in">
+                    <div class="item-background">
+                        <div class="item-overlay">
+                            <h3>🔬 시험관아기 시술</h3>
+                            <p>최신 의료 기술과 풍부한 경험을 바탕으로 한 시험관아기 시술을 안전하게 진행합니다.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <div class="item-background">
+                        <div class="item-overlay">
+                            <h3>❄️ 난자/정자/배아 냉동</h3>
+                            <p>미래의 임신을 위한 난자, 정자, 배아 냉동 보관 서비스를 안전하게 제공합니다.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <div class="item-background">
+                        <div class="item-overlay">
+                            <h3>👩‍⚕️ 1:1 맞춤 상담</h3>
+                            <p>20년 경력 산부인과 전문의의 개별 맞춤 상담과 시크릿 진료를 제공합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
                 
                 <div class="gallery-item fade-in">
                     <div class="item-background">
@@ -2679,33 +2702,25 @@
     </section>
                 
                 <div class="service-card fade-in">
-                    <div class="icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
+                    <div class="icon">💉</div>
                     <h3>인공수정</h3>
                     <p>개인별 맞춤 인공수정 프로그램 및 전문 관리</p>
                 </div>
                 
                 <div class="service-card fade-in">
-                    <div class="icon">
-                        <i class="fas fa-pills"></i>
-                    </div>
+                    <div class="icon">💊</div>
                     <h3>호르몬 치료</h3>
                     <p>정밀한 호르몬 검사와 개인 맞춤형 호르몬 치료</p>
                 </div>
                 
                 <div class="service-card fade-in">
-                    <div class="icon">
-                        <i class="fas fa-stethoscope"></i>
-                    </div>
+                    <div class="icon">🔬</div>
                     <h3>종합 검진</h3>
                     <p>남녀 난임 종합 검진 및 상담 서비스</p>
                 </div>
                 
                 <div class="service-card fade-in">
-                    <div class="icon">
-                        <i class="fas fa-heart-pulse"></i>
-                    </div>
+                    <div class="icon">💝</div>
                     <h3>관리 프로그램</h3>
                     <p>임신 성공을 위한 지속적인 관리 및 상담</p>
                 </div>
@@ -2725,20 +2740,20 @@
                 <div class="story-card floating fade-in">
                     <div class="story-background"></div>
                     <div class="story-content">
-                        <div class="story-emoji">💝</div>
-                        <h3>새로운 시작</h3>
-                        <p>"전문적인 케어로 꿈을 이뤘어요"</p>
-                        <div class="story-author">김은주님</div>
+                        <div class="story-emoji">🌸</div>
+                        <h3>자연임신 성공</h3>
+                        <p>"생리주기 분석을 통한 정확한 치료로 자연임신에 성공했어요"</p>
+                        <div class="story-author">서○○님 (30세)</div>
                     </div>
                 </div>
                 
                 <div class="story-card floating fade-in">
                     <div class="story-background"></div>
                     <div class="story-content">
-                        <div class="story-emoji">🌸</div>
-                        <h3>희망의 열매</h3>
-                        <p>"따뜻한 관심에 감사해요"</p>
-                        <div class="story-author">박미경님</div>
+                        <div class="story-emoji">💝</div>
+                        <h3>시험관아기 성공</h3>
+                        <p>"20년 경력 전문의의 체계적 관리로 건강한 아이를 만났어요"</p>
+                        <div class="story-author">김○○님 (35세)</div>
                     </div>
                 </div>
                 
@@ -2746,9 +2761,9 @@
                     <div class="story-background"></div>
                     <div class="story-content">
                         <div class="story-emoji">✨</div>
-                        <h3>기적 같은 순간</h3>
-                        <p>"리즈인과 함께해서 행복해요"</p>
-                        <div class="story-author">이수진님</div>
+                        <h3>냉동배아 임신</h3>
+                        <p>"배아냉동 후 안전한 시술로 두 번째 아이까지 성공했어요"</p>
+                        <div class="story-author">박○○님 (37세)</div>
                     </div>
                 </div>
             </div>
