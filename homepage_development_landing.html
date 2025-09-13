@@ -45,6 +45,9 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -117,6 +120,66 @@
             background: var(--accent-hover);
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+            box-shadow: var(--shadow-lg);
+            z-index: 999;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        .mobile-nav-links li {
+            padding: 0;
+        }
+
+        .mobile-nav-links a {
+            display: block;
+            padding: 1rem 2rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid var(--gray-100);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-links a:hover {
+            background: var(--gray-50);
+            color: var(--accent-color);
+        }
+
+        .mobile-cta {
+            padding: 1rem 2rem;
+        }
+
+        .mobile-cta .cta-button {
+            width: 100%;
+            text-align: center;
+            display: block;
         }
 
         /* Hero Section */
@@ -192,6 +255,8 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            min-height: 48px;
+            touch-action: manipulation;
         }
 
         .button-primary:hover {
@@ -211,6 +276,8 @@
             border: 2px solid var(--gray-300);
             transition: all 0.3s ease;
             cursor: pointer;
+            min-height: 48px;
+            touch-action: manipulation;
         }
 
         .button-secondary:hover {
@@ -586,13 +653,43 @@
                 display: none;
             }
 
+            .cta-button {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
             .hero {
-                padding: 5rem 0 3rem;
+                padding: 4rem 0 3rem;
+            }
+
+            .hero-title {
+                font-size: clamp(1.8rem, 8vw, 2.5rem);
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
+
+            .hero-subtitle {
+                font-size: clamp(1rem, 4vw, 1.1rem);
+                margin-bottom: 2rem;
+                padding: 0 0.5rem;
             }
 
             .hero-actions {
                 flex-direction: column;
                 align-items: center;
+                gap: 0.75rem;
+            }
+
+            .button-primary,
+            .button-secondary {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+                padding: 1rem 1.5rem;
+                font-size: 1.1rem;
             }
 
             .services-grid {
@@ -601,7 +698,11 @@
             }
 
             .service-card {
-                padding: 2rem;
+                padding: 2rem 1.5rem;
+            }
+
+            .service-title {
+                font-size: 1.3rem;
             }
 
             .process-steps {
@@ -610,19 +711,54 @@
             }
 
             .pricing-card {
-                padding: 2rem;
-                margin: 0 1rem;
+                padding: 2rem 1.5rem;
+                margin: 0 0.5rem;
+            }
+
+            .pricing-features li {
+                font-size: 1rem;
+                margin-bottom: 0.75rem;
             }
 
             .contact-actions {
                 flex-direction: column;
                 align-items: center;
+                gap: 1rem;
+            }
+
+            .contact-button {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+                padding: 1rem 1.5rem;
+                font-size: 1.1rem;
+                min-height: 48px;
+                touch-action: manipulation;
+            }
+
+            .contact-info {
+                margin-top: 1.5rem;
+            }
+
+            .contact-info p {
+                font-size: 0.9rem;
+                line-height: 1.4;
             }
 
             .portfolio-link {
                 flex-direction: column;
                 text-align: center;
-                padding: 2rem;
+                padding: 1.5rem;
+                gap: 0.75rem;
+            }
+
+            .section-title {
+                font-size: clamp(1.5rem, 6vw, 2rem);
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                padding: 0 0.5rem;
             }
         }
 
@@ -632,7 +768,23 @@
             }
 
             .hero {
-                padding: 4rem 0 2rem;
+                padding: 3rem 0 2rem;
+            }
+
+            .hero-title {
+                font-size: clamp(1.5rem, 7vw, 2rem);
+                margin-bottom: 0.75rem;
+            }
+
+            .hero-subtitle {
+                font-size: clamp(0.9rem, 3.5vw, 1rem);
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-badge {
+                font-size: 0.8rem;
+                padding: 0.375rem 0.75rem;
+                margin-bottom: 1.5rem;
             }
 
             .services,
@@ -640,23 +792,109 @@
             .pricing,
             .process,
             .contact {
-                padding: 4rem 0;
+                padding: 3rem 0;
+            }
+
+            .section-title {
+                font-size: clamp(1.3rem, 5vw, 1.8rem);
+                margin-bottom: 0.75rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 2rem;
             }
 
             .service-card,
             .step-card {
-                padding: 1.5rem;
+                padding: 1.25rem;
+            }
+
+            .service-title {
+                font-size: 1.2rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .service-description {
+                font-size: 0.9rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .service-icon {
+                font-size: 2rem;
+                margin-bottom: 1rem;
             }
 
             .pricing-card {
-                padding: 1.5rem;
+                padding: 1.25rem;
+                margin: 0 0.25rem;
+            }
+
+            .pricing-title {
+                font-size: 1.5rem;
+            }
+
+            .pricing-price {
+                font-size: 2.5rem;
+            }
+
+            .pricing-features li {
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .pricing-note {
+                margin-top: 1.5rem;
+                padding: 1rem;
+            }
+
+            .pricing-note-title {
+                font-size: 0.9rem;
+            }
+
+            .step-title {
+                font-size: 1.1rem;
+            }
+
+            .step-description {
+                font-size: 0.9rem;
             }
 
             .button-primary,
             .button-secondary,
             .contact-button {
-                padding: 0.875rem 1.5rem;
+                padding: 0.875rem 1.25rem;
                 font-size: 1rem;
+                max-width: 260px;
+                min-height: 48px;
+                touch-action: manipulation;
+                cursor: pointer;
+            }
+
+            .portfolio-link {
+                padding: 1.25rem;
+                gap: 0.5rem;
+            }
+
+            .portfolio-icon {
+                font-size: 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .mobile-menu {
+                top: 60px;
+            }
+
+            .mobile-nav-links a {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .mobile-cta {
+                padding: 0.875rem 1.5rem;
             }
         }
 
@@ -697,7 +935,21 @@
                     <li><a href="#process" class="nav-link">진행과정</a></li>
                 </ul>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-ZzMRC4iORs0LNUUC8CtYdT-cUu0WiI52N_4SkftEXHzuTw/viewform?usp=dialog" target="_blank" class="cta-button">상담 신청</a>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
             </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-nav-links">
+                <li><a href="#services" onclick="closeMobileMenu()">서비스</a></li>
+                <li><a href="#portfolio" onclick="closeMobileMenu()">포트폴리오</a></li>
+                <li><a href="#pricing" onclick="closeMobileMenu()">가격</a></li>
+                <li><a href="#process" onclick="closeMobileMenu()">진행과정</a></li>
+            </ul>
+            <div class="mobile-cta">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-ZzMRC4iORs0LNUUC8CtYdT-cUu0WiI52N_4SkftEXHzuTw/viewform?usp=dialog" target="_blank" class="cta-button">상담 신청</a>
+            </div>
         </div>
     </header>
 
@@ -937,13 +1189,41 @@
     </footer>
 
     <script>
+        // Mobile menu functions
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.remove('active');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!mobileMenu.contains(event.target) && !toggle.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
             if (window.scrollY > 100) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
+            }
+            
+            // Hide mobile menu when scrolling
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
             }
         });
 
