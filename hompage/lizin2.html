@@ -583,21 +583,32 @@
         }
 
         .hero-subtitle {
-            color: var(--gray-600);
+            color: var(--gray-800);
             margin-bottom: 3rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
             font-size: 1.125rem;
             line-height: 1.6;
+            font-weight: 500;
         }
 
         .highlight {
-            background: linear-gradient(135deg, var(--pink-400) 0%, var(--purple-400) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--pink-500) !important;
+            background: none !important;
+            -webkit-background-clip: initial !important;
+            -webkit-text-fill-color: initial !important;
+            background-clip: initial !important;
             font-weight: 700;
+        }
+
+        /* 브라우저 호환성을 위한 대체 스타일 */
+        @supports not (-webkit-background-clip: text) {
+            .highlight {
+                background: none;
+                color: var(--pink-500);
+                -webkit-text-fill-color: initial;
+            }
         }
 
         .hero-actions {
