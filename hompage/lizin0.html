@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
+<html lang="ko"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>리즈인 여성의원</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -25,80 +23,16 @@
             --gray-700: #404040;
             --gray-800: #262626;
             --gray-900: #171717;
-            
-            /* Feminine Color Palette */
-            --rose-100: #ffe4e6;
-            --rose-200: #fecdd3;
-            --rose-300: #fda4af;
-            --rose-400: #fb7185;
-            --rose-500: #f43f5e;
-            --rose-600: #e11d48;
-            
-            --pink-100: #fce7f3;
-            --pink-200: #fbcfe8;
-            --pink-300: #f9a8d4;
-            --pink-400: #f472b6;
-            --pink-500: #ec4899;
-            --pink-600: #db2777;
-            
-            --purple-100: #f3e8ff;
-            --purple-200: #e9d5ff;
-            --purple-300: #d8b4fe;
-            --purple-400: #c084fc;
-            --purple-500: #a855f7;
-            --purple-600: #9333ea;
-            
-            --lavender: #e6e6fa;
-            --pearl: #f8f6f0;
-            --champagne: #f7e7ce;
-            --blush: #ffeef0;
+            --accent-pink: #ec4899;
+            --accent-purple: #8b5cf6;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, var(--blush) 0%, var(--pearl) 25%, var(--lavender) 50%, var(--pink-100) 75%, var(--rose-100) 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease-in-out infinite;
+            background-color: var(--primary-white);
             color: var(--primary-black);
             line-height: 1.5;
             overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Animated Background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(244, 63, 94, 0.05) 0%, transparent 50%);
-            z-index: -2;
-            animation: floatingColors 20s ease-in-out infinite;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        @keyframes floatingColors {
-            0%, 100% { 
-                transform: translateX(0%) translateY(0%) rotate(0deg);
-                opacity: 0.6;
-            }
-            33% { 
-                transform: translateX(-20%) translateY(-10%) rotate(120deg);
-                opacity: 0.8;
-            }
-            66% { 
-                transform: translateX(20%) translateY(10%) rotate(240deg);
-                opacity: 0.4;
-            }
         }
 
         /* Typography */
@@ -140,144 +74,14 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
-            position: relative;
         }
 
         .section {
             padding: 8rem 0;
-            position: relative;
         }
 
         .section-sm {
             padding: 4rem 0;
-        }
-
-        /* Floating Elements */
-        .floating-hearts {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .heart {
-            position: absolute;
-            font-size: 20px;
-            color: var(--pink-300);
-            animation: floatUp 15s linear infinite;
-            opacity: 0;
-        }
-
-        .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
-        .heart:nth-child(2) { left: 20%; animation-delay: 2s; }
-        .heart:nth-child(3) { left: 30%; animation-delay: 4s; }
-        .heart:nth-child(4) { left: 40%; animation-delay: 6s; }
-        .heart:nth-child(5) { left: 50%; animation-delay: 8s; }
-        .heart:nth-child(6) { left: 60%; animation-delay: 10s; }
-        .heart:nth-child(7) { left: 70%; animation-delay: 12s; }
-        .heart:nth-child(8) { left: 80%; animation-delay: 14s; }
-        .heart:nth-child(9) { left: 90%; animation-delay: 16s; }
-
-        @keyframes floatUp {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        /* Sparkle Animation */
-        .sparkles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .sparkle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--pink-400);
-            border-radius: 50%;
-            animation: sparkle 3s linear infinite;
-        }
-
-        .sparkle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-        .sparkle:nth-child(2) { top: 40%; left: 30%; animation-delay: 0.5s; }
-        .sparkle:nth-child(3) { top: 60%; left: 50%; animation-delay: 1s; }
-        .sparkle:nth-child(4) { top: 80%; left: 70%; animation-delay: 1.5s; }
-        .sparkle:nth-child(5) { top: 30%; left: 80%; animation-delay: 2s; }
-        .sparkle:nth-child(6) { top: 70%; left: 20%; animation-delay: 2.5s; }
-
-        @keyframes sparkle {
-            0%, 100% {
-                opacity: 0;
-                transform: scale(0);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Bubble Animation */
-        .bubbles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .bubble {
-            position: absolute;
-            background: linear-gradient(135deg, rgba(244, 63, 94, 0.2), rgba(236, 72, 153, 0.3));
-            border-radius: 50%;
-            animation: bubbleUp 12s linear infinite;
-            opacity: 0;
-        }
-
-        .bubble:nth-child(1) { width: 40px; height: 40px; left: 15%; animation-delay: 0s; }
-        .bubble:nth-child(2) { width: 60px; height: 60px; left: 35%; animation-delay: 2s; }
-        .bubble:nth-child(3) { width: 30px; height: 30px; left: 55%; animation-delay: 4s; }
-        .bubble:nth-child(4) { width: 50px; height: 50px; left: 75%; animation-delay: 6s; }
-        .bubble:nth-child(5) { width: 35px; height: 35px; left: 85%; animation-delay: 8s; }
-
-        @keyframes bubbleUp {
-            0% {
-                transform: translateY(100vh) scale(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.6;
-                transform: translateY(90vh) scale(1);
-            }
-            90% {
-                opacity: 0.6;
-                transform: translateY(10vh) scale(1);
-            }
-            100% {
-                transform: translateY(-10vh) scale(0);
-                opacity: 0;
-            }
         }
 
         /* Hero Section */
@@ -286,300 +90,28 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
             position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--blush) 0%, var(--pearl) 30%, var(--lavender) 60%, var(--pink-100) 100%);
-        }
-
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .gradient-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 25% 25%, rgba(244, 63, 94, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.1) 0%, transparent 60%);
-            animation: romanticGlow 25s ease-in-out infinite;
-        }
-
-        @keyframes romanticGlow {
-            0%, 100% { 
-                opacity: 0.7;
-                transform: scale(1);
-            }
-            50% { 
-                opacity: 1;
-                transform: scale(1.05);
-            }
-        }
-
-        .floating-particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .floating-particles::before,
-        .floating-particles::after {
-            content: '💕';
-            position: absolute;
-            font-size: 30px;
-            animation: floatParticles 20s linear infinite;
-            opacity: 0.6;
-        .floating-particles::before {
-            top: 20%;
-            left: 15%;
-            animation-delay: 0s;
-        }
-
-        .floating-particles::after {
-            top: 60%;
-            right: 20%;
-            animation-delay: 10s;
-        }
-
-        @keyframes floatParticles {
-            0%, 100% { 
-                transform: translateY(0px) rotate(0deg) scale(1); 
-                opacity: 0.4; 
-            }
-            50% { 
-                transform: translateY(-30px) rotate(180deg) scale(1.2); 
-                opacity: 0.8; 
-            }
-        }
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { 
-                transform: translateY(0px) rotate(0deg) scale(1); 
-                opacity: 0.7; 
-            }
-            50% { 
-                transform: translateY(-40px) rotate(180deg) scale(1.1); 
-                opacity: 1; 
-            }
-        }
-
-        .hero-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--primary-white) 100%);
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: left;
-        }
-
-        .hero-image {
-            position: relative;
-            z-index: 2;
-        }
-
-        .image-wrapper {
-            position: relative;
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: 
-                0 25px 50px rgba(0, 0, 0, 0.15),
-                0 0 0 1px rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-            backdrop-filter: blur(10px);
-        }
-
-        .image-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(
-                135deg,
-                rgba(236, 72, 153, 0.1) 0%,
-                rgba(139, 92, 246, 0.1) 50%,
-                rgba(34, 197, 94, 0.1) 100%
-            );
-            z-index: 1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .image-wrapper:hover::before {
-            opacity: 1;
-        }
-
-        .image-wrapper:hover {
-            transform: translateY(-15px) rotateX(5deg) rotateY(-5deg);
-            box-shadow: 
-                0 35px 70px rgba(0, 0, 0, 0.25),
-                0 0 0 1px rgba(255, 255, 255, 0.1);
-        }
-
-        .image-wrapper img {
-            width: 100%;
-            height: 550px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.4s ease;
-            filter: brightness(1.1) contrast(1.05);
-        }
-
-        .image-wrapper:hover img {
-            transform: scale(1.05);
-        }
-
-        .image-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(
-                to top, 
-                rgba(0, 0, 0, 0.9) 0%,
-                rgba(0, 0, 0, 0.6) 50%,
-                transparent 100%
-            );
-            padding: 2.5rem;
-            color: white;
-            z-index: 2;
-            transform: translateY(10px);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .image-wrapper:hover .image-overlay {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .image-overlay h3 {
-            margin: 0;
-            font-weight: 700;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(30, 41, 59, 0.9));
-            color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 2rem;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-            animation: badgeGlow 3s ease-in-out infinite;
-        }
-
-        .hero-badge::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .hero-badge:hover::before {
-            left: 100%;
-        }
-
-        @keyframes badgeGlow {
-            0%, 100% { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); }
-            50% { box-shadow: 0 8px 32px rgba(236, 72, 153, 0.4); }
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .hero-greeting {
             color: var(--gray-600);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             font-weight: 500;
-            font-size: 1.25rem;
-            position: relative;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .hero-title {
-            margin-bottom: 2.5rem;
-            line-height: 1.1;
-            position: relative;
-        }
-
-        .title-line {
-            display: block;
-            animation: slideUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            opacity: 0;
-            transform: translateY(50px);
-            position: relative;
-        }
-
-        .title-line:nth-child(2) {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes slideUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .stylish-title {
-            font-weight: 800;
-            letter-spacing: -3px;
-            text-shadow: 0 4px 12px rgba(244, 63, 94, 0.2);
-        }
-
-        .stylish-title .title-line:first-child {
-            background: linear-gradient(135deg, var(--rose-600) 0%, var(--pink-500) 50%, var(--purple-500) 100%);
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--primary-black) 0%, var(--gray-700) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-
-        .clinic-name {
-            background: linear-gradient(135deg, var(--pink-600) 0%, var(--rose-500) 50%, var(--purple-600) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 900;
-            margin-top: 0.5rem;
         }
 
         .hero-subtitle {
@@ -588,154 +120,18 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            font-size: 1.125rem;
-            line-height: 1.6;
-        }
-
-        .highlight {
-            background: linear-gradient(135deg, var(--pink-400) 0%, var(--purple-400) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 700;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: flex-start;
-            margin-bottom: 4rem;
-            flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease-out 0.8s both;
         }
 
         .hero-cta {
             display: inline-block;
-            padding: 1.2rem 3rem;
-            border-radius: 3rem;
+            background: var(--primary-black);
+            color: var(--primary-white);
+            padding: 1rem 2.5rem;
+            border-radius: 2rem;
             text-decoration: none;
-            font-weight: 700;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            font-size: 1rem;
-            position: relative;
-            overflow: hidden;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .hero-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.6s;
-        }
-
-        .hero-cta:hover::before {
-            left: 100%;
-        }
-
-        .hero-cta.primary {
-            background: linear-gradient(135deg, var(--rose-500) 0%, var(--pink-500) 50%, var(--purple-500) 100%);
-            color: white;
-            box-shadow: 
-                0 8px 30px rgba(244, 63, 94, 0.4),
-                0 0 0 1px rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .hero-cta.primary:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 
-                0 15px 40px rgba(244, 63, 94, 0.6),
-                0 0 0 1px rgba(255, 255, 255, 0.3);
-            background: linear-gradient(135deg, var(--rose-600) 0%, var(--pink-600) 50%, var(--purple-600) 100%);
-        }
-
-        .hero-cta.secondary {
-            background: rgba(255, 255, 255, 0.3);
-            color: var(--rose-600);
-            border: 2px solid var(--pink-300);
-            backdrop-filter: blur(10px);
-        }
-
-        .hero-cta.secondary:hover {
-            background: rgba(255, 255, 255, 0.5);
-            border-color: var(--pink-400);
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 10px 30px rgba(244, 63, 94, 0.2);
-        }
-
-        .hero-cta.secondary {
-            background: transparent;
-            color: var(--gray-700);
-            border: 2px solid var(--gray-300);
-        }
-
-        .hero-cta.secondary:hover {
-            background: var(--gray-100);
-            border-color: var(--gray-400);
-            transform: translateY(-2px);
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: flex-start;
-            gap: 4rem;
-            margin-top: 3rem;
-            animation: fadeInUp 0.8s ease-out 1.2s both;
-        }
-
-        .stat-item {
-            text-align: center;
-            position: relative;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-            min-width: 120px;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .stat-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #ec4899, #8b5cf6, #22c55e);
-            border-radius: 20px 20px 0 0;
-        }
-
-        .stat-number {
-            display: block;
-            font-size: 2.5rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 0.875rem;
-            color: var(--gray-600);
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-black);
         }
 
         .hero-cta:hover {
@@ -1575,20 +971,6 @@
                 display: block;
             }
 
-            .hero-layout {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                text-align: center;
-            }
-
-            .hero-content {
-                text-align: center;
-            }
-
-            .image-wrapper img {
-                height: 400px;
-            }
-
             .about-grid {
                 grid-template-columns: 1fr;
                 gap: 60px;
@@ -1620,39 +1002,11 @@
                 font-size: 3rem;
             }
 
-            .hero-layout {
-                gap: 2rem;
-            }
-
-            .image-wrapper img {
-                height: 300px;
-            }
-
             .hero .subtitle {
                 font-size: 1.4rem;
             }
 
             .hero-greeting {
-                font-size: 1rem;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.75rem;
-            }
-
-            .hero-cta {
-                padding: 0.875rem 2rem;
-                font-size: 0.9rem;
-            }
-
-            .hero-stats {
-                gap: 2rem;
-                flex-wrap: wrap;
-            }
-
-            .stat-number {
                 font-size: 1.5rem;
             }
 
@@ -1736,82 +1090,29 @@
     </style>
 </head>
 <body>
-    <!-- Floating Animation Elements -->
-    <div class="floating-hearts">
-        <div class="heart">💖</div>
-        <div class="heart">💝</div>
-        <div class="heart">💕</div>
-        <div class="heart">💗</div>
-        <div class="heart">💙</div>
-        <div class="heart">💜</div>
-        <div class="heart">🤍</div>
-        <div class="heart">💛</div>
-        <div class="heart">🧡</div>
-    </div>
-
-    <div class="sparkles">
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
-    </div>
-
-    <div class="bubbles">
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-    </div>
-
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-background">
-            <div class="floating-particles"></div>
-            <div class="gradient-overlay"></div>
-        </div>
         <div class="container">
-            <div class="hero-layout">
-                <div class="hero-content fade-in">
-                    <div class="hero-badge">
-                        <span class="badge-text">PREMIUM FERTILITY CARE</span>
-                    </div>
-                    <p class="hero-greeting text-medium">안녕하세요!</p>
-                    <h1 class="hero-title text-huge stylish-title">
-                        <span class="title-line">리즈인</span>
-                        <span class="title-line clinic-name">여성의원</span>
-                    </h1>
-                    <p class="hero-subtitle text-medium">
-                        난임 전문 의료진과 함께하는<br>
-                        <span class="highlight">새로운 희망의 시작</span>을 만들어드립니다.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#services" class="hero-cta primary">전문 진료 알아보기</a>
-                        <a href="#contact" class="hero-cta secondary">상담 예약하기</a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">년 경험</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">1,500+</span>
-                            <span class="stat-label">성공 사례</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">98%</span>
-                            <span class="stat-label">만족도</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-image fade-in">
-                    <div class="image-wrapper">
-                        <img src="woman.png" alt="밝게 웃고 있는 젊은 여성">
-                        <div class="image-overlay">
-                            <h3 class="text-big">밝은 미소와<br>희망찬 내일</h3>
-                        </div>
+            <div class="hero-content fade-in visible">
+                <p class="hero-greeting text-medium">안녕하세요!</p>
+                <h1 class="hero-title text-massive">리즈인<br>여성의원입니다.</h1>
+                <p class="hero-subtitle text-medium">
+                    난임 전문 의료진과 함께하는<br>
+                    <span class="highlight">새로운 희망의 시작</span>을 만들어드립니다.
+                </p>
+                <a href="#services" class="hero-cta">전문 진료 알아보기</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Section -->
+    <section class="photo-section section-sm">
+        <div class="container">
+            <div class="photo-container fade-in visible">
+                <div class="photo-wrapper">
+                    <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="밝게 웃고 있는 젊은 여성">
+                    <div class="photo-overlay">
+                        <h3 class="text-big">밝은 미소와<br>희망찬 내일</h3>
                     </div>
                 </div>
             </div>
@@ -1821,7 +1122,7 @@
     <!-- Quote Section -->
     <section class="quote-section">
         <div class="container">
-            <div class="fade-in">
+            <div class="fade-in visible">
                 <div class="quote-mark">"</div>
                 <h2 class="text-huge">어떻게 하면<br><span class="highlight">더 건강한</span><br>임신을 할 수 있을까요?</h2>
                 <p class="text-medium" style="margin-top: 2rem; color: var(--gray-400);">
@@ -1835,7 +1136,7 @@
     <!-- Services Section -->
     <section id="services" class="section">
         <div class="container">
-            <div class="fade-in">
+            <div class="fade-in visible">
                 <h2 class="text-huge" style="text-align: center; margin-bottom: 2rem;">
                     맞춤형 <span class="highlight">난임 치료</span> 솔루션
                 </h2>
@@ -1845,7 +1146,7 @@
             </div>
             
             <div class="services-grid">
-                <div class="service-card fade-in">
+                <div class="service-card fade-in visible" style="transform: translateY(0px) scale(1);">
                     <div class="service-icon">🔬</div>
                     <h3 class="service-title">정밀 진단</h3>
                     <p class="service-description">
@@ -1853,7 +1154,7 @@
                     </p>
                 </div>
                 
-                <div class="service-card fade-in">
+                <div class="service-card fade-in visible" style="transform: translateY(0px) scale(1);">
                     <div class="service-icon">🧬</div>
                     <h3 class="service-title">체외수정</h3>
                     <p class="service-description">
@@ -1861,7 +1162,7 @@
                     </p>
                 </div>
                 
-                <div class="service-card fade-in">
+                <div class="service-card fade-in visible" style="transform: translateY(0px) scale(1);">
                     <div class="service-icon">🌱</div>
                     <h3 class="service-title">자연 임신 관리</h3>
                     <p class="service-description">
@@ -1869,7 +1170,7 @@
                     </p>
                 </div>
                 
-                <div class="service-card fade-in">
+                <div class="service-card fade-in visible" style="transform: translateY(0px) scale(1);">
                     <div class="service-icon">💊</div>
                     <h3 class="service-title">호르몬 치료</h3>
                     <p class="service-description">
@@ -1877,7 +1178,7 @@
                     </p>
                 </div>
                 
-                <div class="service-card fade-in">
+                <div class="service-card fade-in visible" style="transform: translateY(0px) scale(1);">
                     <div class="service-icon">🩺</div>
                     <h3 class="service-title">종합 검진</h3>
                     <p class="service-description">
@@ -1885,7 +1186,7 @@
                     </p>
                 </div>
                 
-                <div class="service-card fade-in">
+                <div class="service-card fade-in visible" style="transform: translateY(0px) scale(1);">
                     <div class="service-icon">❤️</div>
                     <h3 class="service-title">심리 상담</h3>
                     <p class="service-description">
@@ -1899,11 +1200,11 @@
     <!-- Special Features Section -->
     <section class="special-features">
         <div class="container">
-            <h2 class="section-title fade-in">리즈인만의 특별함</h2>
-            <p class="section-subtitle fade-in">리즈인 여성의원만의 차별화된 전문 서비스</p>
+            <h2 class="section-title fade-in visible">리즈인만의 특별함</h2>
+            <p class="section-subtitle fade-in visible">리즈인 여성의원만의 차별화된 전문 서비스</p>
             
             <div class="features-grid">
-                <div class="special-card fade-in">
+                <div class="special-card fade-in visible" style="transform: translateY(0px) scale(1);">
                     <div class="icon">
                         <i class="fas fa-user-md"></i>
                     </div>
@@ -1911,7 +1212,7 @@
                     <p>오랜 경험과 전문성을 바탕으로 한 신뢰할 수 있는 난임 치료 서비스를 제공합니다.</p>
                 </div>
                 
-                <div class="special-card fade-in">
+                <div class="special-card fade-in visible" style="transform: translateY(0px) scale(1);">
                     <div class="icon">
                         <i class="fas fa-clipboard-check"></i>
                     </div>
@@ -1919,7 +1220,7 @@
                     <p>개인별 맞춤 치료 계획 수립부터 지속적인 관리까지 체계적인 시스템을 운영합니다.</p>
                 </div>
                 
-                <div class="special-card fade-in">
+                <div class="special-card fade-in visible">
                     <div class="icon">
                         <i class="fas fa-calendar-alt"></i>
                     </div>
@@ -1927,7 +1228,7 @@
                     <p>정확한 생리주기 분석을 통해 최적의 치료 시기와 방법을 제시합니다.</p>
                 </div>
                 
-                <div class="special-card fade-in">
+                <div class="special-card fade-in visible" style="transform: translateY(0px) scale(1);">
                     <div class="icon">
                         <i class="fas fa-heart"></i>
                     </div>
@@ -1941,11 +1242,11 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title fade-in">전문 진료 분야</h2>
-            <p class="section-subtitle fade-in">리즈인 여성의원의 전문적인 난임 치료 서비스</p>
+            <h2 class="section-title fade-in visible">전문 진료 분야</h2>
+            <p class="section-subtitle fade-in visible">리즈인 여성의원의 전문적인 난임 치료 서비스</p>
             
             <div class="services-grid">
-                <div class="service-card fade-in">
+                <div class="service-card fade-in visible">
                     <div class="icon">
                         <i class="fas fa-microscope"></i>
                     </div>
@@ -1953,7 +1254,7 @@
                     <p>첨단 장비를 이용한 정확한 난임 원인 진단 및 분석</p>
                 </div>
                 
-                <div class="service-card fade-in">
+                <div class="service-card fade-in visible" style="transform: translateY(0px) scale(1);">
                     <div class="icon">
                         <i class="fas fa-dna"></i>
                     </div>
@@ -1961,7 +1262,7 @@
                     <p>최신 기술과 노하우를 바탕으로 한 체외수정 시술</p>
                 </div>
                 
-                <div class="service-card fade-in">
+                <div class="service-card fade-in visible" style="transform: translateY(0px) scale(1);">
                     <div class="icon">
                         <i class="fas fa-seedling"></i>
                     </div>
@@ -1969,7 +1270,7 @@
                     <p>개인별 맞춤 인공수정 프로그램 및 전문 관리</p>
                 </div>
                 
-                <div class="service-card fade-in">
+                <div class="service-card fade-in visible">
                     <div class="icon">
                         <i class="fas fa-pills"></i>
                     </div>
@@ -1977,7 +1278,7 @@
                     <p>정밀한 호르몬 검사와 개인 맞춤형 호르몬 치료</p>
                 </div>
                 
-                <div class="service-card fade-in">
+                <div class="service-card fade-in visible" style="transform: translateY(0px) scale(1);">
                     <div class="icon">
                         <i class="fas fa-stethoscope"></i>
                     </div>
@@ -1985,7 +1286,7 @@
                     <p>남녀 난임 종합 검진 및 상담 서비스</p>
                 </div>
                 
-                <div class="service-card fade-in">
+                <div class="service-card fade-in visible">
                     <div class="icon">
                         <i class="fas fa-heart-pulse"></i>
                     </div>
@@ -1999,11 +1300,11 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
-            <h2 class="text-huge fade-in">SUCCESS<br>STORIES</h2>
-            <p class="text-medium testimonials-subtitle fade-in">우리와 함께한 성공의 이야기들</p>
+            <h2 class="text-huge fade-in visible">SUCCESS<br>STORIES</h2>
+            <p class="text-medium testimonials-subtitle fade-in visible">우리와 함께한 성공의 이야기들</p>
             
             <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
+                <div class="testimonial-card fade-in visible">
                     <div class="testimonial-content">
                         <div class="testimonial-number">01</div>
                         <h3 class="text-large">김은주</h3>
@@ -2012,7 +1313,7 @@
                     </div>
                 </div>
                 
-                <div class="testimonial-card fade-in">
+                <div class="testimonial-card fade-in visible">
                     <div class="testimonial-content">
                         <div class="testimonial-number">02</div>
                         <h3 class="text-large">박미경</h3>
@@ -2021,7 +1322,7 @@
                     </div>
                 </div>
                 
-                <div class="testimonial-card fade-in">
+                <div class="testimonial-card fade-in visible">
                     <div class="testimonial-content">
                         <div class="testimonial-number">03</div>
                         <h3 class="text-large">이수진</h3>
@@ -2033,7 +1334,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+       <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -2137,5 +1438,6 @@
             });
         });
     </script>
-</body>
-</html>
+
+
+</body></html>
