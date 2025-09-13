@@ -355,6 +355,12 @@
             font-weight: 600;
         }
 
+        /* Service Link Hover Effect */
+        .service-link a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .header {
@@ -499,7 +505,11 @@
                 text-align: center;
             }
 
-            .summary-text h2 {
+            .service-link a:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            }
+        }            .summary-text h2 {
                 font-size: 1.8rem;
                 margin-bottom: 15px;
             }
@@ -912,6 +922,18 @@
                         <div class="feature-icon">💬</div>
                         <div class="feature-text">피드백 반영 대기중</div>
                     </div>
+                </div>
+
+                <!-- Service Link Section -->
+                <div class="service-link" style="margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; text-align: center;">
+                    <h3 style="color: white; margin-bottom: 15px; font-size: 1.4rem; font-weight: 700;">전문 홈페이지 개발 서비스</h3>
+                    <p style="color: rgba(255,255,255,0.9); margin-bottom: 20px; line-height: 1.5;">
+                        이런 퀄리티의 홈페이지를 원하신다면? 맞춤형 홈페이지 개발 서비스를 확인해보세요!
+                    </p>
+                    <a href="../homepage_development_landing.html" target="_blank" 
+                       style="display: inline-block; background: white; color: #667eea; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; transform: translateY(0);">
+                        서비스 소개 페이지 보기 →
+                    </a>
                 </div>
             </div>
         </div>
