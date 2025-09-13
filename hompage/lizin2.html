@@ -1733,6 +1733,705 @@
                 gap: 0.25rem;
             }
         }
+
+        /* New Sections Styles */
+
+        /* Vision Section */
+        .vision-section {
+            padding: 8rem 0;
+            position: relative;
+            background: linear-gradient(135deg, var(--pearl) 0%, var(--pink-100) 100%);
+            overflow: hidden;
+        }
+
+        .vision-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink-200), var(--purple-200));
+            opacity: 0.6;
+            animation: floatShape 20s linear infinite;
+        }
+
+        .shape-1 { width: 100px; height: 100px; top: 20%; left: 10%; animation-delay: 0s; }
+        .shape-2 { width: 150px; height: 150px; top: 60%; right: 15%; animation-delay: 5s; }
+        .shape-3 { width: 80px; height: 80px; top: 80%; left: 60%; animation-delay: 10s; }
+        .shape-4 { width: 120px; height: 120px; top: 30%; right: 40%; animation-delay: 15s; }
+
+        @keyframes floatShape {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-50px) rotate(180deg); }
+        }
+
+        .vision-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .vision-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--pink-500) 0%, var(--purple-500) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .vision-description {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .vision-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+        }
+
+        .vision-visual {
+            display: flex;
+            justify-content: center;
+        }
+
+        .visual-card {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .visual-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .visual-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--gray-800);
+        }
+
+        .visual-card p {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, var(--lavender) 0%, var(--pearl) 100%);
+        }
+
+        .experience-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .experience-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--gray-800);
+        }
+
+        .experience-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .experience-card {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            padding: 2.5rem;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-15px);
+        }
+
+        .card-large {
+            grid-row: span 2;
+        }
+
+        .card-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .card-gradient {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--pink-200) 0%, var(--purple-200) 100%);
+            opacity: 0.7;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--gray-800);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .card-icon.large {
+            font-size: 4rem;
+        }
+
+        .experience-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .experience-card p {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .card-stats {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .stat {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--pink-600);
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--champagne) 100%);
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .gallery-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--gray-800);
+        }
+
+        .gallery-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 200px 200px;
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item.large {
+            grid-row: span 2;
+        }
+
+        .gallery-item.tall {
+            grid-row: span 2;
+        }
+
+        .item-background {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--pink-300) 0%, var(--purple-300) 100%);
+            position: relative;
+        }
+
+        .item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .item-overlay {
+            transform: translateY(0);
+        }
+
+        .item-overlay h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Stories Section */
+        .stories-section {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, var(--purple-100) 0%, var(--pink-100) 100%);
+        }
+
+        .stories-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .stories-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--gray-800);
+        }
+
+        .stories-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .story-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 2.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .story-card.floating {
+            animation: floatCard 6s ease-in-out infinite;
+        }
+
+        .story-card:nth-child(2) {
+            animation-delay: 2s;
+        }
+
+        .story-card:nth-child(3) {
+            animation-delay: 4s;
+        }
+
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .story-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .story-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--rose-200) 0%, var(--pink-200) 100%);
+            opacity: 0.3;
+            border-radius: 25px;
+        }
+
+        .story-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .story-emoji {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--gray-800);
+        }
+
+        .story-card p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .story-author {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--pink-600);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 8rem 0;
+            position: relative;
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+            color: white;
+            overflow: hidden;
+        }
+
+        .contact-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .contact-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .contact-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink-500), var(--purple-500));
+            opacity: 0.1;
+            animation: floatContactShape 15s linear infinite;
+        }
+
+        .contact-shape.shape-1 { width: 200px; height: 200px; top: 10%; left: 80%; }
+        .contact-shape.shape-2 { width: 150px; height: 150px; top: 70%; left: 10%; animation-delay: 5s; }
+        .contact-shape.shape-3 { width: 100px; height: 100px; top: 50%; right: 70%; animation-delay: 10s; }
+
+        @keyframes floatContactShape {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(180deg); }
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .contact-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-300);
+            margin-bottom: 3rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-section .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--pink-500), var(--purple-500));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-section .contact-label {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-section .contact-value {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+
+        .contact-cta {
+            display: flex;
+            justify-content: center;
+        }
+
+        .cta-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 3rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-card p {
+            color: var(--gray-300);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            position: relative;
+            background: linear-gradient(135deg, var(--pink-500), var(--purple-500));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .button-bg {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover .button-bg {
+            left: 100%;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            color: white;
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+
+        .footer-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+        }
+
+        .footer-pattern {
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, var(--pink-500) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--pink-400), var(--purple-400));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-tagline {
+            color: var(--gray-400);
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-link {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--pink-400);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-800);
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-copyright {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive Design for New Sections */
+        @media (max-width: 1024px) {
+            .vision-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .experience-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1791,20 +2490,6 @@
                         <a href="#services" class="hero-cta primary">전문 진료 알아보기</a>
                         <a href="#contact" class="hero-cta secondary">상담 예약하기</a>
                     </div>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">년 경험</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">1,500+</span>
-                            <span class="stat-label">성공 사례</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">98%</span>
-                            <span class="stat-label">만족도</span>
-                        </div>
-                    </div>
                 </div>
                 <div class="hero-image fade-in">
                     <div class="image-wrapper">
@@ -1818,148 +2503,169 @@
         </div>
     </section>
 
-    <!-- Quote Section -->
-    <section class="quote-section">
-        <div class="container">
-            <div class="fade-in">
-                <div class="quote-mark">"</div>
-                <h2 class="text-huge">어떻게 하면<br><span class="highlight">더 건강한</span><br>임신을 할 수 있을까요?</h2>
-                <p class="text-medium" style="margin-top: 2rem; color: var(--gray-400);">
-                    당신의 꿈을 현실로 만드는 여정,<br>
-                    리즈인 여성의원이 함께합니다.
-                </p>
+    <!-- Vision Section -->
+    <section class="vision-section">
+        <div class="vision-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
             </div>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="section">
         <div class="container">
-            <div class="fade-in">
-                <h2 class="text-huge" style="text-align: center; margin-bottom: 2rem;">
-                    맞춤형 <span class="highlight">난임 치료</span> 솔루션
-                </h2>
-                <p class="text-medium" style="text-align: center; color: var(--gray-600); margin-bottom: 4rem;">
-                    개인의 특성을 고려한 체계적이고 전문적인 치료를 제공합니다.
-                </p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">🔬</div>
-                    <h3 class="service-title">정밀 진단</h3>
-                    <p class="service-description">
-                        최신 의료 장비를 활용한 정확한 난임 원인 분석과 개인별 맞춤 진단을 실시합니다.
+            <div class="vision-content fade-in">
+                <div class="vision-text">
+                    <h2 class="vision-title">새로운 생명의<br><span class="gradient-text">기적</span>을 함께</h2>
+                    <p class="vision-description">
+                        당신의 가장 소중한 꿈을 현실로 만드는<br>
+                        특별한 여정이 시작됩니다
                     </p>
+                    <div class="vision-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">✨</span>
+                            <span>개인 맞춤 치료</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">💝</span>
+                            <span>세심한 케어</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🌸</span>
+                            <span>희망의 시작</span>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">🧬</div>
-                    <h3 class="service-title">체외수정</h3>
-                    <p class="service-description">
-                        풍부한 경험과 최신 기술을 바탕으로 한 안전하고 효과적인 체외수정 시술을 제공합니다.
-                    </p>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">🌱</div>
-                    <h3 class="service-title">자연 임신 관리</h3>
-                    <p class="service-description">
-                        생리주기 분석과 호르몬 관리를 통한 자연 임신 가능성을 높이는 체계적인 관리를 합니다.
-                    </p>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">💊</div>
-                    <h3 class="service-title">호르몬 치료</h3>
-                    <p class="service-description">
-                        개인별 호르몬 상태 분석을 통한 맞춤형 호르몬 치료로 임신 가능성을 향상시킵니다.
-                    </p>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">🩺</div>
-                    <h3 class="service-title">종합 검진</h3>
-                    <p class="service-description">
-                        부부 종합 난임 검진을 통해 정확한 원인을 파악하고 최적의 치료 방향을 제시합니다.
-                    </p>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <div class="service-icon">❤️</div>
-                    <h3 class="service-title">심리 상담</h3>
-                    <p class="service-description">
-                        난임 스트레스 관리와 심리적 지원을 통해 치료 과정에서의 정신적 안정을 도모합니다.
-                    </p>
+                <div class="vision-visual">
+                    <div class="visual-card">
+                        <div class="card-content">
+                            <div class="card-icon">💕</div>
+                            <h3>행복한 가정의 시작</h3>
+                            <p>전문적인 치료와 따뜻한 관심으로 당신의 꿈을 응원합니다</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Special Features Section -->
-    <section class="special-features">
+    <!-- Experience Section -->
+    <section class="experience-section">
         <div class="container">
-            <h2 class="section-title fade-in">리즈인만의 특별함</h2>
-            <p class="section-subtitle fade-in">리즈인 여성의원만의 차별화된 전문 서비스</p>
+            <div class="experience-header fade-in">
+                <h2 class="experience-title">특별한 <span class="gradient-text">경험</span></h2>
+                <p class="experience-subtitle">리즈인에서만 누릴 수 있는 프리미엄 케어</p>
+            </div>
             
-            <div class="features-grid">
-                <div class="special-card fade-in">
-                    <div class="icon">
-                        <i class="fas fa-user-md"></i>
+            <div class="experience-grid">
+                <div class="experience-card card-large fade-in">
+                    <div class="card-background">
+                        <div class="card-gradient"></div>
                     </div>
-                    <h3>20년 전문 경험</h3>
-                    <p>오랜 경험과 전문성을 바탕으로 한 신뢰할 수 있는 난임 치료 서비스를 제공합니다.</p>
+                    <div class="card-content">
+                        <div class="card-icon large">🌹</div>
+                        <h3>개인 맞춤 프로그램</h3>
+                        <p>당신만을 위한 특별한 치료 계획</p>
+                        <div class="card-stats">
+                            <span class="stat">98% 만족도</span>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="special-card fade-in">
-                    <div class="icon">
-                        <i class="fas fa-clipboard-check"></i>
+                <div class="experience-card fade-in">
+                    <div class="card-background">
+                        <div class="card-gradient"></div>
                     </div>
-                    <h3>체계적 관리</h3>
-                    <p>개인별 맞춤 치료 계획 수립부터 지속적인 관리까지 체계적인 시스템을 운영합니다.</p>
+                    <div class="card-content">
+                        <div class="card-icon">💎</div>
+                        <h3>프리미엄 케어</h3>
+                        <p>최고급 시설과 서비스</p>
+                    </div>
                 </div>
                 
-                <div class="special-card fade-in">
-                    <div class="icon">
-                        <i class="fas fa-calendar-alt"></i>
+                <div class="experience-card fade-in">
+                    <div class="card-background">
+                        <div class="card-gradient"></div>
                     </div>
-                    <h3>생리주기 분석</h3>
-                    <p>정확한 생리주기 분석을 통해 최적의 치료 시기와 방법을 제시합니다.</p>
+                    <div class="card-content">
+                        <div class="card-icon">✨</div>
+                        <h3>혁신적 기술</h3>
+                        <p>최신 의료 기술 적용</p>
+                    </div>
                 </div>
                 
-                <div class="special-card fade-in">
-                    <div class="icon">
-                        <i class="fas fa-heart"></i>
+                <div class="experience-card fade-in">
+                    <div class="card-background">
+                        <div class="card-gradient"></div>
                     </div>
-                    <h3>맞춤형 케어</h3>
-                    <p>환자 개개인의 상황과 특성을 고려한 개인 맞춤형 치료 프로그램을 제공합니다.</p>
+                    <div class="card-content">
+                        <div class="card-icon">🤍</div>
+                        <h3>따뜻한 배려</h3>
+                        <p>세심하고 정성스러운 관리</p>
+                    </div>
+                </div>
+                
+                <div class="experience-card fade-in">
+                    <div class="card-background">
+                        <div class="card-gradient"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">🌸</div>
+                        <h3>전문성</h3>
+                        <p>풍부한 경험의 의료진</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <!-- Gallery Section -->
+    <section class="gallery-section">
         <div class="container">
-            <h2 class="section-title fade-in">전문 진료 분야</h2>
-            <p class="section-subtitle fade-in">리즈인 여성의원의 전문적인 난임 치료 서비스</p>
+            <div class="gallery-header fade-in">
+                <h2 class="gallery-title">아름다운 <span class="gradient-text">순간들</span></h2>
+                <p class="gallery-subtitle">리즈인에서의 특별한 경험들</p>
+            </div>
             
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="icon">
-                        <i class="fas fa-microscope"></i>
+            <div class="gallery-grid">
+                <div class="gallery-item large fade-in">
+                    <div class="item-background">
+                        <div class="item-overlay">
+                            <h3>편안한 환경</h3>
+                            <p>안락하고 프라이빗한 진료 공간</p>
+                        </div>
                     </div>
-                    <h3>난임 진단</h3>
-                    <p>첨단 장비를 이용한 정확한 난임 원인 진단 및 분석</p>
                 </div>
                 
-                <div class="service-card fade-in">
-                    <div class="icon">
-                        <i class="fas fa-dna"></i>
+                <div class="gallery-item fade-in">
+                    <div class="item-background">
+                        <div class="item-overlay">
+                            <h3>최신 장비</h3>
+                            <p>첨단 의료 기술</p>
+                        </div>
                     </div>
-                    <h3>체외수정</h3>
-                    <p>최신 기술과 노하우를 바탕으로 한 체외수정 시술</p>
                 </div>
+                
+                <div class="gallery-item fade-in">
+                    <div class="item-background">
+                        <div class="item-overlay">
+                            <h3>전문 상담</h3>
+                            <p>1:1 맞춤 케어</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item tall fade-in">
+                    <div class="item-background">
+                        <div class="item-overlay">
+                            <h3>희망의 시작</h3>
+                            <p>새로운 가족의 꿈</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
                 
                 <div class="service-card fade-in">
                     <div class="icon">
@@ -1996,37 +2702,98 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
+    <!-- Stories Section -->
+    <section class="stories-section">
         <div class="container">
-            <h2 class="text-huge fade-in">SUCCESS<br>STORIES</h2>
-            <p class="text-medium testimonials-subtitle fade-in">우리와 함께한 성공의 이야기들</p>
+            <div class="stories-header fade-in">
+                <h2 class="stories-title">행복한 <span class="gradient-text">이야기들</span></h2>
+                <p class="stories-subtitle">리즈인과 함께한 소중한 순간들</p>
+            </div>
             
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-content">
-                        <div class="testimonial-number">01</div>
-                        <h3 class="text-large">김은주</h3>
-                        <p class="testimonial-text">"체계적인 관리와 전문적인 치료로 건강한 아이를 얻었습니다."</p>
-                        <div class="testimonial-details">35세 · 체외수정 성공</div>
+            <div class="stories-grid">
+                <div class="story-card floating fade-in">
+                    <div class="story-background"></div>
+                    <div class="story-content">
+                        <div class="story-emoji">💝</div>
+                        <h3>새로운 시작</h3>
+                        <p>"전문적인 케어로 꿈을 이뤘어요"</p>
+                        <div class="story-author">김은주님</div>
                     </div>
                 </div>
                 
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-content">
-                        <div class="testimonial-number">02</div>
-                        <h3 class="text-large">박미경</h3>
-                        <p class="testimonial-text">"개인 맞춤형 치료로 단기간에 좋은 결과를 얻었습니다."</p>
-                        <div class="testimonial-details">32세 · 인공수정 성공</div>
+                <div class="story-card floating fade-in">
+                    <div class="story-background"></div>
+                    <div class="story-content">
+                        <div class="story-emoji">🌸</div>
+                        <h3>희망의 열매</h3>
+                        <p>"따뜻한 관심에 감사해요"</p>
+                        <div class="story-author">박미경님</div>
                     </div>
                 </div>
                 
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-content">
-                        <div class="testimonial-number">03</div>
-                        <h3 class="text-large">이수진</h3>
-                        <p class="testimonial-text">"세심한 배려와 전문적인 상담이 큰 힘이 되었습니다."</p>
-                        <div class="testimonial-details">38세 · 호르몬 치료 성공</div>
+                <div class="story-card floating fade-in">
+                    <div class="story-background"></div>
+                    <div class="story-content">
+                        <div class="story-emoji">✨</div>
+                        <h3>기적 같은 순간</h3>
+                        <p>"리즈인과 함께해서 행복해요"</p>
+                        <div class="story-author">이수진님</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-background">
+            <div class="contact-shapes">
+                <div class="contact-shape shape-1"></div>
+                <div class="contact-shape shape-2"></div>
+                <div class="contact-shape shape-3"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="contact-content fade-in">
+                <div class="contact-info">
+                    <h2 class="contact-title">함께 시작해요</h2>
+                    <p class="contact-subtitle">당신의 꿈을 현실로 만드는 첫걸음</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <span class="contact-label">위치</span>
+                                <span class="contact-value">부산진구 새싹로 22-1<br>라이프빌리지 7-9F</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-text">
+                                <span class="contact-label">전화</span>
+                                <span class="contact-value">051-815-3007</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">👨‍⚕️</div>
+                            <div class="contact-text">
+                                <span class="contact-label">원장</span>
+                                <span class="contact-value">염현식</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-cta">
+                    <div class="cta-card">
+                        <h3>상담 예약하기</h3>
+                        <p>전문 상담으로 첫 걸음을 시작하세요</p>
+                        <button class="cta-button">
+                            <span>지금 예약하기</span>
+                            <div class="button-bg"></div>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -2035,39 +2802,24 @@
 
     <!-- Footer -->
     <footer class="footer">
+        <div class="footer-background">
+            <div class="footer-pattern"></div>
+        </div>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-main">
-                    <h2 class="text-huge footer-title">LIZIN<br>CLINIC</h2>
-                    <p class="footer-description">전문적이고 체계적인 난임 치료</p>
+                <div class="footer-brand">
+                    <h2 class="footer-title">LIZIN</h2>
+                    <p class="footer-tagline">새로운 생명의 시작</p>
                 </div>
                 
-                <div class="footer-contact">
-                    <div class="contact-item">
-                        <span class="contact-label">ADDRESS</span>
-                        <span class="contact-value">부산광역시 부산진구 새싹로 22-1<br>라이프빌리지 7-9F 리즈인 여성의원</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">PHONE</span>
-                        <span class="contact-value">051-815-3007</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">REPRESENTATIVE</span>
-                        <span class="contact-value">염현식 원장</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">BUSINESS NO.</span>
-                        <span class="contact-value">394-94-00447</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
                 <div class="footer-links">
                     <a href="#" class="footer-link">개인정보취급방침</a>
                     <a href="#" class="footer-link">이용약관</a>
                     <a href="#" class="footer-link">비급여안내</a>
                 </div>
+            </div>
+            
+            <div class="footer-bottom">
                 <p class="footer-copyright">© 2024 리즈인 여성의원. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
