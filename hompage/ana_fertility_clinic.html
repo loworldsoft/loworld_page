@@ -94,26 +94,135 @@
             justify-content: center;
             text-align: center;
             position: relative;
-            background: linear-gradient(135deg, var(--gray-50) 0%, var(--primary-white) 100%);
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 30%, #cbd5e1 100%);
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+        }
+
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .floating-particles::before,
+        .floating-particles::after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .floating-particles::before {
+            width: 60px;
+            height: 60px;
+            top: 20%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+
+        .floating-particles::after {
+            width: 80px;
+            height: 80px;
+            top: 60%;
+            right: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-30px) rotate(180deg); opacity: 1; }
         }
 
         .hero-content {
             max-width: 900px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
         }
 
         .hero-greeting {
             color: var(--gray-600);
             margin-bottom: 1rem;
             font-weight: 500;
+            font-size: 1.125rem;
         }
 
         .hero-title {
             margin-bottom: 2rem;
-            background: linear-gradient(135deg, var(--primary-black) 0%, var(--gray-700) 100%);
+            line-height: 1.1;
+        }
+
+        .title-line {
+            display: block;
+            animation: slideUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .title-line:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stylish-title {
+            font-weight: 800;
+            letter-spacing: -3px;
+        }
+
+        .stylish-title .title-line:first-child {
+            background: linear-gradient(135deg, #1e293b 0%, #475569 50%, #64748b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .clinic-name {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            margin-top: 0.5rem;
         }
 
         .hero-subtitle {
@@ -122,18 +231,76 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            font-size: 1.125rem;
+            line-height: 1.6;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
         }
 
         .hero-cta {
             display: inline-block;
-            background: var(--primary-black);
-            color: var(--primary-white);
             padding: 1rem 2.5rem;
-            border-radius: 2rem;
+            border-radius: 3rem;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: 2px solid var(--primary-black);
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-cta.primary {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-cta.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-cta.secondary {
+            background: transparent;
+            color: var(--gray-700);
+            border: 2px solid var(--gray-300);
+        }
+
+        .hero-cta.secondary:hover {
+            background: var(--gray-100);
+            border-color: var(--gray-400);
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--gray-800);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            font-weight: 500;
         }
 
         .hero-cta:hover {
@@ -151,31 +318,258 @@
             font-weight: 800;
         }
 
-        .hero-greeting {
-            font-size: 2rem;
-            font-weight: 400;
-            margin-bottom: 15px;
-            opacity: 0;
-            animation: slideInUp 1s ease-out 0.3s forwards;
+        /* Photo Section */
+        .photo-section {
+            background: var(--gray-50);
         }
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
+        .photo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-wrapper {
+            position: relative;
+            width: 400px;
+            height: 500px;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: var(--primary-black);
+            color: var(--primary-white);
+            text-align: center;
+            padding: 6rem 0;
+        }
+
+        .quote-mark {
             font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-            opacity: 0;
-            animation: slideInUp 1s ease-out 0.6s forwards;
-            line-height: 1.2;
+            color: var(--gray-600);
+            line-height: 1;
+            margin-bottom: 1rem;
         }
 
-        .hero .subtitle {
-            font-size: 1.8rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
-            font-weight: 300;
-            opacity: 0;
-            animation: slideInUp 1s ease-out 0.9s forwards;
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            padding: 3rem;
+            background: var(--primary-white);
+            border-radius: 1.5rem;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-black);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-black);
+            color: var(--primary-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--white);
+            padding: 120px 0;
+        }
+
+        .testimonials-subtitle {
+            color: var(--gray-600);
+            margin-bottom: 4rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial-card {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 0;
+            padding: 3rem 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            background: rgba(0, 0, 0, 0.08);
+            transform: translateY(-10px);
+        }
+
+        .testimonial-number {
+            font-size: 6rem;
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.1);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-content h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: var(--gray-700);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .testimonial-details {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 100px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 6rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-title {
+            color: var(--white);
+            margin-bottom: 2rem;
+        }
+
+        .footer-description {
+            font-size: 1.25rem;
+            color: var(--gray-400);
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .contact-label {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .contact-value {
+            font-size: 1.125rem;
+            color: var(--white);
+            font-weight: 400;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 3rem;
+            border-top: 1px solid var(--gray-800);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-link {
+            color: var(--gray-400);
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--white);
+        }
+
+        .footer-copyright {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin: 0;
         }
 
         /* Animated Background Elements */
@@ -755,6 +1149,21 @@
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -767,12 +1176,33 @@
             }
 
             .hero-greeting {
+                font-size: 1rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            .hero-cta {
+                padding: 0.875rem 2rem;
+                font-size: 0.9rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+                flex-wrap: wrap;
+            }
+
+            .stat-number {
                 font-size: 1.5rem;
             }
 
             .services-grid,
             .features-grid,
-            .testimonial-grid {
+            .testimonial-grid,
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -791,6 +1221,20 @@
             .footer-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .footer-links {
+                order: 2;
+            }
+
+            .footer-copyright {
+                order: 1;
             }
 
             .social-links {
@@ -813,11 +1257,23 @@
             }
 
             .testimonial-card {
-                padding: 35px 25px;
+                padding: 2rem 1.5rem;
+            }
+
+            .testimonial-number {
+                font-size: 4rem;
             }
 
             .single-image {
                 height: 250px;
+            }
+
+            .footer-content {
+                gap: 2rem;
+            }
+
+            .contact-item {
+                gap: 0.25rem;
             }
         }
     </style>
@@ -825,15 +1281,42 @@
 <body>
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-background">
+            <div class="floating-particles"></div>
+            <div class="gradient-overlay"></div>
+        </div>
         <div class="container">
             <div class="hero-content fade-in">
+                <div class="hero-badge">
+                    <span class="badge-text">PREMIUM FERTILITY CARE</span>
+                </div>
                 <p class="hero-greeting text-medium">안녕하세요!</p>
-                <h1 class="hero-title text-massive">리즈인<br>여성의원입니다.</h1>
+                <h1 class="hero-title text-huge stylish-title">
+                    <span class="title-line">리즈인</span>
+                    <span class="title-line clinic-name">여성의원</span>
+                </h1>
                 <p class="hero-subtitle text-medium">
                     난임 전문 의료진과 함께하는<br>
                     <span class="highlight">새로운 희망의 시작</span>을 만들어드립니다.
                 </p>
-                <a href="#services" class="hero-cta">전문 진료 알아보기</a>
+                <div class="hero-actions">
+                    <a href="#services" class="hero-cta primary">전문 진료 알아보기</a>
+                    <a href="#contact" class="hero-cta secondary">상담 예약하기</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">년 경험</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1,500+</span>
+                        <span class="stat-label">성공 사례</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">만족도</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -843,9 +1326,9 @@
         <div class="container">
             <div class="photo-container fade-in">
                 <div class="photo-wrapper">
-                    <img src="https://images.unsplash.com/photo-1594824388647-82715749297f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="희망을 품은 여성">
+                    <img src="woman.png" alt="밝게 웃고 있는 젊은 여성">
                     <div class="photo-overlay">
-                        <h3 class="text-big">희망을 품은<br>아름다움</h3>
+                        <h3 class="text-big">밝은 미소와<br>희망찬 내일</h3>
                     </div>
                 </div>
             </div>
@@ -866,40 +1349,65 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Services Section -->
+    <section id="services" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">정성과 전문성으로</h2>
-            <p class="section-subtitle fade-in">리즈인 여성의원의 차별화된 난임 전문 치료</p>
+            <div class="fade-in">
+                <h2 class="text-huge" style="text-align: center; margin-bottom: 2rem;">
+                    맞춤형 <span class="highlight">난임 치료</span> 솔루션
+                </h2>
+                <p class="text-medium" style="text-align: center; color: var(--gray-600); margin-bottom: 4rem;">
+                    개인의 특성을 고려한 체계적이고 전문적인 치료를 제공합니다.
+                </p>
+            </div>
             
-            <div class="about-grid">
-                <div class="about-text fade-in">
-                    <h3>개인 맞춤형 난임 치료의 선두주자</h3>
-                    <p>리즈인 여성의원은 <span class="highlight">체계적이고 과학적인 접근</span>을 바탕으로 개인 맞춤형 난임 치료를 제공합니다.</p>
-                    <p>정확한 진단부터 전문적인 치료까지, 모든 과정에서 <span class="highlight">최신 의료 기술과 정성스러운 케어</span>를 약속드립니다.</p>
-                    <p>생리 주기의 정밀한 분석과 개인별 특성을 고려하여 가장 효과적이고 안전한 치료 방법을 제시합니다.</p>
-                    
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <span class="stat-number">95%</span>
-                            <span class="stat-label">성공률</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">3,000+</span>
-                            <span class="stat-label">성공 사례</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">20년</span>
-                            <span class="stat-label">전문 경험</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">24시간</span>
-                            <span class="stat-label">응급 대응</span>
-                        </div>
-                    </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔬</div>
+                    <h3 class="service-title">정밀 진단</h3>
+                    <p class="service-description">
+                        최신 의료 장비를 활용한 정확한 난임 원인 분석과 개인별 맞춤 진단을 실시합니다.
+                    </p>
                 </div>
-                <div class="about-image fade-in">
-                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="리즈인 여성의원 전문 의료진">
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🧬</div>
+                    <h3 class="service-title">체외수정</h3>
+                    <p class="service-description">
+                        풍부한 경험과 최신 기술을 바탕으로 한 안전하고 효과적인 체외수정 시술을 제공합니다.
+                    </p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🌱</div>
+                    <h3 class="service-title">자연 임신 관리</h3>
+                    <p class="service-description">
+                        생리주기 분석과 호르몬 관리를 통한 자연 임신 가능성을 높이는 체계적인 관리를 합니다.
+                    </p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">💊</div>
+                    <h3 class="service-title">호르몬 치료</h3>
+                    <p class="service-description">
+                        개인별 호르몬 상태 분석을 통한 맞춤형 호르몬 치료로 임신 가능성을 향상시킵니다.
+                    </p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🩺</div>
+                    <h3 class="service-title">종합 검진</h3>
+                    <p class="service-description">
+                        부부 종합 난임 검진을 통해 정확한 원인을 파악하고 최적의 치료 방향을 제시합니다.
+                    </p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">❤️</div>
+                    <h3 class="service-title">심리 상담</h3>
+                    <p class="service-description">
+                        난임 스트레스 관리와 심리적 지원을 통해 치료 과정에서의 정신적 안정을 도모합니다.
+                    </p>
                 </div>
             </div>
         </div>
@@ -1008,85 +1516,76 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
-            <h2 class="section-title fade-in">소중한 후기</h2>
-            <p class="section-subtitle fade-in">리즈인 여성의원과 함께 꿈을 이루신 분들의 이야기</p>
+            <h2 class="text-huge fade-in">SUCCESS<br>STORIES</h2>
+            <p class="text-medium testimonials-subtitle fade-in">우리와 함께한 성공의 이야기들</p>
             
-            <div class="testimonial-grid">
+            <div class="testimonials-grid">
                 <div class="testimonial-card fade-in">
-                    <div class="quote">
-                        "리즈인 여성의원의 체계적인 관리와 전문적인 치료 덕분에 건강한 아이를 얻을 수 있었습니다. 개인 맞춤형 치료가 정말 효과적이었어요."
+                    <div class="testimonial-content">
+                        <div class="testimonial-number">01</div>
+                        <h3 class="text-large">김은주</h3>
+                        <p class="testimonial-text">"체계적인 관리와 전문적인 치료로 건강한 아이를 얻었습니다."</p>
+                        <div class="testimonial-details">35세 · 체외수정 성공</div>
                     </div>
-                    <div class="author">김은주</div>
-                    <div class="role">35세, 체외수정 성공</div>
                 </div>
                 
                 <div class="testimonial-card fade-in">
-                    <div class="quote">
-                        "정확한 생리주기 분석과 개인 맞춤형 치료 계획으로 단기간에 좋은 결과를 얻었습니다. 정말 감사드려요."
+                    <div class="testimonial-content">
+                        <div class="testimonial-number">02</div>
+                        <h3 class="text-large">박미경</h3>
+                        <p class="testimonial-text">"개인 맞춤형 치료로 단기간에 좋은 결과를 얻었습니다."</p>
+                        <div class="testimonial-details">32세 · 인공수정 성공</div>
                     </div>
-                    <div class="author">박미경</div>
-                    <div class="role">32세, 인공수정 성공</div>
                 </div>
                 
                 <div class="testimonial-card fade-in">
-                    <div class="quote">
-                        "의료진의 세심한 배려와 전문적인 상담이 큰 힘이 되었습니다. 리즈인 여성의원을 선택하길 정말 잘했다고 생각해요."
+                    <div class="testimonial-content">
+                        <div class="testimonial-number">03</div>
+                        <h3 class="text-large">이수진</h3>
+                        <p class="testimonial-text">"세심한 배려와 전문적인 상담이 큰 힘이 되었습니다."</p>
+                        <div class="testimonial-details">38세 · 호르몬 치료 성공</div>
                     </div>
-                    <div class="author">이수진</div>
-                    <div class="role">38세, 호르몬 치료 후 성공</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>리즈인 여성의원</h3>
-                    <p>전문적이고 체계적인 난임 치료로 당신의 소중한 꿈을 현실로 만들어드립니다.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                <div class="footer-main">
+                    <h2 class="text-huge footer-title">LIZIN<br>CLINIC</h2>
+                    <p class="footer-description">전문적이고 체계적인 난임 치료</p>
+                </div>
+                
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <span class="contact-label">ADDRESS</span>
+                        <span class="contact-value">부산광역시 부산진구 새싹로 22-1<br>라이프빌리지 7-9F 리즈인 여성의원</span>
                     </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>진료 분야</h3>
-                    <ul>
-                        <li><a href="#">난임 진단</a></li>
-                        <li><a href="#">체외수정</a></li>
-                        <li><a href="#">인공수정</a></li>
-                        <li><a href="#">호르몬 치료</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>병원 정보</h3>
-                    <ul>
-                        <li><a href="#">병원 소개</a></li>
-                        <li><a href="#">의료진 소개</a></li>
-                        <li><a href="#">시설 안내</a></li>
-                        <li><a href="#">오시는 길</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>고객 지원</h3>
-                    <ul>
-                        <li><a href="#">예약 안내</a></li>
-                        <li><a href="#">진료 시간</a></li>
-                        <li><a href="#">자주 묻는 질문</a></li>
-                        <li><a href="#">개인정보처리방침</a></li>
-                    </ul>
+                    <div class="contact-item">
+                        <span class="contact-label">PHONE</span>
+                        <span class="contact-value">051-815-3007</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">REPRESENTATIVE</span>
+                        <span class="contact-value">염현식 원장</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">BUSINESS NO.</span>
+                        <span class="contact-value">394-94-00447</span>
+                    </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 리즈인 여성의원. All rights reserved. | 대표자: 리즈인 원장 | 사업자등록번호: 123-45-67890</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">개인정보취급방침</a>
+                    <a href="#" class="footer-link">이용약관</a>
+                    <a href="#" class="footer-link">비급여안내</a>
+                </div>
+                <p class="footer-copyright">© 2024 리즈인 여성의원. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
     </footer>
