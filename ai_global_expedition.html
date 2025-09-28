@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6PVTZ4M4P2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6PVTZ4M4P2');
+    </script>
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MPGBKQ35');</script>
+    <!-- End Google Tag Manager -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI와 글로벌 원정대 - 1기 모집 | LOWORLD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-black: #000000;
+            --primary-white: #ffffff;
+            --primary-color: #000000;
+            --secondary-color: #404040;
+            --accent-color: #06b6d4;
+            --accent-hover: #0891b2;
+            --success-color: #22c55e;
+            --warning-color: #f59e0b;
+            --ai-global-color: #06b6d4;
+            --ai-global-hover: #0891b2;
+            --text-dark: #000000;
+            --text-light: #525252;
+            --white: #ffffff;
+            --gray-50: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-300: #d4d4d4;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 30%, #cffafe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease-in-out infinite;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(6, 182, 212, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 80% 70%, rgba(8, 145, 178, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 40% 90%, rgba(34, 197, 94, 0.1) 0%, transparent 50%);
+            z-index: -2;
+            animation: floatingColors 20s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes floatingColors {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+            25% { transform: translateY(-10px) rotate(1deg); opacity: 0.8; }
+            50% { transform: translateY(-5px) rotate(-1deg); opacity: 0.9; }
+            75% { transform: translateY(-15px) rotate(0.5deg); opacity: 0.85; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-black);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 12rem 0 8rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--primary-black) 0%, var(--accent-color) 50%, var(--primary-black) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: textShine 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes textShine {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 8px 30px rgba(6, 182, 212, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dark);
+            padding: 1.2rem 3rem;
+            border: 2px solid var(--gray-300);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Pricing Hero */
+        .pricing-hero {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 0 auto 4rem;
+            max-width: 600px;
+            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.3);
+        }
+
+        .pricing-hero h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-original {
+            text-decoration: line-through;
+            opacity: 0.7;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-special {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #fbbf24;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-note {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 8rem 0;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-black), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(6, 182, 212, 0.1);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(6, 182, 212, 0.3);
+            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-black);
+        }
+
+        .feature-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            padding: 8rem 0;
+        }
+
+        .timeline-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 2rem;
+            top: 5rem;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent-color), transparent);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-number {
+            flex-shrink: 0;
+            width: 4rem;
+            height: 4rem;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3);
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(6, 182, 212, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            flex: 1;
+        }
+
+        .timeline-period {
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-black);
+        }
+
+        .timeline-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 8rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+            color: white;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--accent-color);
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-black);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            text-align: center;
+            color: #888;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-actions a {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 1rem;
+                margin-bottom: 3rem;
+            }
+
+            .timeline-item::before {
+                display: none;
+            }
+
+            .cta-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-actions a {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPGBKQ35"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">LOWORLD</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#services">서비스</a></li>
+                    <li><a href="#features">특징</a></li>
+                    <li><a href="#timeline">커리큘럼</a></li>
+                    <li><a href="#contact">신청</a></li>
+                </ul>
+                <a href="#contact" class="nav-cta">1기 신청</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-badge">🚨 1기 한정 모집 중 🚨</div>
+                <h1>AI와 글로벌 원정대</h1>
+                <p>
+                    네이버 카페가 처음 생겼을 때처럼, 지금이 바로 그 기회입니다. 
+                    AI 자동화 기술과 노코드 개발로 글로벌 시장을 함께 정복하세요. 
+                    로월드 대표의 20년 경력과 함께하는 1년 과정입니다.
+                </p>
+                
+                <div class="pricing-hero">
+                    <h3>🔥 1기 특별가 🔥</h3>
+                    <div class="pricing-original">정가 월 100만원</div>
+                    <div class="pricing-special">월 50만원</div>
+                    <div class="pricing-note">
+                        1기 한정 50% 할인 | 12개월 과정 | 글로벌 마케팅 자동화 포함
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary">
+                        1기 지금 신청하기 🚀
+                    </a>
+                    <a href="#features" class="btn-secondary">
+                        자세히 알아보기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">왜 지금이 기회인가?</h2>
+                <p class="section-subtitle">
+                    다시 오지 않을 글로벌 진출의 골든타임. 
+                    AI 기술이 성숙해졌지만 아직 많은 사람들이 눈치채지 못한 지금이 바로 그 때입니다.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">네이버 카페 초기와 같은 기회</h3>
+                    <p class="feature-description">
+                        당시 네이버 카페를 만들기만 해도 공동구매 등으로 큰 수익을 거둘 수 있었습니다. 
+                        지금의 글로벌 시장이 바로 그런 상황입니다.
+                    </p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">글로벌 진출의 골든타임</h3>
+                    <p class="feature-description">
+                        글로벌 콘텐츠, 교육, 서비스 산업 진출이야말로 다시 오지 않을 기회입니다. 
+                        지금 시작하는 것이 엄청난 이득입니다.
+                    </p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">AI 자동화 기술</h3>
+                    <p class="feature-description">
+                        AI 기술이 성숙해졌지만 아직 많은 사람들이 눈치채지 못했습니다. 
+                        노코드 개발과 함께 누구나 글로벌 서비스를 만들 수 있습니다.
+                    </p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">💎</div>
+                    <h3 class="feature-title">검증된 20년 경력</h3>
+                    <p class="feature-description">
+                        로월드 대표의 20년 소프트웨어 개발 및 비즈니스 경력을 바탕으로 
+                        실전 검증된 글로벌 진출 전략을 제공합니다.
+                    </p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📈</div>
+                    <h3 class="feature-title">글로벌 마케팅 자동화</h3>
+                    <p class="feature-description">
+                        로월드 글로벌 마케팅 자동화 시스템을 통해 제품 홍보, 마케팅, 영업까지 
+                        모든 것을 자동화하여 함께 시장을 점유해나갑니다.
+                    </p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🌍</div>
+                    <h3 class="feature-title">글로벌 앱/웹/설치형 서비스</h3>
+                    <p class="feature-description">
+                        1년 과정을 통해 실제 글로벌 시장에서 통하는 
+                        앱, 웹, 설치형 서비스를 직접 제작하고 런칭합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">1년 과정 커리큘럼</h2>
+                <p class="section-subtitle">
+                    체계적인 단계별 학습과 실전 프로젝트를 통해 
+                    글로벌 시장에서 성공할 수 있는 모든 것을 배웁니다.
+                </p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <div class="timeline-period">1~3월</div>
+                        <h3 class="timeline-title">AI 자동화 기술 마스터</h3>
+                        <p class="timeline-description">
+                            최신 AI 도구들을 활용한 콘텐츠 생성, 데이터 분석, 고객 서비스 자동화 기술을 익힙니다. 
+                            ChatGPT, Claude, Midjourney 등 실무에 바로 적용 가능한 AI 기술을 마스터합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <div class="timeline-period">4~6월</div>
+                        <h3 class="timeline-title">노코드 개발로 글로벌 앱/웹 제작</h3>
+                        <p class="timeline-description">
+                            코딩 없이도 전문가 수준의 앱과 웹사이트를 제작합니다. 
+                            Bubble, Webflow, FlutterFlow 등을 활용하여 실제 글로벌 서비스를 구축합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <div class="timeline-period">7~9월</div>
+                        <h3 class="timeline-title">설치형 서비스 및 마케팅 런칭</h3>
+                        <p class="timeline-description">
+                            데스크톱 애플리케이션과 SaaS 서비스를 제작하고, 
+                            글로벌 마케팅 전략을 수립하여 실제 고객을 획득합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <div class="timeline-period">10~12월</div>
+                        <h3 class="timeline-title">글로벌 시장 점유 및 수익 최적화</h3>
+                        <p class="timeline-description">
+                            로월드 글로벌 마케팅 자동화 시스템을 활용하여 시장을 확대하고, 
+                            수익을 최적화하는 고급 전략을 실행합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>지금이 바로 그 순간입니다</h2>
+                <p>
+                    다시 오지 않을 기회를 놓치지 마세요. 
+                    AI 자동화와 글로벌 진출의 모든 것을 함께 배우고 실행할 1기 멤버를 모집합니다.
+                </p>
+                <div class="cta-actions">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-ZzMRC4iORs0LNUUC8CtYdT-cUu0WiI52N_4SkftEXHzuTw/viewform?usp=dialog" target="_blank" class="btn-white">
+                        1기 지금 신청하기 🚀
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AI와 글로벌 원정대</h3>
+                    <ul>
+                        <li><a href="#features">특징</a></li>
+                        <li><a href="#timeline">커리큘럼</a></li>
+                        <li><a href="#contact">신청하기</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>LOWORLD 서비스</h3>
+                    <ul>
+                        <li><a href="starter_package_landing.html">스타터패키지</a></li>
+                        <li><a href="homepage_development_landing.html">홈페이지 개발</a></li>
+                        <li><a href="https://api.loworldsoft.com/#/store/home" target="_blank">커머스</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>연락처</h3>
+                    <ul>
+                        <li>이메일: contact@loworldsoft.com</li>
+                        <li>전화: 070-4145-1142</li>
+                        <li>주소: 서울시 강남구</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI와 글로벌 원정대 | LOWORLD. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.9)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

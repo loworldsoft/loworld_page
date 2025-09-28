@@ -37,6 +37,8 @@
             --startup-hover: #7c3aed;
             --gift-color: #f59e0b;
             --gift-hover: #d97706;
+            --ai-global-color: #06b6d4;
+            --ai-global-hover: #0891b2;
             --text-dark: #000000;
             --text-light: #525252;
             --white: #ffffff;
@@ -903,6 +905,13 @@
                 #e11d48 100%);
         }
 
+        .service-overview-card.ai-global::before {
+            background: linear-gradient(135deg, 
+                #06b6d4 0%, 
+                #0891b2 50%, 
+                #0e7490 100%);
+        }
+
         .service-overview-card:hover {
             transform: translateY(-15px) scale(1.02);
             border-color: rgba(139, 92, 246, 0.3);
@@ -1652,6 +1661,24 @@
                     </ul>
                     <a href="https://api.loworldsoft.com/#/store/home" target="_blank" class="service-link">
                         자세히 보기 →
+                    </a>
+                </div>
+
+                <div class="service-overview-card ai-global fade-in">
+                    <div class="service-icon">🚀</div>
+                    <h3 class="service-name">AI와 글로벌 원정대</h3>
+                    <p class="service-description">
+                        AI 자동화 기술과 노코드 개발로 글로벌 진출을 함께하는 1년 과정. 
+                        로월드 대표의 20년 경력과 함께 글로벌 시장을 정복하세요.
+                    </p>
+                    <ul class="service-features">
+                        <li>AI 자동화 기술 + 노코드 개발 교육</li>
+                        <li>글로벌 앱/웹/설치형 서비스 런칭</li>
+                        <li>로월드 글로벌 마케팅 자동화 지원</li>
+                        <li><span style="text-decoration: line-through; color: #888;">월 100만원</span> <strong style="color: #06b6d4;">1기 한정 월 50만원 (50% 할인)</strong></li>
+                    </ul>
+                    <a href="ai_global_expedition.html" class="service-link">
+                        1기 신청하기 →
                     </a>
                 </div>
             </div>
